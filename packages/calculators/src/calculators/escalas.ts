@@ -99,7 +99,7 @@ export const apgar = defineCalculator<ApgarIn, number>({
         : { label: 'Gravemente deprimido (0–3)', severity: 'danger' },
   present: (t) => ({ value: fmt(t), unit: '/ 10' }),
   formula: 'Total = FC + esfuerzo respiratorio + tono + irritabilidad refleja + color (0–2 cada uno). Rango 0–10.',
-  references: [{ citation: 'Apgar V. A proposal for a new method of evaluation of the newborn infant. Curr Res Anesth Analg. 1953;32(4):260-267.' }],
+  references: [{ citation: 'Apgar V. A proposal for a new method of evaluation of the newborn infant. Curr Res Anesth Analg. 1953;32(4):260-267.', doi: '10.1213/00000539-195301000-00041' }],
   warnings: ['Se registra al minuto 1 y al minuto 5. No reemplaza la decisión de reanimar, que no espera al puntaje.'],
 });
 

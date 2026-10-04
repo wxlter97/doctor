@@ -42,3 +42,13 @@ Los DOI están en el código y deben abrirse y confirmarse uno por uno.
 | Peso ideal (Devine) | Devine 1974 | Factor 0.4 del peso ajustado (`TODO(fuente)`) |
 
 Decisiones tomadas por falta de fuente: el MELD-Na y el balance hídrico no colorean la interpretación (no se inventaron umbrales).
+
+## Verificación de referencias contra Crossref (2026-10-03)
+
+Se comprobó que los 22 DOI del código **existen y su título coincide con la cita**, y que año, volumen, número y páginas coinciden, salvo cuatro diferencias que son de metadatos de Crossref y no de la cita (Lancet 1974 figura como vol. 304 en Crossref y como 2(7872) en PubMed; Wells 2000 figura "83(03)"; Cockcroft-Gault figura con el año de la reedición digital, 2008; Apgar figura como 32(1) en Crossref y 32(4) en PubMed).
+
+Se corrigió el DOI de Lim 2003 (CURB-65): era `10.1136/thx.58.5.377` y el correcto es `10.1136/thorax.58.5.377`. Se añadieron DOI a Wells TEP, Wells TVP modificado (NEJM 2003), Holliday-Segar, Baxter, Katz, Payne, Emmett y Apgar.
+
+Esto confirma que las **fuentes existen**; no confirma que las fórmulas, constantes ni puntos de corte del código coincidan con su contenido. Eso sigue pendiente (columna "Pendiente" de las tablas de arriba) y requiere leer cada artículo.
+
+Sin DOI confirmado: Hillier 1999 (Am J Med 106:399), Devine 1974 (Drug Intell Clin Pharm 8:650), DuBois 1916, OMS TRS 894 y las marcadas `TODO(fuente)`.

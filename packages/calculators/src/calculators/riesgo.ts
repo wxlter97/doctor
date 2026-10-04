@@ -66,7 +66,7 @@ export const curb65 = defineCalculator<CurbIn, number>({
   present: (t) => ({ value: fmt(t), unit: '/ 5' }),
   formula: 'Un punto por cada criterio: Confusión, Urea, Respiratoria (FR), Blood pressure, edad ≥ 65. Rango 0–5.',
   references: [
-    { citation: 'Lim WS, et al. Defining community acquired pneumonia severity on presentation to hospital: an international derivation and validation study. Thorax. 2003;58(5):377-382.', doi: '10.1136/thx.58.5.377' },
+    { citation: 'Lim WS, et al. Defining community acquired pneumonia severity on presentation to hospital: an international derivation and validation study. Thorax. 2003;58(5):377-382.', doi: '10.1136/thorax.58.5.377' },
   ],
   warnings: ['No contempla comorbilidades, hipoxemia ni contexto social: complementá con el criterio clínico.', WARN_CLINICAL],
 });
@@ -103,7 +103,7 @@ export const wellsDvt = defineCalculator<WellsDvtIn, number>({
   formula: 'Suma de criterios (+1 cada uno; −2 si hay un diagnóstico alternativo igual o más probable). Rango −2 a 9.',
   references: [
     { citation: 'Wells PS, et al. Value of assessment of pretest probability of deep-vein thrombosis in clinical management. Lancet. 1997;350(9094):1795-1798.', doi: '10.1016/S0140-6736(97)08140-3' },
-    { citation: 'TODO(fuente): la versión con "TVP previa" corresponde a la modificación de Wells et al., 2003; verificar cita y criterios.' },
+    { citation: 'Wells PS, et al. Evaluation of D-dimer in the diagnosis of suspected deep-vein thrombosis (versión modificada, incluye "TVP previa"). N Engl J Med. 2003;349(13):1227-1235.', doi: '10.1056/NEJMoa023153' },
   ],
   warnings: ['La probabilidad pretest orienta la estrategia diagnóstica (dímero D, ecografía); no confirma ni descarta por sí sola.', WARN_CLINICAL],
 });
@@ -136,7 +136,7 @@ export const wellsPe = defineCalculator<WellsPeIn, number>({
   present: (t) => ({ value: fmt(t, 1), unit: 'puntos' }),
   formula: 'Suma de criterios (3 · 3 · 1.5 · 1.5 · 1.5 · 1 · 1). Rango 0–12.5. Tres niveles: < 2 baja, 2–6 moderada, > 6 alta. Dicotómica: ≤ 4 improbable, > 4 probable.',
   references: [
-    { citation: 'Wells PS, et al. Derivation of a simple clinical model to categorize patients probability of pulmonary embolism: increasing the models utility with the SimpliRED D-dimer. Thromb Haemost. 2000;83(3):416-420.' },
+    { citation: 'Wells PS, et al. Derivation of a simple clinical model to categorize patients probability of pulmonary embolism: increasing the models utility with the SimpliRED D-dimer. Thromb Haemost. 2000;83(3):416-420.', doi: '10.1055/s-0037-1613830' },
   ],
   warnings: ['Orienta la estrategia diagnóstica (dímero D, angiotomografía); no confirma ni descarta por sí sola.', WARN_CLINICAL],
 });

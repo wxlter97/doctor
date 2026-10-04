@@ -29,7 +29,7 @@ export const anionGap = defineCalculator<AgIn, AgOut>({
   present: (o) => ({ value: fmt(o.ag, 1), unit: 'mmol/L', extra: o.corregido !== undefined ? [`Corregido por albúmina: ${fmt(o.corregido, 1)} mmol/L`] : undefined }),
   formula: 'Anion gap = Na − (Cl + HCO₃)\nCorregido = AG + 2.5 × (4.0 − albúmina en g/dL)',
   references: [
-    { citation: 'Emmett M, Narins RG. Clinical use of the anion gap. Medicine (Baltimore). 1977;56(1):38-54.' },
+    { citation: 'Emmett M, Narins RG. Clinical use of the anion gap. Medicine (Baltimore). 1977;56(1):38-54.', doi: '10.1097/00005792-197756010-00002' },
     { citation: 'TODO(fuente): verificar el factor 2.5 de la corrección por albúmina con una referencia.' },
   ],
   warnings: [REF_NOTE, 'No incluye potasio.'],
@@ -57,7 +57,7 @@ export const sodioCorregido = defineCalculator<NaIn, number>({
   present: (v) => ({ value: fmt(v, 1), unit: 'mmol/L', precise: String(v) }),
   formula: 'Na corregido = Na medido + factor × (glucosa − 100) / 100   (glucosa en mg/dL; factor 1.6 o 2.4)',
   references: [
-    { citation: 'Katz MA. Hyperglycemia-induced hyponatremia — calculation of expected serum sodium depression. N Engl J Med. 1973;289(16):843-844.' },
+    { citation: 'Katz MA. Hyperglycemia-induced hyponatremia — calculation of expected serum sodium depression. N Engl J Med. 1973;289(16):843-844.', doi: '10.1056/NEJM197310182891607' },
     { citation: 'Hillier TA, et al. Hyperglycemia and hyponatremia: the corrected sodium. Am J Med. 1999;106(4):399-403.' },
   ],
   warnings: ['Ambos factores se usan en la práctica; confirmá cuál usa tu protocolo.'],
@@ -80,7 +80,7 @@ export const calcioCorregido = defineCalculator<CaIn, number>({
   compute: calcioCorregidoCalc,
   present: (v) => ({ value: fmt(v, 1), unit: 'mg/dL', precise: String(v) }),
   formula: 'Ca corregido (mg/dL) = Ca total + 0.8 × (4.0 − albúmina en g/dL)',
-  references: [{ citation: 'Payne RB, et al. Interpretation of serum calcium in patients with abnormal serum proteins. Br Med J. 1973;4(5893):643-646.' }],
+  references: [{ citation: 'Payne RB, et al. Interpretation of serum calcium in patients with abnormal serum proteins. Br Med J. 1973;4(5893):643-646.', doi: '10.1136/bmj.4.5893.643' }],
   warnings: ['No sustituye la medición de calcio iónico, sobre todo en pacientes críticos.', REF_NOTE],
 });
 

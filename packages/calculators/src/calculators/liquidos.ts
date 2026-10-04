@@ -28,7 +28,7 @@ export const holliday = defineCalculator<In, Out>({
   formula:
     'Primeros 10 kg: 100 mL/kg/día\nSiguientes 10 kg (10–20): 50 mL/kg/día\nPor cada kg sobre 20: 20 mL/kg/día\n(equivale a la regla 4-2-1 en mL/h)',
   references: [
-    { citation: 'Holliday MA, Segar WE. The maintenance need for water in parenteral fluid therapy. Pediatrics. 1957;19(5):823-832.' },
+    { citation: 'Holliday MA, Segar WE. The maintenance need for water in parenteral fluid therapy. Pediatrics. 1957;19(5):823-832.', doi: '10.1542/peds.19.5.823' },
   ],
   warnings: [
     'Calcula mantenimiento, no déficit ni pérdidas continuas.',
@@ -65,7 +65,7 @@ export const parklandCalc = defineCalculator<ParklandIn, ParklandOut>({
   }),
   formula: 'Total 24 h (mL) = 4 mL × peso (kg) × % de superficie corporal quemada\nMitad en las primeras 8 h (contadas desde la hora de la quemadura) y mitad en las 16 h siguientes.',
   references: [
-    { citation: 'Baxter CR, Shires T. Physiological response to crystalloid resuscitation of severe burns. Ann N Y Acad Sci. 1968;150(3):874-894.' },
+    { citation: 'Baxter CR, Shires T. Physiological response to crystalloid resuscitation of severe burns. Ann N Y Acad Sci. 1968;150(3):874-894.', doi: '10.1111/j.1749-6632.1968.tb14738.x' },
   ],
   warnings: [
     'Es una estimación inicial con solución cristaloide: ajustá según la diuresis y la respuesta clínica.',
