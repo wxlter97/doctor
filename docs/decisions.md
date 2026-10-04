@@ -41,3 +41,6 @@ El cliente valida hash SHA-256 y esquema zod *antes* de tocar IndexedDB y escrib
 
 ## 014 — Medición de peso del JS
 El presupuesto de 200 KB gzip (§10) se mide sobre **todos** los scripts del arranque, no solo el chunk `index`. Ver `docs/rendimiento.md`.
+
+## 015 — Dependencias pesadas bajo demanda
+`zod`, el registro de calculadoras, `ics` y `minisearch` se cargan con `import()` (al actualizar, tras el primer pintado, al exportar y al cargar el catálogo). Lo que importa es no meterlas en el camino crítico del arranque; ver `docs/rendimiento.md`.

@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import { DEFAULT_TYPES, type Shift } from './model';
-import { buildShift, exportBackup, findOverlap, nextShift, parseBackup, patternDates, restWarnings, summarize, toIcs } from './logic';
+import { buildShift, exportBackup, findOverlap, nextShift, parseBackup, patternDates, restWarnings, summarize } from './logic';
+import { toIcs } from './ics';
 import { isoToMs, localIso, msToIso } from '../../lib/time';
 
 const T = Object.fromEntries(DEFAULT_TYPES.map((t) => [t.id, t]));

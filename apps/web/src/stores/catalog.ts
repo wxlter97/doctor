@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import type { CatalogMedication, Institution } from '@medapoyo/shared';
 import { db } from '../db';
-import { buildIndex, type MedIndex } from '../lib/medicationSearch';
+import type { MedIndex } from '../lib/medicationSearch';
 
 interface CatalogState {
   loaded: boolean;
@@ -27,6 +27,8 @@ export const useCatalog = create<CatalogState>((set) => ({
       meta<Record<string, string>>('synonyms'),
       meta<string | null>('catalogSource'),
     ]);
+    // MiniSearch se carga cuando hay catálogo, no en el arranque.
+    const { buildIndex } = await import('../lib/medicationSearch');
     set({ loaded: true, version, source: source ?? null, index: buildIndex(meds, institutions ?? [], synonyms ?? {}) });
   },
 }));

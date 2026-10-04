@@ -3,10 +3,13 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { VitePWA } from 'vite-plugin-pwa';
+import { visualizer } from 'rollup-plugin-visualizer';
 
 export default defineConfig({
   define: { 'import.meta.env.VITE_APP_VERSION': JSON.stringify(process.env.VITE_APP_VERSION ?? '0.0.0') },
   plugins: [
+    // ANALYZE=1 pnpm build → dist/stats.json (peso por módulo)
+    ...(process.env.ANALYZE ? [visualizer({ filename: 'dist/stats.json', template: 'raw-data', gzipSize: true })] : []),
     react(),
     tailwindcss(),
     VitePWA({

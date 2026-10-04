@@ -3,7 +3,6 @@ import { Download } from 'lucide-react';
 import { t } from '../../i18n/es-SV';
 import { addDays, startOfMonth, todayInSv } from '../../lib/time';
 import { download } from '../../lib/download';
-import { toIcs } from './logic';
 import { ALARM_DEFAULT_MIN, setSetting, useSetting } from './store';
 import type { Shift, ShiftType } from './model';
 
@@ -15,8 +14,9 @@ export function ExportPanel({ shifts, types }: { shifts: Shift[]; types: ShiftTy
   const alarm = useSetting<number>('alarmMinutes', ALARM_DEFAULT_MIN);
   const [msg, setMsg] = useState('');
 
-  const run = () => {
+  const run = async () => {
     if (to < from) { setMsg(s.badRange); return; }
+    const { toIcs } = await import('./ics');
     const ics = toIcs(shifts, types, { from, to }, alarm);
     download('turnos.ics', ics, 'text/calendar');
     setMsg('');
@@ -34,7 +34,7 @@ export function ExportPanel({ shifts, types }: { shifts: Shift[]; types: ShiftTy
         <input className="field" inputMode="numeric" value={alarm} onChange={(e) => void setSetting('alarmMinutes', Math.max(0, Math.min(1440, Number(e.target.value) || 0)))} />
       </label>
       {msg && <p role="alert" className="font-bold text-danger">✖ {msg}</p>}
-      <button className="btn btn-primary self-start" onClick={run}><Download aria-hidden size={18} /> {s.exportBtn}</button>
+      <button className="btn btn-primary self-start" onClick={() => void run()}><Download aria-hidden size={18} /> {s.exportBtn}</button>
     </section>
   );
 }

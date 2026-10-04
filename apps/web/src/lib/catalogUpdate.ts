@@ -1,4 +1,4 @@
-import { catalogSchema, manifestSchema, sha256Hex, type Catalog } from '@medapoyo/shared';
+import type { Catalog } from '@medapoyo/shared';
 import { db, type MedicationRow } from '../db';
 
 export type UpdateStatus =
@@ -52,6 +52,8 @@ export async function writeCatalog(catalog: Catalog) {
 
 export async function updateCatalog({ fetchFn = fetch, onProgress }: UpdateOptions = {}): Promise<UpdateStatus> {
   try {
+    // zod se carga al actualizar, no en el arranque.
+    const { catalogSchema, manifestSchema, sha256Hex } = await import('@medapoyo/shared');
     let res: Response;
     try {
       res = await fetchFn('/catalog/manifest.json', { cache: 'no-store' });

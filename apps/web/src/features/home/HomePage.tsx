@@ -1,10 +1,9 @@
 import { useState, type KeyboardEvent } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { getCalculator } from '@medapoyo/calculators';
 import { db } from '../../db';
 import { RECENTS_MAX } from '../../db/user';
-import { searchCalculators } from '../../lib/calculatorSearch';
+import { useCalculators } from '../../lib/useCalculators';
 import { t } from '../../i18n/es-SV';
 import { useCatalog } from '../../stores/catalog';
 import { instShort } from '../../lib/institutions';
@@ -16,7 +15,8 @@ export function HomePage() {
   const [q, setQ] = useState('');
   const navigate = useNavigate();
   const index = useCatalog((x) => x.index);
-  const calcs = q.trim() ? searchCalculators(q) : [];
+  const calculators = useCalculators();
+  const calcs = q.trim() && calculators ? calculators.search(q) : [];
   const meds = q.trim() && index ? index.search(q) : [];
   const recents = useLiveQuery(() => db.recents.orderBy('usedAt').reverse().limit(RECENTS_MAX).toArray(), []) ?? [];
 
@@ -78,7 +78,7 @@ export function HomePage() {
                 </li>
               );
             }
-            const calc = getCalculator(r.refId);
+            const calc = calculators?.get(r.refId);
             return calc && (
               <li key={`${r.kind}-${r.refId}`}>
                 <Link to={`/calculadoras/${calc.id}`} className="card flex min-h-row items-center py-2 font-bold">{calc.name}</Link>
