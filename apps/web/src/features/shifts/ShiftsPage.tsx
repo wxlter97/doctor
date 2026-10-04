@@ -100,14 +100,14 @@ export function ShiftsPage() {
     <section className="flex max-w-3xl flex-col gap-4">
       <h1 className="text-2xl font-bold">{s.title}</h1>
 
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex items-center gap-2">
         <button className="btn" aria-label={s.prevMonth} onClick={() => setMonth(addMonths(month, -1))}><ChevronLeft aria-hidden size={20} /></button>
-        <h2 className="min-w-40 flex-1 text-center text-lg font-bold first-letter:uppercase" aria-live="polite">{monthLabel(month)}</h2>
+        <h2 className="min-w-0 flex-1 text-center text-base font-bold first-letter:uppercase lg:text-lg" aria-live="polite">{monthLabel(month)}</h2>
         <button className="btn" aria-label={s.nextMonth} onClick={() => setMonth(addMonths(month, 1))}><ChevronRight aria-hidden size={20} /></button>
-        <button className="btn" onClick={() => setMonth(startOfMonth(today))}>{s.today}</button>
+        <button className="btn px-3" onClick={() => setMonth(startOfMonth(today))}>{s.today}</button>
       </div>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 [&>.btn]:px-3 [&>.btn]:text-sm lg:[&>.btn]:px-4 lg:[&>.btn]:text-base">
         {!brush.on ? (
           <button className="btn" onClick={() => setBrush({ on: true, typeId: brush.typeId || types[0]?.id || '' })}><Paintbrush aria-hidden size={18} /> {s.brush}</button>
         ) : (

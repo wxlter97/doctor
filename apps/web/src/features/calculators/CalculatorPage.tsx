@@ -165,24 +165,27 @@ function CalculatorView({ calc }: { calc: AnyCalculator }) {
         <p className="text-sm text-muted">{t.disclaimer.short}</p>
       </div>
 
-      <aside aria-live="polite" className="sticky bottom-0 -mx-4 border-t-2 border-line bg-surface p-4 lg:top-0 lg:mx-0 lg:border-2 lg:shadow-[var(--shadow)]">
+      <aside aria-live="polite" className="sticky bottom-0 -mx-4 border-t-2 border-line bg-surface px-4 py-3 lg:top-0 lg:mx-0 lg:border-2 lg:p-4 lg:shadow-[var(--shadow)]">
         <h2 className="sr-only">{c.result}</h2>
         {result.ok ? (
           <div className="flex flex-col gap-2">
-            <p className="text-3xl font-black">{result.presentation.value} <span className="text-base font-bold">{result.presentation.unit}</span></p>
-            {result.presentation.extra?.map((e) => <p key={e} className="font-bold">{e}</p>)}
-            {result.interpretation && <SeverityBadge {...result.interpretation} />}
-            <div className="flex flex-wrap items-center gap-2">
-              <button className="btn btn-primary" onClick={() => void copy()}>
+            <div className="flex items-center justify-between gap-3 lg:flex-col lg:items-stretch lg:gap-2">
+              <p className="text-2xl font-black lg:text-3xl">{result.presentation.value} <span className="text-base font-bold">{result.presentation.unit}</span></p>
+              <button className="btn btn-primary shrink-0" onClick={() => void copy()}>
                 {copied ? <Check aria-hidden size={18} /> : <Copy aria-hidden size={18} />} {copied ? c.copied : c.copy}
               </button>
-              {result.presentation.precise && (
-                <details className="text-sm"><summary className="min-h-11 cursor-pointer py-2">{c.precision}</summary>{result.presentation.precise}</details>
-              )}
             </div>
+            {result.presentation.extra?.map((e) => <p key={e} className="text-sm font-bold lg:text-base">{e}</p>)}
+            {result.interpretation && <SeverityBadge {...result.interpretation} />}
+            {result.presentation.precise && (
+              <details className="hidden text-sm lg:block"><summary className="min-h-11 cursor-pointer py-2">{c.precision}</summary>{result.presentation.precise}</details>
+            )}
           </div>
         ) : (
-          <p className="text-muted">{c.fillFields}</p>
+          <p className="text-muted">
+            {c.fillFields}
+            {hasScored && <strong className="ml-2 text-fg">· {c.partialSum}: {partial}</strong>}
+          </p>
         )}
       </aside>
     </div>

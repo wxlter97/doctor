@@ -44,3 +44,6 @@ El presupuesto de 200 KB gzip (§10) se mide sobre **todos** los scripts del arr
 
 ## 015 — Dependencias pesadas bajo demanda
 `zod`, el registro de calculadoras, `ics` y `minisearch` se cargan con `import()` (al actualizar, tras el primer pintado, al exportar y al cargar el catálogo). Lo que importa es no meterlas en el camino crítico del arranque; ver `docs/rendimiento.md`.
+
+## 016 — E2E móvil
+`e2e/mobile.spec.ts` (viewport 390×844, táctil) comprueba en 11 pantallas que no haya desborde horizontal ni objetivos interactivos < 44 px, que el resultado de la calculadora quede fijo sobre la barra inferior y que la barra navegue entre secciones. `SHOTS_DIR=<carpeta> pnpm e2e mobile` guarda capturas para revisión visual (lo que los asserts no ven: p. ej. la barra de resultado ocupaba ~40 % de la pantalla y se compactó).

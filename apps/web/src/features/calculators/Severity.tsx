@@ -12,7 +12,7 @@ const icons = { info: Info, warning: TriangleAlert, danger: OctagonAlert };
 export function SeverityBadge({ severity, label }: { severity: Severity; label: string }) {
   const Icon = icons[severity];
   return (
-    <p className={`flex items-start gap-2 border-2 border-current px-3 py-2 font-bold ${styles[severity]}`}>
+    <p className={`flex items-start gap-2 border-2 border-current px-3 py-1.5 text-sm font-bold lg:py-2 lg:text-base ${styles[severity]}`}>
       <Icon aria-hidden size={20} className="mt-0.5 shrink-0" /> <span>{label}</span>
     </p>
   );
