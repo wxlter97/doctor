@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { setMeta } from '../../db';
 import { t } from '../../i18n/es-SV';
+import { CatalogDownload } from '../medications/CatalogDownload';
 import { avisoLegal } from '../settings/legal/aviso-legal';
 
 export function Onboarding() {
@@ -31,6 +32,7 @@ export function Onboarding() {
         <section className="card flex flex-col gap-3">
           <h2 className="text-xl font-bold">{o.catalogTitle}</h2>
           <p>{o.catalogBody}</p>
+          <CatalogDownload />
           <div className="flex gap-2">
             <button className="btn" onClick={() => void finish()}>{o.skip}</button>
             <button className="btn btn-primary" onClick={() => void finish()}>{o.finish}</button>

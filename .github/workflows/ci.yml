@@ -12,7 +12,17 @@ jobs:
         with: { node-version: 24, cache: pnpm }
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
+      - run: pnpm validate:catalog
       - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm build
       - run: pnpm audit --prod --audit-level=high
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: '3.12' }
+      - run: pip install pytest
+      - run: pytest -q
+        working-directory: data/pipeline

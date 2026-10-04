@@ -8,6 +8,8 @@ import { exportBackup, parseBackup } from '../shifts/logic';
 import { REST_DEFAULT_H, replaceAllData, setSetting, useSetting } from '../shifts/store';
 import type { Shift, ShiftType } from '../shifts/model';
 import { useState } from 'react';
+import { useCatalog } from '../../stores/catalog';
+import { CatalogDownload } from '../medications/CatalogDownload';
 import { avisoLegal } from './legal/aviso-legal';
 
 function Segmented<T extends string>({ label, value, options, onChange }: {
@@ -43,6 +45,7 @@ export function SettingsPage() {
     await replaceAllData(r.data.types, r.data.shifts);
     setBackupMsg(s.backupOk(r.data.shifts.length));
   };
+  const catalogVersion = useCatalog((x) => x.version);
   const historyCount = useLiveQuery(() => db.calcHistory.count(), []) ?? 0;
   return (
     <section className="flex max-w-2xl flex-col gap-4">
@@ -51,6 +54,11 @@ export function SettingsPage() {
         options={[['system', s.themeSystem], ['light', s.themeLight], ['dark', s.themeDark]]} />
       <Segmented<Density> label={s.density} value={density} onChange={setDensity}
         options={[['comfortable', s.densityComfortable], ['compact', s.densityCompact]]} />
+      <div className="card flex flex-col gap-2">
+        <h2 className="font-bold">{s.catalogTitle}</h2>
+        <p className="text-sm">{t.catalog.version(catalogVersion)}</p>
+        <CatalogDownload label={t.catalog.update} />
+      </div>
       <div className="card flex flex-col gap-2">
         <label htmlFor="rest-threshold" className="font-bold">{s.restThreshold}</label>
         <input id="rest-threshold" className="field max-w-32" inputMode="decimal" value={rest}

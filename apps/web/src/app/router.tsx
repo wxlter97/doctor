@@ -10,7 +10,14 @@ export const router = createBrowserRouter([
     element: <Layout />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: 'medicamentos', element: <Placeholder title={t.medications.title} body={t.medications.empty} /> },
+      {
+        path: 'medicamentos',
+        lazy: async () => ({ Component: (await import('../features/medications/MedicationsLayout')).MedicationsLayout }),
+        children: [
+          { index: true, lazy: async () => ({ Component: (await import('../features/medications/MedicationsLayout')).MedicationsIndexPlaceholder }) },
+          { path: ':id', lazy: async () => ({ Component: (await import('../features/medications/MedicationDetail')).MedicationDetail }) },
+        ],
+      },
       { path: 'calculadoras', lazy: async () => ({ Component: (await import('../features/calculators/CalculatorsPage')).CalculatorsPage }) },
       { path: 'calculadoras/:id', lazy: async () => ({ Component: (await import('../features/calculators/CalculatorPage')).CalculatorPage }) },
       { path: 'turnos', lazy: async () => ({ Component: (await import('../features/shifts/ShiftsPage')).ShiftsPage }) },

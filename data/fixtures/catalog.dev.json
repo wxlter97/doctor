@@ -1,0 +1,1034 @@
+{
+ "version": 1,
+ "publishedAt": "2026-01-01T00:00:00Z",
+ "source": "FIXTURE",
+ "institutions": [
+  {
+   "id": "minsal",
+   "name": "Ministerio de Salud (MINSAL)",
+   "listName": "LIME"
+  },
+  {
+   "id": "isss",
+   "name": "Instituto Salvadoreño del Seguro Social (ISSS)",
+   "listName": "LOM"
+  },
+  {
+   "id": "fosalud",
+   "name": "Fondo Solidario para la Salud (FOSALUD)",
+   "listName": "LIM"
+  }
+ ],
+ "synonyms": {
+  "paracetamol": "acetaminofén",
+  "dipirona": "metamizol",
+  "aspirina": "ácido acetilsalicílico",
+  "albuterol": "salbutamol",
+  "epinefrina": "adrenalina"
+ },
+ "medications": [
+  {
+   "id": "fixture-001",
+   "genericName": "Acetaminofén",
+   "activeIngredients": [
+    "acetaminofén"
+   ],
+   "form": "tableta",
+   "strength": "500 mg",
+   "route": "oral",
+   "atcCode": "N02BE01",
+   "therapeuticGroup": "Analgésicos y antipiréticos",
+   "searchTerms": [
+    "paracetamol"
+   ],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-001",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-001",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-001",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-002",
+   "genericName": "Acetaminofén",
+   "activeIngredients": [
+    "acetaminofén"
+   ],
+   "form": "suspensión oral",
+   "strength": "120 mg/5 mL",
+   "route": "oral",
+   "atcCode": "N02BE01",
+   "therapeuticGroup": "Analgésicos y antipiréticos",
+   "searchTerms": [
+    "paracetamol"
+   ],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-002",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-002",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-003",
+   "genericName": "Ibuprofeno",
+   "activeIngredients": [
+    "ibuprofeno"
+   ],
+   "form": "tableta",
+   "strength": "400 mg",
+   "route": "oral",
+   "atcCode": "M01AE01",
+   "therapeuticGroup": "Antiinflamatorios no esteroideos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-003",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-003",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-003",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-004",
+   "genericName": "Diclofenaco",
+   "activeIngredients": [
+    "diclofenaco"
+   ],
+   "form": "solución inyectable",
+   "strength": "75 mg/3 mL",
+   "route": "intramuscular",
+   "atcCode": "M01AB05",
+   "therapeuticGroup": "Antiinflamatorios no esteroideos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-004",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-004",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-005",
+   "genericName": "Ácido acetilsalicílico",
+   "activeIngredients": [
+    "ácido acetilsalicílico"
+   ],
+   "form": "tableta",
+   "strength": "100 mg",
+   "route": "oral",
+   "atcCode": "B01AC06",
+   "therapeuticGroup": "Antitrombóticos",
+   "searchTerms": [
+    "aspirina",
+    "asa"
+   ],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-005",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-005",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-005",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-006",
+   "genericName": "Metamizol",
+   "activeIngredients": [
+    "metamizol"
+   ],
+   "form": "solución inyectable",
+   "strength": "1 g/2 mL",
+   "route": "intravenosa",
+   "atcCode": "N02BB02",
+   "therapeuticGroup": "Analgésicos y antipiréticos",
+   "searchTerms": [
+    "dipirona"
+   ],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-006",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-007",
+   "genericName": "Tramadol",
+   "activeIngredients": [
+    "tramadol"
+   ],
+   "form": "solución inyectable",
+   "strength": "100 mg/2 mL",
+   "route": "intravenosa",
+   "atcCode": "N02AX02",
+   "therapeuticGroup": "Analgésicos opioides",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-007",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-007",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-008",
+   "genericName": "Amoxicilina",
+   "activeIngredients": [
+    "amoxicilina"
+   ],
+   "form": "cápsula",
+   "strength": "500 mg",
+   "route": "oral",
+   "atcCode": "J01CA04",
+   "therapeuticGroup": "Antibacterianos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-008",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-008",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-008",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-009",
+   "genericName": "Amoxicilina",
+   "activeIngredients": [
+    "amoxicilina"
+   ],
+   "form": "suspensión oral",
+   "strength": "250 mg/5 mL",
+   "route": "oral",
+   "atcCode": "J01CA04",
+   "therapeuticGroup": "Antibacterianos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-009",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-009",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-010",
+   "genericName": "Azitromicina",
+   "activeIngredients": [
+    "azitromicina"
+   ],
+   "form": "tableta",
+   "strength": "500 mg",
+   "route": "oral",
+   "atcCode": "J01FA10",
+   "therapeuticGroup": "Antibacterianos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-010",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-010",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-010",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-011",
+   "genericName": "Ciprofloxacino",
+   "activeIngredients": [
+    "ciprofloxacino"
+   ],
+   "form": "tableta",
+   "strength": "500 mg",
+   "route": "oral",
+   "atcCode": "J01MA02",
+   "therapeuticGroup": "Antibacterianos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-011",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-011",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-012",
+   "genericName": "Ceftriaxona",
+   "activeIngredients": [
+    "ceftriaxona"
+   ],
+   "form": "polvo para solución inyectable",
+   "strength": "1 g",
+   "route": "intravenosa",
+   "atcCode": "J01DD04",
+   "therapeuticGroup": "Antibacterianos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-012",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-012",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-013",
+   "genericName": "Gentamicina",
+   "activeIngredients": [
+    "gentamicina"
+   ],
+   "form": "solución inyectable",
+   "strength": "80 mg/2 mL",
+   "route": "intramuscular",
+   "atcCode": "J01GB03",
+   "therapeuticGroup": "Antibacterianos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-013",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-014",
+   "genericName": "Metronidazol",
+   "activeIngredients": [
+    "metronidazol"
+   ],
+   "form": "tableta",
+   "strength": "500 mg",
+   "route": "oral",
+   "atcCode": "P01AB01",
+   "therapeuticGroup": "Antiinfecciosos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-014",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-014",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-014",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-015",
+   "genericName": "Fluconazol",
+   "activeIngredients": [
+    "fluconazol"
+   ],
+   "form": "cápsula",
+   "strength": "150 mg",
+   "route": "oral",
+   "atcCode": "J02AC01",
+   "therapeuticGroup": "Antimicóticos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-015",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-015",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-016",
+   "genericName": "Omeprazol",
+   "activeIngredients": [
+    "omeprazol"
+   ],
+   "form": "cápsula",
+   "strength": "20 mg",
+   "route": "oral",
+   "atcCode": "A02BC01",
+   "therapeuticGroup": "Antiulcerosos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-016",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-016",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-016",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-017",
+   "genericName": "Ondansetrón",
+   "activeIngredients": [
+    "ondansetrón"
+   ],
+   "form": "solución inyectable",
+   "strength": "8 mg/4 mL",
+   "route": "intravenosa",
+   "atcCode": "A04AA01",
+   "therapeuticGroup": "Antieméticos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-017",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-017",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-018",
+   "genericName": "Metformina",
+   "activeIngredients": [
+    "metformina"
+   ],
+   "form": "tableta",
+   "strength": "850 mg",
+   "route": "oral",
+   "atcCode": "A10BA02",
+   "therapeuticGroup": "Antidiabéticos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-018",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-018",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-018",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-019",
+   "genericName": "Glibenclamida",
+   "activeIngredients": [
+    "glibenclamida"
+   ],
+   "form": "tableta",
+   "strength": "5 mg",
+   "route": "oral",
+   "atcCode": "A10BB01",
+   "therapeuticGroup": "Antidiabéticos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-019",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-019",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-019",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-020",
+   "genericName": "Insulina humana NPH",
+   "activeIngredients": [
+    "insulina humana"
+   ],
+   "form": "suspensión inyectable",
+   "strength": "100 UI/mL",
+   "route": "subcutánea",
+   "atcCode": "A10AC01",
+   "therapeuticGroup": "Antidiabéticos",
+   "searchTerms": [
+    "insulina nph"
+   ],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-020",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-020",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-021",
+   "genericName": "Enalapril",
+   "activeIngredients": [
+    "enalapril"
+   ],
+   "form": "tableta",
+   "strength": "10 mg",
+   "route": "oral",
+   "atcCode": "C09AA02",
+   "therapeuticGroup": "Antihipertensivos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-021",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-021",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-021",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-022",
+   "genericName": "Captopril",
+   "activeIngredients": [
+    "captopril"
+   ],
+   "form": "tableta",
+   "strength": "25 mg",
+   "route": "oral",
+   "atcCode": "C09AA01",
+   "therapeuticGroup": "Antihipertensivos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-022",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-023",
+   "genericName": "Losartán",
+   "activeIngredients": [
+    "losartán"
+   ],
+   "form": "tableta",
+   "strength": "50 mg",
+   "route": "oral",
+   "atcCode": "C09CA01",
+   "therapeuticGroup": "Antihipertensivos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-023",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-023",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-023",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-024",
+   "genericName": "Amlodipino",
+   "activeIngredients": [
+    "amlodipino"
+   ],
+   "form": "tableta",
+   "strength": "5 mg",
+   "route": "oral",
+   "atcCode": "C08CA01",
+   "therapeuticGroup": "Antihipertensivos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-024",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-024",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-024",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-025",
+   "genericName": "Atenolol",
+   "activeIngredients": [
+    "atenolol"
+   ],
+   "form": "tableta",
+   "strength": "50 mg",
+   "route": "oral",
+   "atcCode": "C07AB03",
+   "therapeuticGroup": "Antihipertensivos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-025",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-025",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-026",
+   "genericName": "Hidroclorotiazida",
+   "activeIngredients": [
+    "hidroclorotiazida"
+   ],
+   "form": "tableta",
+   "strength": "25 mg",
+   "route": "oral",
+   "atcCode": "C03AA03",
+   "therapeuticGroup": "Diuréticos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-026",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-026",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-026",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-027",
+   "genericName": "Furosemida",
+   "activeIngredients": [
+    "furosemida"
+   ],
+   "form": "solución inyectable",
+   "strength": "20 mg/2 mL",
+   "route": "intravenosa",
+   "atcCode": "C03CA01",
+   "therapeuticGroup": "Diuréticos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-027",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-027",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-028",
+   "genericName": "Atorvastatina",
+   "activeIngredients": [
+    "atorvastatina"
+   ],
+   "form": "tableta",
+   "strength": "20 mg",
+   "route": "oral",
+   "atcCode": "C10AA05",
+   "therapeuticGroup": "Hipolipemiantes",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-028",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-028",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-028",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-029",
+   "genericName": "Warfarina",
+   "activeIngredients": [
+    "warfarina"
+   ],
+   "form": "tableta",
+   "strength": "5 mg",
+   "route": "oral",
+   "atcCode": "B01AA03",
+   "therapeuticGroup": "Antitrombóticos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-029",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-029",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-030",
+   "genericName": "Salbutamol",
+   "activeIngredients": [
+    "salbutamol"
+   ],
+   "form": "aerosol para inhalación",
+   "strength": "100 mcg/dosis",
+   "route": "inhalatoria",
+   "atcCode": "R03AC02",
+   "therapeuticGroup": "Broncodilatadores",
+   "searchTerms": [
+    "albuterol"
+   ],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-030",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-030",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-030",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-031",
+   "genericName": "Prednisona",
+   "activeIngredients": [
+    "prednisona"
+   ],
+   "form": "tableta",
+   "strength": "5 mg",
+   "route": "oral",
+   "atcCode": "H02AB07",
+   "therapeuticGroup": "Corticoesteroides",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-031",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-031",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-031",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-032",
+   "genericName": "Dexametasona",
+   "activeIngredients": [
+    "dexametasona"
+   ],
+   "form": "solución inyectable",
+   "strength": "4 mg/mL",
+   "route": "intravenosa",
+   "atcCode": "H02AB02",
+   "therapeuticGroup": "Corticoesteroides",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-032",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "isss",
+     "code": "FIX-IS-032",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-033",
+   "genericName": "Loratadina",
+   "activeIngredients": [
+    "loratadina"
+   ],
+   "form": "tableta",
+   "strength": "10 mg",
+   "route": "oral",
+   "atcCode": "R06AX13",
+   "therapeuticGroup": "Antihistamínicos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "minsal",
+     "code": "FIX-MI-033",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    },
+    {
+     "id": "fosalud",
+     "code": "FIX-FO-033",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  },
+  {
+   "id": "fixture-034",
+   "genericName": "Clonazepam",
+   "activeIngredients": [
+    "clonazepam"
+   ],
+   "form": "tableta",
+   "strength": "2 mg",
+   "route": "oral",
+   "atcCode": "N03AE01",
+   "therapeuticGroup": "Antiepilépticos",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "isss",
+     "code": "FIX-IS-034",
+     "careLevel": "Datos de prueba",
+     "presentation": "Presentación de prueba"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,13 @@
+[project]
+name = "medapoyo-pipeline"
+version = "0.0.0"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+extract = ["pdfplumber", "pandas", "httpx"]
+dev = ["pytest"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

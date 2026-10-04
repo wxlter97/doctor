@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { NavLink, Outlet } from 'react-router';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { Settings } from 'lucide-react';
@@ -8,6 +8,8 @@ import { sections } from './nav';
 import { ShortcutsHelp } from './ShortcutsHelp';
 import { UpdatePrompt } from './UpdatePrompt';
 import { useShortcuts } from './useShortcuts';
+import { updateCatalog } from '../lib/catalogUpdate';
+import { useCatalog } from '../stores/catalog';
 import { Onboarding } from '../features/onboarding/Onboarding';
 
 const linkBase = 'flex items-center gap-3 border-line font-bold';
@@ -19,6 +21,15 @@ export function Layout() {
 
   // undefined = cargando; null = aún no aceptó el aviso legal
   const accepted = useLiveQuery(async () => (await db.meta.get('disclaimerAcceptedAt'))?.value ?? null, []);
+  // Carga el catálogo local y, si hay red, busca una versión nueva (la local se conserva si falla).
+  useEffect(() => {
+    if (!accepted) return;
+    void useCatalog.getState().load().then(async () => {
+      if (!navigator.onLine) return;
+      if ((await updateCatalog()).status === 'updated') await useCatalog.getState().load();
+    });
+  }, [accepted]);
+
   if (accepted === undefined) return null;
   if (accepted === null) return <Onboarding />;
 

@@ -29,3 +29,12 @@ Cuenta como guardia nocturna o de 24 h todo turno que cruza la medianoche local 
 
 ## 010 — Alarmas del .ics
 La librería `ics` emite `TRIGGER:-PT60M` (duración válida de RFC 5545). Pendiente: confirmar importación con alarmas en Google Calendar y Apple Calendar (criterio de la Fase 3).
+
+## 011 — Catálogo de prueba (FIXTURE)
+`data/fixtures/catalog.dev.json` tiene ~34 medicamentos reales por nombre pero con **instituciones, códigos y niveles inventados**; lleva `source: "FIXTURE"` y la UI muestra un aviso. `apps/web/public/catalog/` contiene hoy ese snapshot (v1) y debe reemplazarse por el real antes de publicar (la CI lo valida pero no impide `FIXTURE`; pendiente decidir si bloquear en producción).
+
+## 012 — Actualización atómica del catálogo
+El cliente valida hash SHA-256 y esquema zod *antes* de tocar IndexedDB y escribe en una sola transacción; cualquier fallo conserva la versión local. El manifiesto se sirve con `no-cache`.
+
+## 013 — Python estándar en el pipeline
+`normalize`/`match` usan solo la biblioteca estándar para poder probarse sin instalar pdfplumber/pandas (dependencias opcionales `extract`).
