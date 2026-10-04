@@ -1,0 +1,98 @@
+/*
+ * Design tokens. TODO(marca): tema neutro de placeholder en escala de grises.
+ * Reemplazar con la referencia de marca brutalista (PLAN §14.7) editando solo este archivo.
+ */
+:root {
+  color-scheme: light;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --bg: #f2f2f2;
+  --surface: #ffffff;
+  --surface-2: #e6e6e6;
+  --fg: #111111;
+  --fg-muted: #4d4d4d;
+  --border-color: #111111;
+  --accent: #111111;
+  --accent-fg: #ffffff;
+  --focus: #0050d0;
+
+  --info: #1f4e8c;
+  --info-bg: #e3edf9;
+  --warning: #7a4b00;
+  --warning-bg: #fdf0d2;
+  --danger: #a30f0f;
+  --danger-bg: #fbe3e3;
+  --success: #17632b;
+  --success-bg: #dff3e4;
+
+  --radius: 0px;
+  --border-width: 2px;
+  --shadow: 3px 3px 0 0 var(--border-color);
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --row-h: 56px;
+  --control-h: 48px;
+  --text-base: 16px;
+  --text-sm: 14px;
+  --text-lg: 18px;
+  --text-xl: 24px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --bg: #161616;
+    --surface: #202020;
+    --surface-2: #2c2c2c;
+    --fg: #f0f0f0;
+    --fg-muted: #b0b0b0;
+    --border-color: #f0f0f0;
+    --accent: #f0f0f0;
+    --accent-fg: #111111;
+    --focus: #6aa6ff;
+    --info: #9cc3f5;
+    --info-bg: #17283d;
+    --warning: #f1c36b;
+    --warning-bg: #3a2c0d;
+    --danger: #ff9c9c;
+    --danger-bg: #3d1717;
+    --success: #8fdba2;
+    --success-bg: #15301d;
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #161616;
+  --surface: #202020;
+  --surface-2: #2c2c2c;
+  --fg: #f0f0f0;
+  --fg-muted: #b0b0b0;
+  --border-color: #f0f0f0;
+  --accent: #f0f0f0;
+  --accent-fg: #111111;
+  --focus: #6aa6ff;
+  --info: #9cc3f5;
+  --info-bg: #17283d;
+  --warning: #f1c36b;
+  --warning-bg: #3a2c0d;
+  --danger: #ff9c9c;
+  --danger-bg: #3d1717;
+  --success: #8fdba2;
+  --success-bg: #15301d;
+}
+
+:root[data-density='compact'] {
+  --space-3: 8px;
+  --space-4: 12px;
+  --space-5: 16px;
+  --row-h: 44px;
+  --control-h: 44px; /* los objetivos táctiles nunca bajan de 44 px */
+  --text-base: 15px;
+  --text-sm: 13px;
+}
