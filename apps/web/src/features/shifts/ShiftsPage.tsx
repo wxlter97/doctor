@@ -129,28 +129,34 @@ export function ShiftsPage() {
       )}
       {notice && <p role="alert" className="font-bold text-danger">✖ {notice}</p>}
 
-      <div role="grid" aria-label={monthLabel(month)} onKeyDown={onKey} className="grid grid-cols-7 gap-1">
-        {WEEK.map((d, i) => <div key={i} role="columnheader" className="py-1 text-center text-sm font-bold">{d}</div>)}
-        {cells.map((d) => {
-          const list = byDay.get(d) ?? [];
-          const inMonth = d.slice(0, 7) === first.slice(0, 7);
-          const warn = restByDay.has(d);
-          const label = `${dayLabel(d)}${list.length ? `: ${list.map((x) => typeById.get(x.typeId)?.name).join(', ')}` : ''}${warn ? '. ' + s.restShort : ''}`;
-          return (
-            <button
-              key={d} data-date={d} role="gridcell" aria-label={label}
-              onClick={() => onDayClick(d)}
-              onPointerEnter={(e) => { if (brush.on && e.buttons === 1) void applyBrush(d, false); }}
-              className={`flex min-h-14 flex-col items-stretch gap-0.5 border-2 p-1 text-left text-sm ${d === today ? 'border-4 border-line font-black' : 'border-line'} ${inMonth ? 'bg-surface' : 'bg-surface-2 text-muted'}`}
-            >
-              <span className="flex items-center justify-between">{Number(d.slice(8))}{warn && <AlertTriangle aria-hidden size={14} />}</span>
-              {list.map((x) => {
-                const tp = typeById.get(x.typeId);
-                return <span key={x.id} className="truncate border border-black px-1 text-center text-xs font-black text-black" style={{ background: tp?.color }}>{tp?.short}</span>;
-              })}
-            </button>
-          );
-        })}
+      <div role="grid" aria-label={monthLabel(month)} onKeyDown={onKey} className="flex flex-col gap-1">
+        <div role="row" className="grid grid-cols-7 gap-1">
+          {WEEK.map((d, i) => <div key={i} role="columnheader" className="py-1 text-center text-sm font-bold">{d}</div>)}
+        </div>
+        {Array.from({ length: weeks }, (_, w) => (
+          <div key={w} role="row" className="grid grid-cols-7 gap-1">
+            {cells.slice(w * 7, w * 7 + 7).map((d) => {
+              const list = byDay.get(d) ?? [];
+              const inMonth = d.slice(0, 7) === first.slice(0, 7);
+              const warn = restByDay.has(d);
+              const label = `${dayLabel(d)}${list.length ? `: ${list.map((x) => typeById.get(x.typeId)?.name).join(', ')}` : ''}${warn ? '. ' + s.restShort : ''}`;
+              return (
+                <button
+                  key={d} data-date={d} role="gridcell" aria-label={label}
+                  onClick={() => onDayClick(d)}
+                  onPointerEnter={(e) => { if (brush.on && e.buttons === 1) void applyBrush(d, false); }}
+                  className={`flex min-h-14 flex-col items-stretch gap-0.5 border-2 p-1 text-left text-sm ${d === today ? 'border-4 border-line font-black' : 'border-line'} ${inMonth ? 'bg-surface' : 'bg-surface-2 text-muted'}`}
+                >
+                  <span className="flex items-center justify-between">{Number(d.slice(8))}{warn && <AlertTriangle aria-hidden size={14} />}</span>
+                  {list.map((x) => {
+                    const tp = typeById.get(x.typeId);
+                    return <span key={x.id} className="truncate border border-black px-1 text-center text-xs font-black text-black" style={{ background: tp?.color }}>{tp?.short}</span>;
+                  })}
+                </button>
+              );
+            })}
+          </div>
+        ))}
       </div>
 
       <div className="card flex flex-col gap-2">
