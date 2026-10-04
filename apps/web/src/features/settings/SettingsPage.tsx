@@ -1,3 +1,6 @@
+import { useLiveQuery } from 'dexie-react-hooks';
+import { db } from '../../db';
+import { clearHistory } from '../../db/user';
 import { t } from '../../i18n/es-SV';
 import { usePrefs, type Density, type Theme } from '../../stores/prefs';
 import { avisoLegal } from './legal/aviso-legal';
@@ -21,6 +24,7 @@ function Segmented<T extends string>({ label, value, options, onChange }: {
 export function SettingsPage() {
   const { theme, density, setTheme, setDensity } = usePrefs();
   const s = t.settings;
+  const historyCount = useLiveQuery(() => db.calcHistory.count(), []) ?? 0;
   return (
     <section className="flex max-w-2xl flex-col gap-4">
       <h1 className="text-2xl font-bold">{s.title}</h1>
@@ -28,6 +32,12 @@ export function SettingsPage() {
         options={[['system', s.themeSystem], ['light', s.themeLight], ['dark', s.themeDark]]} />
       <Segmented<Density> label={s.density} value={density} onChange={setDensity}
         options={[['comfortable', s.densityComfortable], ['compact', s.densityCompact]]} />
+      <div className="card flex flex-col gap-2">
+        <h2 className="font-bold">{s.historyTitle}</h2>
+        <p className="text-sm">{s.historyBody}</p>
+        <p className="text-sm font-bold">{s.historyCount(historyCount)}</p>
+        <button className="btn self-start" disabled={historyCount === 0} onClick={() => void clearHistory()}>{s.historyClear}</button>
+      </div>
       <div className="card">
         <h2 className="font-bold">{s.legal}</h2>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">{avisoLegal.map((p) => <li key={p}>{p}</li>)}</ul>

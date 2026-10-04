@@ -1,6 +1,7 @@
 import { createBrowserRouter } from 'react-router';
 import { Layout } from './Layout';
 import { Placeholder } from './Placeholder';
+import { HomePage } from '../features/home/HomePage';
 import { SettingsPage } from '../features/settings/SettingsPage';
 import { t } from '../i18n/es-SV';
 
@@ -8,9 +9,10 @@ export const router = createBrowserRouter([
   {
     element: <Layout />,
     children: [
-      { index: true, element: <Placeholder title={t.home.title} body={t.home.empty} /> },
+      { index: true, element: <HomePage /> },
       { path: 'medicamentos', element: <Placeholder title={t.medications.title} body={t.medications.empty} /> },
-      { path: 'calculadoras', element: <Placeholder title={t.calculators.title} body={t.calculators.empty} /> },
+      { path: 'calculadoras', lazy: async () => ({ Component: (await import('../features/calculators/CalculatorsPage')).CalculatorsPage }) },
+      { path: 'calculadoras/:id', lazy: async () => ({ Component: (await import('../features/calculators/CalculatorPage')).CalculatorPage }) },
       { path: 'turnos', element: <Placeholder title={t.shifts.title} body={t.shifts.empty} /> },
       { path: 'ajustes', element: <SettingsPage /> },
       ...(import.meta.env.DEV
