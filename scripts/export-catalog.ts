@@ -3,6 +3,7 @@
  *   tsx scripts/export-catalog.ts --fixture [--version N]   → desde data/fixtures/catalog.dev.json
  *   tsx scripts/export-catalog.ts                            → desde Supabase (SUPABASE_URL, SUPABASE_ANON_KEY)
  *   tsx scripts/export-catalog.ts --validate                 → valida lo publicado (esquema + hash); usado en CI
+ *   ...  --validate --forbid-fixture                         → además rechaza datos de prueba (deploy de producción)
  */
 import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -13,11 +14,12 @@ const FIXTURE = join(import.meta.dirname, '..', 'data/fixtures/catalog.dev.json'
 const arg = (name: string) => process.argv.includes(name);
 const argVal = (name: string) => process.argv[process.argv.indexOf(name) + 1];
 
-export async function validatePublished(dir = OUT): Promise<string> {
+export async function validatePublished(dir = OUT, opts: { forbidFixture?: boolean } = {}): Promise<string> {
   const manifest = manifestSchema.parse(JSON.parse(await readFile(join(dir, 'manifest.json'), 'utf8')));
   const raw = await readFile(join(dir, manifest.url.replace('/catalog/', '')), 'utf8');
   if ((await sha256Hex(raw)) !== manifest.sha256) throw new Error('El hash del catálogo no coincide con el manifiesto.');
   const catalog = catalogSchema.parse(JSON.parse(raw));
+  if (opts.forbidFixture && catalog.source === 'FIXTURE') throw new Error('El catálogo publicado es de PRUEBA (source=FIXTURE): no se puede desplegar a producción.');
   if (catalog.version !== manifest.version) throw new Error('La versión del catálogo no coincide con el manifiesto.');
   if (catalog.medications.length !== manifest.count) throw new Error('El conteo del manifiesto no coincide.');
   return `Catálogo v${catalog.version} válido (${catalog.medications.length} medicamentos${catalog.source ? `, source=${catalog.source}` : ''}).`;
@@ -67,7 +69,7 @@ async function fromSupabase(): Promise<Catalog> {
 }
 
 async function main() {
-  if (arg('--validate')) { console.log(await validatePublished()); return; }
+  if (arg('--validate')) { console.log(await validatePublished(OUT, { forbidFixture: arg('--forbid-fixture') })); return; }
   const catalog: Catalog = arg('--fixture')
     ? { ...(JSON.parse(await readFile(FIXTURE, 'utf8')) as Catalog), ...(arg('--version') ? { version: Number(argVal('--version')) } : {}) }
     : await fromSupabase();

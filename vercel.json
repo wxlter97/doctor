@@ -1,5 +1,5 @@
 {
-  "buildCommand": "pnpm --filter @medapoyo/web build",
+  "buildCommand": "if [ \"$VERCEL_ENV\" = \"production\" ]; then pnpm validate:catalog --forbid-fixture; fi && pnpm --filter @medapoyo/web build",
   "outputDirectory": "apps/web/dist",
   "rewrites": [{ "source": "/((?!assets/|catalog/|.*\\..*).*)", "destination": "/index.html" }],
   "headers": [
