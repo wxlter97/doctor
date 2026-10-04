@@ -1,8 +1,8 @@
 import { defineCalculator, fmt } from '../helpers';
 import type { ChoiceInput, Interpretation } from '../types';
 
-const tile = (value: number, label: string) => ({ value, label: `${value} · ${label}` });
-const scoreInput = (id: string, label: string, copy: string, options: [number, string][]): ChoiceInput => ({
+export const tile = (value: number, label: string) => ({ value, label: `${value} · ${label}` });
+export const scoreInput = (id: string, label: string, copy: string, options: [number, string][]): ChoiceInput => ({
   kind: 'choice', id, label, copy, scored: true,
   options: options.map(([v, l]) => tile(v, l)),
 });
@@ -105,9 +105,9 @@ export const apgar = defineCalculator<ApgarIn, number>({
 
 // ── CHA₂DS₂-VASc ────────────────────────────────────────────────────────
 interface ChadsIn { ic: number; hta: number; edad: number; dm: number; acv: number; vascular: number; sexo: number }
-const yesNo = (id: string, label: string, copy: string, points: number): ChoiceInput => ({
-  kind: 'choice', id, label, copy, scored: true, omitIfZero: true,
-  options: [{ value: 0, label: '0 · No', copy: '' }, { value: points, label: `+${points} · Sí`, copy }],
+export const yesNo = (id: string, label: string, copy: string, points: number): ChoiceInput => ({
+  kind: 'choice', id, label, copy, scored: true, omitIfZero: true, default: 0,
+  options: [{ value: 0, label: '0 · No', copy: '' }, { value: points, label: `${points > 0 ? "+" : ""}${points} · Sí`, copy }],
 });
 
 export const cha2ds2vasc = defineCalculator<ChadsIn, number>({

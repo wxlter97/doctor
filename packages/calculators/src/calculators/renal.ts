@@ -80,3 +80,27 @@ export const cockcroftGault = defineCalculator<CgIn, number>({
     'Supone función renal estable. Verificá la ficha del fármaco para saber qué estimación usa para ajustar la dosis.',
   ],
 });
+
+// ── Schwartz bedside (pediátrica) ───────────────────────────────────────
+interface SchwartzIn { talla: number; creatinina: number }
+export const schwartzEgfr = ({ talla, creatinina }: SchwartzIn) => (0.413 * talla) / creatinina;
+
+export const schwartz = defineCalculator<SchwartzIn, number>({
+  id: 'schwartz-bedside',
+  name: 'TFG pediátrica (Schwartz bedside)',
+  copyName: 'Schwartz',
+  category: 'renal',
+  keywords: ['schwartz', 'tfg pediatrica', 'filtrado glomerular', 'niño', 'creatinina', 'pediatria'],
+  population: 'pediatrico',
+  inputs: [
+    { kind: 'number', id: 'talla', label: 'Talla', copy: 'talla {v}', unit: 'cm', units: [{ id: 'cm', label: 'cm', factor: 1 }, { id: 'in', label: 'in', factor: 2.54 }], min: 40, max: 200 },
+    creatininaInput,
+  ],
+  compute: schwartzEgfr,
+  present: (v) => ({ value: fmt(v, 1), unit: 'mL/min/1.73 m²', precise: `${v}` }),
+  formula: 'TFG (mL/min/1.73 m²) = 0.413 × talla (cm) / creatinina sérica (mg/dL)',
+  references: [
+    { citation: 'Schwartz GJ, et al. New equations to estimate GFR in children with CKD. J Am Soc Nephrol. 2009;20(3):629-637.', doi: '10.1681/ASN.2008030287' },
+  ],
+  warnings: ['Para niños con enfermedad renal crónica estable. Requiere creatinina medida con método estandarizado (IDMS).', 'No usar en recién nacidos ni en lesión renal aguda.'],
+});
