@@ -6,6 +6,7 @@ import { db } from '../../db';
 import { RECENTS_MAX } from '../../db/user';
 import { searchCalculators } from '../../lib/calculatorSearch';
 import { t } from '../../i18n/es-SV';
+import { NextShiftCard } from '../shifts/NextShiftCard';
 
 const GROUP_MAX = 5;
 
@@ -44,6 +45,7 @@ export function HomePage() {
           </div>
         )}
       </div>
+      <NextShiftCard />
       <div className="flex flex-col gap-2">
         <h2 className="font-bold">{t.home.recents}</h2>
         {recents.length === 0 && <p className="card text-muted">{t.home.noRecents}</p>}
