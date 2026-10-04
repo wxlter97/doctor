@@ -50,3 +50,6 @@ El presupuesto de 200 KB gzip (§10) se mide sobre **todos** los scripts del arr
 
 ## 017 — Accesibilidad automatizada
 `e2e/a11y.spec.ts` corre axe-core (WCAG 2.0/2.1 A y AA) en 10 pantallas × {claro, oscuro} × {cómoda, compacta}, y prueba por separado que tema y densidad cambian sin recargar y que todo es operable con teclado (atajos, foco visible, flechas en el calendario, Esc en hojas). Detectó que el calendario usaba `role="grid"` sin `role="row"` (corregido). No cubre diálogos abiertos ni lo que axe no puede juzgar (orden de lectura, textos alternativos con sentido, lectores de pantalla reales).
+
+## 018 — E2E de actualización del service worker
+`e2e/sw-update.spec.ts` construye dos versiones (`VITE_APP_VERSION` 1.0.0 y 2.0.0), las sirve desde un servidor estático cuya carpeta cambia en caliente (`e2e/helpers/staticServer.ts`) y verifica: aparece "Nueva versión disponible" sin recargar ni perder lo escrito, el aviso persiste al navegar, la app sigue en 1.0.0 hasta que el usuario toca "Actualizar", y luego recarga en 2.0.0. Control negativo comprobado: si el SW llama `skipWaiting()` en `install`, el test falla. Tarda ~10 s porque compila dos veces.
