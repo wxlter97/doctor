@@ -8,3 +8,5 @@ dev-dist
 data/sources/*.pdf
 .vercel
 coverage
+test-results
+playwright-report

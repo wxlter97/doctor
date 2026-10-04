@@ -12,8 +12,8 @@ Tema y densidad se escriben en Dexie (`settings`, fuente de verdad) y se espejan
 ## 004 — Paso de catálogo en el primer uso
 No hay catálogo publicado en la Fase 0; el paso 3 del primer uso es informativo y se puede saltar. Se conectará en la Fase 2.
 
-## 005 — E2E offline diferido
-El test Playwright en modo offline (§10) se añade al cerrar la Fase 0 con el usuario; no está en CI todavía.
+## 005 — E2E offline (resuelto)
+`apps/web/e2e/offline.spec.ts` cubre §10: primera visita con descarga del catálogo, recarga con el service worker activo, modo offline (con un control de que `fetch` falla) y uso de calculadoras, medicamentos y turnos. Local: `PW_CHANNEL=chrome pnpm e2e` (usa el Chrome instalado). En CI se instala Chromium. Corre contra el build de producción porque el service worker no existe en dev.
 
 ## 006 — Dev server de la PWA
 `vite-plugin-pwa` con `devOptions.enabled = false`; el service worker solo se prueba con `build` + `preview`.

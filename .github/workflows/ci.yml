@@ -16,6 +16,8 @@ jobs:
       - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm build
+      - run: pnpm --filter @medapoyo/web exec playwright install --with-deps chromium
+      - run: pnpm e2e
       - run: pnpm audit --prod --audit-level=high
   pipeline:
     runs-on: ubuntu-latest
