@@ -38,3 +38,6 @@ El cliente valida hash SHA-256 y esquema zod *antes* de tocar IndexedDB y escrib
 
 ## 013 — Python estándar en el pipeline
 `normalize`/`match` usan solo la biblioteca estándar para poder probarse sin instalar pdfplumber/pandas (dependencias opcionales `extract`).
+
+## 014 — Medición de peso del JS
+El presupuesto de 200 KB gzip (§10) se mide sobre **todos** los scripts del arranque, no solo el chunk `index`. Ver `docs/rendimiento.md`.

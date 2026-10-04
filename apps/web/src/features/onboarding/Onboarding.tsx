@@ -11,7 +11,7 @@ export function Onboarding() {
   const finish = () => setMeta('disclaimerAcceptedAt', new Date().toISOString());
 
   return (
-    <div className="mx-auto flex h-full max-w-xl flex-col justify-center gap-4 p-4">
+    <main className="mx-auto flex h-full max-w-xl flex-col justify-center gap-4 p-4">
       <h1 className="text-2xl font-black">{t.app.name}</h1>
       {step === 0 && (
         <section className="card flex flex-col gap-3">
@@ -39,6 +39,6 @@ export function Onboarding() {
           </div>
         </section>
       )}
-    </div>
+    </main>
   );
 }
