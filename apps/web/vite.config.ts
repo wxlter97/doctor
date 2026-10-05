@@ -33,8 +33,8 @@ export default defineConfig({
       registerType: 'prompt',
       injectRegister: false,
       manifest: {
-        name: 'MedApoyo SV',
-        short_name: 'MedApoyo',
+        name: 'MedHelp',
+        short_name: 'MedHelp',
         description: 'Apoyo para médicos en El Salvador: medicamentos, calculadoras y turnos.',
         lang: 'es-SV',
         start_url: '/',

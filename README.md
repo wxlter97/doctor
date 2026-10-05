@@ -1,4 +1,4 @@
-# MedApoyo SV
+# MedHelp
 
 PWA gratuita en español para médicos de El Salvador: medicamentos por institución, calculadoras clínicas y turnos personales. Herramienta de apoyo; no sustituye el criterio médico. Plan completo: ver `PLAN.md` del proyecto.
 

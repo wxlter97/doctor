@@ -2,15 +2,15 @@
  * Íconos de la app según Manual de Marca §05: fondo Tinta, banda Faro al pie, inicial en Archivo Black (Faro);
  * donde la banda cruza la letra, la letra va en Tinta. Salida: favicon.svg y PNG de la PWA en public/.
  *   pnpm --filter @medapoyo/web icons
- * La banda crece con cada app de la serie (20 → 40 → 68 → 88 sobre 108 px). BAND es PROVISIONAL: confirmar con Walter.
+ * La banda crece con cada app de la serie (20 → 40 → 68 → 88 sobre 108 px); MedHelp la usa en 0 (decisión de Walter).
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import opentype from 'opentype.js';
 import { chromium } from '@playwright/test';
 
-const INITIAL = 'M';
-const BAND = 20; // ← PROVISIONAL (ver docs/decisions.md ADR 020)
+const INITIAL = 'H';
+const BAND = 0; // decidido por Walter: sin banda (ver docs/decisions.md ADR 020)
 const FARO = '#FFDB00';
 const TINTA = '#111111';
 const SIZE = 108;
@@ -31,11 +31,10 @@ const baseline = SIZE / 2 - (asc + desc) / 2 + asc;
 const path = glyph.getPath((SIZE - advance) / 2, baseline, FONT_SIZE).toPathData(2);
 
 const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${SIZE} ${SIZE}" width="${SIZE}" height="${SIZE}">
-<defs><clipPath id="band"><rect x="0" y="${SIZE - BAND}" width="${SIZE}" height="${BAND}"/></clipPath></defs>
+${BAND > 0 ? `<defs><clipPath id="band"><rect x="0" y="${SIZE - BAND}" width="${SIZE}" height="${BAND}"/></clipPath></defs>` : ''}
 <rect width="${SIZE}" height="${SIZE}" fill="${TINTA}"/>
 <path d="${path}" fill="${FARO}"/>
-<rect x="0" y="${SIZE - BAND}" width="${SIZE}" height="${BAND}" fill="${FARO}"/>
-<path d="${path}" fill="${TINTA}" clip-path="url(#band)"/>
+${BAND > 0 ? `<rect x="0" y="${SIZE - BAND}" width="${SIZE}" height="${BAND}" fill="${FARO}"/>\n<path d="${path}" fill="${TINTA}" clip-path="url(#band)"/>` : ''}
 </svg>
 `;
 writeFileSync(join(root, 'public/favicon.svg'), svg);

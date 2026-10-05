@@ -1,6 +1,6 @@
 // Todos los textos de la interfaz viven aquí (voseo salvadoreño).
 export const t = {
-  app: { name: 'MedApoyo SV', tagline: 'Apoyo para médicos en El Salvador' },
+  app: { name: 'MedHelp', tagline: 'Apoyo para médicos en El Salvador' },
   nav: {
     home: 'Inicio',
     medications: 'Medicamentos',

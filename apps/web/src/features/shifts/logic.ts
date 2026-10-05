@@ -87,7 +87,7 @@ export function parseBackup(json: string): ParseResult {
   let raw: unknown;
   try { raw = JSON.parse(json); } catch { return { ok: false, error: 'El archivo no es un JSON válido.' }; }
   const r = backupSchema.safeParse(raw);
-  if (!r.success) return { ok: false, error: 'El archivo no es un respaldo válido de MedApoyo.' };
+  if (!r.success) return { ok: false, error: 'El archivo no es un respaldo válido de MedHelp.' };
   const ids = new Set(r.data.types.map((t) => t.id));
   if (r.data.shifts.some((s) => !ids.has(s.typeId))) return { ok: false, error: 'Hay turnos con un tipo que no existe en el respaldo.' };
   return { ok: true, data: { ...r.data, shifts: r.data.shifts.map((s) => ({ ...s, start: msToIso(isoToMs(s.start)), end: msToIso(isoToMs(s.end)) })) } };
