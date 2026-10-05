@@ -53,3 +53,6 @@ El presupuesto de 200 KB gzip (§10) se mide sobre **todos** los scripts del arr
 
 ## 018 — E2E de actualización del service worker
 `e2e/sw-update.spec.ts` construye dos versiones (`VITE_APP_VERSION` 1.0.0 y 2.0.0), las sirve desde un servidor estático cuya carpeta cambia en caliente (`e2e/helpers/staticServer.ts`) y verifica: aparece "Nueva versión disponible" sin recargar ni perder lo escrito, el aviso persiste al navegar, la app sigue en 1.0.0 hasta que el usuario toca "Actualizar", y luego recarga en 2.0.0. Control negativo comprobado: si el SW llama `skipWaiting()` en `install`, el test falla. Tarda ~10 s porque compila dos veces.
+
+## 019 — E2E en Chromium, Firefox y WebKit
+`playwright.config.ts` define tres proyectos. La prueba móvil (`isMobile`) corre en Chromium y WebKit (Firefox no la soporta). El offline se prueba apagando un servidor propio sobre `dist/`, no con `context.setOffline`, que en WebKit falla al recargar páginas servidas por el service worker. Resultado: 30/30 en los tres motores (WebKit de Playwright, no Safari real en iOS).

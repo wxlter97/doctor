@@ -5,9 +5,6 @@ import { join } from 'node:path';
 import { expect, test } from '@playwright/test';
 import { startStaticServer } from './helpers/staticServer';
 
-const PORT = 4180;
-const URL = `http://localhost:${PORT}`;
-
 function build(version: string, outDir: string) {
   execSync(`pnpm exec vite build --outDir "${outDir}" --emptyOutDir`, {
     cwd: join(import.meta.dirname, '..'),
@@ -23,7 +20,8 @@ test('al publicar una versión nueva se avisa, sin recargar solo ni perder lo qu
   const v2 = join(base, 'v2');
   build('1.0.0', v1);
   build('2.0.0', v2);
-  const { server, setRoot } = await startStaticServer(PORT, v1);
+  const { server, port, setRoot } = await startStaticServer(v1);
+  const URL = `http://localhost:${port}`;
 
   try {
     // Versión 1: primera visita y recarga para que el service worker controle la página.

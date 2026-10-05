@@ -8,7 +8,13 @@ export default defineConfig({
   timeout: 60_000,
   fullyParallel: false,
   reporter: [['list']],
-  use: { baseURL: 'http://localhost:4173', ...(channel ? { channel } : {}) },
+  use: { baseURL: 'http://localhost:4173' },
+  projects: [
+    { name: 'chromium', use: { browserName: 'chromium', ...(channel ? { channel } : {}) } },
+    // isMobile no existe en Firefox: la prueba de móvil corre en Chromium y WebKit.
+    { name: 'firefox', use: { browserName: 'firefox' }, testIgnore: /mobile\.spec/ },
+    { name: 'webkit', use: { browserName: 'webkit' } },
+  ],
   // El service worker solo existe en el build de producción.
   webServer: {
     command: 'pnpm build && pnpm preview --port 4173 --strictPort',

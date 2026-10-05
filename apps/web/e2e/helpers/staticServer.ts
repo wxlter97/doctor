@@ -8,7 +8,7 @@ const MIME: Record<string, string> = {
 };
 
 /** Servidor estático con fallback SPA; `setRoot` cambia la carpeta servida en caliente (simula un deploy nuevo). */
-export async function startStaticServer(port: number, root: string): Promise<{ server: Server; setRoot: (r: string) => void }> {
+export async function startStaticServer(root: string): Promise<{ server: Server; port: number; setRoot: (r: string) => void }> {
   let current = root;
   const server = createServer(async (req, res) => {
     const path = normalize(decodeURIComponent(new URL(req.url ?? '/', 'http://x').pathname)).replace(/^(\.\.[/\\])+/, '');
@@ -20,6 +20,6 @@ export async function startStaticServer(port: number, root: string): Promise<{ s
     res.writeHead(200, headers);
     res.end(await readFile(file));
   });
-  await new Promise<void>((r) => server.listen(port, r));
-  return { server, setRoot: (r) => { current = r; } };
+  await new Promise<void>((r) => server.listen(0, r)); // puerto libre: los proyectos corren en paralelo
+  return { server, port: (server.address() as { port: number }).port, setRoot: (r) => { current = r; } };
 }
