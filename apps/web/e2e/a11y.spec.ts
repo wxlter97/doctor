@@ -11,6 +11,12 @@ async function onboard(page: Page) {
   await expect(page.getByRole('heading', { name: 'Inicio' })).toBeVisible();
 }
 
+/** Pantalla lista: título visible y fuentes cargadas (networkidle es frágil con un service worker). */
+async function settled(page: Page) {
+  await page.getByRole('heading', { level: 1 }).first().waitFor();
+  await page.evaluate(() => document.fonts.ready.then(() => undefined));
+}
+
 const routes = ['/', '/medicamentos', '/medicamentos/fixture-001', '/calculadoras', '/calculadoras/ckd-epi-2021', '/calculadoras/sofa', '/turnos', '/turnos/horas', '/turnos/tipos', '/ajustes'];
 
 async function violations(page: Page) {
@@ -29,7 +35,7 @@ for (const scheme of ['light', 'dark'] as const) {
         await page.goto(path);
         await page.evaluate((d) => document.documentElement.setAttribute('data-density', d), density);
         if (path === '/turnos') await page.getByRole('grid').waitFor();
-        await page.waitForLoadState('networkidle');
+        await settled(page);
         for (const v of await violations(page)) found.push(`${path}: ${v}`);
       }
       expect(found).toEqual([]);

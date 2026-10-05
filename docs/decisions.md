@@ -70,3 +70,8 @@ Desviaciones deliberadas (cada una por una razón comprobable):
 7. **Regla del 10 %**: Faro aparece en el botón principal, el foco en oscuro, el borde lateral de las advertencias y el bloque «Hecho por wxlter.» (fondo completo de bloque de marca, permitido).
 
 Decidido por Walter (2026-10-04): la app se llama **MedHelp**, su ícono usa la **H** y **sin banda** (altura 0; la banda de 20/40/68/88 es de la serie de apps y esta no la usa). El nombre comercial queda resuelto (§14.5). Los identificadores internos conservan el codename `medapoyo` (paquetes `@medapoyo/*`, base IndexedDB `medapoyo`, claves de localStorage, formato del respaldo JSON, UID del `.ics`): renombrarlos no aporta nada al usuario y cambiar el nombre de la base borraría los datos locales de quien ya use la app.
+
+## 021 — Robustez de los e2e y Vitest
+- Vitest solo corre `src/**/*.test.*`; los specs de Playwright (`e2e/`) los corre `pnpm e2e`. Antes Vitest los recogía y fallaba al importarlos (la CI de `pnpm test` habría fallado).
+- Los e2e esperan estados explícitos (título visible, fuentes cargadas) en vez de `networkidle`, que con un service worker no es fiable. Tiempo límite de 120 s y 2 trabajadores.
+- Con el equipo muy cargado (carga > 6; hubo ejecuciones 10× más lentas), alguna prueba puede pasarse de tiempo aunque pase sola en segundos. En ejecución limpia: 30/30 en Chromium, Firefox y WebKit. No se encontró una causa en la app: no se reprodujo el cuelgue al bajar la carga y las peticiones terminaban con normalidad.

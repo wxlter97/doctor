@@ -5,7 +5,8 @@ const channel = process.env.PW_CHANNEL;
 
 export default defineConfig({
   testDir: './e2e',
-  timeout: 60_000,
+  timeout: 120_000, // las pruebas de accesibilidad recorren 10 pantallas y 3 motores corren a la vez
+  workers: 2,
   fullyParallel: false,
   reporter: [['list']],
   use: { baseURL: 'http://localhost:4173' },

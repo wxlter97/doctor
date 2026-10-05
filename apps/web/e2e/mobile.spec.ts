@@ -31,6 +31,12 @@ async function smallTargets(page: Page) {
 }
 const overflowX = (page: Page) => page.evaluate(() => document.documentElement.scrollWidth - window.innerWidth);
 
+/** Pantalla lista: título visible y fuentes cargadas (networkidle es frágil con un service worker). */
+async function settled(page: Page) {
+  await page.getByRole('heading', { level: 1 }).first().waitFor();
+  await page.evaluate(() => document.fonts.ready.then(() => undefined));
+}
+
 const routes: [string, string][] = [
   ['/', 'inicio'],
   ['/medicamentos', 'medicamentos'],
@@ -50,7 +56,7 @@ test('móvil: sin desborde horizontal ni objetivos táctiles chicos', async ({ p
   const problems: string[] = [];
   for (const [path, name] of routes) {
     await page.goto(path);
-    await page.waitForLoadState('networkidle');
+    await settled(page);
     if (path === '/turnos') await page.getByRole('grid').waitFor();
     if (path === '/calculadoras/ckd-epi-2021') {
       await page.getByLabel('Creatinina sérica', { exact: true }).fill('1.2');

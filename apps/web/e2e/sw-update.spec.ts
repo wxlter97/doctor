@@ -61,7 +61,7 @@ test('al publicar una versión nueva se avisa, sin recargar solo ni perder lo qu
 
     // El usuario acepta: se activa la versión 2 y recarga.
     await banner.getByRole('button', { name: 'Actualizar' }).click();
-    await expect(page.getByText('Versión de la app: 2.0.0')).toBeVisible({ timeout: 20_000 });
+    await expect(page.getByText('Versión de la app: 2.0.0')).toBeVisible({ timeout: 60_000 }); // la recarga puede tardar con el equipo cargado
     expect(await page.evaluate(() => (window as unknown as { __alive?: boolean }).__alive)).toBeUndefined(); // la página recargó
     await expect(page.getByRole('status').filter({ hasText: 'Nueva versión disponible' })).toHaveCount(0);
   } finally {
