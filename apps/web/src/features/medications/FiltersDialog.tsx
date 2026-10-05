@@ -9,18 +9,18 @@ export function FiltersDialog({ forms, groups, form, group, onChange, onClose }:
   return (
     <Dialog.Root open onOpenChange={(o) => !o && onClose()}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-40 bg-black/60" />
+        <Dialog.Overlay className="fixed inset-0 z-40 bg-[var(--on-overlay)]" />
         <Dialog.Content className="card fixed inset-x-0 bottom-0 z-50 max-h-[85vh] overflow-y-auto lg:inset-y-0 lg:right-0 lg:left-auto lg:max-h-none lg:w-96">
           <Dialog.Title className="text-xl font-bold">{m.filters}</Dialog.Title>
           <Dialog.Description className="sr-only">{m.filtersDescription}</Dialog.Description>
           <div className="mt-3 flex flex-col gap-4">
-            <label className="flex flex-col gap-1 font-bold">{m.form}
+            <label className="lbl flex flex-col gap-1">{m.form}
               <select className="field" value={form ?? ''} onChange={(e) => onChange({ form: e.target.value || undefined, group })}>
                 <option value="">{m.all}</option>
                 {forms.map((f) => <option key={f} value={f}>{f}</option>)}
               </select>
             </label>
-            <label className="flex flex-col gap-1 font-bold">{m.group}
+            <label className="lbl flex flex-col gap-1">{m.group}
               <select className="field" value={group ?? ''} onChange={(e) => onChange({ form, group: e.target.value || undefined })}>
                 <option value="">{m.all}</option>
                 {groups.map((g) => <option key={g} value={g}>{g}</option>)}

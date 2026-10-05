@@ -120,14 +120,14 @@ export function ShiftsPage() {
       {brush.on && (
         <div role="radiogroup" aria-label={s.type} className="flex flex-wrap gap-2">
           {types.map((tp) => (
-            <button key={tp.id} role="radio" aria-checked={tp.id === brush.typeId} className={`btn ${tp.id === brush.typeId ? 'btn-primary' : ''}`} onClick={() => setBrush({ on: true, typeId: tp.id })}>
+            <button key={tp.id} role="radio" aria-checked={tp.id === brush.typeId} className={`btn ${tp.id === brush.typeId ? 'btn-selected' : ''}`} onClick={() => setBrush({ on: true, typeId: tp.id })}>
               <span aria-hidden className="inline-block size-3 border border-current" style={{ background: tp.color }} /> {tp.name}
             </button>
           ))}
           <p className="w-full text-sm text-muted">{s.brushHelp(brushType?.name ?? '')}</p>
         </div>
       )}
-      {notice && <p role="alert" className="font-bold text-danger">✖ {notice}</p>}
+      {notice && <p role="alert" className="err">✖ {notice}</p>}
 
       <div role="grid" aria-label={monthLabel(month)} onKeyDown={onKey} className="flex flex-col gap-1">
         <div role="row" className="grid grid-cols-7 gap-1">
@@ -150,7 +150,7 @@ export function ShiftsPage() {
                   <span className="flex items-center justify-between">{Number(d.slice(8))}{warn && <AlertTriangle aria-hidden size={14} />}</span>
                   {list.map((x) => {
                     const tp = typeById.get(x.typeId);
-                    return <span key={x.id} className="truncate border border-black px-1 text-center text-xs font-black text-black" style={{ background: tp?.color }}>{tp?.short}</span>;
+                    return <span key={x.id} className="truncate border border-black px-1 text-center font-mono text-xs font-bold text-black" style={{ background: tp?.color }}>{tp?.short}</span>;
                   })}
                 </button>
               );
@@ -181,7 +181,7 @@ export function ShiftsPage() {
                 <button className="card flex w-full flex-col items-start py-2 text-left" onClick={() => setSelected(d)}>
                   <span className="font-bold first-letter:uppercase">{dayLabel(d)}</span>
                   <span>{tp?.name} · {timePart(x.start)}–{timePart(x.end)}</span>
-                  {restByDay.get(d)?.map((m) => <span key={m} className="flex gap-1 text-sm font-bold text-warning"><AlertTriangle aria-hidden size={16} /> {m}</span>)}
+                  {restByDay.get(d)?.map((m) => <span key={m} className="flex gap-1 text-sm font-bold"><AlertTriangle aria-hidden size={16} /> {m}</span>)}
                 </button>
               </li>
             );

@@ -17,14 +17,32 @@ function Segmented<T extends string>({ label, value, options, onChange }: {
 }) {
   return (
     <fieldset className="card">
-      <legend className="px-1 font-bold">{label}</legend>
+      <legend className="lbl px-1">{label}</legend>
       <div role="radiogroup" className="mt-2 flex flex-wrap gap-2">
         {options.map(([v, text]) => (
           <button key={v} role="radio" aria-checked={value === v} onClick={() => onChange(v)}
-            className={`btn ${value === v ? 'btn-primary' : ''}`}>{text}</button>
+            className={`btn ${value === v ? 'btn-selected' : ''}`}>{text}</button>
         ))}
       </div>
     </fieldset>
+  );
+}
+
+/** Lockup principal de wxlter (Manual de Marca §02): símbolo a la izquierda, alineado a la base del wordmark. */
+function WxlterBlock() {
+  return (
+    <aside aria-label={t.settings.madeBy} className="border-2 border-line bg-faro p-6 text-tinta">
+      <div className="flex items-end gap-4">
+        <svg viewBox="0 0 100 100" width="48" height="48" aria-hidden="true">
+          <rect width="100" height="100" fill="#111111" />
+          <polyline points="14,24 32,76 50,44 68,76 86,24" fill="none" stroke="#FFDB00" strokeWidth="15" strokeLinejoin="miter" />
+        </svg>
+        <span className="display text-4xl" style={{ lineHeight: 0.8, letterSpacing: '-0.035em' }}>wxlter.</span>
+      </div>
+      <p className="lbl mt-4 border-t-2 border-tinta pt-3 !text-[11px] !leading-6">
+        {t.settings.madeBy} · <a className="inline-flex min-h-11 items-center underline underline-offset-2" href="https://wxlter.dev" target="_blank" rel="noopener noreferrer">wxlter.dev</a>
+      </p>
+    </aside>
   );
 }
 
@@ -60,7 +78,7 @@ export function SettingsPage() {
         <CatalogDownload label={t.catalog.update} />
       </div>
       <div className="card flex flex-col gap-2">
-        <label htmlFor="rest-threshold" className="font-bold">{s.restThreshold}</label>
+        <label htmlFor="rest-threshold" className="lbl">{s.restThreshold}</label>
         <input id="rest-threshold" className="field max-w-32" inputMode="decimal" value={rest}
           onChange={(e) => void setSetting('restThresholdHours', Math.max(0, Math.min(48, Number(e.target.value.replace(',', '.')) || 0)))} />
         <p className="text-sm text-muted">{s.restThresholdHelp}</p>
@@ -87,6 +105,7 @@ export function SettingsPage() {
         <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">{avisoLegal.map((p) => <li key={p}>{p}</li>)}</ul>
       </div>
       <p className="text-sm text-muted">{s.version}: {import.meta.env.VITE_APP_VERSION}</p>
+      <WxlterBlock />
     </section>
   );
 }

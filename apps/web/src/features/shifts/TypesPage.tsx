@@ -22,13 +22,13 @@ function TypeEditor({ type, used }: { type: ShiftType; used: boolean }) {
   return (
     <li className="card flex flex-col gap-3">
       <div className="grid grid-cols-[1fr_5rem] gap-2">
-        <label className="flex flex-col gap-1 font-bold">{s.typeName}<input className="field" value={draft.name} onChange={(e) => set('name', e.target.value)} /></label>
-        <label className="flex flex-col gap-1 font-bold">{s.typeShort}<input className="field" maxLength={3} value={draft.short} onChange={(e) => set('short', e.target.value)} /></label>
+        <label className="lbl flex flex-col gap-1">{s.typeName}<input className="field" value={draft.name} onChange={(e) => set('name', e.target.value)} /></label>
+        <label className="lbl flex flex-col gap-1">{s.typeShort}<input className="field" maxLength={3} value={draft.short} onChange={(e) => set('short', e.target.value)} /></label>
       </div>
       <div className="grid grid-cols-3 gap-2">
-        <label className="flex flex-col gap-1 font-bold">{s.typeColor}<input className="field p-1" type="color" value={draft.color} onChange={(e) => set('color', e.target.value)} /></label>
-        <label className="flex flex-col gap-1 font-bold">{s.startTime}<input className="field" type="time" value={draft.startTime} onChange={(e) => set('startTime', e.target.value)} /></label>
-        <label className="flex flex-col gap-1 font-bold">{s.duration}<input className="field" inputMode="decimal" value={draft.durationH} onChange={(e) => set('durationH', Number(e.target.value.replace(',', '.')) || 0)} /></label>
+        <label className="lbl flex flex-col gap-1">{s.typeColor}<input className="field p-1" type="color" value={draft.color} onChange={(e) => set('color', e.target.value)} /></label>
+        <label className="lbl flex flex-col gap-1">{s.startTime}<input className="field" type="time" value={draft.startTime} onChange={(e) => set('startTime', e.target.value)} /></label>
+        <label className="lbl flex flex-col gap-1">{s.duration}<input className="field" inputMode="decimal" value={draft.durationH} onChange={(e) => set('durationH', Number(e.target.value.replace(',', '.')) || 0)} /></label>
       </div>
       <label htmlFor={id} className="flex min-h-11 items-center gap-2 font-bold">
         <input id={id} type="checkbox" className="size-5" checked={draft.countsHours} onChange={(e) => set('countsHours', e.target.checked)} /> {s.countsHours}

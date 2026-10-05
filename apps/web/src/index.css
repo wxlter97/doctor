@@ -1,4 +1,9 @@
 @import 'tailwindcss';
+@import '@fontsource/archivo/latin-400.css';
+@import '@fontsource/archivo/latin-700.css';
+@import '@fontsource/archivo-black/latin-400.css';
+@import '@fontsource/jetbrains-mono/latin-400.css';
+@import '@fontsource/jetbrains-mono/latin-700.css';
 @import './styles/tokens.css';
 
 @theme inline {
@@ -6,20 +11,19 @@
   --color-surface: var(--surface);
   --color-surface-2: var(--surface-2);
   --color-fg: var(--fg);
-  --color-muted: var(--fg-muted);
+  --color-soft: var(--fg-soft);
+  --color-muted: var(--muted);
   --color-line: var(--border-color);
-  --color-accent: var(--accent);
-  --color-accent-fg: var(--accent-fg);
+  --color-line-soft: var(--border-soft);
+  --color-selected: var(--selected-bg);
+  --color-selected-fg: var(--selected-fg);
   --color-focus: var(--focus);
-  --color-info: var(--info);
-  --color-info-bg: var(--info-bg);
-  --color-warning: var(--warning);
-  --color-warning-bg: var(--warning-bg);
-  --color-danger: var(--danger);
-  --color-danger-bg: var(--danger-bg);
-  --color-success: var(--success);
-  --color-success-bg: var(--success-bg);
+  --color-faro: var(--faro);
+  --color-tinta: var(--tinta);
+  --color-alerta: var(--alerta);
+  --color-listo: var(--listo);
   --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
   --font-mono: var(--font-mono);
   --radius-ui: var(--radius);
   --spacing-row: var(--row-h);
@@ -36,7 +40,34 @@ body {
   color: var(--fg);
   font-family: var(--font-sans);
   font-size: var(--text-base);
+  line-height: 1.55;
   -webkit-text-size-adjust: 100%;
+}
+
+/* Titulares: Archivo Black, un solo peso (otro peso está prohibido), tracking negativo y interlineado < 1.05 */
+h1,
+h2,
+h3,
+.display {
+  font-family: var(--font-display);
+  font-weight: 400 !important;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+h1 {
+  font-size: var(--text-xl);
+}
+h2 {
+  font-size: var(--text-lg);
+}
+.display {
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-size: var(--text-2xl);
+  }
 }
 
 /* Sin animaciones decorativas */
@@ -54,6 +85,23 @@ body {
 }
 
 @layer components {
+  /* Etiquetas y datos: JetBrains Mono, mayúsculas, tracking 0.12em */
+  .lbl,
+  .tag {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+  .tag {
+    display: inline-block;
+    border: var(--border-width) solid var(--border-color);
+    padding: 1px 6px;
+    background: var(--surface);
+    color: var(--fg);
+  }
+
   .btn {
     display: inline-flex;
     min-height: var(--control-h);
@@ -66,19 +114,43 @@ body {
     border-radius: var(--radius);
     background: var(--surface);
     color: var(--fg);
+    font-family: var(--font-sans);
     font-weight: 700;
     cursor: pointer;
   }
-  .btn-primary {
-    background: var(--accent);
-    color: var(--accent-fg);
+  .btn:hover:not(:disabled) {
+    background: var(--selected-bg);
+    color: var(--selected-fg);
   }
+  .btn:disabled {
+    background: var(--surface-2);
+    color: var(--muted);
+    border-color: var(--border-soft);
+    cursor: not-allowed;
+  }
+  /* Acción principal: Faro con texto Tinta; al pasar el cursor se invierte */
+  .btn-primary {
+    background: var(--primary-bg);
+    color: var(--primary-fg);
+    border-color: var(--primary-border);
+  }
+  .btn-primary:hover:not(:disabled) {
+    background: var(--tinta);
+    color: var(--faro);
+    border-color: var(--faro);
+  }
+  /* Opción elegida (radios, chips, pestañas) */
+  .btn-selected,
+  .btn-selected:hover:not(:disabled) {
+    background: var(--selected-bg);
+    color: var(--selected-fg);
+  }
+
   .card {
     border: var(--border-width) solid var(--border-color);
     border-radius: var(--radius);
     background: var(--surface);
     padding: var(--space-4);
-    box-shadow: var(--shadow);
   }
   .field {
     min-height: var(--control-h);
@@ -86,6 +158,39 @@ body {
     border: var(--border-width) solid var(--border-color);
     border-radius: var(--radius);
     background: var(--surface);
+    color: var(--fg);
     padding: 0 var(--space-3);
+    /* Mono como en los campos de la marca; 16 px para que iOS no haga zoom al enfocar */
+    font-family: var(--font-mono);
+    font-size: 16px;
+  }
+  .field[aria-invalid='true'] {
+    border-color: var(--alerta);
+  }
+
+  /* Aviso de la marca: borde de 2 px y bloque lateral de 10 px del color del significado. El texto siempre va en tinta. */
+  .aviso {
+    border: var(--border-width) solid var(--border-color);
+    border-left: 10px solid var(--aviso-info);
+    background: var(--surface);
+    color: var(--fg);
+    padding: var(--space-2) var(--space-3);
+  }
+  .aviso-warning {
+    border-left-color: var(--aviso-warning);
+  }
+  .aviso-danger {
+    border-color: var(--alerta);
+    border-left-color: var(--alerta);
+  }
+  .aviso-success {
+    border-left-color: var(--aviso-success);
+  }
+  /* Mensaje de error de campo/formulario (el rojo marca, no es el color del texto: no llega a 4.5:1 sobre todos los fondos) */
+  .err {
+    border-left: 4px solid var(--alerta);
+    padding-left: var(--space-2);
+    color: var(--fg);
+    font-weight: 700;
   }
 }

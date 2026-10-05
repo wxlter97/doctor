@@ -32,7 +32,7 @@ export function MedicationDetail() {
         <div className="flex flex-col gap-1">
           <h1 className="text-2xl font-bold">{med.genericName}</h1>
           <p className="text-muted">{med.form} · {med.strength}{med.route ? ` · ${med.route}` : ''}</p>
-          <p className="flex flex-wrap gap-1">{med.institutions.map((i) => <span key={i.id} className="border-2 border-line px-1.5 text-xs font-black">{instShort(i.id)}</span>)}</p>
+          <p className="flex flex-wrap gap-1">{med.institutions.map((i) => <span key={i.id} className="tag">{instShort(i.id)}</span>)}</p>
         </div>
         <button className="btn shrink-0" aria-pressed={!!isFav} aria-label={isFav ? m.unfavorite : m.favorite} onClick={() => void toggleFavorite('medication', id)}>
           <Star aria-hidden size={20} fill={isFav ? 'currentColor' : 'none'} />

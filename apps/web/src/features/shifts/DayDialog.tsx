@@ -33,13 +33,13 @@ export function DayDialog({ date, shifts, types, rest, onClose }: {
   return (
     <Dialog.Root open onOpenChange={(o) => !o && onClose()}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-40 bg-black/60" />
+        <Dialog.Overlay className="fixed inset-0 z-40 bg-[var(--on-overlay)]" />
         <Dialog.Content className="card fixed inset-x-0 bottom-0 z-50 max-h-[85vh] overflow-y-auto lg:inset-y-0 lg:right-0 lg:left-auto lg:max-h-none lg:w-[26rem]">
           <Dialog.Title className="text-xl font-bold first-letter:uppercase">{dayLabel(date)}</Dialog.Title>
           <Dialog.Description className="sr-only">{s.dayDescription}</Dialog.Description>
 
           {rest.length > 0 && (
-            <p className="mt-3 flex gap-2 border-2 border-current bg-warning-bg p-2 font-bold text-warning" role="status">
+            <p className="aviso aviso-warning mt-3 flex gap-2 font-bold" role="status">
               <AlertTriangle aria-hidden size={20} className="shrink-0" /> <span>{rest.join(' ')}</span>
             </p>
           )}
@@ -61,20 +61,20 @@ export function DayDialog({ date, shifts, types, rest, onClose }: {
           <h3 className="mt-4 font-bold">{s.addShift}</h3>
           <div role="radiogroup" aria-label={s.type} className="mt-2 grid grid-cols-2 gap-2">
             {types.map((tp) => (
-              <button key={tp.id} role="radio" aria-checked={tp.id === typeId} onClick={() => pick(tp.id)} className={`btn justify-start ${tp.id === typeId ? 'btn-primary' : ''}`}>
+              <button key={tp.id} role="radio" aria-checked={tp.id === typeId} onClick={() => pick(tp.id)} className={`btn justify-start ${tp.id === typeId ? 'btn-selected' : ''}`}>
                 <span aria-hidden className="inline-block size-3 border border-current" style={{ background: tp.color }} /> {tp.name}
               </button>
             ))}
           </div>
           <div className="mt-3 grid grid-cols-2 gap-2">
-            <label className="flex flex-col gap-1 font-bold">{s.startTime}
+            <label className="lbl flex flex-col gap-1">{s.startTime}
               <input className="field" type="time" value={startTime} onChange={(e) => setStartTime(e.target.value)} />
             </label>
-            <label className="flex flex-col gap-1 font-bold">{s.duration}
+            <label className="lbl flex flex-col gap-1">{s.duration}
               <input className="field" inputMode="decimal" value={durationH} onChange={(e) => setDurationH(e.target.value.replace(',', '.'))} />
             </label>
           </div>
-          {error && <p role="alert" className="mt-2 font-bold text-danger">✖ {error}</p>}
+          {error && <p role="alert" className="err mt-2">✖ {error}</p>}
           <div className="mt-4 flex gap-2">
             <button className="btn btn-primary" onClick={() => void add()}>{s.save}</button>
             <Dialog.Close className="btn">{t.shortcuts.closeBtn}</Dialog.Close>

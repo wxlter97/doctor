@@ -12,7 +12,7 @@ export function Onboarding() {
 
   return (
     <main className="mx-auto flex h-full max-w-xl flex-col justify-center gap-4 p-4">
-      <h1 className="text-2xl font-black">{t.app.name}</h1>
+      <h1 className="display text-2xl">{t.app.name}</h1>
       {step === 0 && (
         <section className="card flex flex-col gap-3">
           <h2 className="text-xl font-bold">{o.legalTitle}</h2>

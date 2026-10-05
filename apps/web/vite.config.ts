@@ -4,6 +4,19 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { VitePWA } from 'vite-plugin-pwa';
 import { visualizer } from 'rollup-plugin-visualizer';
+import type { Plugin } from 'vite';
+
+/** Precarga las fuentes del primer pintado (los nombres llevan hash, por eso se calculan del bundle). */
+const preloadFonts = (): Plugin => ({
+  name: 'preload-fonts',
+  transformIndexHtml: {
+    order: 'post',
+    handler(_html, ctx) {
+      const files = Object.keys(ctx.bundle ?? {}).filter((f) => /(archivo-latin-(400|700)|archivo-black-latin-400)-normal-.*\.woff2$/.test(f));
+      return files.map((f) => ({ tag: 'link', injectTo: 'head', attrs: { rel: 'preload', as: 'font', type: 'font/woff2', crossorigin: '', href: `/${f}` } }));
+    },
+  },
+});
 
 export default defineConfig({
   define: { 'import.meta.env.VITE_APP_VERSION': JSON.stringify(process.env.VITE_APP_VERSION ?? '0.0.0') },
@@ -12,6 +25,7 @@ export default defineConfig({
     ...(process.env.ANALYZE ? [visualizer({ filename: 'dist/stats.json', template: 'raw-data', gzipSize: true })] : []),
     react(),
     tailwindcss(),
+    preloadFonts(),
     VitePWA({
       strategies: 'injectManifest',
       srcDir: 'src',
@@ -26,8 +40,8 @@ export default defineConfig({
         start_url: '/',
         scope: '/',
         display: 'standalone',
-        background_color: '#282828',
-        theme_color: '#282828',
+        background_color: '#111111',
+        theme_color: '#111111',
         icons: [
           { src: '/icon-192.png', sizes: '192x192', type: 'image/png' },
           { src: '/icon-512.png', sizes: '512x512', type: 'image/png' },

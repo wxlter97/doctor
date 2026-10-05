@@ -24,7 +24,7 @@ export function NextShiftCard() {
             {next.type?.name} · <span className="inline-block first-letter:uppercase">{dayLabel(datePart(next.shift.start))}</span>
           </p>
           <p>{timePart(next.shift.start)}–{timePart(next.shift.end)}</p>
-          <p className="text-xl font-black">
+          <p className="display text-xl">
             {next.inProgress ? s.inShift(timePart(next.shift.end)) : s.inCountdown(countdown(isoToMs(next.shift.start) - now))}
           </p>
         </>

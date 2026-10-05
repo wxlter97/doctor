@@ -33,28 +33,28 @@ export function PatternDialog({ types, onClose }: { types: ShiftType[]; onClose:
   return (
     <Dialog.Root open onOpenChange={(o) => !o && onClose()}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 z-40 bg-black/60" />
+        <Dialog.Overlay className="fixed inset-0 z-40 bg-[var(--on-overlay)]" />
         <Dialog.Content className="card fixed inset-x-0 bottom-0 z-50 max-h-[90vh] overflow-y-auto lg:top-1/2 lg:bottom-auto lg:left-1/2 lg:w-[28rem] lg:-translate-x-1/2 lg:-translate-y-1/2">
           <Dialog.Title className="text-xl font-bold">{s.repeat}</Dialog.Title>
           <Dialog.Description className="mb-3 text-sm text-muted">{s.patternHelp}</Dialog.Description>
           <div className="flex flex-col gap-3">
-            <label className="flex flex-col gap-1 font-bold">{s.type}
+            <label className="lbl flex flex-col gap-1">{s.type}
               <select className="field" value={typeId} onChange={(e) => setTypeId(e.target.value)}>{types.map((tp) => <option key={tp.id} value={tp.id}>{tp.name}</option>)}</select>
             </label>
             <div className="grid grid-cols-2 gap-2">
-              <label className="flex flex-col gap-1 font-bold">{s.from}<input className="field" type="date" value={from} onChange={(e) => setFrom(e.target.value)} /></label>
-              <label className="flex flex-col gap-1 font-bold">{s.to}<input className="field" type="date" value={to} onChange={(e) => setTo(e.target.value)} /></label>
+              <label className="lbl flex flex-col gap-1">{s.from}<input className="field" type="date" value={from} onChange={(e) => setFrom(e.target.value)} /></label>
+              <label className="lbl flex flex-col gap-1">{s.to}<input className="field" type="date" value={to} onChange={(e) => setTo(e.target.value)} /></label>
             </div>
             <div role="radiogroup" aria-label={s.patternMode} className="flex gap-2">
-              <button role="radio" aria-checked={mode === 'everyN'} className={`btn ${mode === 'everyN' ? 'btn-primary' : ''}`} onClick={() => setMode('everyN')}>{s.everyN}</button>
-              <button role="radio" aria-checked={mode === 'weekdays'} className={`btn ${mode === 'weekdays' ? 'btn-primary' : ''}`} onClick={() => setMode('weekdays')}>{s.byWeekday}</button>
+              <button role="radio" aria-checked={mode === 'everyN'} className={`btn ${mode === 'everyN' ? 'btn-selected' : ''}`} onClick={() => setMode('everyN')}>{s.everyN}</button>
+              <button role="radio" aria-checked={mode === 'weekdays'} className={`btn ${mode === 'weekdays' ? 'btn-selected' : ''}`} onClick={() => setMode('weekdays')}>{s.byWeekday}</button>
             </div>
             {mode === 'everyN' ? (
-              <label className="flex flex-col gap-1 font-bold">{s.everyNLabel}<input className="field" inputMode="numeric" value={n} onChange={(e) => setN(e.target.value)} /></label>
+              <label className="lbl flex flex-col gap-1">{s.everyNLabel}<input className="field" inputMode="numeric" value={n} onChange={(e) => setN(e.target.value)} /></label>
             ) : (
               <div className="flex gap-1" role="group" aria-label={s.byWeekday}>
                 {DAYS.map((d, i) => (
-                  <button key={i} aria-pressed={days.includes(i)} className={`btn flex-1 px-0 ${days.includes(i) ? 'btn-primary' : ''}`}
+                  <button key={i} aria-pressed={days.includes(i)} className={`btn flex-1 px-0 ${days.includes(i) ? 'btn-selected' : ''}`}
                     onClick={() => setDays((cur) => (cur.includes(i) ? cur.filter((x) => x !== i) : [...cur, i]))}>{d}</button>
                 ))}
               </div>

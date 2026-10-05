@@ -27,13 +27,13 @@ export function ExportPanel({ shifts, types }: { shifts: Shift[]; types: ShiftTy
       <h2 className="text-lg font-bold">{s.exportIcs}</h2>
       <p className="text-sm text-muted">{s.exportHelp}</p>
       <div className="grid grid-cols-2 gap-2">
-        <label className="flex flex-col gap-1 font-bold">{s.from}<input className="field" type="date" value={from} onChange={(e) => setFrom(e.target.value)} /></label>
-        <label className="flex flex-col gap-1 font-bold">{s.to}<input className="field" type="date" value={to} onChange={(e) => setTo(e.target.value)} /></label>
+        <label className="lbl flex flex-col gap-1">{s.from}<input className="field" type="date" value={from} onChange={(e) => setFrom(e.target.value)} /></label>
+        <label className="lbl flex flex-col gap-1">{s.to}<input className="field" type="date" value={to} onChange={(e) => setTo(e.target.value)} /></label>
       </div>
-      <label className="flex flex-col gap-1 font-bold">{s.alarmBefore}
+      <label className="lbl flex flex-col gap-1">{s.alarmBefore}
         <input className="field" inputMode="numeric" value={alarm} onChange={(e) => void setSetting('alarmMinutes', Math.max(0, Math.min(1440, Number(e.target.value) || 0)))} />
       </label>
-      {msg && <p role="alert" className="font-bold text-danger">✖ {msg}</p>}
+      {msg && <p role="alert" className="err">✖ {msg}</p>}
       <button className="btn btn-primary self-start" onClick={() => void run()}><Download aria-hidden size={18} /> {s.exportBtn}</button>
     </section>
   );

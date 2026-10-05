@@ -26,8 +26,8 @@ export function HoursPage() {
       <Link to="/turnos" className="inline-flex min-h-11 items-center gap-1 font-bold underline"><ChevronLeft aria-hidden size={18} /> {s.title}</Link>
       <h1 className="text-2xl font-bold">{s.hoursTitle}</h1>
       <div role="radiogroup" aria-label={s.hoursTitle} className="flex gap-2">
-        <button role="radio" aria-checked={view === 'month'} className={`btn ${view === 'month' ? 'btn-primary' : ''}`} onClick={() => setView('month')}>{s.byMonth}</button>
-        <button role="radio" aria-checked={view === 'week'} className={`btn ${view === 'week' ? 'btn-primary' : ''}`} onClick={() => setView('week')}>{s.byWeek}</button>
+        <button role="radio" aria-checked={view === 'month'} className={`btn ${view === 'month' ? 'btn-selected' : ''}`} onClick={() => setView('month')}>{s.byMonth}</button>
+        <button role="radio" aria-checked={view === 'week'} className={`btn ${view === 'week' ? 'btn-selected' : ''}`} onClick={() => setView('week')}>{s.byWeek}</button>
       </div>
       <div className="flex items-center gap-2">
         <button className="btn" aria-label={s.prev} onClick={() => step(-1)}><ChevronLeft aria-hidden size={20} /></button>
@@ -35,7 +35,7 @@ export function HoursPage() {
         <button className="btn" aria-label={s.next} onClick={() => step(1)}><ChevronRight aria-hidden size={20} /></button>
       </div>
       <div className="card flex flex-col gap-3">
-        <p className="text-3xl font-black">{r1(sum.totalH)} h</p>
+        <p className="display text-3xl">{r1(sum.totalH)} h</p>
         <p className="font-bold">{s.nights(sum.nightCount)}</p>
         <table className="w-full text-left">
           <thead><tr><th className="py-1">{s.type}</th><th className="py-1 text-right">{s.hours}</th><th className="py-1 text-right">{s.shiftsCount}</th></tr></thead>

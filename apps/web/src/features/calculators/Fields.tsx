@@ -12,7 +12,7 @@ export function NumberField({ input, raw, unitId, error, onChange, onUnit }: {
   const id = `f-${input.id}`;
   return (
     <div className="flex flex-col gap-1">
-      <label htmlFor={id} className="font-bold">{input.label}</label>
+      <label htmlFor={id} className="lbl">{input.label}</label>
       <div className="flex gap-2">
         <input
           id={id} className="field" inputMode="decimal" autoComplete="off" value={raw}
@@ -27,7 +27,7 @@ export function NumberField({ input, raw, unitId, error, onChange, onUnit }: {
           input.unit && <span className="flex min-w-14 items-center text-muted">{input.unit}</span>
         )}
       </div>
-      <p id={`${id}-help`} className={`text-sm ${error ? 'font-bold text-danger' : 'text-muted'}`}>
+      <p id={`${id}-help`} className={`text-sm ${error ? 'err' : 'text-muted'}`}>
         {error ? `✖ ${error}` : input.help ? `${input.help} · ${help}` : help}
       </p>
     </div>
@@ -39,7 +39,7 @@ export function ChoiceField({ input, raw, onChange }: { input: ChoiceInput; raw:
   if (!tiles) {
     return (
       <div className="flex flex-col gap-1">
-        <label htmlFor={`f-${input.id}`} className="font-bold">{input.label}</label>
+        <label htmlFor={`f-${input.id}`} className="lbl">{input.label}</label>
         <select id={`f-${input.id}`} className="field" value={raw} onChange={(e) => onChange(e.target.value)}>
           <option value="">Elegí una opción</option>
           {input.options.map((o) => <option key={o.value} value={String(o.value)}>{o.label}</option>)}
@@ -49,7 +49,7 @@ export function ChoiceField({ input, raw, onChange }: { input: ChoiceInput; raw:
   }
   return (
     <fieldset className="flex flex-col gap-2">
-      <legend className="mb-1 font-bold">{input.label}</legend>
+      <legend className="lbl mb-1">{input.label}</legend>
       <div role="radiogroup" aria-label={input.label} className="grid gap-2">
         {input.options.map((o) => {
           const selected = String(o.value) === raw;
@@ -57,7 +57,7 @@ export function ChoiceField({ input, raw, onChange }: { input: ChoiceInput; raw:
             <button
               key={String(o.value)} type="button" role="radio" aria-checked={selected}
               onClick={() => onChange(String(o.value))}
-              className={`btn justify-start text-left ${selected ? 'btn-primary' : ''}`}
+              className={`btn justify-start text-left ${selected ? 'btn-selected' : ''}`}
             >
               <span aria-hidden>{selected ? '●' : '○'}</span> {o.label}
             </button>
@@ -72,9 +72,9 @@ export function DateField({ input, raw, error, onChange }: { input: DateInput; r
   const id = `f-${input.id}`;
   return (
     <div className="flex flex-col gap-1">
-      <label htmlFor={id} className="font-bold">{input.label}</label>
+      <label htmlFor={id} className="lbl">{input.label}</label>
       <input id={id} type="date" className="field" value={raw} aria-invalid={!!error} onChange={(e) => onChange(e.target.value)} />
-      {error && <p className="text-sm font-bold text-danger">✖ {error}</p>}
+      {error && <p className="err text-sm">✖ {error}</p>}
     </div>
   );
 }

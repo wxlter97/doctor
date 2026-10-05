@@ -12,7 +12,7 @@ export function ShortcutsHelp({ open, onOpenChange }: { open: boolean; onOpenCha
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
-        <Dialog.Overlay className="fixed inset-0 bg-black/60" />
+        <Dialog.Overlay className="fixed inset-0 bg-[var(--on-overlay)]" />
         <Dialog.Content className="card fixed top-1/2 left-1/2 w-[min(92vw,32rem)] -translate-x-1/2 -translate-y-1/2">
           <Dialog.Title className="mb-3 text-xl font-bold">{t.shortcuts.title}</Dialog.Title>
           <Dialog.Description className="mb-3 text-sm text-muted">{t.shortcuts.typing}</Dialog.Description>

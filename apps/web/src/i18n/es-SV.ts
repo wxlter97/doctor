@@ -173,6 +173,7 @@ export const t = {
     backupImport: 'Importar respaldo',
     backupConfirm: 'Importar reemplaza tus turnos y tipos actuales. ¿Seguimos?',
     backupOk: (n: number) => `Respaldo importado: ${n} turnos.`,
+    madeBy: 'Hecho por Walter Castillo',
     catalogTitle: 'Catálogo de medicamentos',
     historyTitle: 'Historial de cálculos',
     historyBody: 'Se guarda solo en este dispositivo (valores numéricos, sin datos de pacientes). Máximo 200 entradas.',

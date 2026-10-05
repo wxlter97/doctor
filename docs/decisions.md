@@ -56,3 +56,17 @@ El presupuesto de 200 KB gzip (§10) se mide sobre **todos** los scripts del arr
 
 ## 019 — E2E en Chromium, Firefox y WebKit
 `playwright.config.ts` define tres proyectos. La prueba móvil (`isMobile`) corre en Chromium y WebKit (Firefox no la soporta). El offline se prueba apagando un servidor propio sobre `dist/`, no con `context.setOffline`, que en WebKit falla al recargar páginas servidas por el service worker. Resultado: 30/30 en los tres motores (WebKit de Playwright, no Safari real en iOS).
+
+## 020 — Aplicación de la marca wxlter (Fase 0.5)
+Tokens en `styles/tokens.css` con la paleta del Manual de Marca v1.0 (Faro, Tinta, Papel, Humo, Ceniza; Alerta y Listo solo como semánticos), bordes de 2 px, radio 0, sin sombras, titulares en Archivo Black (tracking −0.02 a −0.04 em, interlineado ≤ 1.05, un solo peso), texto en Archivo, etiquetas y datos en JetBrains Mono (mayúsculas, tracking 0.12 em). Botón principal Faro con texto Tinta que se invierte al pasar el cursor; opción/pestaña activa Tinta + Faro. Íconos con la regla del §05 (`pnpm icons`).
+
+Desviaciones deliberadas (cada una por una razón comprobable):
+1. **Foco**: contorno de 3 px en Tinta (y Faro en oscuro), no Faro. Faro sobre Papel no llega a 3:1 (WCAG 1.4.11) y el plan exige AA.
+2. **Campos a 16 px** (la marca pide 14 px): por debajo de 16 px, iOS Safari hace zoom al enfocar.
+3. **Avisos clínicos** (información/advertencia/peligro): la marca solo define Alerta y Listo, así que se usa su componente "aviso" (bloque lateral de 10 px): Humo = información, Faro = advertencia, Alerta = peligro. El texto va siempre en Tinta y con ícono, porque Alerta (#D92B0C) da 4.4:1 sobre Papel y ~3.9:1 sobre Tinta, insuficiente como color de texto. Los mensajes de error usan `.err` (barra Alerta + texto en tinta).
+4. **Tema oscuro**: la marca define Tinta como fondo y #EDEDE7 / #8A8A80 como texto sobre oscuro, pero no superficies. Se derivan #1B1B19 y #262624 (cards y filas) y #9A9A90 (texto secundario, para llegar a 4.5:1 sobre ambas). Faro se usa como acento y texto solo en oscuro (la regla prohíbe amarillo sobre fondo claro).
+5. **Fuentes autoalojadas** (`@fontsource`, subconjunto latino) y no Google Fonts: funcionan sin conexión, entran en el precaché y no filtran la IP a terceros (CSP `default-src 'self'`).
+6. **Voz**: la interfaz mantiene el voseo salvadoreño del plan (el design system escribe en «tú») y **no** aplica el remate humorístico: es una herramienta clínica y el tono bromista no corresponde. Sí aplica «preciso primero, frases cortas, nombres exactos».
+7. **Regla del 10 %**: Faro aparece en el botón principal, la pestaña activa (solo en oscuro) y el bloque «Hecho por wxlter.» (fondo completo de bloque de marca, permitido).
+
+Pendiente de Walter: la **altura de la banda** del ícono de MedApoyo. El manual fija 20 → 40 → 68 → 88 para las apps de la serie pero no dice cuál corresponde a esta; hoy es 20 (constante `BAND` en `apps/web/scripts/make-icons.ts`). Lo mismo con la inicial («M») y con si el nombre comercial (§14.5) será «MedApoyo SV».

@@ -165,12 +165,12 @@ function CalculatorView({ calc }: { calc: AnyCalculator }) {
         <p className="text-sm text-muted">{t.disclaimer.short}</p>
       </div>
 
-      <aside aria-live="polite" className="sticky bottom-0 -mx-4 border-t-2 border-line bg-surface px-4 py-3 lg:top-0 lg:mx-0 lg:border-2 lg:p-4 lg:shadow-[var(--shadow)]">
+      <aside aria-live="polite" className="sticky bottom-0 -mx-4 border-t-2 border-line bg-surface px-4 py-3 lg:top-0 lg:mx-0 lg:border-2 lg:p-4">
         <h2 className="sr-only">{c.result}</h2>
         {result.ok ? (
           <div className="flex flex-col gap-2">
             <div className="flex items-center justify-between gap-3 lg:flex-col lg:items-stretch lg:gap-2">
-              <p className="text-2xl font-black lg:text-3xl">{result.presentation.value} <span className="text-base font-bold">{result.presentation.unit}</span></p>
+              <p className="display text-2xl lg:text-3xl">{result.presentation.value} <span className="text-base font-bold">{result.presentation.unit}</span></p>
               <button className="btn btn-primary shrink-0" onClick={() => void copy()}>
                 {copied ? <Check aria-hidden size={18} /> : <Copy aria-hidden size={18} />} {copied ? c.copied : c.copy}
               </button>

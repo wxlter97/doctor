@@ -23,7 +23,7 @@ export function MedicationRow({ med, fav, search }: { med: CatalogMedication; fa
         </span>
         <span className="text-muted">{med.form} · {med.strength}</span>
         <span className="flex flex-wrap gap-1">
-          {med.institutions.map((i) => <span key={i.id} className="border-2 border-line px-1.5 text-xs font-black">{instShort(i.id)}</span>)}
+          {med.institutions.map((i) => <span key={i.id} className="tag">{instShort(i.id)}</span>)}
         </span>
       </Link>
     </li>
@@ -74,7 +74,7 @@ export function MedicationsLayout() {
     <div className="lg:grid lg:h-full lg:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] lg:gap-6">
       <section className={`${detailOpen ? 'hidden lg:flex' : 'flex'} min-h-0 flex-col gap-3 lg:overflow-y-auto`} onKeyDown={onKey}>
         <h1 className="text-2xl font-bold">{m.title}</h1>
-        {source === 'FIXTURE' && <p role="note" className="border-2 border-current bg-warning-bg p-2 text-sm font-bold text-warning">{m.fixtureBanner}</p>}
+        {source === 'FIXTURE' && <p role="note" className="aviso aviso-warning text-sm font-bold">{m.fixtureBanner}</p>}
         {loaded && !index ? (
           <div className="card flex flex-col gap-3">
             <p>{m.noCatalog}</p>
@@ -85,7 +85,7 @@ export function MedicationsLayout() {
             <input id="med-search" className="field" type="search" autoComplete="off" aria-label={m.search} placeholder={m.search} value={text} onChange={(e) => setText(e.target.value)} />
             <div className="flex flex-wrap items-center gap-2">
               {(index?.institutions ?? []).map((i) => (
-                <button key={i.id} aria-pressed={insts.includes(i.id)} onClick={() => toggleInst(i.id)} className={`btn ${insts.includes(i.id) ? 'btn-primary' : ''}`}>{instShort(i.id)}</button>
+                <button key={i.id} aria-pressed={insts.includes(i.id)} onClick={() => toggleInst(i.id)} className={`btn ${insts.includes(i.id) ? 'btn-selected' : ''}`}>{instShort(i.id)}</button>
               ))}
               <button className="btn" onClick={() => setFiltersOpen(true)}><SlidersHorizontal aria-hidden size={18} /> {m.filters}{advanced > 0 && <span className="border-2 border-current px-1.5 text-xs">{advanced}</span>}</button>
             </div>
