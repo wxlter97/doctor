@@ -58,6 +58,7 @@ export function MedicationDetail() {
         </ul>
         <p className="text-sm font-bold">{m.notStock}</p>
         {med.institutions.some((i) => i.id === 'minsal') && <p className="text-sm text-muted">{m.sourceMinsal}</p>}
+        {med.institutions.some((i) => i.id === 'isss') && <p className="text-sm text-muted">{m.sourceIsss}</p>}
       </section>
 
       {clinical && sections.length > 0 ? (

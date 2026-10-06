@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { catalogSchema, manifestSchema, sha256Hex } from '@medapoyo/shared';
 import { buildIndex } from './medicationSearch';
 
-// Catálogo publicado en public/catalog (hoy: LOM/MINSAL 2026, parcial).
+// Catálogo publicado en public/catalog (hoy: LOM/MINSAL 2026 + LOM/ISSS 19.ª ed., parcial).
 const dir = join(__dirname, '../../public/catalog');
 const manifest = manifestSchema.parse(JSON.parse(readFileSync(join(dir, 'manifest.json'), 'utf8')));
 const raw = readFileSync(join(dir, manifest.url.replace('/catalog/', '')), 'utf8');
@@ -22,9 +22,10 @@ describe('catálogo real publicado', () => {
     expect(catalog.source).toBe('PARCIAL');
   });
   it('todo medicamento tiene institución con código y atribución de la edición', () => {
-    expect(catalog.institutions.map((i) => i.id)).toEqual(['minsal']);
+    expect(catalog.institutions.map((i) => i.id)).toEqual(['minsal', 'isss']);
     expect(catalog.institutions[0]?.listEdition).toContain('1201');
-    expect(catalog.medications.every((m) => m.institutions[0]?.code)).toBe(true);
+    expect(catalog.institutions[1]?.listEdition).toContain('19');
+    expect(catalog.medications.every((m) => m.institutions.length > 0 && m.institutions.every((i) => i.code))).toBe(true);
   });
   it('encuentra por nombre, sinónimo y tildes', () => {
     expect(names('paracetamol').some((n) => /Acetaminofén/.test(n))).toBe(true);
@@ -33,8 +34,17 @@ describe('catálogo real publicado', () => {
     expect(names('amoxicilina').length).toBeGreaterThan(1);
   });
   it('filtra por institución', () => {
-    expect(index.search('', { institutions: ['minsal'] })).toHaveLength(catalog.medications.length);
-    expect(index.search('', { institutions: ['isss'] })).toHaveLength(0);
+    const count = (id: string) => catalog.medications.filter((m) => m.institutions.some((i) => i.id === id)).length;
+    expect(index.search('', { institutions: ['minsal'] })).toHaveLength(count('minsal'));
+    expect(index.search('', { institutions: ['isss'] })).toHaveLength(count('isss'));
+    expect(count('minsal')).toBeGreaterThan(700);
+    expect(count('isss')).toBeGreaterThan(700);
+    expect(index.search('', { institutions: ['minsal', 'isss'] }).length).toBeLessThanOrEqual(catalog.medications.length);
+  });
+  it('hay medicamentos en ambas listas y cada ficha conserva su código y presentación por institución', () => {
+    const both = catalog.medications.filter((m) => m.institutions.length === 2);
+    expect(both.length).toBeGreaterThan(200);
+    expect(both.every((m) => m.institutions.map((i) => i.id).join() === 'minsal,isss')).toBe(true);
   });
   it('rendimiento: búsqueda ≤ 50 ms con el catálogo real', () => {
     const t = Array.from({ length: 7 }, () => { const s = performance.now(); index.search('amoxicilina'); return performance.now() - s; }).sort((a, b) => a - b);

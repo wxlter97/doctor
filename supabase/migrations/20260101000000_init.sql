@@ -77,7 +77,7 @@ create policy "lectura publica" on catalog_versions for select to anon using (tr
 
 insert into institutions (id, name, list_name) values
   ('minsal', 'Ministerio de Salud (MINSAL)', 'LOM/MINSAL'),
-  ('isss', 'Instituto Salvadoreño del Seguro Social (ISSS)', 'LOM'),
+  ('isss', 'Instituto Salvadoreño del Seguro Social (ISSS)', 'LOM/ISSS'),
   ('fosalud', 'Fondo Solidario para la Salud (FOSALUD)', 'LIM'),
   ('sanidad_militar', 'Sanidad Militar', null),
   ('isbm', 'Instituto Salvadoreño de Bienestar Magisterial (ISBM)', null);
