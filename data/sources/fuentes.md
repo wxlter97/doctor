@@ -17,7 +17,7 @@ Se localizaron en el portal de transparencia (https://www.transparencia.gob.sv).
 | Institución | Listado | Archivo | Tamaño | Notas |
 |---|---|---|---|---|
 | ISSS | Listado Oficial de Medicamentos, **19.ª edición** (publicado 29/10/2024, «Vigente»; no hay otra más nueva en el portal) | `LOM_-_19a_Edicion_redacted.pdf` (ID 606538) | 3.2 MB | **Descargado** como `isss_lom_19.pdf` (gitignored). 198 pp.; lista general pp. 57–150 (836 códigos de 7 dígitos con tablas limpias); el índice alfabético (pp. 151+) repite los códigos y se ignora. Extractor: `isss.py`. Sin cláusula de licencia visible: es una versión pública publicada en el portal de transparencia (LAIP); se cita la fuente y se aclara que no es publicación oficial. |
-| FOSALUD | Listado Institucional de Medicamentos, **2.ª edición** (la más reciente encontrada) | `LISTADO_INSTITUCIONAL_DE_MEDICAMENTOS-FOSALUD_2a._EDICIONescaneada.pdf` (ID 347038) | 15.2 MB | **Escaneado**: necesita OCR. Existe una 1.ª edición (ID 280043, 8.2 MB) que no se necesita. Falta confirmar que no haya una edición posterior no publicada en el portal. |
+| FOSALUD | Listado Institucional de Medicamentos, **2.ª edición** (la más reciente encontrada) | `LISTADO_INSTITUCIONAL_DE_MEDICAMENTOS-FOSALUD_2a._EDICIONescaneada.pdf` (ID 347038) | 15.2 MB | **Descargado** como `fosalud_lim_2.pdf` (gitignored). **Es de 2019** (74 pp., escaneo sin texto), probablemente desactualizado. Lista general = págs. 22–38 (101 filas); las págs. 39+ son sub-listados por profesión (odontología, enfermería, emergencias, CPTA…) y no se ingieren. Se leyó con OCR (`fosalud.py`, tesseract `spa`, celda por celda sobre la rejilla). Licencia (pág. 2): reproducción permitida citando la fuente y **sin fines de venta u otro fin comercial** (igual que MINSAL). Existe una 1.ª edición (ID 280043) que no se usa. Falta confirmar que no haya una edición posterior fuera del portal. |
 
 ## Estado de la extracción de MINSAL
 
@@ -31,4 +31,4 @@ Consecuencias para MedHelp:
 1. Citar siempre «Ministerio de Salud de El Salvador — LOM/MINSAL 2026 (Acuerdo n.º 1201, 14/05/2026)» en la ficha y en la página de fuentes.
 2. **Uso no comercial**: la app debe seguir siendo gratuita y sin anuncios ni venta. Si algún día se monetiza, hay que pedir autorización a MINSAL.
 3. No sugerir que MINSAL respalda la app (el aviso legal ya dice que no sustituye el criterio médico; falta añadir que no es una publicación oficial).
-4. Los PDF de ISSS, FOSALUD y de la Superintendencia no traen cláusula de licencia visible: pendiente revisar sus condiciones.
+4. FOSALUD: licencia visible en la pág. 2 (cita la fuente, sin fin comercial). Los PDF del ISSS y de la Superintendencia no traen cláusula de licencia visible: pendiente revisar sus condiciones.

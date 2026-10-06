@@ -4,7 +4,7 @@ import { describe, expect, it } from 'vitest';
 import { catalogSchema, manifestSchema, sha256Hex } from '@medapoyo/shared';
 import { buildIndex } from './medicationSearch';
 
-// Catálogo publicado en public/catalog (hoy: LOM/MINSAL 2026 + LOM/ISSS 19.ª ed., parcial).
+// Catálogo publicado en public/catalog (hoy: LOM/MINSAL 2026 + LOM/ISSS 19.ª ed. + LIM-FOSALUD 2019, parcial).
 const dir = join(__dirname, '../../public/catalog');
 const manifest = manifestSchema.parse(JSON.parse(readFileSync(join(dir, 'manifest.json'), 'utf8')));
 const raw = readFileSync(join(dir, manifest.url.replace('/catalog/', '')), 'utf8');
@@ -22,7 +22,8 @@ describe('catálogo real publicado', () => {
     expect(catalog.source).toBe('PARCIAL');
   });
   it('todo medicamento tiene institución con código y atribución de la edición', () => {
-    expect(catalog.institutions.map((i) => i.id)).toEqual(['minsal', 'isss']);
+    expect(catalog.institutions.map((i) => i.id)).toEqual(['minsal', 'isss', 'fosalud']);
+    expect(catalog.institutions[2]?.listEdition).toContain('2019');
     expect(catalog.institutions[0]?.listEdition).toContain('1201');
     expect(catalog.institutions[1]?.listEdition).toContain('19');
     expect(catalog.medications.every((m) => m.institutions.length > 0 && m.institutions.every((i) => i.code))).toBe(true);
@@ -39,12 +40,15 @@ describe('catálogo real publicado', () => {
     expect(index.search('', { institutions: ['isss'] })).toHaveLength(count('isss'));
     expect(count('minsal')).toBeGreaterThan(700);
     expect(count('isss')).toBeGreaterThan(700);
+    expect(count('fosalud')).toBeGreaterThan(60);
+    expect(index.search('', { institutions: ['fosalud'] })).toHaveLength(count('fosalud'));
     expect(index.search('', { institutions: ['minsal', 'isss'] }).length).toBeLessThanOrEqual(catalog.medications.length);
   });
   it('hay medicamentos en ambas listas y cada ficha conserva su código y presentación por institución', () => {
     const both = catalog.medications.filter((m) => m.institutions.length === 2);
     expect(both.length).toBeGreaterThan(200);
-    expect(both.every((m) => m.institutions.map((i) => i.id).join() === 'minsal,isss')).toBe(true);
+    expect(both.some((m) => m.institutions.map((i) => i.id).join() === 'minsal,isss')).toBe(true);
+    expect(catalog.medications.some((m) => m.institutions.length === 3)).toBe(true);
   });
   it('rendimiento: búsqueda ≤ 50 ms con el catálogo real', () => {
     const t = Array.from({ length: 7 }, () => { const s = performance.now(); index.search('amoxicilina'); return performance.now() - s; }).sort((a, b) => a - b);

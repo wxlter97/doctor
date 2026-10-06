@@ -1,5 +1,5 @@
 {
- "version": 3,
+ "version": 5,
  "publishedAt": "2026-10-05T00:00:00Z",
  "source": "PARCIAL",
  "institutions": [
@@ -18,6 +18,14 @@
    "listEdition": "19.ª edición (29/10/2024)",
    "sourceDate": "2024-10-29",
    "sourceUrl": "https://www.transparencia.gob.sv/descarga_archivo.php?id=NjA2NTM4&inst=606538"
+  },
+  {
+   "id": "fosalud",
+   "name": "Fondo Solidario para la Salud (FOSALUD)",
+   "listName": "LIM-FOSALUD",
+   "listEdition": "2.ª edición (2019)",
+   "sourceDate": "2019-01-01",
+   "sourceUrl": "https://www.transparencia.gob.sv/descarga_archivo.php?id=MzQ3MDM4&inst=347038"
   }
  ],
  "synonyms": {
@@ -324,6 +332,10 @@
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Tableta · Empaque primario individual",
      "notes": "Regulación: En Consulta de Emergencia: se autoriza HASTA 20 tabletas para el manejo de casos agudos. La cantidad máxima aplica en consulta externa para el manejo de casos crónicos. En toda prescripción que incluya acetaminofen no se deberá superar la Dosis límite diaria de 3 g."
+    },
+    {
+     "id": "fosalud",
+     "code": "01200010"
     }
    ],
    "route": "oral",
@@ -635,6 +647,12 @@
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general (restringido)",
      "presentation": "Forma: Tableta · Empaque primario individual, protegido de la luz",
      "notes": "Regulación: Indicado para el tratamiento de Herpes genital, Herpes Zoster y Varicela."
+    },
+    {
+     "id": "fosalud",
+     "code": "00501007",
+     "careLevel": "Prescripción: Médico general (restringido)",
+     "notes": "Texto leído por OCR del escaneo, sin verificar: Regulación: Indicado para el tratamiento de Herpes genital, Herpes Zoster y Varicela."
     }
    ],
    "route": "oral",
@@ -1503,8 +1521,7 @@
      "id": "minsal",
      "code": "00201005",
      "careLevel": "Nivel 2A · Vital",
-     "presentation": "I.M. - I.V. Frasco Vial 2 mL (U/M: C/U)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "I.M. - I.V. Frasco Vial 2 mL (U/M: C/U)"
     },
     {
      "id": "isss",
@@ -1643,6 +1660,11 @@
      "code": "8080201",
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Tableta Recubierta · Empaque primario individual"
+    },
+    {
+     "id": "fosalud",
+     "code": "02205005",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -1673,6 +1695,11 @@
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Tableta o Cápsula · Empaque primario individual",
      "notes": "Regulación: Indicado como parte del esquema de tratamiento para hipertensión arterial. Primera línea de tratamiento en pacientes con HTA sin diabetes mellitus mayor de 60 años de edad."
+    },
+    {
+     "id": "fosalud",
+     "code": "00704005",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -1836,14 +1863,18 @@
      "id": "minsal",
      "code": "00202005",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "Frasco 100 mL, con dosificador graduado (U/M: C/U)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "Frasco 100 mL, con dosificador graduado (U/M: C/U)"
     },
     {
      "id": "isss",
      "code": "8140201",
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Polvo para Suspensión Oral · Frasco 100 mL, con dosificador graduado tipo jeringa o pipeta"
+    },
+    {
+     "id": "fosalud",
+     "code": "00202005",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -1864,8 +1895,7 @@
      "id": "minsal",
      "code": "00202010",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "Empaque Primario Individual (U/M: CTO)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "Empaque Primario Individual (U/M: CTO)"
     },
     {
      "id": "isss",
@@ -1873,6 +1903,11 @@
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Cápsula o Tableta · Empaque primario individual",
      "notes": "Criterio de uso: Cantidad máxima aplica para tratamiento de Helicobacter Pílory."
+    },
+    {
+     "id": "fosalud",
+     "code": "00202010",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -1897,7 +1932,7 @@
      "code": "00203015",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Frasco 60 mL, con dosificador graduado (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectologías, Otorrinolaringól ogos, Neumólogos. Lineamientos técnicos para la prevención y control de la Rabia. Nota *(1) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectologías, Otorrinolaringól ogos, Neumólogos. Lineamientos técnicos para la prevención y control de la Rabia."
     }
    ],
    "route": "oral",
@@ -1922,7 +1957,7 @@
      "code": "00203025",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Empaque Primario Individual (U/M: CTO)",
-     "notes": "USO EXCLUSIVO PARA: Medicina Interna, Infectología. En IVU en mujeres embarazadas y postparto. Lineamientos técnicos para la prevención y control de la Rabia. Nota *(1) del listado"
+     "notes": "USO EXCLUSIVO PARA: Medicina Interna, Infectología. En IVU en mujeres embarazadas y postparto. Lineamientos técnicos para la prevención y control de la Rabia."
     },
     {
      "id": "isss",
@@ -1976,8 +2011,7 @@
      "id": "minsal",
      "code": "00202015",
      "careLevel": "Nivel 2A · Esencial",
-     "presentation": "I.M. - I.V. Frasco Vial (U/M: C/U)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "I.M. - I.V. Frasco Vial (U/M: C/U)"
     },
     {
      "id": "isss",
@@ -2009,7 +2043,7 @@
      "code": "00203006",
      "careLevel": "Nivel 2B · Esencial",
      "presentation": "I.M. - I.V. Frasco Vial (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología, UCI, Cirugía. Nota *(1) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología, UCI, Cirugía."
     },
     {
      "id": "isss",
@@ -2152,6 +2186,11 @@
      "code": "8040208",
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Tableta · Empaque primario individual"
+    },
+    {
+     "id": "fosalud",
+     "code": "00701025",
+     "notes": "Texto leído por OCR del escaneo, sin verificar: Regulación: Paciente con HTA + diagnóstico de Cardiopatía Isquémica o Insuficiencia Cardiaca o Angina Estable. Paciente con HTA + antecedentes de Infarto al miocardio."
     }
    ],
    "route": "oral",
@@ -2213,6 +2252,12 @@
      "careLevel": "Despacho 2 D · Esencial · Prescripción: Especialista (restringido)",
      "presentation": "Forma: Tableta o Comprimido Recubierto · Empaque primario individual, protegido de la luz",
      "notes": "Criterio de uso: Indicado cuando no exista un control adecuado del colesterol, con las medidas no farmacologicas como la dieta y el ejercicio. Además indicado en el manejo de pacientes que han sufrido un evento coronario o cerebro vascular. Se realizara monitoreo de las pruebas hepáticas, función renal y de CPK al inicio en el paciente con factores de riesgo (Hipotiroidismo no tratado, alcoholismo) y en aquel paciente que durante el tratamiento presente síntomas (Mialgias, debilidad muscular). Considerar interacciones farmacológicas con Fibratos (Gemfibrozilo), Verapamilo, Claritromicina, Fluconazole, Itraconazole, Amiodarona. Especialidad: Endocrinologia, Medicina Interna, Neurología, Cardiología, Clínicas Metabólicas, Medicina Familiar."
+    },
+    {
+     "id": "fosalud",
+     "code": "002501008",
+     "careLevel": "Prescripción: Médico general",
+     "notes": "Texto leído por OCR del escaneo, sin verificar: Regulación: Paciente con Enfermedad Renal Crónica que presenta Dislipidemia. Pacientes con Cardiopatía Isquémica. Previo monitoreo de función hepática."
     }
    ],
    "route": "oral",
@@ -2286,6 +2331,11 @@
      "code": "8160623",
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Solución Inyectable I.M. - I.V. - S.C. · Ampolla 1 mL"
+    },
+    {
+     "id": "fosalud",
+     "code": "01700005",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "I.M./I.V./S.C.",
@@ -2386,7 +2436,7 @@
      "code": "00207035",
      "careLevel": "Nivel 1A · Vital",
      "presentation": "Empaque Primario Individual (U/M: CTO)",
-     "notes": "USO EXCLUSIVO PARA: En primer y segundo nivel de atención para dar cumplimiento a Plan Nacional para la Prevención y Control de Cólera, Clínicas VICITS. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: En primer y segundo nivel de atención para dar cumplimiento a Plan Nacional para la Prevención y Control de Cólera, Clínicas VICITS."
     },
     {
      "id": "isss",
@@ -2415,7 +2465,7 @@
      "code": "00207040",
      "careLevel": "Nivel 1A · Vital",
      "presentation": "Frasco 15 mL con dosificador graduado, protegido de la luz (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: En primer y segundo nivel de atención para dar cumplimiento a Plan Nacional para la Prevención y Control de Cólera, Clínicas VICITS. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: En primer y segundo nivel de atención para dar cumplimiento a Plan Nacional para la Prevención y Control de Cólera, Clínicas VICITS."
     }
    ],
    "route": "oral",
@@ -2437,7 +2487,7 @@
      "code": "00207030",
      "careLevel": "Nivel 2A · Esencial",
      "presentation": "Frasco vial 10 mL (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología, Medicina Interna. Por la alta resistencia en f. Tifoidea y Neumonía Atípicas incorporar. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología, Medicina Interna. Por la alta resistencia en f. Tifoidea y Neumonía Atípicas incorporar."
     }
    ],
    "route": "parenteral",
@@ -2459,7 +2509,7 @@
      "code": "00208027",
      "careLevel": "Nivel 3 · Esencial",
      "presentation": "I.M. - I.V. Frasco Vial (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología y en combinación con Ceftazidima + Avibactam (2+0.5) g. Nota *(3) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología y en combinación con Ceftazidima + Avibactam (2+0.5) g."
     }
    ],
    "route": "I.M./I.V.",
@@ -2642,6 +2692,12 @@
      "code": "01904005",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Frasco (200 - 250) Inhalaciones, libre de clorofluorocarbono (C.F.C.) (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "01904005",
+     "careLevel": "Prescripción: Médico general (restringido)",
+     "notes": "Texto leído por OCR del escaneo, sin verificar: Regulación: Uso en Consulta Externa en Asma Bronquial Crónica."
     }
    ],
    "route": "oral",
@@ -2889,6 +2945,10 @@
      "code": "03200020",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Tubo (15 - 30) g (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "03200020"
     }
    ],
    "route": "tópica",
@@ -3835,6 +3895,11 @@
      "code": "03200025",
      "careLevel": "Nivel 1A · No Esencial",
      "presentation": "Sobre (2.2 - 2.5) g (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "03200025",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "tópica",
@@ -3920,6 +3985,11 @@
      "code": "02800025",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "I.M. y/o I.V. Ampolla 10 mL (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "02800025",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "I.M./I.V.",
@@ -4075,6 +4145,11 @@
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Tableta Ranurada · Empaque primario individual, protegido de la luz",
      "notes": "Criterio de uso: Requiere evaluación de las pruebas renales, hepáticas, hematológicas y electrolitos antes y durante la terapia con este medicamento."
+    },
+    {
+     "id": "fosalud",
+     "code": "02209025",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -4280,6 +4355,11 @@
      "careLevel": "Despacho 2 D · Esencial · Prescripción: Especialista (restringido)",
      "presentation": "Forma: Tableta Ranurada · Empaque primario individual, protegido de la luz",
      "notes": "Regulación: Indicado como tratamiento Adjunto de Insuficiencia Cardiaca estable Clase Funcional II y III en pacientes que no responden al tratamiento con Inhibidores de la ECA, Diuréticos, con o sin digital. Uso autorizado en Nefrología para continuación de tratamiento indicado por Cardiología. Especialidad: Cardiología, Medicina Interna, Nefrología, Geriatría, Medicina Familiar."
+    },
+    {
+     "id": "fosalud",
+     "code": "00701030",
+     "notes": "Texto leído por OCR del escaneo, sin verificar: Regulación: Paciente con HTA + diagnóstico de Cardiopatía Isquémica o Insuficiencia Cardiaca o Angina Estable. Paciente con HTA + antecedentes de Infarto al miocardio."
     }
    ],
    "route": "oral",
@@ -4400,7 +4480,7 @@
      "code": "00202022",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Frasco (60 - 100) mL, con dosificador graduado (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infecciones de piel y tejidos blandos, como alternativa en IVU e infecciones respiratorias superiores. Nota *(1) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infecciones de piel y tejidos blandos, como alternativa en IVU e infecciones respiratorias superiores."
     },
     {
      "id": "isss",
@@ -4408,6 +4488,11 @@
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Polvo o gránulos para Suspensión Oral · Frasco 60 mL",
      "notes": "Criterio de uso: Indicado en Infección de: Vías Urinarias y Tracto Respiratorio Superior, Tejidos blandos y Piel."
+    },
+    {
+     "id": "fosalud",
+     "code": "00202022",
+     "notes": "Texto leído por OCR del escaneo, sin verificar: Regulación: Uso exclusivo en infecciones de piel y tejidos blandos"
     }
    ],
    "route": "oral",
@@ -4431,7 +4516,7 @@
      "code": "00202025",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Empaque Primario Individual (U/M: CTO)",
-     "notes": "USO EXCLUSIVO PARA: Infecciones de piel y tejidos blandos. Nota *(1) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infecciones de piel y tejidos blandos."
     },
     {
      "id": "isss",
@@ -4460,7 +4545,7 @@
      "code": "00212015",
      "careLevel": "Nivel 2A · Esencial",
      "presentation": "Empaque Primario Individual (U/M: CTO)",
-     "notes": "USO EXCLUSIVO PARA: Infecciones del aparato respiratorio superior, otitis media, de piel, tejido subcutáneo, tracto urinario, dentales, osteoarticulares . Nota *(1) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infecciones del aparato respiratorio superior, otitis media, de piel, tejido subcutáneo, tracto urinario, dentales, osteoarticulares ."
     }
    ],
    "route": "oral",
@@ -4506,7 +4591,7 @@
      "code": "00202020",
      "careLevel": "Nivel 2A · Esencial",
      "presentation": "I.M. - I.V. Frasco Vial (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: profilaxis quirúrgica en Cirugía General, Ginecología y Obstetricia. Nota *(1) del listado"
+     "notes": "USO EXCLUSIVO PARA: profilaxis quirúrgica en Cirugía General, Ginecología y Obstetricia."
     },
     {
      "id": "isss",
@@ -4537,7 +4622,7 @@
      "code": "00202045",
      "careLevel": "Nivel 2B · Esencial",
      "presentation": "I.V. - I.M. Frasco Vial (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología Antibiótico de amplio espectro. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología Antibiótico de amplio espectro."
     }
    ],
    "route": "I.V./I.M.",
@@ -4582,7 +4667,7 @@
      "code": "00212005",
      "careLevel": "Nivel 2B · Esencial",
      "presentation": "Frasco (50-120) mL, con dosificador graduado (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología, Medicina Interna, Pediatría. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología, Medicina Interna, Pediatría."
     }
    ],
    "route": "oral",
@@ -4604,7 +4689,7 @@
      "code": "00212010",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Empaque Primario Individual (U/M: CTO)",
-     "notes": "USO EXCLUSIVO PARA: Infectología, Medicina Interna. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología, Medicina Interna."
     }
    ],
    "route": "oral",
@@ -4628,7 +4713,7 @@
      "code": "00202040",
      "careLevel": "Nivel 2A · Vital",
      "presentation": "I.M. - I.V. Frasco Vial (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Neonatología e Infectología y en Pediatría según lo establecido en la Guías Clínicas de Pediatría vigente. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Neonatología e Infectología y en Pediatría según lo establecido en la Guías Clínicas de Pediatría vigente."
     },
     {
      "id": "isss",
@@ -4681,7 +4766,7 @@
      "code": "00202030",
      "careLevel": "Nivel 2B · Vital",
      "presentation": "I.V. Frasco Vial, protegido de la luz (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología, Medicina Interna. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología, Medicina Interna."
     }
    ],
    "route": "I.V.",
@@ -4704,7 +4789,7 @@
      "code": "00202031",
      "careLevel": "Nivel 3 · Esencial",
      "presentation": "para perfusión I.V. Frasco Vial (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología para MDR. Nota *(3) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología para MDR."
     }
    ],
    "route": "I.V.",
@@ -4751,7 +4836,7 @@
      "code": "00202035",
      "careLevel": "Nivel 1B · Vital",
      "presentation": "I.M. - I.V. Frasco Vial (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Desde el Nivel de uso 1B para médico capacitado en el manejo de ITS. Manteniendo el uso y regulación en los niveles de atención Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Desde el Nivel de uso 1B para médico capacitado en el manejo de ITS. Manteniendo el uso y regulación en los niveles de atención"
     },
     {
      "id": "isss",
@@ -4822,6 +4907,11 @@
      "code": "02705010",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "I.M. Frasco Vial 10 mL, protegido de la luz (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "02705010",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "I.M.",
@@ -5052,8 +5142,7 @@
      "id": "minsal",
      "code": "00208005",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "Empaque Primario Individual (U/M: CTO)",
-     "notes": "Nota *(2) del listado"
+     "presentation": "Empaque Primario Individual (U/M: CTO)"
     },
     {
      "id": "isss",
@@ -5061,6 +5150,11 @@
      "careLevel": "Despacho 2 D · Vital · Prescripción: Médico general (restringido)",
      "presentation": "Forma: Tableta Recubierta · Empaque primario individual",
      "notes": "Regulación: Segunda linea de tratamiento en infecciones de vías urinarias, de acuerdo a resultado de cultivo. Uso en otras indicaciones de acuerdo a ficha farmacológica. Asteriscos aplica exclusivamente para Urología, Ortopedia, Infectología."
+    },
+    {
+     "id": "fosalud",
+     "code": "00208005",
+     "careLevel": "Prescripción: Médico general (restringido)"
     }
    ],
    "route": "oral",
@@ -5163,8 +5257,7 @@
      "id": "minsal",
      "code": "00208010",
      "careLevel": "Nivel 2A · Esencial",
-     "presentation": "I.V. Frasco Vial o Infusor 100 mL, protegido de la luz (U/M: C/U)",
-     "notes": "Nota *(2) del listado"
+     "presentation": "I.V. Frasco Vial o Infusor 100 mL, protegido de la luz (U/M: C/U)"
     },
     {
      "id": "isss",
@@ -5351,8 +5444,7 @@
      "id": "minsal",
      "code": "00207015",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "Frasco (50 - 60) mL, con dosificador graduado (U/M: C/U)",
-     "notes": "Nota *(2) del listado"
+     "presentation": "Frasco (50 - 60) mL, con dosificador graduado (U/M: C/U)"
     },
     {
      "id": "isss",
@@ -5360,6 +5452,11 @@
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general (restringido)",
      "presentation": "Forma: Polvo o Gránulos para Suspensión Oral · Frasco (50 - 60) mL, con dosificador graduado tipo jeringa o pipeta",
      "notes": "Regulación: Alternativa terapéutica en pacientes alérgicos a penicilina u otros betalactámicos, en infecciones del tracto respiratorio superior, piel y tejidos blandos."
+    },
+    {
+     "id": "fosalud",
+     "code": "00207015",
+     "careLevel": "Prescripción: Médico general (restringido)"
     }
    ],
    "route": "oral",
@@ -5380,8 +5477,7 @@
      "id": "minsal",
      "code": "00207020",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "Empaque Primario Individual (U/M: CTO)",
-     "notes": "Nota *(2) del listado"
+     "presentation": "Empaque Primario Individual (U/M: CTO)"
     },
     {
      "id": "isss",
@@ -5389,6 +5485,10 @@
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general (restringido)",
      "presentation": "Forma: Tableta Recubierta · Empaque primario individual",
      "notes": "Regulación: Alternativa terapéutica en pacientes alérgicos a Penicilina u otros Betalactámicos, infecciones del tracto respiratorio superior, piel y tejidos blandos. Su uso empírico está justificado únicamente en Neumonía adquirida en la comunidad. Cantidad máxima aplica para Tratamiento de Helicobacter Pilory."
+    },
+    {
+     "id": "fosalud",
+     "code": "00207020"
     }
    ],
    "route": "oral",
@@ -5412,7 +5512,7 @@
      "code": "00206010",
      "careLevel": "Nivel 2A · Esencial",
      "presentation": "Empaque Primario Individual (U/M: CTO)",
-     "notes": "USO EXCLUSIVO PARA: Infectología, UCI. En donde no haya, podrá prescribir Medicina Interna. Nota *(1) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología, UCI. En donde no haya, podrá prescribir Medicina Interna."
     },
     {
      "id": "isss",
@@ -5443,7 +5543,7 @@
      "code": "00206015",
      "careLevel": "Nivel 2A · Esencial",
      "presentation": "I.V. Frasco Vial 6 mL (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología, UCI. En donde no haya, podrá prescribir Medicina Interna. Nota *(1) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología, UCI. En donde no haya, podrá prescribir Medicina Interna."
     },
     {
      "id": "isss",
@@ -5472,7 +5572,7 @@
      "code": "03300006",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Tubo (40-45) g, con aplicador (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Ginecología y Obstetricia. Nota *(1) del listado"
+     "notes": "USO EXCLUSIVO PARA: Ginecología y Obstetricia."
     },
     {
      "id": "isss",
@@ -5800,6 +5900,11 @@
      "code": "8100051",
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Solución Oftálmica · Frasco gotero (5 - 10) mL, protegido de la luz"
+    },
+    {
+     "id": "fosalud",
+     "code": "03100035",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oftálmica",
@@ -5821,6 +5926,11 @@
      "code": "03100040",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Tubo (3 - 5) g (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "03100040",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oftálmica",
@@ -5843,8 +5953,7 @@
      "id": "minsal",
      "code": "00205005",
      "careLevel": "Nivel 2B · Esencial",
-     "presentation": "I.V. Frasco Vial (U/M: C/U)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "I.V. Frasco Vial (U/M: C/U)"
     },
     {
      "id": "isss",
@@ -5904,6 +6013,12 @@
      "code": "8130015",
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Jarabe · Frasco 120 mL, con dosificador graduado tipo jeringa o pipeta, protegido de la luz"
+    },
+    {
+     "id": "fosalud",
+     "code": "02000005",
+     "careLevel": "Prescripción: Médico general",
+     "notes": "Texto leído por OCR del escaneo, sin verificar: Regulación: sur ar 4er\" 1 Y 181 LU as PS * LL Lúldas Y* 1060651 60M! Mirad Athos dNAlLo As (A? Ladade (01 Lay Al 11d? 14M 6h ds? 10M M0 pnerras LA LA 1 1661.71 E 6 o e NANo ENANA y niñas menores de diez años de edad. AIEPI MINSAL 2018, pag.44 y 102). INDICACIONES: para el tratamiento de RINITIS ALERGICA, URTICARIA, PRURIGO POR PICADURA DE INSECTOS PRIU/RITO Y REACCIONES A MEDICAMENTOS"
     }
    ],
    "route": "oral",
@@ -5931,6 +6046,11 @@
      "code": "8130004",
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Tableta · Empaque primario individual"
+    },
+    {
+     "id": "fosalud",
+     "code": "02000010",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -7481,6 +7601,11 @@
      "code": "8010526",
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Solución Inyectable I.M. · Ampolla 3 mL, protegido de la luz"
+    },
+    {
+     "id": "fosalud",
+     "code": "01001010",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "I.M.",
@@ -7532,8 +7657,7 @@
      "id": "minsal",
      "code": "00202055",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "Empaque Primario Individual (U/M: CTO)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "Empaque Primario Individual (U/M: CTO)"
     }
    ],
    "route": "oral",
@@ -7557,7 +7681,7 @@
      "code": "00202056",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Empaque Primario Individual (U/M: CTO)",
-     "notes": "USO EXCLUSIVO PARA: Alternativa Terapéutica para el medicamento con código 00202055. Nota *(1) del listado"
+     "notes": "USO EXCLUSIVO PARA: Alternativa Terapéutica para el medicamento con código 00202055."
     }
    ],
    "route": "oral",
@@ -7703,6 +7827,11 @@
      "code": "8010404",
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Tableta · Empaque primario individual o frasco, protegido de la luz"
+    },
+    {
+     "id": "fosalud",
+     "code": "00102020",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -7793,6 +7922,11 @@
      "code": "8020402",
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Tableta Ranurada · Empaque primario individual"
+    },
+    {
+     "id": "fosalud",
+     "code": "02101005",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -7820,6 +7954,10 @@
      "code": "8020405",
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Solución Inyectable I.M. - I.V. · Frasco vial 5 mL"
+    },
+    {
+     "id": "fosalud",
+     "code": "02101010"
     }
    ],
    "route": "I.M./I.V.",
@@ -8338,6 +8476,11 @@
      "code": "8040601",
      "careLevel": "Despacho 2 C · Vital · Prescripción: Hospitalario general",
      "presentation": "Forma: Solución Inyectable I.V. · Frasco vial o ampolla 5 mL"
+    },
+    {
+     "id": "fosalud",
+     "code": "00709025",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "I.V.",
@@ -8392,8 +8535,7 @@
      "id": "minsal",
      "code": "00210005",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "Empaque Primario Individual, protegido (U/M: CTO)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "Empaque Primario Individual, protegido (U/M: CTO)"
     },
     {
      "id": "isss",
@@ -8401,6 +8543,11 @@
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Cápsula o Tableta · Empaque primario individual, protegido de la luz",
      "notes": "Criterio de uso: Prescripción de acuerdo a Lineamientos Técnicos para la Prevención y Control de la Rabia vigente. Contraindicado en pacientes menores de 8 años."
+    },
+    {
+     "id": "fosalud",
+     "code": "00210005",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -8892,6 +9039,11 @@
      "code": "8040409",
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Tableta Ranurada · Empaque primario individual"
+    },
+    {
+     "id": "fosalud",
+     "code": "00705015",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -9159,6 +9311,10 @@
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general (restringido)",
      "presentation": "Forma: Tableta o Cápsula · Empaque primario individual o frasco, protegido de la luz",
      "notes": "Regulación: Indicado para el tratamiento de Crisis de Migraña. Dosificación: 1 - 2 tab. al inicio del ataque agudo, luego 1- 2 tab. en 30 minutos. Máximo 4 tabletas en 24 hrs. Este medicamento no debe ser utilizado más de 2 veces a la semana, y no debe repetirse en un intervalo menor de 5 días."
+    },
+    {
+     "id": "fosalud",
+     "code": "02210005"
     }
    ],
    "route": "oral",
@@ -9180,7 +9336,7 @@
      "code": "03100170",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Tubo (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Oftalmología y/o profilaxis del recién nacido. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Oftalmología y/o profilaxis del recién nacido."
     }
    ],
    "route": "oftálmica",
@@ -9352,7 +9508,7 @@
      "code": "00202080",
      "careLevel": "Nivel 3 · Vital",
      "presentation": "I.V. Frasco vial (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología, UCI Por resistencia farmacológica. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología, UCI Por resistencia farmacológica."
     },
     {
      "id": "isss",
@@ -9523,8 +9679,7 @@
      "id": "minsal",
      "code": "00300015",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "I.M. Frasco Vial (U/M: C/U)",
-     "notes": "Nota *(2) del listado"
+     "presentation": "I.M. Frasco Vial (U/M: C/U)"
     }
    ],
    "route": "I.M.",
@@ -11775,6 +11930,12 @@
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Cápsula de Liberación Prolongada · Empaque primario individual o frasco, protegido de la luz",
      "notes": "Criterio de uso: Debe monitorizarse las pruebas Hematológicas durante la terapia con este medicamento."
+    },
+    {
+     "id": "fosalud",
+     "code": "02209035",
+     "careLevel": "Prescripción: Médico general",
+     "notes": "Texto leído por OCR del escaneo, sin verificar: Regulación: Debe monitorizarse las pruebas Hematológicas durante la terapia con este medicamento."
     }
    ],
    "route": "oral",
@@ -12192,6 +12353,10 @@
      "code": "8070112",
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Solución o Emulsión Inyectable I.M. - I.V. - S.C. · Ampolla 1 mL, protegido de la luz"
+    },
+    {
+     "id": "fosalud",
+     "code": "00906005"
     }
    ],
    "route": "I.M./I.V./S.C.",
@@ -12504,6 +12669,11 @@
      "code": "8080207",
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Cápsula · Empaque primario individual, protegido de la luz"
+    },
+    {
+     "id": "fosalud",
+     "code": "02206015",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -12791,7 +12961,7 @@
      "code": "00200011",
      "careLevel": "Nivel 2C · Esencial",
      "presentation": "I.V. Frasco Vial (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología, bacilos gramnegativos MDR en combinación con otros antimicrobianos Nota *(3) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología, bacilos gramnegativos MDR en combinación con otros antimicrobianos"
     }
    ],
    "route": "I.V.",
@@ -12815,7 +12985,7 @@
      "code": "00200012",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Sobre (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Tratamiento de infecciones agudas no complicadas del tracto urinario bajo en mujeres en embarazo y puerperio. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Tratamiento de infecciones agudas no complicadas del tracto urinario bajo en mujeres en embarazo y puerperio."
     }
    ],
    "route": "oral",
@@ -12999,6 +13169,10 @@
      "code": "8040310",
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Tableta Ranurada · Empaque primario individual, protegido de la luz"
+    },
+    {
+     "id": "fosalud",
+     "code": "00800025"
     }
    ],
    "route": "oral",
@@ -13484,8 +13658,7 @@
      "id": "minsal",
      "code": "00201010",
      "careLevel": "Nivel 1B · Esencial",
-     "presentation": "I.M. - I.V. Frasco Vial 2 mL (U/M: C/U)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "I.M. - I.V. Frasco Vial 2 mL (U/M: C/U)"
     },
     {
      "id": "isss",
@@ -13493,6 +13666,11 @@
      "careLevel": "Despacho 2 D · Esencial · Prescripción: Especialista (restringido)",
      "presentation": "Forma: Solución Inyectable I.M - I.V. · Frasco vial o ampolla 2 mL",
      "notes": "Regulación: Indicado en casos que no exista otra alternativa terapéutica más efectiva o segura, Requiere Antibiograma. Se aprueba la administración ambulatoria para continuación de tratamiento en un centro de atención de menor complejidad, en el marco del “Lineamiento para la Terapia Antimicrobiana Parenteral Ambulatoria en el ISSS”. Cantidad máxima (14) aplica cuando se indique para uso ambulatorio."
+    },
+    {
+     "id": "fosalud",
+     "code": "00201010",
+     "careLevel": "Prescripción: Médico general (restringido)"
     }
    ],
    "route": "I.M./I.V.",
@@ -13917,6 +14095,11 @@
      "careLevel": "Despacho 2 C · Vital · Prescripción: Especialista",
      "presentation": "Forma: Solución Inyectable I.M. · Ampolla 1 mL, protegido de la luz",
      "notes": "Regulación: Dosis máxima recomendada 20 mg al día. USO EXCLUSIVAMENTE INTRAMUSCULAR."
+    },
+    {
+     "id": "fosalud",
+     "code": "02201030",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "I.M./I.V.",
@@ -14082,6 +14265,11 @@
      "careLevel": "Nivel 1A · Vital",
      "presentation": "I.V. Frasco Vial o Ampolla (U/M: C/U)",
      "notes": "USO EXCLUSIVO PARA: Nivel de uso 1A en casos de preeclampsia grave y debe ser administrado con precaución ya que puede ocasionar descensos impredecibles en la presión arterial. Manteniendo el uso y regulación en los niveles de atención previamente establecidos."
+    },
+    {
+     "id": "fosalud",
+     "code": "00703010",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "I.V.",
@@ -14130,6 +14318,11 @@
      "code": "8040311",
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Tableta Ranurada · Empaque primario individual"
+    },
+    {
+     "id": "fosalud",
+     "code": "00800035",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -14159,6 +14352,11 @@
      "code": "8010508",
      "careLevel": "Despacho 2 C · Vital · Prescripción: Especialista",
      "presentation": "Forma: Polvo Para Dilución I.M. - I.V. · Frasco Vial con o sin diluyente adjunto"
+    },
+    {
+     "id": "fosalud",
+     "code": "02304020",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "I.M./I.V.",
@@ -14491,6 +14689,12 @@
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Tableta Recubierta · Empaque primario individual, protegido de la luz",
      "notes": "Regulación: Las Especialidades autorizadas podrán prescribir la dosis máxima de 90 tabletas. En Unidades de Emergencia máximo 15 tabletas. Especialidad: Urología, Cirugía General, Gastroenterología, Ginecología, Medicina Interna, Coloproctología, Oncología."
+    },
+    {
+     "id": "fosalud",
+     "code": "01700015",
+     "careLevel": "Prescripción: Médico general",
+     "notes": "Texto leído por OCR del escaneo, sin verificar: Regulación: En atenciones en consulta máximo 15 tabletas."
     }
    ],
    "route": "oral",
@@ -14568,6 +14772,11 @@
      "code": "8140108",
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Suspensión Oral · Frasco (100 - 120) mL, con dosificador graduado tipo jeringa o pipeta"
+    },
+    {
+     "id": "fosalud",
+     "code": "01001015",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -14596,6 +14805,11 @@
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Tableta o Tableta Recubierta · Empaque primario individual",
      "notes": "Regulación: Cantidad MAXIMA aplica exclusivamente para Reumatología."
+    },
+    {
+     "id": "fosalud",
+     "code": "01001020",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -14772,7 +14986,7 @@
      "code": "00204005",
      "careLevel": "Nivel 2B · Esencial",
      "presentation": "I.V. Frasco Vial (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología, Intensivistas. En donde no haya, podrá prescribir Medicina Interna. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología, Intensivistas. En donde no haya, podrá prescribir Medicina Interna."
     }
    ],
    "route": "I.V.",
@@ -15278,6 +15492,11 @@
      "code": "8070310",
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Solución Inyectable I.V. - S.C. · Frasco vial 10 mL"
+    },
+    {
+     "id": "fosalud",
+     "code": "02301010",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "S.C.",
@@ -15537,6 +15756,11 @@
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general (restringido)",
      "presentation": "Forma: Tableta o Tableta Recubierta · Empaque primario individual",
      "notes": "Regulación: Indicado como parte del esquema de tratamiento para Hipertensión Arterial en SEGUNDA LINEA DE TRATAMIENTO en pacientes que presentan Intolerancia demostrada o contraindicación para el uso de IECAS, lo cual deberá ser documentado en el expediente clínico."
+    },
+    {
+     "id": "fosalud",
+     "code": "00706010",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -17089,7 +17313,7 @@
      "code": "00208015",
      "careLevel": "Nivel 2A · Esencial",
      "presentation": "I.V. Frasco Infusor o Bolsa, de 100 mL, protegido de la luz (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología, Medicina Interna, UCI. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología, Medicina Interna, UCI."
     }
    ],
    "route": "I.V.",
@@ -17111,7 +17335,7 @@
      "code": "00208020",
      "careLevel": "Nivel 2A · Esencial",
      "presentation": "Empaque Primario Individual (U/M: CTO)",
-     "notes": "USO EXCLUSIVO PARA: Infectología, Medicina Interna, UCI. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología, Medicina Interna, UCI."
     },
     {
      "id": "isss",
@@ -17410,6 +17634,11 @@
      "code": "01500020, 01500025",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "I.V.-S.C. Ampolla o Frasco Vial (10-20) mL sin preservantes (U/M: C/U) | I.V. - S.C. Frasco Vial 50 mL Con preservantes (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "01500025",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "I.V./S.C.",
@@ -17473,6 +17702,10 @@
      "code": "01500038",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Cartucho (1.7 - 1.8) mL (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "01500038"
     }
    ],
    "route": "parenteral",
@@ -17537,7 +17770,7 @@
      "code": "00200005",
      "careLevel": "Nivel 3 · Vital",
      "presentation": "Empaque Primario Individual o Frasco (10-30) (U/M: CTO)",
-     "notes": "USO EXCLUSIVO PARA: Infectología. Nota *(3) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología."
     },
     {
      "id": "isss",
@@ -17566,7 +17799,7 @@
      "code": "00200010",
      "careLevel": "Nivel 3 · Vital",
      "presentation": "I.V. Frasco Vial o Bolsa de infusión, protegida de la luz (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología. Nota *(3) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología."
     }
    ],
    "route": "I.V.",
@@ -17775,6 +18008,11 @@
      "code": "02000035",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Frasco (100 - 120) mL, con dosificador graduado (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "02000035",
+     "notes": "Texto leído por OCR del escaneo, sin verificar: Regulación: No se deben utilizar antitusigenos, expectorantes, antinistaminicos ni mucoliticos para el tratamiento de le tos en niños y niñas menores de diez años. (Lineamientos técnicos para la atención integral de niños y niñas menores de diez años de edad. AIEPI MINSAL 2018, pag.44 y 102). INDICACIONES: para el tratamiento de RINITIS ALERGICA, URTICARIA, PRURIGO POR PICADURA DE INSECTOS PRIJRITO Y REACCIONES A MEDICAMENTOS."
     }
    ],
    "route": "oral",
@@ -17803,6 +18041,11 @@
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Tableta · Empaque primario individual",
      "notes": "Criterio de uso: Indicado en pacientes que por su ocupación requieran un antihistamínico que produzca menos sueño. Tratamiento para casos agudos: 7-10 tabletas. Cantidad maxima aplica para: Otorrinolaringología, Neumología, Alergología, Dermatología, Medicina Interna. NOTA: En Alergología para el manejo de pacientes con urticaria crónica espontánea refractaria al tratamiento se prescribirá de acuerdo a las regulaciones establecidas con la Especialidad."
+    },
+    {
+     "id": "fosalud",
+     "code": "02000045",
+     "notes": "Texto leído por OCR del escaneo, sin verificar: Regulación: Tratamiento para casos agudos: 7-10 tabletas."
     }
    ],
    "route": "oral",
@@ -17982,6 +18225,11 @@
      "code": "02800080",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "I.M. - I.V. Ampolla 10 mL (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "02800080",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "I.M./I.V.",
@@ -18088,6 +18336,11 @@
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Empaque Primario Individual (U/M: CTO)",
      "notes": "USO EXCLUSIVO PARA: Resultado positivo (+) con presencia de helmintos o ante sospecha clínica o campañas de prevención."
+    },
+    {
+     "id": "fosalud",
+     "code": "00101005",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -18392,6 +18645,10 @@
      "code": "01500045",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Cartucho 1.8 mL (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "01500045"
     }
    ],
    "route": "parenteral",
@@ -18442,7 +18699,7 @@
      "code": "00204008",
      "careLevel": "Nivel 2C · Esencial",
      "presentation": "I.V. Frasco Vial (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología, Intensivistas. En donde no haya, podrá prescribir Medicina Interna. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología, Intensivistas. En donde no haya, podrá prescribir Medicina Interna."
     },
     {
      "id": "isss",
@@ -18471,7 +18728,7 @@
      "code": "00204010",
      "careLevel": "Nivel 2B · Esencial",
      "presentation": "I.V. Frasco Vial (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectologías, Intensivistas. En donde no haya, podrá prescribir Medicina Interna. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectologías, Intensivistas. En donde no haya, podrá prescribir Medicina Interna."
     }
    ],
    "route": "I.V.",
@@ -18692,6 +18949,12 @@
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Tableta Ranurada · Empaque primario individual o frasco",
      "notes": "Regulación: Indicado en: Diabetes Mellitus tipo 2, que no responde a dieta y ejercicio."
+    },
+    {
+     "id": "fosalud",
+     "code": "02301030",
+     "careLevel": "Prescripción: Médico general",
+     "notes": "Texto leído por OCR del escaneo, sin verificar: Regulación: Indicado en: Diabetes Mellitus tipo 2, que no responde a dieta y ejercicio."
     }
    ],
    "route": "oral",
@@ -18922,6 +19185,11 @@
      "code": "8080905",
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Tableta · Empaque primario individual"
+    },
+    {
+     "id": "fosalud",
+     "code": "01600005",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -18982,6 +19250,10 @@
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Solución Inyectable I.M. - I.V. · Ampolla 2 mL, protegido de la luz",
      "notes": "Regulación: No usar en niños ni en neonatos."
+    },
+    {
+     "id": "fosalud",
+     "code": "02101025"
     }
    ],
    "route": "I.M./I.V.",
@@ -19249,14 +19521,18 @@
      "id": "minsal",
      "code": "00102010",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "Empaque Primario Individual, protegido de la luz (U/M: CTO)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "Empaque Primario Individual, protegido de la luz (U/M: CTO)"
     },
     {
      "id": "isss",
      "code": "8010406",
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Tableta · Empaque primario individual, protegido de la luz"
+    },
+    {
+     "id": "fosalud",
+     "code": "00102010",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -19277,8 +19553,7 @@
      "id": "minsal",
      "code": "00102015",
      "careLevel": "Nivel 2A · Vital",
-     "presentation": "I.V. Frasco Vial o Bolsa 100 mL, protegido de la luz (U/M: C/U)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "I.V. Frasco Vial o Bolsa 100 mL, protegido de la luz (U/M: C/U)"
     },
     {
      "id": "isss",
@@ -19305,8 +19580,12 @@
      "id": "minsal",
      "code": "03300025",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "Tubo (40 - 50) g, con aplicador (U/M: C/U)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "Tubo (40 - 50) g, con aplicador (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "03300025",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "vaginal",
@@ -19329,14 +19608,18 @@
      "id": "minsal",
      "code": "00102005",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "Frasco (120-150) mL con dosificador graduado, protegido de la luz (U/M: C/U)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "Frasco (120-150) mL con dosificador graduado, protegido de la luz (U/M: C/U)"
     },
     {
      "id": "isss",
      "code": "8140310",
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Suspensión Oral · Frasco (120-150) mL, con dosificador graduado tipo jeringa o pipeta, protegido de la luz"
+    },
+    {
+     "id": "fosalud",
+     "code": "00102005",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -19796,7 +20079,7 @@
      "code": "00208025",
      "careLevel": "Nivel 2B · Esencial",
      "presentation": "Empaque Primario Individual (U/M: CTO)",
-     "notes": "USO EXCLUSIVO PARA: Uso hospitalario previa autorización de jefe de servicio/ jefe de turno limitar a infecciones respiratorias. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Uso hospitalario previa autorización de jefe de servicio/ jefe de turno limitar a infecciones respiratorias."
     }
    ],
    "route": "oral",
@@ -19818,7 +20101,7 @@
      "code": "03100150",
      "careLevel": "Nivel 2B · Esencial",
      "presentation": "Frasco Gotero 5 mL (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Oftalmología. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Oftalmología."
     }
    ],
    "route": "oftálmica",
@@ -19842,7 +20125,7 @@
      "code": "00208026",
      "careLevel": "Nivel 2B · Esencial",
      "presentation": "para perfusión I.V. Frasco Vial o Bolsa, protegido de la luz (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Uso hospitalario previa autorización de jefe de servicio/ jefe de turno limitar a infecciones respiratorias. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Uso hospitalario previa autorización de jefe de servicio/ jefe de turno limitar a infecciones respiratorias."
     }
    ],
    "route": "I.V.",
@@ -19865,7 +20148,7 @@
      "code": "03100160",
      "careLevel": "Nivel 2B · Esencial",
      "presentation": "Frasco Gotero (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Oftalmología. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Oftalmología."
     }
    ],
    "route": "oftálmica",
@@ -20700,6 +20983,11 @@
      "code": "8010317",
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Suspensión Oral · Frasco (30 - 40) mL, con gotero dosificador calibrado (0.5 - 1.0) mL, protegido de la luz"
+    },
+    {
+     "id": "fosalud",
+     "code": "00400040",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -20811,8 +21099,7 @@
      "id": "minsal",
      "code": "00600010",
      "careLevel": "Nivel 1B · Esencial",
-     "presentation": "Frasco (80 – 120) mL, con dosificador graduado, protegido de la luz (U/M: C/U)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "Frasco (80 – 120) mL, con dosificador graduado, protegido de la luz (U/M: C/U)"
     }
    ],
    "route": "oral",
@@ -20835,8 +21122,11 @@
      "id": "minsal",
      "code": "00600015",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "Empaque Primario Individual (U/M: CTO)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "Empaque Primario Individual (U/M: CTO)"
+    },
+    {
+     "id": "fosalud",
+     "code": "00600015"
     }
    ],
    "route": "oral",
@@ -21561,6 +21851,11 @@
      "code": "8080903",
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Solución inyectable I.M. - I.V. · Ampolla 2 mL, protegido de la luz"
+    },
+    {
+     "id": "fosalud",
+     "code": "01600010",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "I.M./I.V.",
@@ -21629,8 +21924,7 @@
      "id": "minsal",
      "code": "00202060",
      "careLevel": "Nivel 2A · Esencial",
-     "presentation": "I.V. Frasco Vial (U/M: C/U)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "I.V. Frasco Vial (U/M: C/U)"
     },
     {
      "id": "isss",
@@ -22034,8 +22328,11 @@
      "id": "minsal",
      "code": "00202065",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "I.M. Frasco Vial con o sin diluyente (U/M: C/U)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "I.M. Frasco Vial con o sin diluyente (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "00202065"
     }
    ],
    "route": "I.M.",
@@ -22080,8 +22377,7 @@
      "id": "minsal",
      "code": "00202075",
      "careLevel": "Nivel 2A · Vital",
-     "presentation": "I.V. Frasco Vial (U/M: C/U)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "I.V. Frasco Vial (U/M: C/U)"
     }
    ],
    "route": "I.V.",
@@ -22168,6 +22464,10 @@
      "code": "03200065",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Frasco 60 mL ó Tubo de 60 g, protegido de la luz (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "03200065"
     }
    ],
    "route": "tópica",
@@ -22386,7 +22686,7 @@
      "code": "00203035",
      "careLevel": "Nivel 2C · Esencial",
      "presentation": "I.V. Frasco Vial (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología, Medicina Interna, UCI. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología, Medicina Interna, UCI."
     },
     {
      "id": "isss",
@@ -22702,7 +23002,7 @@
      "code": "00300097",
      "careLevel": "Nivel 2A · Esencial",
      "presentation": "I.V.- I.M.- I.T. Frasco Vial, protegido de la luz. (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología. Nota *(3) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología."
     }
    ],
    "route": "I.V./I.M.",
@@ -22921,6 +23221,11 @@
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Tableta Ranurada · Empaque primario individual",
      "notes": "Criterio de uso: Asteriscos aplican exclusivamente para Reumatología."
+    },
+    {
+     "id": "fosalud",
+     "code": "02304035",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -23306,6 +23611,10 @@
      "code": "8040204",
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Tableta · Empaque primario individual, protegido de la luz"
+    },
+    {
+     "id": "fosalud",
+     "code": "00701010"
     }
    ],
    "route": "oral",
@@ -23875,8 +24184,7 @@
      "id": "minsal",
      "code": "00300061",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "Frasco (60 – 120) mL con dosificador graduado, protegido de la luz (U/M: C/U)",
-     "notes": "Nota *(2) del listado"
+     "presentation": "Frasco (60 – 120) mL con dosificador graduado, protegido de la luz (U/M: C/U)"
     }
    ],
    "route": "oral",
@@ -23897,8 +24205,7 @@
      "id": "minsal",
      "code": "00300070",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "Empaque Primario Individual, protegido de la luz (U/M: CTO)",
-     "notes": "Nota *(2) del listado"
+     "presentation": "Empaque Primario Individual, protegido de la luz (U/M: CTO)"
     },
     {
      "id": "isss",
@@ -23978,7 +24285,7 @@
      "code": "00200015",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Empaque Primario Individual (U/M: CTO)",
-     "notes": "USO EXCLUSIVO PARA: Diarrea, Encefalopatía hepática, Colon irritable. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Diarrea, Encefalopatía hepática, Colon irritable."
     }
    ],
    "route": "oral",
@@ -24456,6 +24763,11 @@
      "code": "01903005",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Oral Frasco (200 - 250) inhalaciones, libre de clorofluorocarbono (C.F.C.) (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "01903005",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "inhalatoria",
@@ -24479,6 +24791,11 @@
      "code": "01903010",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Frasco gotero o dosificador, 20 mL, protegido de la luz (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "01903010",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "inhalatoria",
@@ -25891,8 +26208,7 @@
      "id": "minsal",
      "code": "00209022",
      "careLevel": "Nivel 3 · Esencial",
-     "presentation": "Empaque Primario Individual, protegido de la luz (U/M: CTO)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "Empaque Primario Individual, protegido de la luz (U/M: CTO)"
     }
    ],
    "route": "oral",
@@ -26003,6 +26319,10 @@
      "code": "02705015",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Frasco 60 mL con dosificador graduado o Frasco cuenta gotas, protegido de la luz (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "02705015"
     }
    ],
    "route": "oral",
@@ -26682,6 +27002,11 @@
      "code": "02701015",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Empaque Primario Individual, protegido de la luz (U/M: CTO)"
+    },
+    {
+     "id": "fosalud",
+     "code": "02701015",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -26709,6 +27034,11 @@
      "code": "8070107",
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Solución Inyectable I.M. - I.V. · Frasco vial 10 mL, protegido de la luz"
+    },
+    {
+     "id": "fosalud",
+     "code": "02701020",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "I.M./I.V.",
@@ -26730,7 +27060,7 @@
      "code": "00211006",
      "careLevel": "Nivel 3 · Esencial",
      "presentation": "para perfusión I.V. Frasco Vial (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología y Trasplante Médula Ósea. Nota *(3) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología y Trasplante Médula Ósea."
     }
    ],
    "route": "I.V.",
@@ -27172,6 +27502,11 @@
      "careLevel": "Despacho 2 C · Esencial · Prescripción: Hospitalario general",
      "presentation": "Forma: Solución Inyectable I.M. I.V. · Ampolla 2 mL",
      "notes": "Regulación: Alternativa terapéutica para manejo de dolor agudo y crónico de moderado a severo."
+    },
+    {
+     "id": "fosalud",
+     "code": "01300040",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "I.M./I.V.",
@@ -27458,8 +27793,11 @@
      "id": "minsal",
      "code": "00209005",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "Frasco (100-120) mL con dosificador graduado, protegido de la luz (U/M: C/U)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "Frasco (100-120) mL con dosificador graduado, protegido de la luz (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "00209005"
     }
    ],
    "route": "oral",
@@ -27481,8 +27819,7 @@
      "id": "minsal",
      "code": "00209010",
      "careLevel": "Nivel 1A · Esencial",
-     "presentation": "Empaque Primario Individual, protegido de la luz (U/M: CTO)",
-     "notes": "Nota *(1) del listado"
+     "presentation": "Empaque Primario Individual, protegido de la luz (U/M: CTO)"
     },
     {
      "id": "isss",
@@ -27490,6 +27827,11 @@
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Tableta Ranurada · Empaque primario individual, protegido de la luz",
      "notes": "Criterio de uso: Asteriscos aplica exclusivamente para: *Lineamientos Técnicos para la Prevención y Control de la Rabia vigente. **Cantidad Máxima aplica a Infectología y Urología."
+    },
+    {
+     "id": "fosalud",
+     "code": "00209010",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -27533,7 +27875,7 @@
      "code": "00209015",
      "careLevel": "Nivel 2B · Esencial",
      "presentation": "I.V. Ampolla 5 mL o Frasco Vial, protegido de la luz (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología. Nota *(1) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología."
     }
    ],
    "route": "I.V.",
@@ -29374,7 +29716,7 @@
      "code": "00211000",
      "careLevel": "Nivel 3 · Esencial",
      "presentation": "Empaque Primario Individual (U/M: CTO)",
-     "notes": "USO EXCLUSIVO PARA: Infectología, específicamente en el tratamiento de las infecciones por Clostridium difficile (ICD). Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología, específicamente en el tratamiento de las infecciones por Clostridium difficile (ICD)."
     }
    ],
    "route": "oral",
@@ -29398,7 +29740,7 @@
      "code": "00211005",
      "careLevel": "Nivel 2B · Vital",
      "presentation": "I.V. Frasco Vial para 10 mL (U/M: C/U)",
-     "notes": "USO EXCLUSIVO PARA: Infectología, UCI. Nota *(2) del listado"
+     "notes": "USO EXCLUSIVO PARA: Infectología, UCI."
     },
     {
      "id": "isss",
@@ -29521,6 +29863,12 @@
      "careLevel": "Despacho 2 D · Esencial · Prescripción: Especialista (restringido)",
      "presentation": "Forma: Tableta Recubierta Ranurada de Liberación Prolongada · Empaque primario individual, protegido de la luz",
      "notes": "Criterio de uso: Indicado en taquiarritmias supraventriculares, angina e hipertensión arterial. Contraindicaciones: taquiarritmias con QRS amplio, fibrilación auricular con preexitación, Insuficiencia Cardíaca(IC). Puede precipitar: Hipotensión arterial y shock, trastornos de la conducción AV e IC. Interacción grave con Betabloqueadores. Las tabletas pueden ser partidas a la mitad, pero no deben ser trituradas ni masticadas. Especialidad: Cardiología, Medicina Interna, Geriatría, Clínica de Hipertensión, Medicina Familiar."
+    },
+    {
+     "id": "fosalud",
+     "code": "00704035",
+     "careLevel": "Prescripción: Médico general",
+     "notes": "Texto leído por OCR del escaneo, sin verificar: Regulación: Paciente con HTA + DM + micro o macro albuminuria"
     }
    ],
    "route": "oral",
@@ -29649,6 +29997,11 @@
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Cápsula o Perla de Gelatina Blanda · Empaque primario individual o frasco, protegido de la luz",
      "notes": "Criterio de uso: Tratamiento de deficiencia de Vitamina A: Estados de malabsorción intestinal y desnutrición. Uso de acuerdo a Norma del Programa de Atención Integral en Salud Infantil. Adenda 1-24-06-2010 (Esquema de dosificación y prescripción de vitamina A desde el nacimiento)."
+    },
+    {
+     "id": "fosalud",
+     "code": "02701025",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -30065,6 +30418,11 @@
      "careLevel": "Despacho 1 A · No esencial · Prescripción: Médico general (restringido)",
      "presentation": "Forma: Jarabe · Frasco 120 mL, con dosificador graduado tipo jeringa o pipeta, protegido de la luz",
      "notes": "Regulación: Uso según esquema de dosificación terapéutica en niños con diarrea aguda. Prescripción de acuerdo a Norma del Programa de Atención Integral en Salud Infantil vigente."
+    },
+    {
+     "id": "fosalud",
+     "code": "02703010",
+     "careLevel": "Prescripción: Médico general"
     }
    ],
    "route": "oral",
@@ -30277,6 +30635,12 @@
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Tableta Ranurada · Empaque primario individual",
      "notes": "Criterio de uso: Profilaxis y Tratamiento de anemia megaloblástica, anemia hemolítica, diálisis o para pacientes con terapia antifolatos. La cantidad máxima (30) en el Programa de Atención Integral en Salud a la Mujer aplica únicamente para pacientes con riesgo aumentado o alto de presentar embarazo con defecto del Tubo Neural, desde 3 meses previos a la concepción hasta las 12 semanas de edad gestacional, de acuerdo a normativa vigente. Prescripción en Pediatría de acuerdo a lo establecido en el Programa de Atención Integral en Salud Infantil ISSS vigente."
+    },
+    {
+     "id": "fosalud",
+     "code": "02705005",
+     "careLevel": "Prescripción: Médico general",
+     "notes": "Texto leído por OCR del escaneo, sin verificar: Regulación: Uso en programa de Atención integral en Salud a la mujer en edad productiva, embarazo y lactancia. (Máximo 15 Tabletas). Tratamiento de anemia medgaloblastica, anemia hemolítica, diálisis."
     }
    ],
    "route": "oral",

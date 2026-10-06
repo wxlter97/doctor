@@ -66,3 +66,27 @@ def test_estado_fisico_incompatible_no_fusiona():
     cat = {"version": 2, "institutions": [{"id": "minsal"}], "medications": [_minsal("minsal-1", "Aciclovir", "250 mg", "Sólido Parenteral", "I.V.")]}
     out, _, stats = combine(cat, [isss.parse(row(name="Aciclovir", strength="250 mg", form="Solución Inyectable I.V.", code="8010336"))])
     assert stats["isss_en_ficha_minsal"] == 0 and len(out["medications"]) == 2
+
+
+def test_fosalud_atc_y_concentracion_ocr():
+    from medapoyo_pipeline.combine import strength_ok
+    from medapoyo_pipeline.fosalud import fix_atc
+
+    assert fix_atc("ROGABO4") == "R06AB04" and fix_atc("RO3ACO2") == "R03AC02"
+    assert strength_ok("100,000 Ul/mL", "100,000 UI/mL") and strength_ok("1,000 meg/mL", "1,000 mcg/mL")
+    assert not strength_ok("5%", "50%")  # distinto número: no se asocia
+    assert strength_ok("ar", "3%")  # ilegible: no contradice
+    assert not strength_ok("500 mg", "250 mg")
+
+
+def test_fosalud_solo_se_une_con_pareja_segura():
+    from medapoyo_pipeline import fosalud
+
+    fr = fosalud.FosRow(30, "00101005", "P02CA01", "Mebendazol", "100 mg", "Tableta", "Empaque Primario Individual", "G", notes={"Regulación": "Uso en niños."})
+    unknown = fosalud.FosRow(30, "09999999", "", "Fármaco inventado", "7 mg", "Tableta", "", "G")
+    cat = {"version": 2, "institutions": [{"id": "minsal"}], "medications": [{**_minsal("minsal-1", "Mebendazol", "100 mg", "Sólido Oral", "oral"), "institutions": [{"id": "minsal", "code": "00101005"}]}]}
+    out, _, stats = combine(cat, [], [fosalud.parse(fr), fosalud.parse(unknown)])
+    ids = [i["id"] for i in out["medications"][0]["institutions"]]
+    assert ids == ["minsal", "fosalud"] and len(out["medications"]) == 1  # lo sin pareja no se publica
+    assert "OCR" in out["medications"][0]["institutions"][1]["notes"] and stats["fosalud_sin_publicar"] == 1
+    assert "presentation" not in out["medications"][0]["institutions"][1]

@@ -16,6 +16,7 @@ Lo que falta: parsers de LIME/LOM/LIM (requieren los PDF reales, §14.3) y el fi
 ```bash
 .venv/bin/pip install -e '.[extract]'
 .venv/bin/python -m medapoyo_pipeline.minsal          # → data/processed/catalog.minsal.json + CSV de revisión
+# (una sola vez, ~4 min) OCR de FOSALUD → data/processed/fosalud.ocr.json: ver medapoyo_pipeline/fosalud.py (necesita tesseract + tesseract-lang + poppler)
 .venv/bin/python -m medapoyo_pipeline.combine         # MINSAL + ISSS → data/processed/catalog.minsal-isss.json + data/review/{cruce_posibles,isss_revision,isss_muestra_50}.csv
 cd ../.. && pnpm export:catalog --from-json data/processed/catalog.minsal-isss.json --version 3   # publica en apps/web/public/catalog
 ```

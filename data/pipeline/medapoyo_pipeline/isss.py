@@ -76,6 +76,22 @@ def _fix_spaces(s: str) -> str:
     return s
 
 
+def infer_route(form: str, presentation: str) -> str | None:
+    route = _route(form, presentation)
+    if not route and re.search(r"tableta|cápsula|capsula|comprimido|jarabe|elixir", form, re.I) and not re.search(r"sublingual|vaginal|rectal|bucal", form, re.I):
+        route = "oral"
+    if not route:
+        low = form.lower()
+        for w, canon in (("oral", "oral"), ("oftálmic", "oftálmica"), ("tópic", "tópica"), ("vaginal", "vaginal"), ("rectal", "rectal"), ("nasal", "nasal"), ("ótic", "ótica"), ("sublingual", "sublingual")):
+            if w in low:
+                route = canon
+                break
+        if not route and re.search(r"I\.\s?[VMS]\.|S\.\s?C\.|inyectable|parenteral", form, re.I):
+            vias = re.findall(r"I\.\s?V\.|I\.\s?M\.|S\.\s?C\.", form)
+            route = "/".join(dict.fromkeys(v.replace(" ", "") for v in vias)) or "parenteral"
+    return route
+
+
 def parse(row: IsssRow) -> dict:
     """Ficha en el formato del catálogo (una institución)."""
     name, strength = row.name, row.strength
@@ -97,18 +113,7 @@ def parse(row: IsssRow) -> dict:
     prio = PRIORIDAD.get(row.prioridad)
     care = " · ".join(x for x in (f"Despacho {row.despacho}" if row.despacho else None, prio, f"Prescripción: {nivel}" if nivel else None) if x)
     notes = " ".join(f"{k}: {v}." if not v.endswith(".") else f"{k}: {v}" for k, v in row.notes.items())
-    route = _route(form, row.presentation)
-    if not route and re.search(r"tableta|cápsula|capsula|comprimido|jarabe|elixir", form, re.I) and not re.search(r"sublingual|vaginal|rectal|bucal", form, re.I):
-        route = "oral"
-    if not route:
-        low = form.lower()
-        for w, canon in (("oral", "oral"), ("oftálmic", "oftálmica"), ("tópic", "tópica"), ("vaginal", "vaginal"), ("rectal", "rectal"), ("nasal", "nasal"), ("ótic", "ótica"), ("sublingual", "sublingual")):
-            if w in low:
-                route = canon
-                break
-        if not route and re.search(r"I\.\s?[VMS]\.|S\.\s?C\.|inyectable|parenteral", form, re.I):
-            vias = re.findall(r"I\.\s?V\.|I\.\s?M\.|S\.\s?C\.", form)
-            route = "/".join(dict.fromkeys(v.replace(" ", "") for v in vias)) or "parenteral"
+    route = infer_route(form, row.presentation)
     return {
         "name": name, "ingredients": ings or [name], "terms": terms, "strength": strength, "form": form[:1].upper() + form[1:],
         "route": route, "code": row.code, "careLevel": care or None, "presentation": row.presentation or None,

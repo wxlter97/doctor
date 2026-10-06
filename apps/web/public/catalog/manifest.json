@@ -1,7 +1,7 @@
 {
-  "version": 3,
+  "version": 5,
   "publishedAt": "2026-10-05T00:00:00Z",
-  "url": "/catalog/catalog-v3.json",
-  "sha256": "5c095066e383e6fd408a600567a96bd94d85347d3a13ec4bb083b629c42721ff",
+  "url": "/catalog/catalog-v5.json",
+  "sha256": "4a59e78cf8e52cb9df90d9d07c973a894c8fd250da2dbb672e4bd672238bb6d1",
   "count": 1313
 }

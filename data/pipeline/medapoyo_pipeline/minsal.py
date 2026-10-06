@@ -221,7 +221,8 @@ def build_catalog(rows: list[RawRow], groups: dict[str, str], version: int = 2, 
         prio = r.prioridad.replace("NoEsencial", "No esencial")
         nivel = r.nivel or None
         care = " · ".join(x for x in ((f"Nivel {nivel}" if nivel else None), prio or None) if x) or None
-        notes = [x for x in (r.regulacion, f"Nota *({note}) del listado" if note else None) if x]
+        # La nota al pie *(n) no se publica: el PDF no trae la leyenda que la explique y mostrarla sola confunde.
+        notes = [x for x in (r.regulacion,) if x]
         key = (p.name.lower(), p.form.lower(), p.strength.lower())
         entry = {"code": r.sinab, "careLevel": care, "presentation": (p.presentation + (f" (U/M: {r.um})" if r.um else "")).strip() or None, "notes": " ".join(notes) or None}
         if key in merged:  # misma publicación con otra presentación/código: una sola ficha, varios códigos

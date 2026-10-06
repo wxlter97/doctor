@@ -17,11 +17,17 @@ from collections import defaultdict
 from difflib import SequenceMatcher
 from pathlib import Path
 
+from . import fosalud as fosalud_mod
 from . import isss as isss_mod
 from . import minsal as minsal_mod
 from .normalize import norm_text, normalize_strength
 
 STOP = {"de", "del", "la", "el", "y", "o", "en", "con", "sin", "para", "por"}
+FOSALUD_INSTITUTION = {
+    "id": "fosalud", "name": "Fondo Solidario para la Salud (FOSALUD)", "listName": "LIM-FOSALUD",
+    "listEdition": "2.ª edición (2019)", "sourceDate": "2019-01-01",
+    "sourceUrl": "https://www.transparencia.gob.sv/descarga_archivo.php?id=MzQ3MDM4&inst=347038",
+}
 ISSS_INSTITUTION = {
     "id": "isss", "name": "Instituto Salvadoreño del Seguro Social (ISSS)", "listName": "LOM/ISSS",
     "listEdition": "19.ª edición (29/10/2024)", "sourceDate": "2024-10-29",
@@ -86,7 +92,7 @@ def compatible(a: str | None, b: str | None) -> bool:
     return a is None or b is None or a == b
 
 
-def combine(minsal_catalog: dict, isss_rows: list[dict], version: int = 3) -> tuple[dict, list[dict], dict]:
+def combine(minsal_catalog: dict, isss_rows: list[dict], fos_rows: list[dict] | None = None, version: int = 5) -> tuple[dict, list[dict], dict]:
     meds = [dict(m) for m in minsal_catalog["medications"]]
     index: dict[tuple, list[int]] = defaultdict(list)
     for n, m in enumerate(meds):
@@ -149,15 +155,100 @@ def combine(minsal_catalog: dict, isss_rows: list[dict], version: int = 3) -> tu
             if best[1] and best[0] >= 0.85 and okey[1] == strength_key(best[1]["strength"]):
                 review.append({"isss_codigo": inst_entry(rows).get("code"), "isss_nombre": r["name"], "isss_concentracion": r["strength"], "isss_forma": r["form"],
                                "minsal_id": best[1]["id"], "minsal_concentracion": best[1]["strength"], "minsal_forma": best[1]["form"], "motivo": f"nombre parecido ({best[0]:.2f}), misma concentración", "decision": ""})
+    fos_stats = {}
+    if fos_rows:
+        fos_stats = add_fosalud(meds, fos_rows, review, used)
+    institutions = minsal_catalog["institutions"] + [ISSS_INSTITUTION] + ([FOSALUD_INSTITUTION] if fos_rows else [])
     catalog = {
-        **minsal_catalog, "version": version, "institutions": minsal_catalog["institutions"] + [ISSS_INSTITUTION],
+        **minsal_catalog, "version": version, "institutions": institutions,
         "medications": sorted(meds, key=lambda x: x["genericName"].lower()),
     }
-    stats = {
+    stats = {**fos_stats,
         "minsal_fichas": len(minsal_catalog["medications"]), "isss_filas": len(isss_rows), "isss_en_ficha_minsal": sum(len(v) for v in by_ficha.values()),
         "fichas_con_ambas": len(by_ficha), "isss_fichas_propias": len(own_order), "total_fichas": len(meds), "para_revision": len(review),
     }
     return catalog, review, stats
+
+
+def _numbers(s: str) -> list[str]:
+    return re.findall(r"\d+(?:\.\d+)?", re.sub(r"(?<=\d),(?=\d{3})", "", s))
+
+
+def strength_ok(ocr: str, ref: str) -> bool:
+    """¿La concentración leída por OCR coincide con la de la ficha? Misma clave, o mismos números en el mismo orden
+    (tolera UI/Ul, mcg/meg, espacios). Si el OCR no leyó una concentración utilizable, no se puede contradecir."""
+    if strength_key(ocr) == strength_key(ref):
+        return True
+    a, b = _numbers(ocr), _numbers(ref)
+    if not a and sum(ch.isalnum() for ch in ocr) < 6:
+        return True  # ilegible: se decide por código y nombre
+    return bool(a) and a == b
+
+
+def _similar(a: str, b: str) -> float:
+    return SequenceMatcher(None, " ".join(ingredient_key([a])), " ".join(ingredient_key([b]))).ratio()
+
+
+def add_fosalud(meds: list[dict], rows: list[dict], review: list[dict], used: set[str]) -> dict:
+    """FOSALUD usa códigos SINAB (los mismos del LOM/MINSAL): el código es la prueba principal, el nombre la confirma."""
+    by_code: dict[str, dict] = {}
+    for m in meds:
+        for i in m["institutions"]:
+            if i["id"] == "minsal":
+                for c in i["code"].split(", "):
+                    by_code.setdefault(c, m)
+    index: dict[tuple, list[dict]] = defaultdict(list)
+    for m in meds:
+        index[(ingredient_key(m["activeIngredients"]), strength_key(m["strength"]), route_class(m.get("route"), m["form"]))].append(m)
+    attach: dict[str, list[dict]] = defaultdict(list)
+    fixed = byname = byckey = own = 0
+    pending: list[dict] = []
+    for r in rows:
+        code, flags = r["code"], r["flags"]
+        target = by_code.get(code)
+        if target is None:
+            # ¿un dígito mal leído? (distancia 1 con un código MINSAL de nombre casi idéntico)
+            cands = [c for c in by_code if len(c) == len(code) == 8 and sum(a != b for a, b in zip(c, code, strict=True)) == 1 and _similar(r["name"], by_code[c]["genericName"]) >= 0.8 and strength_ok(r["strength"], by_code[c]["strength"])]
+            if len(cands) == 1:
+                r["flags"] = flags + [f"código corregido por OCR: {code} → {cands[0]}"]
+                code = r["code"] = cands[0]
+                target = by_code[code]
+                fixed += 1
+        if target is not None and _similar(r["name"], target["genericName"]) >= 0.55 and strength_ok(r["strength"], target["strength"]):
+            attach[target["id"]].append(r)
+            byname += 1
+            continue
+        if target is not None:
+            motivo = "mismo código SINAB que MINSAL pero distinto nombre o concentración (¿error de OCR o de código?)"
+            review.append({"isss_codigo": f"FOSALUD {code}", "isss_nombre": r["name"], "isss_concentracion": r["strength"], "isss_forma": r["form"], "minsal_id": target["id"],
+                           "minsal_concentracion": target["strength"], "minsal_forma": target["form"], "motivo": motivo, "decision": ""})
+            r["flags"] = r["flags"] + [motivo]
+        pending.append(r)
+    leftovers: list[dict] = []
+    for r in pending:
+        key = (ingredient_key(r["ingredients"]), strength_key(r["strength"]), route_class(r["route"], r["form"]))
+        hit = next((m for m in index.get(key, []) if compatible(physical_state(m["form"]), physical_state(r["form"]))), None) if r["strength"] != minsal_mod.NO_STRENGTH else None
+        if hit is not None:
+            attach[hit["id"]].append(r)
+            byckey += 1
+        else:
+            leftovers.append(r)
+    ids = {m["id"]: m for m in meds}
+
+    def entry(rs: list[dict]) -> dict:
+        uniq = lambda xs: list(dict.fromkeys(x for x in xs if x))  # noqa: E731
+        notes = " ".join(uniq(r["notes"] for r in rs))
+        e = {"id": "fosalud", "code": ", ".join(uniq(r["code"] for r in rs)), "careLevel": " / ".join(uniq(r["careLevel"] for r in rs)) or None,
+             "notes": f"Texto leído por OCR del escaneo, sin verificar: {notes}" if notes else None}
+        return {k: v for k, v in e.items() if v}  # sin «presentación»: el texto de OCR no es confiable y la ficha ya trae la de MINSAL
+
+    for mid, rs in attach.items():
+        ids[mid]["institutions"] = ids[mid]["institutions"] + [entry(rs)]
+    # Lo que no tiene pareja segura NO se publica (el OCR deja errores en los nombres): va a revisión humana
+    for r in leftovers:
+        r["flags"] = r["flags"] + ["sin pareja segura en MINSAL/ISSS: no se publica hasta transcribirlo a mano"]
+        own += 1
+    return {"fosalud_filas": len(rows), "fosalud_codigo_corregido": fixed, "fosalud_por_codigo": byname, "fosalud_por_clave": byckey, "fosalud_sin_publicar": own}
 
 
 def main() -> int:
@@ -166,7 +257,17 @@ def main() -> int:
     rows, groups = minsal_mod.extract_rows(src / minsal_mod.PDF_NAME)
     minsal_catalog, _ = minsal_mod.build_catalog(rows, groups)
     isss_rows = [isss_mod.parse(r) for r in isss_mod.extract_rows(src / isss_mod.PDF_NAME)]
-    catalog, review, stats = combine(minsal_catalog, isss_rows)
+    fos_json = root / "data/processed/fosalud.ocr.json"
+    fos_rows: list[dict] = []
+    if fos_json.exists():
+        raw = [fosalud_mod.FosRow(**{**r}) for r in json.loads(fos_json.read_text(encoding="utf-8")) if 22 <= r["page"] <= 38]  # lista general (págs. 22–38)
+        seen: set[str] = set()
+        for fr in raw:
+            if fr.sinab in seen:
+                continue
+            seen.add(fr.sinab)
+            fos_rows.append(fosalud_mod.parse(fr))
+    catalog, review, stats = combine(minsal_catalog, isss_rows, fos_rows or None)
     out = root / "data/processed"
     out.mkdir(parents=True, exist_ok=True)
     (out / "catalog.minsal-isss.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=1), encoding="utf-8")
@@ -189,6 +290,12 @@ def main() -> int:
         for m in sample:
             code = next(i["code"] for i in m["institutions"] if i["id"] == "isss")
             w.writerow([m["id"], code, m["genericName"], m["strength"], m["form"], "+".join(i["id"] for i in m["institutions"]), "", ""])
+    if fos_rows:
+        with open(rev / "fosalud_revision.csv", "w", newline="", encoding="utf-8") as f:
+            w = csv.writer(f)
+            w.writerow(["codigo", "pagina", "motivo", "nombre", "concentracion", "forma", "presentacion_ocr", "decision"])
+            for r in fos_rows:
+                w.writerow([r["code"], r["page"], "; ".join(r["flags"]) or "lectura por OCR: verificar contra el escaneo", r["name"], r["strength"], r["form"], r["presentation"] or "", ""])
     print(json.dumps(stats, ensure_ascii=False, indent=1), f"| ISSS con indicador de revisión: {len(flagged)}")
     return 0
 
