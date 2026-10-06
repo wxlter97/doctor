@@ -40,7 +40,7 @@ async function settled(page: Page) {
 const routes: [string, string][] = [
   ['/', 'inicio'],
   ['/medicamentos', 'medicamentos'],
-  ['/medicamentos/fixture-001', 'ficha'],
+  ['/medicamentos/minsal-00101009', 'ficha'],
   ['/calculadoras', 'calculadoras'],
   ['/calculadoras/ckd-epi-2021', 'ckd'],
   ['/calculadoras/glasgow', 'glasgow'],

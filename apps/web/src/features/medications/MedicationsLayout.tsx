@@ -74,6 +74,7 @@ export function MedicationsLayout() {
     <div className="lg:grid lg:h-full lg:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] lg:gap-6">
       <section className={`${detailOpen ? 'hidden lg:flex' : 'flex'} min-h-0 flex-col gap-3 lg:overflow-y-auto`} onKeyDown={onKey}>
         <h1 className="text-2xl font-bold">{m.title}</h1>
+        {source === 'PARCIAL' && <p role="note" className="aviso aviso-warning text-sm font-bold">{m.partialBanner}</p>}
         {source === 'FIXTURE' && <p role="note" className="aviso aviso-warning text-sm font-bold">{m.fixtureBanner}</p>}
         {loaded && !index ? (
           <div className="card flex flex-col gap-3">

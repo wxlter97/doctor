@@ -51,11 +51,13 @@ export function MedicationDetail() {
                 {i.code && <p className="text-sm">{m.code}: {i.code}</p>}
                 {i.careLevel && <p className="text-sm">{m.careLevel}: {i.careLevel}</p>}
                 {i.presentation && <p className="text-sm">{m.presentation}: {i.presentation}</p>}
+                {i.notes && <p className="aviso aviso-warning mt-1 text-sm"><strong>{m.restriction}:</strong> {i.notes}</p>}
               </li>
             );
           })}
         </ul>
         <p className="text-sm font-bold">{m.notStock}</p>
+        {med.institutions.some((i) => i.id === 'minsal') && <p className="text-sm text-muted">{m.sourceMinsal}</p>}
       </section>
 
       {clinical && sections.length > 0 ? (

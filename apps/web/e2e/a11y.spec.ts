@@ -17,7 +17,7 @@ async function settled(page: Page) {
   await page.evaluate(() => document.fonts.ready.then(() => undefined));
 }
 
-const routes = ['/', '/medicamentos', '/medicamentos/fixture-001', '/calculadoras', '/calculadoras/ckd-epi-2021', '/calculadoras/sofa', '/turnos', '/turnos/horas', '/turnos/tipos', '/ajustes'];
+const routes = ['/', '/medicamentos', '/medicamentos/minsal-00101009', '/calculadoras', '/calculadoras/ckd-epi-2021', '/calculadoras/sofa', '/turnos', '/turnos/horas', '/turnos/tipos', '/ajustes'];
 
 async function violations(page: Page) {
   const r = await new AxeBuilder({ page }).withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa']).analyze();

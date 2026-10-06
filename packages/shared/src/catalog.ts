@@ -37,6 +37,8 @@ export const medicationSchema = z.object({
     code: z.string().optional(),
     careLevel: z.string().optional(),
     presentation: z.string().optional(),
+    /** Regulación de prescripción u otras notas del listado (p. ej. «USO EXCLUSIVO PARA…»). */
+    notes: z.string().optional(),
   })).min(1),
   clinical: clinicalSchema.optional(),
 });

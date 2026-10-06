@@ -10,3 +10,11 @@ python3 -m venv .venv && .venv/bin/pip install -e '.[dev]'
 
 Lo que está hecho y probado: normalización (nombres, formas, concentraciones, sinónimos) y cruce con revisión humana.
 Lo que falta: parsers de LIME/LOM/LIM (requieren los PDF reales, §14.3) y el filtro "solo publicar filas resueltas" en la carga.
+
+## MINSAL (LOM/MINSAL 2026)
+
+```bash
+.venv/bin/pip install -e '.[extract]'
+.venv/bin/python -m medapoyo_pipeline.minsal          # → data/processed/catalog.minsal.json + CSV de revisión
+cd ../.. && pnpm export:catalog --from-json data/processed/catalog.minsal.json   # publica en apps/web/public/catalog
+```

@@ -1,6 +1,7 @@
 /**
  * Genera el snapshot del catálogo (manifest + catalog-vN.json) en apps/web/public/catalog.
  *   tsx scripts/export-catalog.ts --fixture [--version N]   → desde data/fixtures/catalog.dev.json
+ *   tsx scripts/export-catalog.ts --from-json <archivo>      → desde un catálogo ya armado (p. ej. data/processed/catalog.minsal.json)
  *   tsx scripts/export-catalog.ts                            → desde Supabase (SUPABASE_URL, SUPABASE_ANON_KEY)
  *   tsx scripts/export-catalog.ts --validate                 → valida lo publicado (esquema + hash); usado en CI
  *   ...  --validate --forbid-fixture                         → además rechaza datos de prueba (deploy de producción)
@@ -70,9 +71,11 @@ async function fromSupabase(): Promise<Catalog> {
 
 async function main() {
   if (arg('--validate')) { console.log(await validatePublished(OUT, { forbidFixture: arg('--forbid-fixture') })); return; }
-  const catalog: Catalog = arg('--fixture')
-    ? { ...(JSON.parse(await readFile(FIXTURE, 'utf8')) as Catalog), ...(arg('--version') ? { version: Number(argVal('--version')) } : {}) }
-    : await fromSupabase();
+  const catalog: Catalog = arg('--from-json')
+    ? (JSON.parse(await readFile(argVal('--from-json') as string, 'utf8')) as Catalog)
+    : arg('--fixture')
+      ? { ...(JSON.parse(await readFile(FIXTURE, 'utf8')) as Catalog), ...(arg('--version') ? { version: Number(argVal('--version')) } : {}) }
+      : await fromSupabase();
   const { json, manifest, filename } = await buildSnapshot(catalog);
   await mkdir(OUT, { recursive: true });
   for (const f of await readdir(OUT)) if (/^catalog-v\d+\.json$/.test(f) && f !== filename) await rm(join(OUT, f));

@@ -19,7 +19,7 @@ export const t = {
   },
   medications: {
     title: 'Medicamentos',
-    search: 'Buscá por nombre, principio activo o grupo',
+    search: 'Buscá un medicamento',
     filters: 'Filtros',
     filtersDescription: 'Filtros avanzados por forma farmacéutica y grupo terapéutico.',
     form: 'Forma farmacéutica',
@@ -39,6 +39,9 @@ export const t = {
     resultsCount: (n: number) => `${n} ${n === 1 ? 'resultado' : 'resultados'}`,
     showingFirst: (n: number, total: number) => `Mostrando ${n} de ${total}. Afiná la búsqueda para ver el resto.`,
     notStock: 'Estar en el listado no garantiza existencias en el establecimiento.',
+    partialBanner: 'Catálogo parcial: por ahora solo incluye el listado del MINSAL (LOM/MINSAL 2026) y no se ha verificado a mano. Faltan ISSS y FOSALUD. No es una publicación oficial.',
+    restriction: 'Regulación de prescripción',
+    sourceMinsal: 'Fuente: Ministerio de Salud de El Salvador — LOM/MINSAL 2026 (Acuerdo n.º 1201, 14/05/2026). Reproducción con atribución y sin fines comerciales; MedHelp no es una publicación oficial ni cuenta con el respaldo del MINSAL.',
     fixtureBanner: 'Datos de prueba: este catálogo NO es real. No lo uses para decisiones clínicas.',
     officialList: 'Listado oficial',
     inList: 'En listado oficial',

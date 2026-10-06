@@ -10,12 +10,18 @@
 | `LISTADO-OFICIAL-DE-MEDICAMENTOS-2026.pdf` | **LOM 2026 de la Superintendencia de Regulación Sanitaria** (acuerdo n.º SI.2026.02.06-02 de 06/02/2026). Es un listado **nacional**: no indica institución, ni nivel de atención, ni código SINAB. Incluye vacunas y la clasificación AWaRe. | 23 | Usable como **referencia cruzada**; **no** es el listado del ISSS ni de FOSALUD. ~324 filas con ATC + correlativo. |
 | `listado_institucional_de_medicamentos_esenciales_lime_pliegos_v2.pdf` | LIME 1.ª versión, MINSAL, mayo de 2016. | 210 | **Obsoleto**: lo reemplazó el LOM/MINSAL (Acuerdo 800 de 2025, hoy el 1201 de 2026). Solo valor histórico. No ingerir. |
 
-## Pendientes
+## Pendientes (ubicados el 2026-10-05, aún sin descargar)
 
-| Institución | Listado | Estado |
-|---|---|---|
-| ISSS | LOM ISSS (la búsqueda web indicó 19.ª edición, 2024; **no confirmado**) | **Falta el PDF.** |
-| FOSALUD | LIM (la búsqueda web indicó 2.ª edición, 2019; **no confirmado**; puede haber una más nueva) | **Falta el PDF.** |
+Se localizaron en el portal de transparencia (https://www.transparencia.gob.sv). Los enlaces de descarga usan el ID del documento en base64: `https://www.transparencia.gob.sv/descarga_archivo.php?id=<base64(ID)>&inst=<ID>`.
+
+| Institución | Listado | Archivo | Tamaño | Notas |
+|---|---|---|---|---|
+| ISSS | Listado Oficial de Medicamentos, **19.ª edición** (publicado 29/10/2024, «Vigente»; no hay otra más nueva en el portal) | `LOM_-_19a_Edicion_redacted.pdf` (ID 606538) | 3.2 MB | Pendiente de descargar y revisar. |
+| FOSALUD | Listado Institucional de Medicamentos, **2.ª edición** (la más reciente encontrada) | `LISTADO_INSTITUCIONAL_DE_MEDICAMENTOS-FOSALUD_2a._EDICIONescaneada.pdf` (ID 347038) | 15.2 MB | **Escaneado**: necesita OCR. Existe una 1.ª edición (ID 280043, 8.2 MB) que no se necesita. Falta confirmar que no haya una edición posterior no publicada en el portal. |
+
+## Estado de la extracción de MINSAL
+
+`python -m medapoyo_pipeline.minsal` (en `data/pipeline`) genera `data/processed/catalog.minsal.json` (792 fichas desde 834 filas), `data/review/minsal_revision.csv` (filas dudosas) y `data/review/minsal_muestra_50.csv` (muestra reproducible para verificar a mano contra el PDF). El PDF repite el código SINAB `02301010` para dos insulinas distintas (cristalina y NPH): probable error de la fuente.
 
 ## Condiciones de uso (importante)
 
