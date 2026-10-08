@@ -278,6 +278,12 @@
      "code": "01200005",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Frasco (100 -120) mL, con dosificador graduado (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "01200005",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Solución oral o jarabe · Frasco 120 mL, con dosificador Graduado Tipo Jeringa o Pipeta, Protegido de la Luz"
     }
    ],
    "route": "oral",
@@ -979,6 +985,12 @@
      "code": "02800010, 02800015, 02800020",
      "careLevel": "Nivel 1A · Esencial / Nivel 2B · Esencial",
      "presentation": "Ampolla 10 mL (U/M: C/U) | Frasco Vial 50 mL (U/M: C/U) | Bolsa o Frasco Plástico Flexible 1000 mL (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "02800010",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Ampolla 10 mL"
     }
    ],
    "route": "parenteral",
@@ -1281,22 +1293,7 @@
      "careLevel": "Nivel 2B · Esencial",
      "presentation": "I.V. Frasco Vial (U/M: C/U)",
      "notes": "USO EXCLUSIVO PARA: Especialista: UCI, Cardiología, Medicina Interna, Cirugía Vascular Periférica y Neurología."
-    }
-   ],
-   "route": "I.V.",
-   "atcCode": "B01AD02",
-   "therapeuticGroup": "Medicamentos biológicos y biotecnológicos"
-  },
-  {
-   "id": "isss-8060328",
-   "genericName": "Alteplasa",
-   "activeIngredients": [
-    "Alteplasa"
-   ],
-   "form": "Polvo Liofilizado",
-   "strength": "50 mg",
-   "searchTerms": [],
-   "institutions": [
+    },
     {
      "id": "isss",
      "code": "8060328",
@@ -1305,7 +1302,9 @@
      "notes": "Criterio de uso: Autorizado para uso en Trombolisis de Infarto Agudo de Miocardio, Accidente Cerebrovascular Isquémico y Embolismo Pulmonar Agudo. Regulación: Uso Bajo Protocolo. Especialidad: Cardiología, Medicina Interna, Cirugía Vascular Periferica, Neurología."
     }
    ],
-   "therapeuticGroup": "Medicamentos que afectan la coagulación"
+   "route": "I.V.",
+   "atcCode": "B01AD02",
+   "therapeuticGroup": "Medicamentos biológicos y biotecnológicos"
   },
   {
    "id": "isss-8020106",
@@ -1477,6 +1476,12 @@
      "careLevel": "Nivel 2B · Vital",
      "presentation": "I.V. Frasco Vial, protegido de la luz (U/M: C/U)",
      "notes": "USO EXCLUSIVO PARA: Infectología."
+    },
+    {
+     "id": "isss",
+     "code": "8010337",
+     "careLevel": "Despacho 2 B · Vital · Prescripción: Hospitalario general",
+     "presentation": "Forma: Polvo Liofilizado Para Dilución I.V. · Frasco vial, protegido de la luz"
     }
    ],
    "route": "I.V.",
@@ -2099,26 +2104,6 @@
    "therapeuticGroup": "Medicamentos de uso gastrointestinal"
   },
   {
-   "id": "isss-8010337",
-   "genericName": "Anfotericina B",
-   "activeIngredients": [
-    "Anfotericina B"
-   ],
-   "form": "Polvo Liofilizado Para Dilución I.V.",
-   "strength": "50 mg",
-   "searchTerms": [],
-   "institutions": [
-    {
-     "id": "isss",
-     "code": "8010337",
-     "careLevel": "Despacho 2 B · Vital · Prescripción: Hospitalario general",
-     "presentation": "Forma: Polvo Liofilizado Para Dilución I.V. · Frasco vial, protegido de la luz"
-    }
-   ],
-   "route": "I.V.",
-   "therapeuticGroup": "Antimicóticos"
-  },
-  {
    "id": "isss-8020604",
    "genericName": "Antihemorroidal (anestésico local, sin corticosteroide) sin sales de Bismuto",
    "activeIngredients": [
@@ -2255,7 +2240,6 @@
     },
     {
      "id": "fosalud",
-     "code": "002501008",
      "careLevel": "Prescripción: Médico general",
      "notes": "Texto leído por OCR del escaneo, sin verificar: Regulación: Paciente con Enfermedad Renal Crónica que presenta Dislipidemia. Pacientes con Cardiopatía Isquémica. Previo monitoreo de función hepática."
     }
@@ -2309,6 +2293,27 @@
    ],
    "route": "parenteral",
    "therapeuticGroup": "Medicamentos de uso en ginecologia y obstetricia"
+  },
+  {
+   "id": "fosalud-01601005",
+   "genericName": "Atracurio Besilato",
+   "activeIngredients": [
+    "Atracurio Besilato"
+   ],
+   "form": "Solución inyectable I.V",
+   "strength": "10 mg/mL",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "fosalud",
+     "code": "01601005",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Solución inyectable I.V · Ampolla 2.5 mL, protegida de la luz."
+    }
+   ],
+   "route": "parenteral",
+   "therapeuticGroup": "Sistema musculoesquelético",
+   "atcCode": "M03AC04"
   },
   {
    "id": "minsal-01700005",
@@ -2864,27 +2869,6 @@
    "therapeuticGroup": "Antídotos"
   },
   {
-   "id": "isss-8010423",
-   "genericName": "Benznidazol",
-   "activeIngredients": [
-    "Benznidazol"
-   ],
-   "form": "Tableta",
-   "strength": "100 mg",
-   "searchTerms": [],
-   "institutions": [
-    {
-     "id": "isss",
-     "code": "8010423",
-     "careLevel": "Despacho 2 C · Esencial · Prescripción: Especialista (restringido)",
-     "presentation": "Forma: Tableta · Empaque primario individual o frasco, protegido de la luz",
-     "notes": "Criterio de uso: Tratamiento de La Tripanosomiasis Americana (Enfermedad de Chagas) Causada por T. Cruzi. Especialidad: Medicina Interna, Infectología."
-    }
-   ],
-   "route": "oral",
-   "therapeuticGroup": "Antiparasitarios"
-  },
-  {
    "id": "minsal-00105005",
    "genericName": "Benznidazole",
    "activeIngredients": [
@@ -2900,6 +2884,13 @@
      "careLevel": "Nivel 1B · Esencial",
      "presentation": "Empaque Primario Individual (U/M: CTO)",
      "notes": "USO EXCLUSIVO PARA: Alternativa Terapéutica para el medicamento con código 00105010."
+    },
+    {
+     "id": "isss",
+     "code": "8010423",
+     "careLevel": "Despacho 2 C · Esencial · Prescripción: Especialista (restringido)",
+     "presentation": "Forma: Tableta · Empaque primario individual o frasco, protegido de la luz",
+     "notes": "Criterio de uso: Tratamiento de La Tripanosomiasis Americana (Enfermedad de Chagas) Causada por T. Cruzi. Especialidad: Medicina Interna, Infectología."
     }
    ],
    "route": "oral",
@@ -4435,24 +4426,7 @@
      "careLevel": "Nivel 3 · Esencial",
      "presentation": "para perfusión I.V. Frasco Vial (U/M: C/U)",
      "notes": "USO EXCLUSIVO PARA: Infectología, Trasplante Médula Ósea."
-    }
-   ],
-   "route": "I.V.",
-   "atcCode": "J02AX04",
-   "therapeuticGroup": "Medicamentos antimicóticos"
-  },
-  {
-   "id": "isss-8010381",
-   "genericName": "Caspofungina (Acetato)",
-   "activeIngredients": [
-    "Caspofungina"
-   ],
-   "form": "Polvo para Dilución I.V",
-   "strength": "50 mg",
-   "searchTerms": [
-    "acetato"
-   ],
-   "institutions": [
+    },
     {
      "id": "isss",
      "code": "8010381",
@@ -4461,7 +4435,9 @@
      "notes": "Criterio de uso: Uso restringido. Exclusivo para la Especialidad de Infectología, como parte de la reserva antimicotica institucional. Tratamiento de elección en Candidemia, causada por Cándidas spp. (C. glabrata, C. krusei, C. auris). Alternativa de tratamiento en pacientes con Candidiasis o Aspergilosis Invasiva, cuando exista resistencia o contraindicación a formulaciones de anfotericina B, itraconazol y voriconazol. Dosis de carga de 70 mg en el día 1, seguida de 50 mg diarios posteriormente. Regulación: Uso Bajo Protocolo. Especialidad: Infectología."
     }
    ],
-   "therapeuticGroup": "Antimicóticos"
+   "route": "I.V.",
+   "atcCode": "J02AX04",
+   "therapeuticGroup": "Medicamentos antimicóticos"
   },
   {
    "id": "minsal-00202022",
@@ -4623,24 +4599,7 @@
      "careLevel": "Nivel 2B · Esencial",
      "presentation": "I.V. - I.M. Frasco Vial (U/M: C/U)",
      "notes": "USO EXCLUSIVO PARA: Infectología Antibiótico de amplio espectro."
-    }
-   ],
-   "route": "I.V./I.M.",
-   "atcCode": "J01DE01",
-   "therapeuticGroup": "Medicamentos antimicrobianos"
-  },
-  {
-   "id": "isss-8010358",
-   "genericName": "Cefepime (Clorhidrato)",
-   "activeIngredients": [
-    "Cefepime"
-   ],
-   "form": "Polvo Para Dilución I.M. - I.V.",
-   "strength": "1 g",
-   "searchTerms": [
-    "clorhidrato"
-   ],
-   "institutions": [
+    },
     {
      "id": "isss",
      "code": "8010358",
@@ -4649,8 +4608,9 @@
      "notes": "Regulación: Uso restringido. Autorizado para la Especialidad de Infectología. En los Centros de Atención que no cuentan con Infectólogo o en su ausencia, la autorización se hará por: Médico Coordinador del Comité Local de Farmacoterapia, Jefes de Servicios Clínicos y/o Médico Coordinador de Turno."
     }
    ],
-   "route": "I.M./I.V.",
-   "therapeuticGroup": "Antimicrobianos"
+   "route": "I.V./I.M.",
+   "atcCode": "J01DE01",
+   "therapeuticGroup": "Medicamentos antimicrobianos"
   },
   {
    "id": "minsal-00212005",
@@ -6324,6 +6284,12 @@
      "code": "03200030",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Tubo (20 - 40) g (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "03200030",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Crema Top · Tubo (20 - 40)g"
     }
    ],
    "route": "tópica",
@@ -7412,6 +7378,12 @@
      "code": "8160509, 8160510",
      "careLevel": "Despacho 2 C · Esencial · Prescripción: Médico general",
      "presentation": "Forma: Solución Inyectable I.V. · Bolsa o frasco plástico flexible 1,000 mL | Forma: Solución Inyectable I.V. · Bolsa o frasco plástico flexible 250 mL"
+    },
+    {
+     "id": "fosalud",
+     "code": "02800035, 02800055",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Solución Inyectable I.V · Bolsa o Frasco Plástico Flexible 250 mL | Forma: Solución Inyectable I.V · Bolsa o Frasco 50 mL"
     }
    ],
    "route": "I.V.",
@@ -7452,6 +7424,12 @@
      "code": "8160514",
      "careLevel": "Despacho 2 C · Vital · Prescripción: Médico general",
      "presentation": "Forma: Solución Inyectable I.V. · Frasco o bolsa 50 mL"
+    },
+    {
+     "id": "fosalud",
+     "code": "02800045",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Solución Inyectable I.V · Bolsa o Frasco Plástico Flexible 1,000 mL"
     }
    ],
    "route": "I.V.",
@@ -9232,6 +9210,12 @@
      "code": "8040606",
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Solución Inyectable I.M. - I.V. - S.C. · Ampolla 1mL, protegido de la luz"
+    },
+    {
+     "id": "fosalud",
+     "code": "00711010",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Solución Inyectable I.M. - I.V. - S.C · Ampolla 1 mL, Protegido de la Luz"
     }
    ],
    "route": "I.M./I.V./S.C.",
@@ -9763,6 +9747,27 @@
    "route": "oral",
    "atcCode": "G03CA57",
    "therapeuticGroup": "Medicamentos estrógenos, progestágenos y anovulatorios"
+  },
+  {
+   "id": "fosalud-03300015",
+   "genericName": "Estrógenos Conjugados",
+   "activeIngredients": [
+    "Estrógenos Conjugados"
+   ],
+   "form": "Crema Vaginal",
+   "strength": "(0.15 + 0.03) mg",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "fosalud",
+     "code": "03300015",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Crema Vaginal · Tubo con 6 Aplicadores"
+    }
+   ],
+   "route": "vaginal",
+   "therapeuticGroup": "Sistema genitourinario y hormonas sexuales",
+   "atcCode": "G03CA57"
   },
   {
    "id": "minsal-00300020",
@@ -12443,6 +12448,28 @@
    "therapeuticGroup": "Medicamentos antimicóticos"
   },
   {
+   "id": "fosalud-00400010",
+   "genericName": "Fluconazol",
+   "activeIngredients": [
+    "Fluconazol"
+   ],
+   "form": "Cápsula o Tableta",
+   "strength": "150 mg",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "fosalud",
+     "code": "00400010",
+     "careLevel": "Prescripción: Médico general (restringido)",
+     "presentation": "Forma: Cápsula o Tableta · Empaque Primario Individual",
+     "notes": "Texto transcrito del escaneo, sin verificar: Regulación: Como Tercera línea de tratamiento en Candidiasis Vulvovaginal recurrente y Complicada confirmado por cultivo (MAX. 4 tabletas /mes, máximo 6 meses). Para tratamiento de Onicomicosis (Tiña Ungueal) previo medición de función hepática"
+    }
+   ],
+   "route": "oral",
+   "therapeuticGroup": "Antiinfecciosos para uso sistémico",
+   "atcCode": "J02AC01"
+  },
+  {
    "id": "minsal-02602060",
    "genericName": "Fludarabina Fosfato",
    "activeIngredients": [
@@ -12458,22 +12485,7 @@
      "careLevel": "Nivel 3 · Esencial",
      "presentation": "I.V. Frasco vial (U/M: C/U)",
      "notes": "USO EXCLUSIVO PARA: Hemato- Oncología según protocolo."
-    }
-   ],
-   "route": "I.V.",
-   "atcCode": "L01BB05",
-   "therapeuticGroup": "Medicamentos de uso en oncología"
-  },
-  {
-   "id": "isss-8060152",
-   "genericName": "Fludarabina fosfato",
-   "activeIngredients": [
-    "Fludarabina fosfato"
-   ],
-   "form": "Polvo para Dilución I.V",
-   "strength": "50 mg",
-   "searchTerms": [],
-   "institutions": [
+    },
     {
      "id": "isss",
      "code": "8060152",
@@ -12482,7 +12494,9 @@
      "notes": "Regulación: Uso Bajo Protocolo. Indicado como primera línea de tratamiento en pacientes adultos con Leucemia Linfocítica Crónica (LLC), en enfermedad avanzada activa y sintomática: Raí 111 / IV (Binet C), o Raí 1 / 11 (Binet A/B). 6 Ciclos de tratamiento. Especialidad: Hematología."
     }
    ],
-   "therapeuticGroup": "Agentes antineoplásicos e inmunomoduladores"
+   "route": "I.V.",
+   "atcCode": "L01BB05",
+   "therapeuticGroup": "Medicamentos de uso en oncología"
   },
   {
    "id": "minsal-02304065",
@@ -12500,22 +12514,7 @@
      "careLevel": "Nivel 3 · Esencial",
      "presentation": "Empaque Primario Individual o Frasco (U/M: CTO)",
      "notes": "USO EXCLUSIVO PARA: Endocrinología."
-    }
-   ],
-   "route": "oral",
-   "atcCode": "H02AA02",
-   "therapeuticGroup": "Medicamentos de uso en endocrinología"
-  },
-  {
-   "id": "isss-8250101",
-   "genericName": "Fludrocortizona Acetato",
-   "activeIngredients": [
-    "Fludrocortizona Acetato"
-   ],
-   "form": "Tableta",
-   "strength": "0.1 mg",
-   "searchTerms": [],
-   "institutions": [
+    },
     {
      "id": "isss",
      "code": "8250101",
@@ -12525,7 +12524,8 @@
     }
    ],
    "route": "oral",
-   "therapeuticGroup": "Corticosteroides"
+   "atcCode": "H02AA02",
+   "therapeuticGroup": "Medicamentos de uso en endocrinología"
   },
   {
    "id": "minsal-02201015",
@@ -12986,24 +12986,7 @@
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Sobre (U/M: C/U)",
      "notes": "USO EXCLUSIVO PARA: Tratamiento de infecciones agudas no complicadas del tracto urinario bajo en mujeres en embarazo y puerperio."
-    }
-   ],
-   "route": "oral",
-   "atcCode": "J01XX01",
-   "therapeuticGroup": "Medicamentos antimicrobianos"
-  },
-  {
-   "id": "isss-8010388",
-   "genericName": "Fosfomicina (Trometamol)",
-   "activeIngredients": [
-    "Fosfomicina"
-   ],
-   "form": "Polvo Granulado",
-   "strength": "3 g",
-   "searchTerms": [
-    "trometamol"
-   ],
-   "institutions": [
+    },
     {
      "id": "isss",
      "code": "8010388",
@@ -13012,7 +12995,9 @@
      "notes": "Criterio de uso: Segunda línea de tratamiento en casos de Infección de Vías Urinarias por E. Coli BLEE y con sensibilidad demostrada a Fosfomicina, si el paciente no tolera, es resistente o no es eficiente el manejo con medicamentos de primera línea incluidos en LOM. Regulación: Uso Bajo Protocolo. Especialidad: Infectología, Medicina Interna."
     }
    ],
-   "therapeuticGroup": "Antimicrobianos"
+   "route": "oral",
+   "atcCode": "J01XX01",
+   "therapeuticGroup": "Medicamentos antimicrobianos"
   },
   {
    "id": "isss-8010379",
@@ -13676,6 +13661,26 @@
    "route": "I.M./I.V.",
    "atcCode": "J01GB03",
    "therapeuticGroup": "Medicamentos antimicrobianos"
+  },
+  {
+   "id": "fosalud-02301005",
+   "genericName": "Glibenclamida",
+   "activeIngredients": [
+    "Glibenclamida"
+   ],
+   "form": "Tableta",
+   "strength": "5 mg",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "fosalud",
+     "code": "02301005",
+     "presentation": "Forma: Tableta · Empaque Primario Individual"
+    }
+   ],
+   "route": "oral",
+   "therapeuticGroup": "Tracto alimentario y metabolismo",
+   "atcCode": "A10BB01"
   },
   {
    "id": "minsal-03500015",
@@ -14420,6 +14425,12 @@
      "code": "03200035",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Tubo (25 - 40) g (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "03200035",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Crema · Tubo 25-40g"
     }
    ],
    "route": "tópica",
@@ -14626,6 +14637,28 @@
    ],
    "route": "oral",
    "therapeuticGroup": "Micronutrientes"
+  },
+  {
+   "id": "fosalud-02705025",
+   "genericName": "Hierro Sulfato + Ácido Fólico",
+   "activeIngredients": [
+    "Hierro Sulfato",
+    "Ácido Fólico"
+   ],
+   "form": "Tableta o Tableta recubierta",
+   "strength": "300 mg",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "fosalud",
+     "code": "02705025",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Tableta o Tableta recubierta · Empaque Primario Individual."
+    }
+   ],
+   "route": "oral",
+   "therapeuticGroup": "Sangre y órganos hematopoyéticos",
+   "atcCode": "B03AD03"
   },
   {
    "id": "isss-8140812",
@@ -14987,26 +15020,7 @@
      "careLevel": "Nivel 2B · Esencial",
      "presentation": "I.V. Frasco Vial (U/M: C/U)",
      "notes": "USO EXCLUSIVO PARA: Infectología, Intensivistas. En donde no haya, podrá prescribir Medicina Interna."
-    }
-   ],
-   "route": "I.V.",
-   "atcCode": "J01DH51",
-   "therapeuticGroup": "Medicamentos antimicrobianos"
-  },
-  {
-   "id": "isss-8010345",
-   "genericName": "Imipenen (Anhidro) + Cilastatina (Sódica)",
-   "activeIngredients": [
-    "Imipenen",
-    "Cilastatina"
-   ],
-   "form": "Polvo Para Dilución I.V.",
-   "strength": "(500 + 500) mg",
-   "searchTerms": [
-    "anhidro",
-    "sódica"
-   ],
-   "institutions": [
+    },
     {
      "id": "isss",
      "code": "8010345",
@@ -15016,7 +15030,8 @@
     }
    ],
    "route": "I.V.",
-   "therapeuticGroup": "Antimicrobianos"
+   "atcCode": "J01DH51",
+   "therapeuticGroup": "Medicamentos antimicrobianos"
   },
   {
    "id": "minsal-02205015",
@@ -15767,6 +15782,28 @@
    "therapeuticGroup": "Medicamentos de uso cardiovascular"
   },
   {
+   "id": "fosalud-00706009",
+   "genericName": "Irbesartán",
+   "activeIngredients": [
+    "Irbesartán"
+   ],
+   "form": "Tableta Oral",
+   "strength": "300 mg",
+   "searchTerms": [],
+   "institutions": [
+    {
+     "id": "fosalud",
+     "code": "00706009",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Tableta Oral · Empaque primario individual",
+     "notes": "Texto transcrito del escaneo, sin verificar: Regulación: Paciente con HTA + DM + micro o macro albuminuria. Paciente con HTA + Enfermedad Renal Crónica. Pacientes con DM tipo 2 + Enfermedad Renal Crónica"
+    }
+   ],
+   "route": "oral",
+   "therapeuticGroup": "Sistema cardiovascular",
+   "atcCode": "C09CA04"
+  },
+  {
    "id": "isss-8060144",
    "genericName": "Irinotecan Clorhidrato (Trihidratado)",
    "activeIngredients": [
@@ -15831,28 +15868,6 @@
    "route": "inhalatoria",
    "atcCode": "N01AB06",
    "therapeuticGroup": "Medicamentos anestésicos generales"
-  },
-  {
-   "id": "isss-8010738",
-   "genericName": "Isoniacida + Rifapentina",
-   "activeIngredients": [
-    "Isoniacida",
-    "Rifapentina"
-   ],
-   "form": "Tableta Recubierta",
-   "strength": "(300 + 300) mg",
-   "searchTerms": [],
-   "institutions": [
-    {
-     "id": "isss",
-     "code": "8010738",
-     "careLevel": "Despacho 2 C (U.M. San Jacinto) · Vital · Prescripción: Médico general (restringido)",
-     "presentation": "Forma: Tableta Recubierta · Empaque primario individual o frasco",
-     "notes": "Criterio de uso: Tratamiento de casos de Tuberculosis Latente (ILTB). Regulación: Uso regulado según Programa de Tuberculosis Institucional (MDR) vigente."
-    }
-   ],
-   "route": "oral",
-   "therapeuticGroup": "Antituberculosos y antileprosos"
   },
   {
    "id": "minsal-00300030",
@@ -16023,6 +16038,13 @@
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Empaque Primario Individual (U/M: CTO)",
      "notes": "USO EXCLUSIVO PARA: Programa Nacional de Tuberculosis y Enfermedades Respiratorias."
+    },
+    {
+     "id": "isss",
+     "code": "8010738",
+     "careLevel": "Despacho 2 C (U.M. San Jacinto) · Vital · Prescripción: Médico general (restringido)",
+     "presentation": "Forma: Tableta Recubierta · Empaque primario individual o frasco",
+     "notes": "Criterio de uso: Tratamiento de casos de Tuberculosis Latente (ILTB). Regulación: Uso regulado según Programa de Tuberculosis Institucional (MDR) vigente."
     }
    ],
    "route": "oral",
@@ -16135,21 +16157,7 @@
      "code": "00707020",
      "careLevel": "Nivel 1B · Vital",
      "presentation": "Sub Lingual Empaque Primario Individual (U/M: CTO)"
-    }
-   ],
-   "atcCode": "C01DA08",
-   "therapeuticGroup": "Medicamentos cardiovasculares"
-  },
-  {
-   "id": "isss-8040101",
-   "genericName": "Isosorbide Dinitrato",
-   "activeIngredients": [
-    "Isosorbide Dinitrato"
-   ],
-   "form": "Tableta Sublingual",
-   "strength": "5 mg",
-   "searchTerms": [],
-   "institutions": [
+    },
     {
      "id": "isss",
      "code": "8040101",
@@ -16157,8 +16165,8 @@
      "presentation": "Forma: Tableta Sublingual · Empaque primario individual"
     }
    ],
-   "route": "sublingual",
-   "therapeuticGroup": "Medicamentos de uso cardiovascular"
+   "atcCode": "C01DA08",
+   "therapeuticGroup": "Medicamentos cardiovasculares"
   },
   {
    "id": "minsal-00707005",
@@ -18119,6 +18127,12 @@
      "code": "03100075",
      "careLevel": "Nivel 1B · Esencial",
      "presentation": "Frasco Gotero (10 - 15) mL (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "03100075",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Solución Oftálmica · Frasco Gotero (10-15) mL"
     }
    ],
    "route": "oftálmica",
@@ -18314,6 +18328,12 @@
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Frasco 30 mL con dosificador graduado (U/M: C/U)",
      "notes": "USO EXCLUSIVO PARA: Resultado positivo (+) con presencia de helmintos o ante sospecha clínica o campañas de prevención."
+    },
+    {
+     "id": "isss",
+     "code": "8140301",
+     "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
+     "presentation": "Forma: Suspensión Oral · Frasco 30 mL con dosificador graduado tipo jeringa o pipeta"
     }
    ],
    "route": "oral",
@@ -18346,26 +18366,6 @@
    "route": "oral",
    "atcCode": "P02CA01",
    "therapeuticGroup": "Medicamentos antiparasitarios"
-  },
-  {
-   "id": "isss-8140301",
-   "genericName": "Mebendazole",
-   "activeIngredients": [
-    "Mebendazole"
-   ],
-   "form": "Suspensión Oral",
-   "strength": "100 mg/5 mL",
-   "searchTerms": [],
-   "institutions": [
-    {
-     "id": "isss",
-     "code": "8140301",
-     "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general",
-     "presentation": "Forma: Suspensión Oral · Frasco 30 mL con dosificador graduado tipo jeringa o pipeta"
-    }
-   ],
-   "route": "oral",
-   "therapeuticGroup": "Antiparasitarios"
   },
   {
    "id": "isss-8200406",
@@ -19261,27 +19261,6 @@
    "therapeuticGroup": "Medicamentos de uso gastrointestinal"
   },
   {
-   "id": "isss-8060106",
-   "genericName": "Metotrexate",
-   "activeIngredients": [
-    "Metotrexate"
-   ],
-   "form": "Tableta",
-   "strength": "2.5 mg",
-   "searchTerms": [],
-   "institutions": [
-    {
-     "id": "isss",
-     "code": "8060106",
-     "careLevel": "Despacho 2 C · Esencial · Prescripción: Especialista (restringido)",
-     "presentation": "Forma: Tableta · Empaque primario individual o frasco",
-     "notes": "Especialidad: Oncología, Hematología, Reumatología, Dermatología, Alergia e Inmunología."
-    }
-   ],
-   "route": "oral",
-   "therapeuticGroup": "Analgésicos"
-  },
-  {
    "id": "isss-8060107",
    "genericName": "Metotrexate (Sódico)",
    "activeIngredients": [
@@ -19319,6 +19298,13 @@
      "code": "01002015",
      "careLevel": "Nivel 2B · Esencial",
      "presentation": "Empaque Primario Individual o Frasco por 30, protegido de la luz (U/M: CTO)"
+    },
+    {
+     "id": "isss",
+     "code": "8060106",
+     "careLevel": "Despacho 2 C · Esencial · Prescripción: Especialista (restringido)",
+     "presentation": "Forma: Tableta · Empaque primario individual o frasco",
+     "notes": "Especialidad: Oncología, Hematología, Reumatología, Dermatología, Alergia e Inmunología."
     }
    ],
    "route": "oral",
@@ -19642,22 +19628,7 @@
      "careLevel": "Nivel 2C · Esencial",
      "presentation": "Empaque Primario Individual, protegido (U/M: CTO)",
      "notes": "USO EXCLUSIVO PARA: Trasplante."
-    }
-   ],
-   "route": "oral",
-   "atcCode": "L04AA06",
-   "therapeuticGroup": "Medicamentos inmunosupresores"
-  },
-  {
-   "id": "isss-8060240",
-   "genericName": "Micofenolato Mofetíl",
-   "activeIngredients": [
-    "Micofenolato Mofetíl"
-   ],
-   "form": "Cápsula",
-   "strength": "250 mg",
-   "searchTerms": [],
-   "institutions": [
+    },
     {
      "id": "isss",
      "code": "8060240",
@@ -19667,7 +19638,8 @@
     }
    ],
    "route": "oral",
-   "therapeuticGroup": "Agentes antineoplásicos e inmunomoduladores"
+   "atcCode": "L04AA06",
+   "therapeuticGroup": "Medicamentos inmunosupresores"
   },
   {
    "id": "isss-8060257",
@@ -20628,6 +20600,12 @@
      "code": "03200055",
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "Tubo (15 - 25) g (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "03200055",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Ungüento Top · Tubo (15 - 25)g"
     }
    ],
    "route": "tópica",
@@ -21170,6 +21148,12 @@
      "code": "00707010",
      "careLevel": "Nivel 2A · Esencial",
      "presentation": "Empaque Primario Individual, Liberación de 5 mg en 24 horas, protegido de la luz (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "00707010",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Parche Transdérmico, Liberación de 5 mg en 24 horas · Empaque primario individual, protegido de la luz"
     }
    ],
    "route": "transdérmica",
@@ -21322,22 +21306,7 @@
      "careLevel": "Nivel 2C · Vital",
      "presentation": "I.V. Frasco Vial o Ampolla 2 mL, protegido de la luz (U/M: C/U)",
      "notes": "USO EXCLUSIVO PARA: UCI."
-    }
-   ],
-   "route": "I.V.",
-   "atcCode": "C02DD01",
-   "therapeuticGroup": "Medicamentos cardiovasculares"
-  },
-  {
-   "id": "isss-8040407",
-   "genericName": "Nitroprusiato Sódico",
-   "activeIngredients": [
-    "Nitroprusiato Sódico"
-   ],
-   "form": "Solución Inyectable I.V.",
-   "strength": "25 mg/mL",
-   "searchTerms": [],
-   "institutions": [
+    },
     {
      "id": "isss",
      "code": "8040407",
@@ -21347,7 +21316,8 @@
     }
    ],
    "route": "I.V.",
-   "therapeuticGroup": "Medicamentos de uso cardiovascular"
+   "atcCode": "C02DD01",
+   "therapeuticGroup": "Medicamentos cardiovasculares"
   },
   {
    "id": "minsal-04100001",
@@ -24901,6 +24871,12 @@
      "code": "8141408",
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Polvo para Solución Oral · Sobre 20.5 g"
+    },
+    {
+     "id": "fosalud",
+     "code": "02109010",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Polvo Para Solución Oral · Sobre 20.5 g"
     }
    ],
    "route": "oral",
@@ -25300,6 +25276,12 @@
      "careLevel": "Despacho 1 A · Esencial · Prescripción: Médico general / Despacho 2 C · Esencial · Prescripción: Hospitalario general / Despacho 1 A · Vital · Prescripción: Médico general / Despacho 3 A y C.E.I.A.A. La Ceiba · Vital · Prescripción: Hospitalario, especialistas (restringido)",
      "presentation": "Forma: Solución Inyectable I.V. · Ampolla 10 mL | Forma: Solución Inyectable I.V. · Frasco o bolsa 100 mL | Forma: Solución Inyectable I.V. · Bolsa o frasco plastico flexible 250 mL | Forma: Solución Inyectable I.V. · Frasco o bolsa 1000 mL | Forma: Solución Inyectable I.V. · Bolsa 1000 mL | Forma: Solución Inyectable I.V. · Frasco o bolsa 3000 mL",
      "notes": "Especialidad: Unidades de Hemodiálisis."
+    },
+    {
+     "id": "fosalud",
+     "code": "02800105, 02800115",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Solución Inyectable I.V · Bolsa o Frasco Plástico Flexible 250 mL | Forma: Solución Inyectable I.V · Frasco o Bolsa 1000 mL"
     }
    ],
    "route": "I.V.",
@@ -25346,28 +25328,6 @@
    "therapeuticGroup": "Otorrinolaringologia"
   },
   {
-   "id": "isss-8250120",
-   "genericName": "Sofosbuvir + Velpatasvir",
-   "activeIngredients": [
-    "Sofosbuvir",
-    "Velpatasvir"
-   ],
-   "form": "Tabletas recubiertas",
-   "strength": "(400 + 100) mg",
-   "searchTerms": [],
-   "institutions": [
-    {
-     "id": "isss",
-     "code": "8250120",
-     "careLevel": "Despacho 3 A (HMQ-ONCO) · Esencial · Prescripción: Especialista (restringido)",
-     "presentation": "Forma: Tabletas recubiertas · Empaque primario individual o frasco",
-     "notes": "Regulación: Indicado para el tratamiento de la infección por virus de hepatitis C genotipos 1, 4,5 y 6. Dosis: 1 tableta vía oral cada día por un máximo de 12 semanas (3 meses). Especialidad: Infectología."
-    }
-   ],
-   "route": "oral",
-   "therapeuticGroup": "Antivirales"
-  },
-  {
    "id": "minsal-00507005",
    "genericName": "Sofosbuvir+Velpatasvir",
    "activeIngredients": [
@@ -25383,6 +25343,13 @@
      "careLevel": "Nivel 2B · Esencial",
      "presentation": "Empaque Primario Individual o Frasco (U/M: C/U)",
      "notes": "USO EXCLUSIVO PARA: Infectología, médico capacitado en ARV, manejo de Hepatitis C."
+    },
+    {
+     "id": "isss",
+     "code": "8250120",
+     "careLevel": "Despacho 3 A (HMQ-ONCO) · Esencial · Prescripción: Especialista (restringido)",
+     "presentation": "Forma: Tabletas recubiertas · Empaque primario individual o frasco",
+     "notes": "Regulación: Indicado para el tratamiento de la infección por virus de hepatitis C genotipos 1, 4,5 y 6. Dosis: 1 tableta vía oral cada día por un máximo de 12 semanas (3 meses). Especialidad: Infectología."
     }
    ],
    "route": "oral",
@@ -25685,6 +25652,30 @@
    ],
    "route": "I.V.",
    "therapeuticGroup": "Soluciones parenterales y electrolítos"
+  },
+  {
+   "id": "fosalud-02800135",
+   "genericName": "Solución Electrolítica en Agua estéril para inyección con Na, K, Ca y Lactato, (Hartmann o Ringer)",
+   "activeIngredients": [
+    "Solución Electrolítica en Agua estéril para inyección con Na, K, Ca y Lactato,"
+   ],
+   "form": "Solución Inyectable I.V",
+   "strength": "Sin concentración",
+   "searchTerms": [
+    "hartmann",
+    "ringer"
+   ],
+   "institutions": [
+    {
+     "id": "fosalud",
+     "code": "02800135",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Solución Inyectable I.V · Bolsa o Frasco Plástico Flexible 1,000 mL"
+    }
+   ],
+   "route": "parenteral",
+   "therapeuticGroup": "Sangre y órganos hematopoyéticos",
+   "atcCode": "B05BB01"
   },
   {
    "id": "isss-8160516",
@@ -26230,6 +26221,12 @@
      "code": "03200080, 03200085",
      "careLevel": "Nivel 2A · Esencial / Nivel 1A · Esencial",
      "presentation": "Tarro 400 g, protegido de la luz (U/M: C/U) | Tubo (30–60) g, protegido de la luz (U/M: C/U)"
+    },
+    {
+     "id": "fosalud",
+     "code": "03200085",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Crema · Tubo 30 - 60 g, Protegido de la Luz"
     }
    ],
    "route": "tópica",
@@ -26838,29 +26835,6 @@
    "therapeuticGroup": "Antisépticos, agentes urinarios y otros"
   },
   {
-   "id": "isss-8040408",
-   "genericName": "Terazocina (Clorhidrato)",
-   "activeIngredients": [
-    "Terazocina"
-   ],
-   "form": "Tableta o Tableta Recubierta",
-   "strength": "5 mg",
-   "searchTerms": [
-    "clorhidrato"
-   ],
-   "institutions": [
-    {
-     "id": "isss",
-     "code": "8040408",
-     "careLevel": "Despacho 2 D · Esencial · Prescripción: Especialista (restringido)",
-     "presentation": "Forma: Tableta o Tableta Recubierta · Empaque primario individual o frasco, protegido de la luz",
-     "notes": "Regulación: Indicado en Hiperplasia Prostática Benigna y en el tratamiento de la Hipertensión Arterial Resistente en cuarta linea de manejo. Dosis máxima recomendada 20 mg al día. Especialidad: Medicina Interna, Urologia, Nefrología, Clínica de Hipertensión, Cardiología, Medicina Familiar."
-    }
-   ],
-   "route": "oral",
-   "therapeuticGroup": "Antisépticos, agentes urinarios y otros"
-  },
-  {
    "id": "minsal-00600020",
    "genericName": "Terazosina (Clorhidrato Dihidrato)",
    "activeIngredients": [
@@ -26878,6 +26852,13 @@
      "careLevel": "Nivel 2A · Esencial",
      "presentation": "Empaque Primario Individual (U/M: CTO)",
      "notes": "USO EXCLUSIVO PARA: Urología."
+    },
+    {
+     "id": "isss",
+     "code": "8040408",
+     "careLevel": "Despacho 2 D · Esencial · Prescripción: Especialista (restringido)",
+     "presentation": "Forma: Tableta o Tableta Recubierta · Empaque primario individual o frasco, protegido de la luz",
+     "notes": "Regulación: Indicado en Hiperplasia Prostática Benigna y en el tratamiento de la Hipertensión Arterial Resistente en cuarta linea de manejo. Dosis máxima recomendada 20 mg al día. Especialidad: Medicina Interna, Urologia, Nefrología, Clínica de Hipertensión, Cardiología, Medicina Familiar."
     }
    ],
    "route": "oral",
@@ -28268,22 +28249,7 @@
      "careLevel": "Nivel 1A · Esencial",
      "presentation": "I.M. Frasco Vial monodosis de (0.5 - 1) mL y multidosis de (2.5 - 10.0) mL adsorbido en una base mineral (U/M: C/U)",
      "notes": "USO EXCLUSIVO PARA: Programa de Vacunación e Inmunizaciones."
-    }
-   ],
-   "route": "I.M.",
-   "atcCode": "J07BC01",
-   "therapeuticGroup": "Medicamentos biológicos y biotecnológicos"
-  },
-  {
-   "id": "isss-8010615",
-   "genericName": "Vacuna Antihepatítis B, Antígeno de Superficie Adsorbido, en el Gel de Hidróxido de Aluminio, Timerosal como Preservativo",
-   "activeIngredients": [
-    "Vacuna Antihepatítis B, Antígeno de Superficie Adsorbido, en el Gel de Hidróxido de Aluminio, Timerosal como Preservativo"
-   ],
-   "form": "Suspensión Esterilizada I.M.",
-   "strength": "20 mcg",
-   "searchTerms": [],
-   "institutions": [
+    },
     {
      "id": "isss",
      "code": "8010615",
@@ -28293,7 +28259,8 @@
     }
    ],
    "route": "I.M.",
-   "therapeuticGroup": "Biológicos"
+   "atcCode": "J07BC01",
+   "therapeuticGroup": "Medicamentos biológicos y biotecnológicos"
   },
   {
    "id": "minsal-02900144",
@@ -30144,27 +30111,6 @@
    "therapeuticGroup": "Antimicóticos"
   },
   {
-   "id": "isss-8010377",
-   "genericName": "Voriconazol",
-   "activeIngredients": [
-    "Voriconazol"
-   ],
-   "form": "Polvo para Infusión I.V.",
-   "strength": "200 mg",
-   "searchTerms": [],
-   "institutions": [
-    {
-     "id": "isss",
-     "code": "8010377",
-     "careLevel": "Despacho 3 B · Vital · Prescripción: Hospitalario, especialistas (restringido)",
-     "presentation": "Forma: Polvo para Infusión I.V. · Frasco Vial",
-     "notes": "Criterio de uso: Uso restringido. Exclusivo para la Especialidad de Infectología, como parte de la reserva antimicótica institucional. Tratamiento de primera línea en: Aspergilosis Invasiva e Infecciones fúngicas graves por Scedosporium spp y Fusarium. Segunda línea en: Aspergilosis Pulmonar Crónica e infecciones invasivas graves por Cándida (incluyendo C. krusei y C. glabrata) con resistencia demostrada a otros antimicóticos disponibles en el LOM. Regulación: Uso Bajo Protocolo. Especialidad: Infectología."
-    }
-   ],
-   "route": "I.V.",
-   "therapeuticGroup": "Antimicóticos"
-  },
-  {
    "id": "minsal-00400034",
    "genericName": "Voriconazole",
    "activeIngredients": [
@@ -30180,6 +30126,13 @@
      "careLevel": "Nivel 2B · Vital",
      "presentation": "I.V. Frasco Vial (U/M: C/U)",
      "notes": "USO EXCLUSIVO PARA: Infectología."
+    },
+    {
+     "id": "isss",
+     "code": "8010377",
+     "careLevel": "Despacho 3 B · Vital · Prescripción: Hospitalario, especialistas (restringido)",
+     "presentation": "Forma: Polvo para Infusión I.V. · Frasco Vial",
+     "notes": "Criterio de uso: Uso restringido. Exclusivo para la Especialidad de Infectología, como parte de la reserva antimicótica institucional. Tratamiento de primera línea en: Aspergilosis Invasiva e Infecciones fúngicas graves por Scedosporium spp y Fusarium. Segunda línea en: Aspergilosis Pulmonar Crónica e infecciones invasivas graves por Cándida (incluyendo C. krusei y C. glabrata) con resistencia demostrada a otros antimicóticos disponibles en el LOM. Regulación: Uso Bajo Protocolo. Especialidad: Infectología."
     }
    ],
    "route": "I.V.",
@@ -30495,6 +30448,12 @@
      "code": "8060304",
      "careLevel": "Despacho 1 A · Vital · Prescripción: Médico general",
      "presentation": "Forma: Tableta, Tableta Recubierta o Tableta con Cubierta Entérica · Empaque primario individual o frasco por 30"
+    },
+    {
+     "id": "fosalud",
+     "code": "00905005",
+     "careLevel": "Prescripción: Médico general",
+     "presentation": "Forma: Tableta · Empaque Primario Individual"
     }
    ],
    "route": "oral",
@@ -30871,29 +30830,6 @@
    "therapeuticGroup": "Medicamentos de uso en neurología y psiquiatría"
   },
   {
-   "id": "isss-8080305",
-   "genericName": "Ácido Valproico o Valproato (Sódico)",
-   "activeIngredients": [
-    "Ácido Valproico o Valproato"
-   ],
-   "form": "Tableta con Cubierta Entérica",
-   "strength": "500 mg",
-   "searchTerms": [
-    "sódico"
-   ],
-   "institutions": [
-    {
-     "id": "isss",
-     "code": "8080305",
-     "careLevel": "Despacho 2 C · Esencial · Prescripción: Especialista",
-     "presentation": "Forma: Tableta con Cubierta Entérica · Empaque primario individual o frasco",
-     "notes": "Regulación: Indicaciones aprobadas para medicamentos que contienen valproato: 1) Epilepsia 2) Manejo de episodios maníacos en trastorno Bipolar cuando el Litio está contraindicado o no es tolerado."
-    }
-   ],
-   "route": "oral",
-   "therapeuticGroup": "Medicamentos de uso en psiquiatria, neurologia y neurocirugia"
-  },
-  {
    "id": "minsal-02209020",
    "genericName": "Ácido Valproico o Valproato de Sodio",
    "activeIngredients": [
@@ -30908,6 +30844,13 @@
      "code": "02209020",
      "careLevel": "Nivel 2A · Esencial",
      "presentation": "Empaque Primario Individual o Frasco (U/M: CTO)"
+    },
+    {
+     "id": "isss",
+     "code": "8080305",
+     "careLevel": "Despacho 2 C · Esencial · Prescripción: Especialista",
+     "presentation": "Forma: Tableta con Cubierta Entérica · Empaque primario individual o frasco",
+     "notes": "Regulación: Indicaciones aprobadas para medicamentos que contienen valproato: 1) Epilepsia 2) Manejo de episodios maníacos en trastorno Bipolar cuando el Litio está contraindicado o no es tolerado."
     }
    ],
    "route": "oral",

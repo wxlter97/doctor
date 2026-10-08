@@ -1,0 +1,29 @@
+isss_codigo,minsal_id,decision,motivo
+8140301,minsal-00101002,merge,Mebendazole = Mebendazol (misma concentración y forma)
+8010423,minsal-00105005,merge,Benznidazol = Benznidazole
+8010358,minsal-00202045,merge,Cefepime = Cefepima; polvo para dilución I.M./I.V. = sólido parenteral
+8010345,minsal-00204005,merge,Imipenen = Imipenem; misma combinación y concentración
+8010738,minsal-00300074,merge,Isoniacida = Isoniazida + Rifapentina
+8010337,minsal-00400005,merge,Anfotericina B = Amfotericina B 50 mg polvo parenteral (verificar que ambos sean la convencional)
+8010377,minsal-00400034,merge,Voriconazol 200 mg polvo para infusión I.V. = sólido parenteral
+8250120,minsal-00507005,merge,Sofosbuvir + Velpatasvir (400 + 100) mg
+8040408,minsal-00600020,merge,Terazocina = Terazosina 5 mg
+8040407,minsal-00703015,merge,Nitroprusiato Sódico = de Sodio 25 mg/mL
+8060106,minsal-01002015,merge,Metotrexate = Metotrexato 2.5 mg
+8080305,minsal-02209020,merge,Ácido Valproico 500 mg tableta con cubierta entérica
+8250101,minsal-02304065,merge,Fludrocortizona = Fludrocortisona 0.1 mg
+8060240,minsal-03901001,merge,Micofenolato Mofetíl = Mofetilo 250 mg
+8010615,minsal-02900095,merge,Vacuna antihepatitis B 20 mcg
+8010388,minsal-00200012,merge,Fosfomicina (Trometamol) 3 g granulado oral
+8010381,minsal-00400036,merge,Caspofungina 50 mg polvo para dilución parenteral
+8040101,minsal-00707020,merge,Isosorbide Dinitrato 5 mg tableta sublingual
+8060328,minsal-02900046,merge,Alteplasa 50 mg polvo liofilizado
+8060152,minsal-02602060,merge,Fludarabina fosfato 50 mg polvo parenteral
+8010376,minsal-00400034,separate,Voriconazol 200 mg TABLETA (oral) no es el polvo parenteral de MINSAL
+8160516,minsal-02800155,separate,No se sabe si es la misma solución de diálisis (el ISSS no indica la composición); se deja separada
+FOSALUD 00707010,minsal-00707010,merge,Nitroglicerina parche: FOSALUD escribe «(18 - 25) mg/Parche» y MINSAL «18 mg»; mismo código SINAB
+FOSALUD 01200005,minsal-01200005,merge,Acetaminofén jarabe: «(120 - 160) mg/5 mL» (FOSALUD) vs «120 mg/5 mL» (MINSAL); mismo código SINAB
+FOSALUD 03100075,minsal-03100075,merge,Lágrimas artificiales: mismo código SINAB y misma descripción larga
+8080620,minsal-02202010,separate,Olanzapina 10 mg: el ISSS es polvo inyectable y MINSAL es tableta oral
+8010373,minsal-00208020,separate,Levofloxacina 500 mg: el ISSS es solución para infusión y MINSAL es oral
+

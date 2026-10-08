@@ -1,225 +1,5 @@
 [
  {
-  "page": 6,
-  "sinab": "01000024",
-  "atc": "",
-  "name": "Sa AO O O A",
-  "strength": "it dt ai",
-  "form": "Add er",
-  "presentation": "A a ds e o o",
-  "nivel": "E",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 9,
-  "sinab": "9900040",
-  "atc": "",
-  "name": "¡2 AVALADO Ny",
-  "strength": "A a",
-  "form": "AR tn",
-  "presentation": "1d MAD IMA 14M dd 1080 1 MA",
-  "nivel": "E",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 9,
-  "sinab": "100000",
-  "atc": "",
-  "name": "a ic",
-  "strength": "> ener IM MAA",
-  "form": "o 21.420 1 0.4\" 30 ar",
-  "presentation": "Ai E A",
-  "nivel": "ER",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 10,
-  "sinab": "140112400404000",
-  "atc": "",
-  "name": "Dd",
-  "strength": "EL MAA AQUA ID",
-  "form": "¿qxe6é0 01 Vilar 1 Liu tuo (us us Y Me",
-  "presentation": "A: E DI",
-  "nivel": "E",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 10,
-  "sinab": "100110",
-  "atc": "",
-  "name": "ONO SANO OS",
-  "strength": "e id td",
-  "form": "70 MU? YA 1000",
-  "presentation": "ni A A",
-  "nivel": "GR",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 10,
-  "sinab": "2200172",
-  "atc": "",
-  "name": "dd aii",
-  "strength": "AS, A IIA A\"",
-  "form": "de MA Mr? dd ye Y MA",
-  "presentation": "ad o",
-  "nivel": "HG",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 12,
-  "sinab": "117021",
-  "atc": "",
-  "name": "7 AMAN A",
-  "strength": "E rt",
-  "form": "2. Wu.» rr Y Y",
-  "presentation": "MS a. dr adds",
-  "nivel": "E",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 12,
-  "sinab": "22100090",
-  "atc": "",
-  "name": "A ds",
-  "strength": "PAR IAS A",
-  "form": ".£2.. MAA” lot! Um Lu:",
-  "presentation": "19 JJ SEEN NON. EA",
-  "nivel": "E",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 14,
-  "sinab": "1050100409",
-  "atc": "",
-  "name": "“90M MAMA 01M 0 0",
-  "strength": "rar Mea NA MANDY Y 00 Blast",
-  "form": "A",
-  "presentation": "PAI A A A A",
-  "nivel": "E",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 14,
-  "sinab": "9100700",
-  "atc": "",
-  "name": "ET PUED LAMAS",
-  "strength": "A",
-  "form": "o e e bd",
-  "presentation": "\"1 9y de NO LM ddr e",
-  "nivel": "E",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 14,
-  "sinab": "00101005",
-  "atc": "P02CA01",
-  "name": "Mebendazol",
-  "strength": "100 mg",
-  "form": "Tableta",
-  "presentation": "Empaque Primario Individual, Protegido de la 1117",
-  "nivel": "G",
-  "notes": {
-   "Regulación": "IÓN DE LA PRESCRIPCIÓN"
-  },
-  "flags": []
- },
- {
-  "page": 15,
-  "sinab": "2010000",
-  "atc": "",
-  "name": "$0 NWINAGLN7 10 1IMrdAy 0 NM",
-  "strength": "ad e",
-  "form": "y 1927 Mew 10) Y",
-  "presentation": "peo? 00M Mimo Nur dnd Ml O Md di Y",
-  "nivel": "",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 15,
-  "sinab": "209141044000",
-  "atc": "",
-  "name": "JS AA PS",
-  "strength": "A cs to",
-  "form": "2. 10M Mur Nu",
-  "presentation": "dm Do!",
-  "nivel": "E",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 17,
-  "sinab": "0000000",
-  "atc": "",
-  "name": "Pp: PAREADO.",
-  "strength": "e td",
-  "form": "+20 100 UNA Ms",
-  "presentation": "eg Y. LM MM” e Y",
-  "nivel": "",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 17,
-  "sinab": "170164",
-  "atc": "",
-  "name": "e? ea e",
-  "strength": "td dede",
-  "form": "0d MAL NANO ddr Y NM!",
-  "presentation": "e",
-  "nivel": "",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 17,
-  "sinab": "220002",
-  "atc": "",
-  "name": "Y» Mao” uenor ima yu",
-  "strength": "2er 6200000040010 0 0400",
-  "form": "“wr Y 0er uo yl",
-  "presentation": "O Es rn y o ca",
-  "nivel": "E",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
   "page": 22,
   "sinab": "00101005",
   "atc": "P02CA01",
@@ -229,7 +9,9 @@
   "presentation": "empaque rrmaro Individual, Protegcido de la l117",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 776,
+  "y1": 919
  },
  {
   "page": 22,
@@ -241,7 +23,9 @@
   "presentation": "Frasco (1<U 15U) mL, con dosificador graduado tipo jeringa o pipeta, Protegaido de la luz",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1098,
+  "y1": 1343
  },
  {
   "page": 22,
@@ -253,7 +37,9 @@
   "presentation": "empaque Primario Individual, Protegido de la l117",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1348,
+  "y1": 1494
  },
  {
   "page": 22,
@@ -265,7 +51,9 @@
   "presentation": "Empaque Primario Individual o Frasco, Protegido de la Luz",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1550,
+  "y1": 1702
  },
  {
   "page": 22,
@@ -277,7 +65,9 @@
   "presentation": "Frasco Vial o Ampolla 2 mL",
   "nivel": "GR",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2058,
+  "y1": 2206
  },
  {
   "page": 22,
@@ -289,7 +79,9 @@
   "presentation": "Frasco 100 mL, con Dosificador Graduado Tipo Jerinaa O Pineta",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2556,
+  "y1": 2745
  },
  {
   "page": 22,
@@ -301,7 +93,9 @@
   "presentation": "Empaque Primario Individual",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2750,
+  "y1": 2881
  },
  {
   "page": 23,
@@ -315,7 +109,9 @@
   "notes": {
    "Regulación": "Uso exclusivo en infecciones de piel y tejidos blandos"
   },
-  "flags": []
+  "flags": [],
+  "y0": 666,
+  "y1": 973
  },
  {
   "page": 23,
@@ -327,7 +123,9 @@
   "presentation": "Frasco Vial con c sin Diluyente",
   "nivel": "",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1035,
+  "y1": 1239
  },
  {
   "page": 23,
@@ -339,7 +137,9 @@
   "presentation": "Frasco (5U 00) mL, con dosificada graduado tipo leringa O vineta",
   "nivel": "GR",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1417,
+  "y1": 1615
  },
  {
   "page": 23,
@@ -351,7 +151,9 @@
   "presentation": "Empaque Primari Individual",
   "nivel": "E",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1769,
+  "y1": 1878
  },
  {
   "page": 23,
@@ -363,7 +165,9 @@
   "presentation": "Empaque Primaric Individual",
   "nivel": "GR",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2240,
+  "y1": 2348
  },
  {
   "page": 23,
@@ -375,7 +179,9 @@
   "presentation": "Frasco 1UU0 mL, co Dosificador Graduado tipo jeringa o pipeta. Protegido de la l11",
   "nivel": "E",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2695,
+  "y1": 2936
  },
  {
   "page": 24,
@@ -387,7 +193,9 @@
   "presentation": "Empaque Primario Individual, Protegido de la Luz",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 543,
+  "y1": 694
  },
  {
   "page": 24,
@@ -399,7 +207,9 @@
   "presentation": "Empaque Primano Individual, Protegido de la Luz",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 889,
+  "y1": 1040
  },
  {
   "page": 24,
@@ -413,7 +223,9 @@
   "notes": {
    "Regulación": "Como lercera linea de tratamiento en Candiatasis Vulvovaginal recurrente y Compucada confirmado por cultivo (MAX. 4 tabletas /mes, máximo 6 meses). Para tratamiento de Onicomicosis (Tiña línqueal) previo medición de función hepática"
   },
-  "flags": []
+  "flags": [],
+  "y0": 1334,
+  "y1": 1594
  },
  {
   "page": 24,
@@ -425,7 +237,9 @@
   "presentation": "Frasco (5U 40) mL, con Gotero dosificador calibrado (0.5 1.0) mL, Protegido de la 1117",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1764,
+  "y1": 2058
  },
  {
   "page": 24,
@@ -439,7 +253,9 @@
   "notes": {
    "Regulación": "Indicado para el tratamiento de Herpes genital, Herpes Zoster y Varicela."
   },
-  "flags": []
+  "flags": [],
+  "y0": 2378,
+  "y1": 2633
  },
  {
   "page": 25,
@@ -451,7 +267,9 @@
   "presentation": "Empaque Primaric Individual, Protegido de la Lu",
   "nivel": "E",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 486,
+  "y1": 734
  },
  {
   "page": 25,
@@ -463,7 +281,9 @@
   "presentation": "Empaque rrimark Individual, Protegaido de la l 1",
   "nivel": "",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1221,
+  "y1": 1368
  },
  {
   "page": 25,
@@ -477,7 +297,9 @@
   "notes": {
    "Regulación": "Paciente con HTA + diagnóstico de Cardiopatía Isquémica o Insuficiencia Cardiaca o Angina Estable. Paciente con HTA + antecedentes de Infarto al miocardio."
   },
-  "flags": []
+  "flags": [],
+  "y0": 1454,
+  "y1": 1742
  },
  {
   "page": 25,
@@ -491,7 +313,9 @@
   "notes": {
    "Regulación": "Paciente con HTA + diagnóstico de Cardiopatía Isquémica o Insuficiencia Cardiaca o Angina Estable. Paciente con HTA + antecedentes de Infarto al miocardio."
   },
-  "flags": []
+  "flags": [],
+  "y0": 1803,
+  "y1": 2091
  },
  {
   "page": 25,
@@ -503,7 +327,9 @@
   "presentation": "Frasco vial o Ampolla",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2459,
+  "y1": 2750
  },
  {
   "page": 26,
@@ -515,7 +341,9 @@
   "presentation": "Empaque Primario Individual,",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 568,
+  "y1": 676
  },
  {
   "page": 26,
@@ -529,7 +357,9 @@
   "notes": {
    "Regulación": "Paciente con HTA + DM + micro o macro albuminuria"
   },
-  "flags": []
+  "flags": [],
+  "y0": 801,
+  "y1": 1095
  },
  {
   "page": 26,
@@ -541,7 +371,9 @@
   "presentation": "Empaque Primario Individual.",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1338,
+  "y1": 1447
  },
  {
   "page": 26,
@@ -553,7 +385,9 @@
   "presentation": "Empaque primario individual",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1623,
+  "y1": 1733
  },
  {
   "page": 26,
@@ -567,7 +401,9 @@
   "notes": {
    "Regulación": "Paciente con HTA + DM + micro o macro albuminuria"
   },
-  "flags": []
+  "flags": [],
+  "y0": 1737,
+  "y1": 1921
  },
  {
   "page": 26,
@@ -579,7 +415,9 @@
   "presentation": "Empaque primario individual, protegido de la luz",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2240,
+  "y1": 2483
  },
  {
   "page": 26,
@@ -591,7 +429,9 @@
   "presentation": "Frasco vial 5 mL",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2603,
+  "y1": 2708
  },
  {
   "page": 27,
@@ -603,7 +443,9 @@
   "presentation": "Ampolla 1mL, Protegido de la Lu",
   "nivel": "E",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 773,
+  "y1": 928
  },
  {
   "page": 27,
@@ -615,7 +457,9 @@
   "presentation": "Empaque Prmariu Individual, Protegido de la Lu",
   "nivel": "E",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1251,
+  "y1": 1402
  },
  {
   "page": 27,
@@ -627,7 +471,9 @@
   "presentation": "Empaque Primari Individual",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1530,
+  "y1": 1639
  },
  {
   "page": 27,
@@ -639,7 +485,9 @@
   "presentation": "empaque Primand Individual",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1978,
+  "y1": 2074
  },
  {
   "page": 27,
@@ -651,7 +499,9 @@
   "presentation": "Ampolla 1 mL, Protegido de la Lu",
   "nivel": "",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2239,
+  "y1": 2384
  },
  {
   "page": 27,
@@ -663,7 +513,9 @@
   "presentation": "Ampolla 3 mL",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2760,
+  "y1": 2867
  },
  {
   "page": 28,
@@ -675,7 +527,9 @@
   "presentation": "Frasco (1UU 14U) mL, con Dosificador Graduado Tipo Jeringa o Piveta",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 679,
+  "y1": 922
  },
  {
   "page": 28,
@@ -687,7 +541,9 @@
   "presentation": "Empaque Primario Individual",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 927,
+  "y1": 1073
  },
  {
   "page": 28,
@@ -699,7 +555,9 @@
   "presentation": "Frasco 140 mL, con dosificador Graduado Tipo Jeringa o Pipeta, Protegido de la 1117",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1540,
+  "y1": 1785
  },
  {
   "page": 28,
@@ -711,7 +569,9 @@
   "presentation": "Empaque Primario Individual",
   "nivel": "",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1789,
+  "y1": 1896
  },
  {
   "page": 28,
@@ -723,7 +583,9 @@
   "presentation": "Ampolla 2 mL.",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2291,
+  "y1": 2435
  },
  {
   "page": 28,
@@ -735,7 +597,9 @@
   "presentation": "Frasco Vial 50 mL",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2768,
+  "y1": 2911
  },
  {
   "page": 29,
@@ -747,7 +611,9 @@
   "presentation": "Cartucho de 1.8 mL, protegido de luz",
   "nivel": "E",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 633,
+  "y1": 789
  },
  {
   "page": 29,
@@ -759,7 +625,9 @@
   "presentation": "Cartucho de 18 m",
   "nivel": "",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 793,
+  "y1": 943
  },
  {
   "page": 29,
@@ -771,7 +639,9 @@
   "presentation": "Empaque primario individual",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1305,
+  "y1": 1414
  },
  {
   "page": 29,
@@ -783,7 +653,9 @@
   "presentation": "Ampolla 2 mL, Protegido de la Luz",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1510,
+  "y1": 1657
  },
  {
   "page": 29,
@@ -795,7 +667,9 @@
   "presentation": "Ampolla 2.5 mL, protegida de la luz.",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1866,
+  "y1": 1975
  },
  {
   "page": 29,
@@ -807,7 +681,9 @@
   "presentation": "Ampolla 1 mL",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2335,
+  "y1": 2481
  },
  {
   "page": 29,
@@ -821,7 +697,9 @@
   "notes": {
    "Regulación": "En atenciones en consulta máximo 15 tabletas."
   },
-  "flags": []
+  "flags": [],
+  "y0": 2572,
+  "y1": 2819
  },
  {
   "page": 30,
@@ -833,7 +711,9 @@
   "presentation": "Frasco Innalador Dosificado Libre de Clorofluorocarbono (C.F.C), 200 250 Inhalaciones",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 936,
+  "y1": 1180
  },
  {
   "page": 30,
@@ -845,7 +725,9 @@
   "presentation": "Frasco Gotero O Dosificador 20 mL, Protegido de la l117",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1184,
+  "y1": 1331
  },
  {
   "page": 30,
@@ -859,7 +741,9 @@
   "notes": {
    "Regulación": "Uso en Consulta Externa en Asma Bronquial Crónica."
   },
-  "flags": []
+  "flags": [],
+  "y0": 1542,
+  "y1": 1937
  },
  {
   "page": 30,
@@ -873,7 +757,9 @@
   "notes": {
    "Regulación": "sur ar 4er\" 1 Y 181 LU as PS * LL Lúldas Y* 1060651 60M! Mirad Athos dNAlLo As (A? Ladade (01 Lay Al 11d? 14M 6h ds? 10M M0 pnerras LA LA 1 1661.71 E 6 o e NANo ENANA y niñas menores de diez años de edad. AIEPI MINSAL 2018, pag.44 y 102). INDICACIONES: para el tratamiento de RINITIS ALERGICA, URTICARIA, PRURIGO POR PICADURA DE INSECTOS PRIU/RITO Y REACCIONES A MEDICAMENTOS"
   },
-  "flags": []
+  "flags": [],
+  "y0": 2288,
+  "y1": 2778
  },
  {
   "page": 30,
@@ -885,7 +771,9 @@
   "presentation": "Empaque Primario Individual",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2783,
+  "y1": 2926
  },
  {
   "page": 31,
@@ -899,7 +787,9 @@
   "notes": {
    "Regulación": "No se deben utilizar antitusigenos, expectorantes, antinistaminicos ni mucoliticos para el tratamiento de le tos en niños y niñas menores de diez años. (Lineamientos técnicos para la atención integral de niños y niñas menores de diez años de edad. AIEPI MINSAL 2018, pag.44 y 102). INDICACIONES: para el tratamiento de RINITIS ALERGICA, URTICARIA, PRURIGO POR PICADURA DE INSECTOS PRIJRITO Y REACCIONES A MEDICAMENTOS."
   },
-  "flags": []
+  "flags": [],
+  "y0": 654,
+  "y1": 1152
  },
  {
   "page": 31,
@@ -913,7 +803,9 @@
   "notes": {
    "Regulación": "Tratamiento para casos agudos: 7-10 tabletas."
   },
-  "flags": []
+  "flags": [],
+  "y0": 1158,
+  "y1": 1409
  },
  {
   "page": 31,
@@ -925,7 +817,9 @@
   "presentation": "Empaque Primari Individual",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1751,
+  "y1": 1861
  },
  {
   "page": 31,
@@ -937,7 +831,9 @@
   "presentation": "Frasco Vial 5 ml",
   "nivel": "E",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1864,
+  "y1": 2020
  },
  {
   "page": 31,
@@ -949,7 +845,9 @@
   "presentation": "Ampolla 2 mL, protegida de la lu:",
   "nivel": "E",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2188,
+  "y1": 2345
  },
  {
   "page": 32,
@@ -961,7 +859,9 @@
   "presentation": "Sobre 20.5 g",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 496,
+  "y1": 796
  },
  {
   "page": 32,
@@ -973,7 +873,9 @@
   "presentation": "Ampolla 1 mL, protegida de la luz.",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1104,
+  "y1": 1249
  },
  {
   "page": 32,
@@ -985,7 +887,9 @@
   "presentation": "Empaque Primario Individual",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1486,
+  "y1": 1595
  },
  {
   "page": 32,
@@ -997,7 +901,9 @@
   "presentation": "Empaque Primario Individual",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1728,
+  "y1": 1875
  },
  {
   "page": 32,
@@ -1009,7 +915,9 @@
   "presentation": "Empaque Primario Individual",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2223,
+  "y1": 2331
  },
  {
   "page": 32,
@@ -1023,7 +931,9 @@
   "notes": {
    "Regulación": "Debe monitorizarse las pruebas Hematológicas durante la terapia con este medicamento."
   },
-  "flags": []
+  "flags": [],
+  "y0": 2516,
+  "y1": 2779
  },
  {
   "page": 33,
@@ -1035,7 +945,9 @@
   "presentation": "empaque Prmarc Individual o Frascc Protegdido de la l11",
   "nivel": "E",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 542,
+  "y1": 690
  },
  {
   "page": 33,
@@ -1047,7 +959,9 @@
   "presentation": "Empaque Primaric Individual",
   "nivel": "E",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1215,
+  "y1": 1324
  },
  {
   "page": 33,
@@ -1059,7 +973,9 @@
   "presentation": "Frasco vial 10 mL, protegido de la luz.",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1441,
+  "y1": 1587
  },
  {
   "page": 33,
@@ -1073,7 +989,9 @@
   "notes": {
    "Regulación": "Indicado en: Diabetes Mellitus tipo 2, que no responde a dieta y ejercicio."
   },
-  "flags": []
+  "flags": [],
+  "y0": 1654,
+  "y1": 1913
  },
  {
   "page": 33,
@@ -1085,7 +1003,9 @@
   "presentation": "Empaque Primario Individual",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2179,
+  "y1": 2286
  },
  {
   "page": 33,
@@ -1097,7 +1017,9 @@
   "presentation": "Frasco vial.",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2292,
+  "y1": 2683
  },
  {
   "page": 34,
@@ -1113,7 +1035,9 @@
   },
   "flags": [
    "código SINAB ilegible por OCR"
-  ]
+  ],
+  "y0": 548,
+  "y1": 809
  },
  {
   "page": 34,
@@ -1125,7 +1049,9 @@
   "presentation": "empaque primano individual, vrotegido de la huz",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1164,
+  "y1": 1311
  },
  {
   "page": 34,
@@ -1137,7 +1063,9 @@
   "presentation": "Frasco Vial 10 mL, Protegido de la Luz",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1315,
+  "y1": 1461
  },
  {
   "page": 34,
@@ -1149,7 +1077,9 @@
   "presentation": "Empaque Primario Individual o Frasco, Protegido de la Luz",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1605,
+  "y1": 1758
  },
  {
   "page": 34,
@@ -1161,7 +1091,9 @@
   "presentation": "Frasco 120 mL, con Dosificador Graduado Tipo Jeringa o Pipeta, Protegido de la 1117",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2108,
+  "y1": 2352
  },
  {
   "page": 34,
@@ -1175,7 +1107,9 @@
   "notes": {
    "Regulación": "Uso en programa de Atención integral en Salud a la mujer en edad productiva, embarazo y lactancia. (Máximo 15 Tabletas). Tratamiento de anemia medgaloblastica, anemia hemolítica, diálisis."
   },
-  "flags": []
+  "flags": [],
+  "y0": 2713,
+  "y1": 2931
  },
  {
   "page": 35,
@@ -1187,7 +1121,9 @@
   "presentation": "Frasco Vial 10 mL, Protegido de la Lu:",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 490,
+  "y1": 599
  },
  {
   "page": 35,
@@ -1199,7 +1135,9 @@
   "presentation": "Frasco 0U mL, cor gotero dosificador calibrado (0.5 1) mL, tipo jeringa o pipeta, Protegido de la l117",
   "nivel": "E",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 896,
+  "y1": 1192
  },
  {
   "page": 35,
@@ -1211,7 +1149,9 @@
   "presentation": "Empaque Primario Individual.",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1277,
+  "y1": 1424
  },
  {
   "page": 35,
@@ -1223,7 +1163,9 @@
   "presentation": "Ampolla 10 mL",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1840,
+  "y1": 1949
  },
  {
   "page": 35,
@@ -1235,7 +1177,9 @@
   "presentation": "Ampolla 10 mL.",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2130,
+  "y1": 2237
  },
  {
   "page": 35,
@@ -1247,7 +1191,9 @@
   "presentation": "Bolsa O Frasco Plástico Flexible 250 mL",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2451,
+  "y1": 2596
  },
  {
   "page": 35,
@@ -1259,7 +1205,9 @@
   "presentation": "DOISa O rrasco Plástico Flexible 1000 mil",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2602,
+  "y1": 2744
  },
  {
   "page": 35,
@@ -1271,7 +1219,9 @@
   "presentation": "Bolsa o Frasco 50 mL",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2749,
+  "y1": 2898
  },
  {
   "page": 36,
@@ -1283,7 +1233,9 @@
   "presentation": "Ampolla 10 mL",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 559,
+  "y1": 703
  },
  {
   "page": 36,
@@ -1295,7 +1247,9 @@
   "presentation": "bBOISa O Frasco Plástico Flexible 250 ml",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 870,
+  "y1": 1015
  },
  {
   "page": 36,
@@ -1307,7 +1261,9 @@
   "presentation": "Frasco o Bolsa 1000 mL",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1020,
+  "y1": 1172
  },
  {
   "page": 36,
@@ -1319,7 +1275,9 @@
   "presentation": "Bolsa o Frasco Plástico Flexible 1000 mL",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1247,
+  "y1": 1640
  },
  {
   "page": 36,
@@ -1331,7 +1289,9 @@
   "presentation": "Frasco Gotero (o 10) mL, Protegido delal117",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1978,
+  "y1": 2123
  },
  {
   "page": 36,
@@ -1343,7 +1303,9 @@
   "presentation": "Tubo 3 5g",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2128,
+  "y1": 2235
  },
  {
   "page": 36,
@@ -1355,7 +1317,9 @@
   "presentation": "Frasco Gotero (10- 15) mL",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2356,
+  "y1": 2695
  },
  {
   "page": 37,
@@ -1367,7 +1331,9 @@
   "presentation": "Tubo 25 30 g",
   "nivel": "E",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 539,
+  "y1": 649
  },
  {
   "page": 37,
@@ -1379,7 +1345,9 @@
   "presentation": "Sobre (2.2 2.5) «",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 835,
+  "y1": 946
  },
  {
   "page": 37,
@@ -1391,7 +1359,9 @@
   "presentation": "Tubo (20 40)g",
   "nivel": "E",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1126,
+  "y1": 1236
  },
  {
   "page": 37,
@@ -1403,7 +1373,9 @@
   "presentation": "Tubo 25-409",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1355,
+  "y1": 1465
  },
  {
   "page": 37,
@@ -1415,7 +1387,9 @@
   "presentation": "Tubo (15 25)g",
   "nivel": "E",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 1686,
+  "y1": 1831
  },
  {
   "page": 37,
@@ -1427,7 +1401,9 @@
   "presentation": "Frasco 6U mL O tubo 60 y Protegido delal1",
   "nivel": "",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2039,
+  "y1": 2185
  },
  {
   "page": 37,
@@ -1439,7 +1415,9 @@
   "presentation": "Tubo 30 60 q, Protegido de la Lu",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 2358,
+  "y1": 2467
  },
  {
   "page": 38,
@@ -1451,7 +1429,9 @@
   "presentation": "Tubo con 6 Aplicadores",
   "nivel": "G",
   "notes": {},
-  "flags": []
+  "flags": [],
+  "y0": 741,
+  "y1": 850
  },
  {
   "page": 38,
@@ -1463,1642 +1443,8 @@
   "presentation": "Tubo (40 50)g, con aplicador",
   "nivel": "G",
   "notes": {},
-  "flags": []
- },
- {
-  "page": 39,
-  "sinab": "0010201",
-  "atc": "",
-  "name": "5 Metronidazol (Benzoil)",
-  "strength": "250 mg/ 5mL",
-  "form": "Suspensión O",
-  "presentation": "Frasco (14U 150) mL, con dosificador 21 graduado tipo jeringa o pipeta, Protegido de la huz",
-  "nivel": "G",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 39,
-  "sinab": "00102010",
-  "atc": "P01AB01",
-  "name": "Metronidazol",
-  "strength": "500 my",
-  "form": "Tableta",
-  "presentation": "empaque Primario Individual, Protegido de la luz",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 39,
-  "sinab": "00202005",
-  "atc": "JO1CAO4A",
-  "name": "Amoxicilina",
-  "strength": "250 mg/ 5 mL",
-  "form": "Polvo Para Suspensión Oral",
-  "presentation": "Frasco 100 mu, con Dosificador Graduado Tipo Jeringa o Piveta",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 39,
-  "sinab": "00202010",
-  "atc": "J01CA04",
-  "name": "Amoxicilina",
-  "strength": "500 mg",
-  "form": "Cápsula O Tableta",
-  "presentation": "empaque Primario Individual",
-  "nivel": "G",
-  "notes": {
-   "Regulación": ") Cantidad máxima aplica para tratamiento de Helicobacter Pylorí"
-  },
-  "flags": []
- },
- {
-  "page": 39,
-  "sinab": "00202022",
-  "atc": "J01DB05",
-  "name": "Cefadroxilo (Monohidrato)",
-  "strength": "250mg/5mL",
-  "form": "Polvo o gránulos para suspensión Oral",
-  "presentation": "Frasco de (60- 100) mL, con dosificador oraduado",
-  "nivel": "G",
-  "notes": {
-   "Regulación": ") Uso exclusivo en infecciones Qe piel y tejidos DIianaos"
-  },
-  "flags": []
- },
- {
-  "page": 40,
-  "sinab": "00207015",
-  "atc": "J01FA09",
-  "name": "Claritromicina",
-  "strength": "250 mg/ 5 mL",
-  "form": "Polvo o Gránulos Para Suspensión Oral",
-  "presentation": "Frasco (9U 0U) mL, con dosificador graduado tipo ierinaa oO viveta",
-  "nivel": "GR",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 40,
-  "sinab": "00207020",
-  "atc": "J01FA09",
-  "name": "Claritromicina",
-  "strength": "500 mg",
-  "form": "Tableta Recubierta",
-  "presentation": "Empaque Primario Individual",
-  "nivel": "GR",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 40,
-  "sinab": "00400040",
-  "atc": "A07AA02",
-  "name": "Nistatina",
-  "strength": "100,000 Ul/ímL",
-  "form": "Suspensión Oral",
-  "presentation": "Frasco (U 40) mL, con Gotero dosificador calibrado (0.5 1.0) mL, Protegido de la 1117",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 40,
-  "sinab": "00501007",
-  "atc": "J05AB01",
-  "name": "Aciclovir",
-  "strength": "400 mg",
-  "form": "Tableta",
-  "presentation": "Empaque Primario Individual, Protegido de la 1117",
-  "nivel": "GR",
-  "notes": {
-   "Regulación": "Indicado para el tratamiento de Herpes genital, Herpes Zoster y Varicela."
-  },
-  "flags": []
- },
- {
-  "page": 41,
-  "sinab": "0100101",
-  "atc": "",
-  "name": "0 Diclofenaco Sódico",
-  "strength": "25 mg/mL",
-  "form": "Solución Inyectable I.)",
-  "presentation": "Ampolla 3 mL",
-  "nivel": "G",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 41,
-  "sinab": "010010",
-  "atc": "",
-  "name": "5 Ibuprofeno",
-  "strength": "100 mg/ 5 mL",
-  "form": "Suspensión O",
-  "presentation": "Frasco (1UU 120) mL, con al Dosificador Graduado Tipo Jeringa o Piveta",
-  "nivel": "G",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 41,
-  "sinab": "0100104",
-  "atc": "",
-  "name": "0) Ibuprofeno",
-  "strength": "400 mg",
-  "form": "lableta O Tableta recubierta",
-  "presentation": "empaque Primario Individual",
-  "nivel": "",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 41,
-  "sinab": "0120001",
-  "atc": "",
-  "name": "5 Acetaminofér",
-  "strength": "(120 160) mg/ mil",
-  "form": "Solución oral jarabe",
-  "presentation": "Frasco 140 mu, con dosificador > Graduado Tipo Jeringa o Pipeta Protegido de la luz",
-  "nivel": "G",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 41,
-  "sinab": "012000",
-  "atc": "",
-  "name": "0 Acetaminofér",
-  "strength": "500 mg",
-  "form": "Tableta",
-  "presentation": "Empaque Primario Individual",
-  "nivel": "E",
-  "notes": {
-   "Regulación": "Ó En consulta se autoriza HASTA 20 tabletas para el manejo de casos agudos. En toda prescripción que incluva acetaminofén no se deberá superar la Dosis límite diaria de 3 q."
-  },
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 42,
-  "sinab": "01500045",
-  "atc": "N01BB03",
-  "name": "Mepivacaina Clorhidrato sin Epvinefrina",
-  "strength": "3%",
-  "form": "solución Inyectable sin vasoconstrictor",
-  "presentation": "Cartucho de 1.8 mL",
-  "nivel": "E",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 42,
-  "sinab": "01600001",
-  "atc": "M03BA03",
-  "name": "Metocarbamol",
-  "strength": "500 my",
-  "form": "Tableta",
-  "presentation": "Empaque primario individual",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 42,
-  "sinab": "02304035",
-  "atc": "H02AB07",
-  "name": "Prednisona",
-  "strength": "5 mg",
-  "form": "Tableta Ranurada",
-  "presentation": "Empaque Primario individiial",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 43,
-  "sinab": "0010101",
-  "atc": "",
-  "name": "5 Mebendazol",
-  "strength": "100 mg",
-  "form": "Tableta",
-  "presentation": "empaque Primario Individual, Protegido de la 1117",
-  "nivel": "G",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 43,
-  "sinab": "0120001",
-  "atc": "",
-  "name": "5 Acetaminofér",
-  "strength": "(120 160) mg/ ' mil",
-  "form": "Solución oral jarabe",
-  "presentation": "Frasco 1U mu, con dosificador ) Graduado Tipo Jeringa o Pipeta, Protegido de la 1117",
-  "nivel": "G",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 43,
-  "sinab": "0120001",
-  "atc": "",
-  "name": "0) Acetaminofér",
-  "strength": "500 my",
-  "form": "Tableta",
-  "presentation": "empaque Primario Individual",
-  "nivel": "E",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 43,
-  "sinab": "0210901",
-  "atc": "",
-  "name": "Sales de O Rehidratación Oral",
-  "strength": "KCULO g/L, Nac 2.6 9/ L, Citrato Trisódico Dihidratado 2.9 g/L, Glucosa Anhidra 135 al.",
-  "form": "Polvo Para Solución Ora",
-  "presentation": "Sobre 20.5 gy",
-  "nivel": "G",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 44,
-  "sinab": "02701025",
-  "atc": "AY1CA01",
-  "name": "Vitamina A (Palmitato)",
-  "strength": "50,000 UI",
-  "form": "Cápsula o Perla de Gelatina Blanda",
-  "presentation": "empaque Primario Individual o Frasco, Protegido de la 1117",
-  "nivel": "",
-  "notes": {
-   "Regulación": "Tratamiento de deficiencia de Vitamina A: Estados de malabsorción intestinal y desnutrición. Uso de acuerdo a Norma AIEPI y del Programa de Atención Integral en Salud Infantil."
-  },
-  "flags": []
- },
- {
-  "page": 44,
-  "sinab": "02703011",
-  "atc": "A12CB01",
-  "name": "Zinc (Sulfato)",
-  "strength": "10 mg /5 mL",
-  "form": "Jarabe",
-  "presentation": "Frasco 140 mu, con Dosificador Graduado Tipo Jeringa o Pipeta, Protegido de la luz",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 44,
-  "sinab": "02705005",
-  "atc": "B03BB01",
-  "name": "Ácido Fólico",
-  "strength": "5 mg",
-  "form": "Tableta Ranurada",
-  "presentation": "Empaque Primario Individual",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 44,
-  "sinab": "02705015",
-  "atc": "B03AA07",
-  "name": "Hierro Sulfato",
-  "strength": "125 mg/mL",
-  "form": "Solución Oral",
-  "presentation": "Frasco 60 mu, con gotero dosificador calibrado (0.5 1) mL, tipo jeringa o pipeta, Protegido de la 1117",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 44,
-  "sinab": "02705025",
-  "atc": "B03AD03",
-  "name": "Hierro Sulfato + Ácido Fólico",
-  "strength": "300 mg",
-  "form": "ableta O Tableta reciibierta",
-  "presentation": "Empaque Primario Iindividi al",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 45,
-  "sinab": "028001",
-  "atc": "",
-  "name": "Agua Estéril LO 2% Para Invección",
-  "strength": "",
-  "form": "",
-  "presentation": "Ampolla 10 mL",
-  "nivel": "G",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 45,
-  "sinab": "031000",
-  "atc": "",
-  "name": "LO Cloranfenicol",
-  "strength": "",
-  "form": "Ungúento Oftálmico",
-  "presentation": "Tubo 3 59",
-  "nivel": "G",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 45,
-  "sinab": "4032000",
-  "atc": "",
-  "name": "5 Permetrina",
-  "strength": "5%",
-  "form": "Loción o Crer",
-  "presentation": "Frasco 6U ML O s tubo 60 gy Protegido de la Luz",
-  "nivel": "E",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 46,
-  "sinab": "00703010",
-  "atc": "CO2DBO",
-  "name": "Hidralazina Clorhidrato",
-  "strength": "20 mg",
-  "form": "POIVO NOMNIUIZado para solución inyectable o solución invectable V",
-  "presentation": "Frasco vial o Ampolla",
-  "nivel": "E",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 46,
-  "sinab": "00704040",
-  "atc": "CO8DAO",
-  "name": "Verapamilo Clorhidrato",
-  "strength": "2.5 mg/mL",
-  "form": "Solución inyectable 1.V.",
-  "presentation": "Frasco vial O Ampolla 2 mL, vrotegida de la luz",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 46,
-  "sinab": "00705015",
-  "atc": "CO9AAO",
-  "name": "gnalapril Maleato",
-  "strength": "20 mg",
-  "form": "Tableta Oral",
-  "presentation": "Empaque primario individual",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 46,
-  "sinab": "00707010",
-  "atc": "CO1DAO",
-  "name": "Nitroglicerina",
-  "strength": "(18 25) mg/Parche",
-  "form": "Parcne Transdérmico, Liberación de 5 ma en 24 horas",
-  "presentation": "Empaque primario individual, protegido de la luz",
-  "nivel": "E",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 46,
-  "sinab": "00709025",
-  "atc": "COICAO",
-  "name": "Dopamina Clorhidrato",
-  "strength": "40 mg/mL",
-  "form": "Ootucion invectahle VW",
-  "presentation": "Frasco vial 5 mL",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 47,
-  "sinab": "00711010",
-  "atc": "C01CA24",
-  "name": "Epinefrina",
-  "strength": "1 mg/mL (1:1000)",
-  "form": "solución inyectable I.M. IV Se",
-  "presentation": "Ampolla 1 mL, Protegido de la luz",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 47,
-  "sinab": "00800030",
-  "atc": "C03CA01",
-  "name": "Furosemida",
-  "strength": "10 mg/mL",
-  "form": "Solución invectable V.",
-  "presentation": "Ampolla 2 mL, vrotegaida de la luz",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 47,
-  "sinab": "00905005",
-  "atc": "B01AC06",
-  "name": "Acido Acetilsalicíilico",
-  "strength": "(80 100) mg",
-  "form": "Tableta Oral",
-  "presentation": "Empaque primano individual.",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 47,
-  "sinab": "00711010",
-  "atc": "CU1CA2A",
-  "name": "eEpinefrna",
-  "strength": "1 mg/mL (1:1000)",
-  "form": "solución Inyectable 1.M. PAZ uz",
-  "presentation": "Ampolla 1muL, Protegido de la Luz",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 47,
-  "sinab": "01001010",
-  "atc": "M01AB05",
-  "name": "Diclofenaco Sódico",
-  "strength": "25 mg/mL",
-  "form": "Solución inyectable 1.M.",
-  "presentation": "Ampolla 3 mL, Protegido de la luz",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 47,
-  "sinab": "01001030",
-  "atc": "M01AB15",
-  "name": "Ketorolaco Trometamina",
-  "strength": "30 mg /mL",
-  "form": "OluUcIoón inyectable 1.M. IV",
-  "presentation": "Ampolla 1 mL, protegida de la luz",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 49,
-  "sinab": "02101011",
-  "atc": "ROGAA",
-  "name": "Dimenhidrinato",
-  "strength": "50 mg /mL",
-  "form": "Solución Inyectable 1.M. INF",
-  "presentation": "Frasco Vial 5 ml",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 49,
-  "sinab": "10170000",
-  "atc": "AO3BA",
-  "name": "Atropina Sulfato",
-  "strength": "0.5 mg/mL",
-  "form": "solución inyectable 1.M. TSE",
-  "presentation": "Ampolla 1 mL",
-  "nivel": "E",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 49,
-  "sinab": "10170002",
-  "atc": "AO3BB",
-  "name": "Hioscina N-Butil Bromuro",
-  "strength": "20 mg/mL",
-  "form": "solución inyectable 1.M, IV",
-  "presentation": "Ampolla 1 mL",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 49,
-  "sinab": "20190300",
-  "atc": "ROZACI",
-  "name": "Salbutamol (Sulfato)",
-  "strength": "100 mcg/dosis",
-  "form": "Aerosol",
-  "presentation": "Frasco inhalador dosificador, (200- 250) inhalacione: libre de clorofluorocarbor (CEC)",
-  "nivel": "E",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 49,
-  "sinab": "01904011",
-  "atc": "RO3BA",
-  "name": "Beclometasona Dipropionato",
-  "strength": "250 mcg/ aplicación",
-  "form": "Aerosol l",
-  "presentation": "Frasco innalagaor dosificador,(200- 250) inhalacione: libre de clorofluorocarbor (CET",
-  "nivel": "E",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 50,
-  "sinab": "02101025",
-  "atc": "AO3FAO",
-  "name": "Metoclopramida (Clorhidrato)",
-  "strength": "5 mg/mL",
-  "form": "otucióÓn inyectable 1.M. IV",
-  "presentation": "Ampolla 2 mL, protegida de la luz.",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 50,
-  "sinab": "02104015",
-  "atc": "AO2BAO",
-  "name": "Ranitidina (Clorhidrato)",
-  "strength": "50 mg",
-  "form": "solución inyectable 1.M. IV",
-  "presentation": "Ampolla (2 5) mL, protegida de la luz.",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 50,
-  "sinab": "02201030",
-  "atc": "NOSADO",
-  "name": "Haloperidol",
-  "strength": "5 mg/mL",
-  "form": "Solución inyectable 1.M. IV",
-  "presentation": "Ampolla 1 mL, protegida de la luz.",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 50,
-  "sinab": "02209040",
-  "atc": "NO3ABO",
-  "name": "rFenttoma Sódica",
-  "strength": "50 mg/mL",
-  "form": "solución invectahle 1VY",
-  "presentation": "Frasco vial 5 mL.",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 50,
-  "sinab": "02301010",
-  "atc": "A10ABO",
-  "name": "insulina Humana Cristalina ADN Recombinante",
-  "strength": "100 U.I/mL",
-  "form": "Solución inyectable 1.V. IM S.C.",
-  "presentation": "Frasco vial 10 mL, protegido de la luz.",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 51,
-  "sinab": "02304020",
-  "atc": "H02AB09",
-  "name": "Hidrocortisona (Succinato Sódico)",
-  "strength": "500 mg",
-  "form": "Polvo para solución inyectable I.M. IV. estabilidad 72 horas después de reconstituido",
-  "presentation": "Frasco vial.",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 51,
-  "sinab": "02800010",
-  "atc": "V07AB00",
-  "name": "Agua esteril vara Invección",
-  "strength": "pais qua aa",
-  "form": "A Y ly a A",
-  "presentation": "Ampolla 10 mL.",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 51,
-  "sinab": "02800025",
-  "atc": "A12AA03",
-  "name": "Calcio GChiconato",
-  "strength": "10%",
-  "form": "solución invectable IV",
-  "presentation": "Ampolla 10 mL.",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 51,
-  "sinab": "02800055",
-  "atc": "B05BA03",
-  "name": "Dextrosa en agua destilada",
-  "strength": "50%",
-  "form": "Solución inyectable LV.",
-  "presentation": "Bolsa o frasco 50 mL.",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 51,
-  "sinab": "02800080",
-  "atc": "BOSXAOS5",
-  "name": "Magnesio Sulfato",
-  "strength": "50%",
-  "form": "solución inyectable 1.M IV",
-  "presentation": "Ampolla 10 mL",
-  "nivel": "E",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 51,
-  "sinab": "02800105",
-  "atc": "B05CB01",
-  "name": "sodio Cloruro en agua destilada",
-  "strength": "0.90%",
-  "form": "Solución inyectable 1.V.",
-  "presentation": "Bolsa O frasco plástico flexible 250 ml",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 51,
-  "sinab": "02800115",
-  "atc": "B05CB01",
-  "name": "0010 Cloruro en agua destilada",
-  "strength": "0.90%",
-  "form": "Solución inyectable 1.V.",
-  "presentation": "Bolsa 1000 mL",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 53,
-  "sinab": "11431114",
-  "atc": "LJ",
-  "name": "SINS IMA LS LL IMA",
-  "strength": "LS NUM EN,",
-  "form": "EVO OI NULA AS",
-  "presentation": "2D) PANA 30 DUI",
-  "nivel": "E",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 53,
-  "sinab": "01200010",
-  "atc": "VNO2BEO1",
-  "name": "Acetaminofén",
-  "strength": "500 mg",
-  "form": "Tableta",
-  "presentation": "Empaque Primario Individual",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 53,
-  "sinab": "02000045",
-  "atc": "R06AX13",
-  "name": "Loratadina",
-  "strength": "10 mg",
-  "form": "Tableta",
-  "presentation": "empaque Primario Individual",
-  "nivel": "G",
-  "notes": {
-   "Regulación": "Tratamiento para casos agudos: 7-10 tabletas."
-  },
-  "flags": []
- },
- {
-  "page": 53,
-  "sinab": "02104010",
-  "atc": "A02BA02",
-  "name": "Ranitidina (Clorhidrato)",
-  "strength": "150 mg",
-  "form": "Tableta",
-  "presentation": "empaque Primario Individual, Protegido de la 1117",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 54,
-  "sinab": "02205005",
-  "atc": "N06AA09",
-  "name": "Amitriptilina Clorhidrato",
-  "strength": "25 mg",
-  "form": "Tableta Recubierta",
-  "presentation": "empaque Primario Individual",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 54,
-  "sinab": "02209025",
-  "atc": "N03AF01",
-  "name": "Carbamazepina",
-  "strength": "200 my",
-  "form": "Tableta Ranurada",
-  "presentation": "Empaque Primario Individual",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 54,
-  "sinab": "02701005",
-  "atc": "A11GA01",
-  "name": "Ácido Ascórbico (Vitamina C)",
-  "strength": "500 mg",
-  "form": "Tableta Oral",
-  "presentation": "Empaque primario individual, protegido de la huz",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 55,
-  "sinab": "02701020",
-  "atc": "A11DA01",
-  "name": "Tiamina Clorhidrato",
-  "strength": "100 mg/mL",
-  "form": "solución Inyectable 1.M. IV.",
-  "presentation": "Frasco Vial 10 mL, Protegido dela l117",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 55,
-  "sinab": "02701040",
-  "atc": "A11HA03",
-  "name": "Alfa tocoferol (Vitamina E)",
-  "strength": "400 U.I.",
-  "form": "Cápsula Oral c gelatina bland sin colorante",
-  "presentation": "Empaque : primario individual o frasco, protegido de la luz",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 55,
-  "sinab": "02705005",
-  "atc": "B03BB01",
-  "name": "Ácido Fólico",
-  "strength": "5 mg",
-  "form": "Tableta Ranurada",
-  "presentation": "empaque Primario Individual",
-  "nivel": "G",
-  "notes": {
-   "Regulación": "Uso en programa de Atención integral en Salud a la mujer en edad productiva, embarazo y lactancia. (Máximo 15 Tabletas). Tratamiento de anemia megaloblastica, anemia hemolítica, diálisis."
-  },
-  "flags": []
- },
- {
-  "page": 55,
-  "sinab": "02705010",
-  "atc": "B03BA01",
-  "name": "Cianocobalamina",
-  "strength": "1,000 mcg/mL",
-  "form": "Solución Inyectable 1.M.",
-  "presentation": "Frasco Vial 10 mL, Protegido de la 1117",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 55,
-  "sinab": "02705025",
-  "atc": "B03AD03",
-  "name": "Hierro Sulfato + Ácido Fólico",
-  "strength": "300 mg",
-  "form": "Lableta O Tableta recubierta",
-  "presentation": "empaque Primario Individual",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 55,
-  "sinab": "03500080",
-  "atc": "N07BA01",
-  "name": "Nicotina",
-  "strength": "(24 25) mg",
-  "form": "Parche transdérmico, liberación de IMA hara",
-  "presentation": "Empaque primario individual",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 56,
-  "sinab": "03500085",
-  "atc": "N07BA01",
-  "name": "Nicotina",
-  "strength": "(8-9) mg",
-  "form": "Parcne transdérmico, liberación de E£ma/16 horas",
-  "presentation": "Empaque primario individual",
-  "nivel": "E",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 57,
-  "sinab": "00202005",
-  "atc": "J01CAD4",
-  "name": "Amoxicilina",
-  "strength": "250 mg/ 5 mL",
-  "form": "Polvo Para Suspensión Oral",
-  "presentation": "Frasco 100 mu, con Dosificador Graduado Tipo Jerinaa o Piveta",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 57,
-  "sinab": "00202010",
-  "atc": "J01CA04",
-  "name": "Amoxicilina",
-  "strength": "500 mg",
-  "form": "Cápsula o Tableta",
-  "presentation": "Empaque Primario Individual",
-  "nivel": "G",
-  "notes": {
-   "Regulación": "Cantidad máxima aplica para tratamiento de Helicobacter Pylori."
-  },
-  "flags": []
- },
- {
-  "page": 57,
-  "sinab": "00202022",
-  "atc": "J01DB05",
-  "name": "Cefadroxilo (Monohidrato)",
-  "strength": "250mg/5mL",
-  "form": "Polvo o gránulos para suspensión oral",
-  "presentation": "Frasco de (60-100) mL, con dosificador graduado",
-  "nivel": "G",
-  "notes": {
-   "Regulación": "Uso exclusivo en infecciones de piel y tendos biandos"
-  },
-  "flags": []
- },
- {
-  "page": 57,
-  "sinab": "00705015",
-  "atc": "CO9AAO2Z",
-  "name": "Enalapril Maleato",
-  "strength": "20 mg",
-  "form": "Tableta Ranurada",
-  "presentation": "Empaque Primario Individual.",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 57,
-  "sinab": "00711010",
-  "atc": "C01CA24",
-  "name": "Epinefrina",
-  "strength": "1 mg/mL (1:1000)",
-  "form": "Solución Inyectable 1.M. SIMS St",
-  "presentation": "Ampolla imL, Protegido de la Luz",
-  "nivel": "G",
-  "notes": {
-   "Regulación": "USO EXCLUSIVO DE: Cuidados Intensivos, Anestesiología."
-  },
-  "flags": []
- },
- {
-  "page": 58,
-  "sinab": "00900005",
-  "atc": "B01AC06",
-  "name": "ACIQ0o Acrcatilealicilica",
-  "strength": "(80 100) mg",
-  "form": "Tableta",
-  "presentation": "empaque rnmano Individual",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 58,
-  "sinab": "01001010",
-  "atc": "M01AB05",
-  "name": "Diclofenaco Sódico",
-  "strength": "25 mg/mL",
-  "form": "Solución Invectable I.M.",
-  "presentation": "Ampolla 3 mL",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 58,
-  "sinab": "01001020",
-  "atc": "M01AE01",
-  "name": "Ibuprofeno",
-  "strength": "400 my",
-  "form": "Tableta O Tableta reciibierta",
-  "presentation": "Empaque Primario Individual",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 58,
-  "sinab": "01200005",
-  "atc": "N02BE01",
-  "name": "Acetaminofén",
-  "strength": "(120 160) mg/ 5 mil",
-  "form": "Solución oral o jarabe",
-  "presentation": "Frasco 120 mL, con dosificador Graduado Tipo Jeringa o Pipeta, Protegido de la 1117",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 58,
-  "sinab": "01200010",
-  "atc": "N02BE01",
-  "name": "Acetaminofén",
-  "strength": "500 mg",
-  "form": "Tableta",
-  "presentation": "Empaque Primario Individual",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 59,
-  "sinab": "02000015",
-  "atc": "R06AB04",
-  "name": "Clorfeniramina Maleato",
-  "strength": "10 mg/mL",
-  "form": "sotucioón Inyectable 1.M. TW",
-  "presentation": "Ampolla 1 mL, Protegido de la Luz",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 59,
-  "sinab": "02000045",
-  "atc": "R06AX13",
-  "name": "Loratadina",
-  "strength": "10 mg",
-  "form": "Tableta",
-  "presentation": "Empaque Primario Individual",
-  "nivel": "G",
-  "notes": {
-   "Regulación": "Tratamiento para casos agudos: 7-10 tabletas."
-  },
-  "flags": []
- },
- {
-  "page": 59,
-  "sinab": "02101010",
-  "atc": "ROGAAOZ2",
-  "name": "Dimenhidrinato",
-  "strength": "50 mg /mL",
-  "form": "Solución Inyectable I.M. =IWi:",
-  "presentation": "Frasco Vial 5 mL",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 59,
-  "sinab": "02104010",
-  "atc": "A02BA02",
-  "name": "Ranitidina (Clorhidrato)",
-  "strength": "150 mg",
-  "form": "Tableta",
-  "presentation": "Empaque Primano Individual, Protegido de la Luz",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 60,
-  "sinab": "02301005",
-  "atc": "A10BB01",
-  "name": "Glibenclamida",
-  "strength": "5 mg",
-  "form": "Tableta",
-  "presentation": "-mpaque Primario Individual",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 60,
-  "sinab": "02301030",
-  "atc": "A10BA02",
-  "name": "Metformina Clorhidrato",
-  "strength": "850 my",
-  "form": "Tableta Ranurada",
-  "presentation": "-Mpaque Primario ndividual o Frasco, rotegido de la 1117",
-  "nivel": "E",
-  "notes": {
-   "Regulación": "Indicado en: Diabetes Mellitus tipo 2, que no responde a dieta y ejercicio."
-  },
-  "flags": []
- },
- {
-  "page": 60,
-  "sinab": "02304035",
-  "atc": "H02AB07",
-  "name": "Prednisona",
-  "strength": "5 mg",
-  "form": "Tableta Ranurada",
-  "presentation": "Empaque Primario Individual",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 60,
-  "sinab": "02800105",
-  "atc": "BOS5CBO1",
-  "name": "odio Cloruro en Agua Estéril vara Invección",
-  "strength": "0.9%",
-  "form": "Solución Inyectable 1.V.",
-  "presentation": "Bolsa O Frasco Plástico Flexible 2580 ml",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 60,
-  "sinab": "02800135",
-  "atc": "B05BB01",
-  "name": "Ooltucioón Electrolítica en Agua estéril para inyección con Na, K, Ca y lactato",
-  "strength": "MN",
-  "form": "Solución Inyectable 1V",
-  "presentation": "Bolsa o Frasco Plástico Flexible 1,1000 mL",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 61,
-  "sinab": "03100035",
-  "atc": "S01AA01",
-  "name": "Cloranfenicol",
-  "strength": "0.5 %.",
-  "form": "Solución Oftálmica",
-  "presentation": "Frasco Gotero lo 10) mL, Protegido de la 1117",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 61,
-  "sinab": "03200035",
-  "atc": "D07AA02",
-  "name": "Hidrocortisona Acetato",
-  "strength": "",
-  "form": "Crema",
-  "presentation": "Tubo 25-40g",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 62,
-  "sinab": "00102005",
-  "atc": "P01AB01",
-  "name": "Metronidazol (Benzoil)",
-  "strength": "250 mg/ 5mL",
-  "form": "Suspensión Ora",
-  "presentation": "Frasco (14U 150) mL, con dosificador graduado tipo jeringa o pipeta, Protegido de la huz7",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 62,
-  "sinab": "00102010",
-  "atc": "P01AB01",
-  "name": "Metronidazol",
-  "strength": "500 mg",
-  "form": "Tableta",
-  "presentation": "Empaque Primario Individual, Protegido de la 1117",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 62,
-  "sinab": "00201010",
-  "atc": "J01GB03",
-  "name": "Gentamicina (Sulfato)",
-  "strength": "40 mg/mL",
-  "form": "solución Inyectable IM IV",
-  "presentation": "Frasco Vial o Ampolla 2 mL",
-  "nivel": "GR",
-  "notes": {
-   "Regulación": "indicado en casos que no exista otra alternativa terapeutica mas efectiva o segura, Requiere Antibiograma. No autorizado para ser prescrito en menores de 5 años. No es medicamento de primera linea"
-  },
-  "flags": []
- },
- {
-  "page": 62,
-  "sinab": "00202005",
-  "atc": "JO1CAD4A",
-  "name": "Amoxicilina",
-  "strength": "250 mg/ 5 mL",
-  "form": "Polvo Para Suspensión Oral",
-  "presentation": "Frasco 100 mL, con Dosificador Graduado Tipo “Jarinna Pinata",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 63,
-  "sinab": "00202065",
-  "atc": "J01CE01",
-  "name": "Penicilina G (Benzatínica)",
-  "strength": "1.2 Millones UI",
-  "form": "Polvo Para Suspensión Inyectable 1.M.",
-  "presentation": "Frasco Vial con o sin Diluyente",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 63,
-  "sinab": "00207015",
-  "atc": "J01FA09",
-  "name": "Claritromicina",
-  "strength": "250 mg/ 5 mL",
-  "form": "Polvo o Gránulos Para Suspensión Oral",
-  "presentation": "Frasco (96 60) mL, con dosificador graduado tipo ieringa O DiDeta",
-  "nivel": "GR",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 63,
-  "sinab": "00207020",
-  "atc": "J01FA09",
-  "name": "Claritromicina",
-  "strength": "500 my",
-  "form": "Tableta Recubierta",
-  "presentation": "Empaque Primario Individual",
-  "nivel": "GR",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 63,
-  "sinab": "00208005",
-  "atc": "JOLIMAO2",
-  "name": "Ciprofloxacina (Clorhidrato)",
-  "strength": "500 mg",
-  "form": "Tableta Recubierta",
-  "presentation": "empaque Primario Individual",
-  "nivel": "GR",
-  "notes": {
-   "Regulación": "Hs a a ss is a: e a A se as ls A a A a E"
-  },
-  "flags": []
- },
- {
-  "page": 63,
-  "sinab": "00209005",
-  "atc": "J01EE01",
-  "name": "Trimetoprim + Sulfametoxazol",
-  "strength": "(40 + 200)]mg/ 5 mil",
-  "form": "Suspensión Oral",
-  "presentation": "Frasco 100 mu, con Dosificador Graduado tipo jeringa o pipeta. Protegido de la L117",
-  "nivel": "G",
-  "notes": {
-   "Regulación": "Indicación en niños y niñas mayores de 6 meses."
-  },
-  "flags": []
- },
- {
-  "page": 63,
-  "sinab": "00209010",
-  "atc": "J01EE01",
-  "name": "Trimetoprim + Sulfametoxazol",
-  "strength": "(160 + 800) mg",
-  "form": "Tableta Ranurada",
-  "presentation": "Empaque Primario Individual",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 64,
-  "sinab": "00400010",
-  "atc": "J02AC01",
-  "name": "Fluconazol",
-  "strength": "150 mg",
-  "form": "Cápsula o Tableta",
-  "presentation": "empaque Primario Individial",
-  "nivel": "GR",
-  "notes": {
-   "Regulación": "Como lercera linea Ue tratamiento en Canaiaiasis Vulvovaginal recurrente y Compucada confirmado por cultivo (MAX. 4 tabletas /mes, máximo 6 meses). Para tratamiento de Onicomicosis (Tiña línaueal) vrevio medición de función hepática"
-  },
-  "flags": []
- },
- {
-  "page": 64,
-  "sinab": "00501007",
-  "atc": "JOS5ABO1",
-  "name": "Aciclovir",
-  "strength": "400 mg",
-  "form": "Tableta",
-  "presentation": "Empaque Primario Individual, Protegido de la 1117",
-  "nivel": "GR",
-  "notes": {
-   "Regulación": "Indicado para el tratamiento de Herpes genital, Herpes Zoster y Varicela."
-  },
-  "flags": []
- },
- {
-  "page": 64,
-  "sinab": "01001010",
-  "atc": "M01AB05",
-  "name": "Diclofenaco Sódico",
-  "strength": "25 mg/mL",
-  "form": "Solución Invectable IM.",
-  "presentation": "Ampolla 3 mL",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 64,
-  "sinab": "01001015",
-  "atc": "M01AE01",
-  "name": "Ibuprofeno",
-  "strength": "100 mg/ 5 mL",
-  "form": "Suspensión Oral",
-  "presentation": "Frasco (100 120) mL, con Dosificador Graduado Tipo Jerinna O Pineta",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 64,
-  "sinab": "01001020",
-  "atc": "M01AE01",
-  "name": "Ibuprofeno",
-  "strength": "400 mg",
-  "form": "Tableta O Tableta reqiihierta",
-  "presentation": "Empaque Primario Individiial",
-  "nivel": "G",
-  "notes": {
-   "Regulación": "Una prescripción mayor estará sujeta a indicación por patología crónica documentada en cuadro clínico."
-  },
-  "flags": []
- },
- {
-  "page": 65,
-  "sinab": "0120000",
-  "atc": "",
-  "name": "] Acetaminofén",
-  "strength": "(120 160) mg/ 5 mil",
-  "form": "Solución oral « jarabe",
-  "presentation": "Frasco 120 mu, con dosificador Graduado Tipo Jeringa o Pipeta, Protegido de la URDVA",
-  "nivel": "",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 65,
-  "sinab": "01200011",
-  "atc": "N02BE01",
-  "name": "Acetaminofén",
-  "strength": "500 mg",
-  "form": "Tableta",
-  "presentation": "Empaque Primario Individual",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 65,
-  "sinab": "01600005",
-  "atc": "M03BA03",
-  "name": "Metocarbamol",
-  "strength": "500 my",
-  "form": "Tableta",
-  "presentation": "Empaque primario individual",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 65,
-  "sinab": "01600010",
-  "atc": "M03BC01",
-  "name": "Orfenadrina Citrato",
-  "strength": "30 mg/ mL",
-  "form": "solucion Inyectable IM. IV",
-  "presentation": "Ampolla mu, Protegido de la l1uz",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 65,
-  "sinab": "01700015",
-  "atc": "A03BB01",
-  "name": "Hioscina N- Butil Bromuro",
-  "strength": "10 mg",
-  "form": "Tableta Recubierta",
-  "presentation": "empaque primario individual, Protegido de la luz",
-  "nivel": "G",
-  "notes": {
-   "Regulación": "En atenciones en consulta máximo 15 tabletas."
-  },
-  "flags": []
- },
- {
-  "page": 65,
-  "sinab": "01700020",
-  "atc": "A03BB01",
-  "name": "Hioscina N- Butil Bromuro",
-  "strength": "20 mg/mL",
-  "form": "solución inyectable 1.M. ¡VA",
-  "presentation": "Ampolla 1 mL, Protegido de la 1117",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 66,
-  "sinab": "02000035",
-  "atc": "R06AX13",
-  "name": "Loratadina",
-  "strength": "5 mg/5 mL",
-  "form": "Solución Oral o Jarabe Oral",
-  "presentation": "Frasco 10 mu, con Dosificador Graduado Tipo Jeringa o Pipeta, Protegido de la luz",
-  "nivel": "",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 66,
-  "sinab": "02000045",
-  "atc": "R06AX13",
-  "name": "Loratadina",
-  "strength": "10 mg",
-  "form": "Tableta",
-  "presentation": "Empaque Primario Individual",
-  "nivel": "",
-  "notes": {
-   "Regulación": "Tratamiento para casos agudos: 7-10 tabletas."
-  },
-  "flags": []
- },
- {
-  "page": 66,
-  "sinab": "02101005",
-  "atc": "R06AA02",
-  "name": "Dimenhidrinato",
-  "strength": "50 mg",
-  "form": "Tableta Ranurada",
-  "presentation": "Empaque Primario Individual",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 66,
-  "sinab": "02101010",
-  "atc": "R06AA02",
-  "name": "Dimenhidrinato",
-  "strength": "50 mg /mL",
-  "form": "Solución Inyectable 1.M. LV.",
-  "presentation": "Frasco Vial 5 mL",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 66,
-  "sinab": "02104010",
-  "atc": "A02BA02",
-  "name": "Ranitidina (Clorhidrato)",
-  "strength": "150 mg",
-  "form": "Tableta",
-  "presentation": "Empaque Primario Individual, Protegido de la 1117",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 67,
-  "sinab": "0221000",
-  "atc": "",
-  "name": "Ergotamina Tartrato + Cafeína",
-  "strength": "(1 + 100) mg",
-  "form": "Tableta o Cápsula",
-  "presentation": "Empaque Primario Individual o Frasco, Protegido de la 1117",
-  "nivel": "",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 67,
-  "sinab": "02705015",
-  "atc": "B03AA07",
-  "name": "Hierro Sulfato",
-  "strength": "125 mg/mL",
-  "form": "Solución Oral",
-  "presentation": "Frasco 0U mL, con gotero dosificador calibrado (0.5 1) mL, tipo jeringa O pipeta, Protegido de la laz",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 67,
-  "sinab": "0270502",
-  "atc": "",
-  "name": "Hierro Sulfato + Ácido Fólico",
-  "strength": "300 my",
-  "form": "labieta O Tableta recubierta",
-  "presentation": "empaque Primario Individual",
-  "nivel": "G",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 67,
-  "sinab": "0280001",
-  "atc": "",
-  "name": "0 Agua Estéril Para Invección",
-  "strength": "MA",
-  "form": "AS A To» € —-. UA dr A ll",
-  "presentation": "Ampolla 10 mL",
-  "nivel": "G",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
- },
- {
-  "page": 68,
-  "sinab": "03100035",
-  "atc": "S01AA01",
-  "name": "Cloranfenicol",
-  "strength": "0.5%.",
-  "form": "Solución Oftálmica",
-  "presentation": "Frasco GOtero lo 10) mL, Protegido de la Luz",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 68,
-  "sinab": "03200020",
-  "atc": "D07AC01",
-  "name": "Betametasona (Valerato)",
-  "strength": "0.1%.",
-  "form": "Crema",
-  "presentation": "Tubo 25 30 g",
-  "nivel": "GR",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 68,
-  "sinab": "03200030",
-  "atc": "D01AC01",
-  "name": "Clotrimazol",
-  "strength": "1%",
-  "form": "Crema Top.",
-  "presentation": "Tubo (20 40)g",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 68,
-  "sinab": "03200035",
-  "atc": "D07AA02",
-  "name": "Hidrocortisona Acetato",
-  "strength": "1%.",
-  "form": "Crema",
-  "presentation": "Tubo 25-40g",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 68,
-  "sinab": "03200055",
-  "atc": "D06AX05",
-  "name": "Neomicna (Sulfato) + Bacitracina (Zinc)",
-  "strength": "Smg (5000 U.) + 5mg(250 U.I)",
-  "form": "Ungúento Top.",
-  "presentation": "Tubo (15 25)g",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 68,
-  "sinab": "03300005",
-  "atc": "G01AF02",
-  "name": "Clotrimazol",
-  "strength": "1%.",
-  "form": "Crema Vaginal",
-  "presentation": "Tubo con Aplicadores 35 45",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 68,
-  "sinab": "03300025",
-  "atc": "G01AF01",
-  "name": "Metronidazol",
-  "strength": "0.73%",
-  "form": "Gel Vaginal",
-  "presentation": "Tubo (40 50)g, con aplicador",
-  "nivel": "G",
-  "notes": {},
-  "flags": []
- },
- {
-  "page": 74,
-  "sinab": "3111314154",
-  "atc": "",
-  "name": "Urra Md Mr A",
-  "strength": "eta m0 IMM MM DY Medusa",
-  "form": "wn A E O",
-  "presentation": "a A O",
-  "nivel": "E",
-  "notes": {},
-  "flags": [
-   "código SINAB ilegible por OCR"
-  ]
+  "flags": [],
+  "y0": 855,
+  "y1": 962
  }
 ]

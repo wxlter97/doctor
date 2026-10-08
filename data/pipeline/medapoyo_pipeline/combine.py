@@ -92,7 +92,7 @@ def compatible(a: str | None, b: str | None) -> bool:
     return a is None or b is None or a == b
 
 
-def combine(minsal_catalog: dict, isss_rows: list[dict], fos_rows: list[dict] | None = None, version: int = 5) -> tuple[dict, list[dict], dict]:
+def combine(minsal_catalog: dict, isss_rows: list[dict], fos_rows: list[dict] | None = None, version: int = 5, decisions: dict[str, str] | None = None) -> tuple[dict, list[dict], dict]:
     meds = [dict(m) for m in minsal_catalog["medications"]]
     index: dict[tuple, list[int]] = defaultdict(list)
     for n, m in enumerate(meds):
@@ -100,10 +100,14 @@ def combine(minsal_catalog: dict, isss_rows: list[dict], fos_rows: list[dict] | 
     by_ficha: dict[int, list[dict]] = defaultdict(list)
     own: dict[tuple, list[dict]] = defaultdict(list)  # fichas solo ISSS: misma clave → una ficha
     own_order: list[tuple] = []
+    forced = 0
     for r in isss_rows:
         key = (ingredient_key(r["ingredients"]), strength_key(r["strength"]), route_class(r["route"], r["form"]))
         state = physical_state(r["form"])
         hit = next((n for n in index.get(key, []) if compatible(physical_state(meds[n]["form"]), state)), None) if r["strength"] != minsal_mod.NO_STRENGTH else None
+        if decisions and r["code"] in decisions:  # decisión humana (data/curated/cruce_decisiones.csv): manda sobre la regla automática
+            hit = next((n for n, m in enumerate(meds) if m["id"] == decisions[r["code"]]), hit)
+            forced += 1
         if hit is not None:
             by_ficha[hit].append(r)
             continue
@@ -157,14 +161,14 @@ def combine(minsal_catalog: dict, isss_rows: list[dict], fos_rows: list[dict] | 
                                "minsal_id": best[1]["id"], "minsal_concentracion": best[1]["strength"], "minsal_forma": best[1]["form"], "motivo": f"nombre parecido ({best[0]:.2f}), misma concentración", "decision": ""})
     fos_stats = {}
     if fos_rows:
-        fos_stats = add_fosalud(meds, fos_rows, review, used)
+        fos_stats = add_fosalud(meds, fos_rows, review, used, decisions)
     institutions = minsal_catalog["institutions"] + [ISSS_INSTITUTION] + ([FOSALUD_INSTITUTION] if fos_rows else [])
     catalog = {
         **minsal_catalog, "version": version, "institutions": institutions,
         "medications": sorted(meds, key=lambda x: x["genericName"].lower()),
     }
     stats = {**fos_stats,
-        "minsal_fichas": len(minsal_catalog["medications"]), "isss_filas": len(isss_rows), "isss_en_ficha_minsal": sum(len(v) for v in by_ficha.values()),
+        "isss_por_decision_humana": forced, "minsal_fichas": len(minsal_catalog["medications"]), "isss_filas": len(isss_rows), "isss_en_ficha_minsal": sum(len(v) for v in by_ficha.values()),
         "fichas_con_ambas": len(by_ficha), "isss_fichas_propias": len(own_order), "total_fichas": len(meds), "para_revision": len(review),
     }
     return catalog, review, stats
@@ -189,7 +193,7 @@ def _similar(a: str, b: str) -> float:
     return SequenceMatcher(None, " ".join(ingredient_key([a])), " ".join(ingredient_key([b]))).ratio()
 
 
-def add_fosalud(meds: list[dict], rows: list[dict], review: list[dict], used: set[str]) -> dict:
+def add_fosalud(meds: list[dict], rows: list[dict], review: list[dict], used: set[str], decisions: dict[str, str] | None = None) -> dict:
     """FOSALUD usa códigos SINAB (los mismos del LOM/MINSAL): el código es la prueba principal, el nombre la confirma."""
     by_code: dict[str, dict] = {}
     for m in meds:
@@ -201,11 +205,18 @@ def add_fosalud(meds: list[dict], rows: list[dict], review: list[dict], used: se
     for m in meds:
         index[(ingredient_key(m["activeIngredients"]), strength_key(m["strength"]), route_class(m.get("route"), m["form"]))].append(m)
     attach: dict[str, list[dict]] = defaultdict(list)
-    fixed = byname = byckey = own = 0
+    fixed = byname = byckey = own = unpublished = 0
     pending: list[dict] = []
     for r in rows:
         code, flags = r["code"], r["flags"]
         target = by_code.get(code)
+        forced_id = (decisions or {}).get(f"FOSALUD {code}")
+        if forced_id:  # decisión humana (data/curated/cruce_decisiones.csv)
+            forced_t = next((m for m in meds if m["id"] == forced_id), None)
+            if forced_t is not None:
+                attach[forced_t["id"]].append(r)
+                byname += 1
+                continue
         if target is None:
             # ¿un dígito mal leído? (distancia 1 con un código MINSAL de nombre casi idéntico)
             cands = [c for c in by_code if len(c) == len(code) == 8 and sum(a != b for a, b in zip(c, code, strict=True)) == 1 and _similar(r["name"], by_code[c]["genericName"]) >= 0.8 and strength_ok(r["strength"], by_code[c]["strength"])]
@@ -237,18 +248,40 @@ def add_fosalud(meds: list[dict], rows: list[dict], review: list[dict], used: se
 
     def entry(rs: list[dict]) -> dict:
         uniq = lambda xs: list(dict.fromkeys(x for x in xs if x))  # noqa: E731
+        tr = all(r.get("transcribed") for r in rs)  # transcrito mirando el escaneo (más fiable que el OCR, pero sin verificar)
+        pres = [" · ".join(x for x in (f"Forma: {r['form']}" if r["form"] != "No especificada" else None, r["presentation"]) if x) for r in rs] if tr else []
         notes = " ".join(uniq(r["notes"] for r in rs))
-        e = {"id": "fosalud", "code": ", ".join(uniq(r["code"] for r in rs)), "careLevel": " / ".join(uniq(r["careLevel"] for r in rs)) or None,
-             "notes": f"Texto leído por OCR del escaneo, sin verificar: {notes}" if notes else None}
-        return {k: v for k, v in e.items() if v}  # sin «presentación»: el texto de OCR no es confiable y la ficha ya trae la de MINSAL
+        how = "transcrito del escaneo" if tr else "leído por OCR del escaneo"
+        e = {"id": "fosalud", "code": ", ".join(uniq(r["code"] for r in rs if re.fullmatch(r"\d{8}", r["code"]))),  # un código mal leído no se publica
+             "careLevel": " / ".join(uniq(r["careLevel"] for r in rs)) or None,
+             "presentation": " | ".join(uniq(pres)) or None, "notes": f"Texto {how}, sin verificar: {notes}" if notes else None}
+        return {k: v for k, v in e.items() if v}  # el texto de OCR puro no incluye «presentación»: no es confiable y la ficha ya trae la de MINSAL
 
     for mid, rs in attach.items():
         ids[mid]["institutions"] = ids[mid]["institutions"] + [entry(rs)]
-    # Lo que no tiene pareja segura NO se publica (el OCR deja errores en los nombres): va a revisión humana
+    # Lo que no tiene pareja segura: si se transcribió mirando el escaneo se publica como ficha propia (con aviso);
+    # si solo lo leyó el OCR NO se publica (deja errores en los nombres) y va a revisión humana.
+    groups: dict[tuple, list[dict]] = defaultdict(list)
     for r in leftovers:
-        r["flags"] = r["flags"] + ["sin pareja segura en MINSAL/ISSS: no se publica hasta transcribirlo a mano"]
+        if not r.get("transcribed"):
+            r["flags"] = r["flags"] + ["sin pareja segura en MINSAL/ISSS: no se publica hasta transcribirlo a mano"]
+            unpublished += 1
+            continue
+        groups[(ingredient_key(r["ingredients"]), strength_key(r["strength"]), route_class(r["route"], r["form"]), physical_state(r["form"]))].append(r)
+    for rs in groups.values():
+        r = rs[0]
+        mid = "fosalud-" + r["code"]
+        n = 2
+        while mid in used:
+            mid, n = f"fosalud-{r['code']}-{n}", n + 1
+        used.add(mid)
+        med = {"id": mid, "genericName": r["name"], "activeIngredients": r["ingredients"], "form": r["form"], "strength": r["strength"], "searchTerms": r["terms"], "institutions": [entry(rs)]}
+        for k_out, k_in in (("route", "route"), ("therapeuticGroup", "group"), ("atcCode", "atc")):
+            if r.get(k_in):
+                med[k_out] = r[k_in]
+        meds.append(med)
         own += 1
-    return {"fosalud_filas": len(rows), "fosalud_codigo_corregido": fixed, "fosalud_por_codigo": byname, "fosalud_por_clave": byckey, "fosalud_sin_publicar": own}
+    return {"fosalud_filas": len(rows), "fosalud_codigo_corregido": fixed, "fosalud_por_codigo": byname, "fosalud_por_clave": byckey, "fosalud_fichas_propias": own, "fosalud_sin_publicar": unpublished}
 
 
 def main() -> int:
@@ -260,23 +293,35 @@ def main() -> int:
     fos_json = root / "data/processed/fosalud.ocr.json"
     fos_rows: list[dict] = []
     if fos_json.exists():
+        tr_path = root / "data/curated/fosalud_transcripcion.json"
+        transcribed = {t["ocr"]: t for t in json.loads(tr_path.read_text(encoding="utf-8"))["filas"]} if tr_path.exists() else {}
         raw = [fosalud_mod.FosRow(**{**r}) for r in json.loads(fos_json.read_text(encoding="utf-8")) if 22 <= r["page"] <= 38]  # lista general (págs. 22–38)
         seen: set[str] = set()
         for fr in raw:
+            if fr.sinab in transcribed:
+                fr = fosalud_mod.apply_transcription(fr, transcribed[fr.sinab])
             if fr.sinab in seen:
                 continue
             seen.add(fr.sinab)
             fos_rows.append(fosalud_mod.parse(fr))
-    catalog, review, stats = combine(minsal_catalog, isss_rows, fos_rows or None)
+    dec_path = root / "data/curated/cruce_decisiones.csv"
+    dec_rows = list(csv.DictReader(open(dec_path, encoding="utf-8"))) if dec_path.exists() else []
+    decisions = {r["isss_codigo"]: r["minsal_id"] for r in dec_rows if r["decision"] == "merge"}
+    decided = {r["isss_codigo"] for r in dec_rows}  # ya resueltas por una persona: no vuelven a la lista de pendientes
+    catalog, review, stats = combine(minsal_catalog, isss_rows, fos_rows or None, decisions=decisions)
     out = root / "data/processed"
     out.mkdir(parents=True, exist_ok=True)
     (out / "catalog.minsal-isss.json").write_text(json.dumps(catalog, ensure_ascii=False, indent=1), encoding="utf-8")
     rev = root / "data/review"
     rev.mkdir(parents=True, exist_ok=True)
-    with open(rev / "cruce_posibles.csv", "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, fieldnames=["isss_codigo", "isss_nombre", "isss_concentracion", "isss_forma", "minsal_id", "minsal_concentracion", "minsal_forma", "motivo", "decision"])
-        w.writeheader()
-        w.writerows(review)
+    fields = ["isss_codigo", "isss_nombre", "isss_concentracion", "isss_forma", "minsal_id", "minsal_concentracion", "minsal_forma", "motivo", "decision"]
+    # Accionable: posibles duplicados por nombre parecido o por código repetido con otro nombre. Lo demás (misma molécula
+    # con otra concentración/vía/forma) son productos distintos a propósito: solo informativo.
+    for name, keep in (("cruce_posibles.csv", lambda r: not r["motivo"].startswith("mismo principio activo")), ("cruce_misma_molecula.csv", lambda r: r["motivo"].startswith("mismo principio activo"))):
+        with open(rev / name, "w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, fieldnames=fields)
+            w.writeheader()
+            w.writerows(r for r in review if keep(r) and r["isss_codigo"] not in decided)
     flagged = [r for r in isss_rows if r["flags"]]
     with open(rev / "isss_revision.csv", "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)

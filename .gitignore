@@ -10,3 +10,4 @@ data/sources/*.pdf
 coverage
 test-results
 playwright-report
+data/review/verificacion.html

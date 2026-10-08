@@ -41,6 +41,8 @@ class FosRow:
     nivel: str
     notes: dict[str, str] = field(default_factory=dict)
     flags: list[str] = field(default_factory=list)
+    y0: int = 0  # banda de la fila en la página renderizada a 300 dpi (para recortar la imagen en la hoja de verificación)
+    y1: int = 0
 
 
 def fix_atc(raw: str) -> str:
@@ -146,14 +148,17 @@ def process_page(png: Path, page: int) -> list[FosRow]:
         if CODE.fullmatch(sinab):
             atc = fix_atc(cell(0, 7, "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"))
             last = FosRow(page, sinab, atc, cell(2), cell(3), cell(4), cell(5), _read_nivel(im, cols, y0, y1))
+            last.y0, last.y1 = y0, y1
             rows.append(last)
         elif len(sinab) >= 6 and re.fullmatch(r"\d+", sinab):  # código mal leído: no se pierde la fila
             last = FosRow(page, sinab, "", cell(2), cell(3), cell(4), cell(5), _read_nivel(im, cols, y0, y1), flags=["código SINAB ilegible por OCR"])
+            last.y0, last.y1 = y0, y1
             rows.append(last)
         else:
             label = _c(cell(0))
             if re.match(r"(?i)^regula", label) and last is not None:
                 text = _clean(_ocr(im.crop((cols[1] + pad, y0 + pad, cols[-1] - pad, y1 - pad)), 6))
+                last.y1 = y1
                 if text:
                     last.notes["Regulación"] = (last.notes.get("Regulación", "") + " " + text).strip()
     return rows
@@ -208,6 +213,12 @@ def _fix_unit_typos(s: str) -> str:
     return _c(t).rstrip(".,; ")
 
 
+def apply_transcription(raw: FosRow, tr: dict) -> FosRow:
+    """Sustituye lo que leyó el OCR por la transcripción hecha mirando el escaneo (data/curated/fosalud_transcripcion.json)."""
+    return FosRow(raw.page, tr["code"], tr["atc"], tr["name"], tr["strength"], tr["form"], tr["presentation"], tr["nivel"],
+                  notes={"Regulación": tr["notes"]} if tr.get("notes") else {}, flags=[*raw.flags, "transcrito del escaneo, sin verificar por una persona"], y0=raw.y0, y1=raw.y1)
+
+
 def parse(row: FosRow) -> dict:
     """Ficha (una institución) en el formato del catálogo. El OCR puede equivocarse: todo queda marcado como tal en `flags`."""
     from .isss import infer_route
@@ -231,4 +242,5 @@ def parse(row: FosRow) -> dict:
         "route": infer_route(form, row.presentation), "code": row.sinab, "careLevel": f"Prescripción: {nivel}" if nivel else None,
         "presentation": _c(row.presentation) or None, "notes": ("Regulación: " + row.notes["Regulación"]) if row.notes.get("Regulación") else None,
         "group": ATC_GROUPS.get(atc[0]) if atc else None, "atc": atc, "flags": flags, "page": row.page,
+        "transcribed": any(f.startswith("transcrito") for f in flags),
     }

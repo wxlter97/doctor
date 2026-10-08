@@ -1,0 +1,258 @@
+{
+ "_nota": "Transcrito por Claude mirando el escaneo de LIM-FOSALUD 2.ª ed. (págs. 24–38) para las 23 filas que el OCR no pudo leer con seguridad. NO verificado por una persona: se muestra con ese aviso. «ocr» es el código tal como lo leyó el OCR (la clave para encontrar la fila); «code» es el que se ve en la imagen.",
+ "filas": [
+  {
+   "ocr": "00400010",
+   "code": "00400010",
+   "atc": "J02AC01",
+   "name": "Fluconazol",
+   "strength": "150 mg",
+   "form": "Cápsula o Tableta",
+   "presentation": "Empaque Primario Individual",
+   "nivel": "GR",
+   "notes": "Como Tercera línea de tratamiento en Candidiasis Vulvovaginal recurrente y Complicada confirmado por cultivo (MAX. 4 tabletas /mes, máximo 6 meses). Para tratamiento de Onicomicosis (Tiña Ungueal) previo medición de función hepática"
+  },
+  {
+   "ocr": "00706009",
+   "code": "00706009",
+   "atc": "C09CA04",
+   "name": "Irbesartán",
+   "strength": "300 mg",
+   "form": "Tableta Oral",
+   "presentation": "Empaque primario individual",
+   "nivel": "G",
+   "notes": "Paciente con HTA + DM + micro o macro albuminuria. Paciente con HTA + Enfermedad Renal Crónica. Pacientes con DM tipo 2 + Enfermedad Renal Crónica"
+  },
+  {
+   "ocr": "00707010",
+   "code": "00707010",
+   "atc": "C01DA02",
+   "name": "Nitroglicerina",
+   "strength": "(18 - 25) mg/Parche",
+   "form": "Parche Transdérmico, Liberación de 5 mg en 24 horas",
+   "presentation": "Empaque primario individual, protegido de la luz",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "00711010",
+   "code": "00711010",
+   "atc": "C01CA24",
+   "name": "Epinefrina",
+   "strength": "1 mg/mL (1:1000)",
+   "form": "Solución Inyectable I.M. - I.V. - S.C.",
+   "presentation": "Ampolla 1 mL, Protegido de la Luz",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "00900005",
+   "code": "00900005",
+   "atc": "B01AC06",
+   "name": "Ácido Acetilsalicílico",
+   "strength": "(80 - 100) mg",
+   "form": "Tableta",
+   "presentation": "Empaque Primario Individual",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "01200005",
+   "code": "01200005",
+   "atc": "N02BE01",
+   "name": "Acetaminofén",
+   "strength": "(120 - 160) mg/ 5 mL",
+   "form": "Solución oral o jarabe",
+   "presentation": "Frasco 120 mL, con dosificador Graduado Tipo Jeringa o Pipeta, Protegido de la Luz",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "01601005",
+   "code": "01601005",
+   "atc": "M03AC04",
+   "name": "Atracurio Besilato",
+   "strength": "10 mg/mL",
+   "form": "Solución inyectable I.V.",
+   "presentation": "Ampolla 2.5 mL, protegida de la luz.",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "02109010",
+   "code": "02109010",
+   "atc": "A07CA00",
+   "name": "Sales de Rehidratación Oral",
+   "strength": "KCl 1.5 g/L, NaCl 2.6 g/ L, Citrato Trisódico Dihidratado 2.9 g/L, Glucosa Anhidra 13.5 g/L",
+   "form": "Polvo Para Solución Oral",
+   "presentation": "Sobre 20.5 g",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "02301005",
+   "code": "02301005",
+   "atc": "A10BB01",
+   "name": "Glibenclamida",
+   "strength": "5 mg",
+   "form": "Tableta",
+   "presentation": "Empaque Primario Individual",
+   "nivel": "",
+   "notes": null
+  },
+  {
+   "ocr": "02705025",
+   "code": "02705025",
+   "atc": "B03AD03",
+   "name": "Hierro Sulfato + Ácido Fólico",
+   "strength": "300 mg",
+   "form": "Tableta o Tableta recubierta",
+   "presentation": "Empaque Primario Individual.",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "02800010",
+   "code": "02800010",
+   "atc": "V07AB00",
+   "name": "Agua Estéril Para Inyección",
+   "strength": "",
+   "form": "",
+   "presentation": "Ampolla 10 mL",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "02800035",
+   "code": "02800035",
+   "atc": "B05BA03",
+   "name": "Dextrosa en Agua Estéril para Inyección",
+   "strength": "5 %",
+   "form": "Solución Inyectable I.V.",
+   "presentation": "Bolsa o Frasco Plástico Flexible 250 mL",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "02800045",
+   "code": "02800045",
+   "atc": "B05BA03",
+   "name": "Dextrosa en Agua Estéril para Inyección",
+   "strength": "50 %",
+   "form": "Solución Inyectable I.V.",
+   "presentation": "Bolsa o Frasco Plástico Flexible 1,000 mL",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "02800055",
+   "code": "02800055",
+   "atc": "B05BA03",
+   "name": "Dextrosa en Agua Estéril para Inyección",
+   "strength": "5 %",
+   "form": "Solución Inyectable I.V.",
+   "presentation": "Bolsa o Frasco 50 mL",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "02800105",
+   "code": "02800105",
+   "atc": "B05CB01",
+   "name": "Sodio Cloruro en Agua Estéril para Inyección",
+   "strength": "0.9 %",
+   "form": "Solución Inyectable I.V.",
+   "presentation": "Bolsa o Frasco Plástico Flexible 250 mL",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "02800115",
+   "code": "02800115",
+   "atc": "B05CB01",
+   "name": "Sodio Cloruro en Agua Estéril para Inyección",
+   "strength": "0.9 %",
+   "form": "Solución Inyectable I.V.",
+   "presentation": "Frasco o Bolsa 1000 mL",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "02800135",
+   "code": "02800135",
+   "atc": "B05BB01",
+   "name": "Solución Electrolítica en Agua estéril para inyección con Na, K, Ca y Lactato, (Hartmann o Ringer)",
+   "strength": "",
+   "form": "Solución Inyectable I.V",
+   "presentation": "Bolsa o Frasco Plástico Flexible 1,000 mL",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "03100075",
+   "code": "03100075",
+   "atc": "S01XA20",
+   "name": "Lagrimas Artificiales",
+   "strength": "(polividona 0.5 % + electrolitos) o derivados de la celulosa (0.3%-0.5%) con o sin dextran 70 (0.1%-0.2%)",
+   "form": "Solución Oftálmica",
+   "presentation": "Frasco Gotero (10-15) mL",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "03200031",
+   "code": "03200030",
+   "atc": "D01AC01",
+   "name": "Clotrimazol",
+   "strength": "1%",
+   "form": "Crema Top.",
+   "presentation": "Tubo (20 - 40)g",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "03200032",
+   "code": "03200035",
+   "atc": "D07AA02",
+   "name": "Hidrocortisona Acetato",
+   "strength": "1 %",
+   "form": "Crema",
+   "presentation": "Tubo 25-40g",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "03200055",
+   "code": "03200055",
+   "atc": "D06AX05",
+   "name": "Neomicina (Sulfato) + Bacitracina (Zinc)",
+   "strength": "5mg (5000 U.I) + 5mg(250 U.I)",
+   "form": "Ungüento Top.",
+   "presentation": "Tubo (15 - 25)g",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "03200082",
+   "code": "03200085",
+   "atc": "D06BA01",
+   "name": "Sulfadiazina de Plata",
+   "strength": "1 %",
+   "form": "Crema",
+   "presentation": "Tubo 30 - 60 g, Protegido de la Luz",
+   "nivel": "G",
+   "notes": null
+  },
+  {
+   "ocr": "03300015",
+   "code": "03300015",
+   "atc": "G03CA57",
+   "name": "Estrógenos Conjugados",
+   "strength": "(0.15 + 0.03) mg",
+   "form": "Crema Vaginal",
+   "presentation": "Tubo con 6 Aplicadores",
+   "nivel": "G",
+   "notes": null
+  }
+ ]
+}

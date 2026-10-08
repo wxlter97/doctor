@@ -90,3 +90,12 @@ def test_fosalud_solo_se_une_con_pareja_segura():
     assert ids == ["minsal", "fosalud"] and len(out["medications"]) == 1  # lo sin pareja no se publica
     assert "OCR" in out["medications"][0]["institutions"][1]["notes"] and stats["fosalud_sin_publicar"] == 1
     assert "presentation" not in out["medications"][0]["institutions"][1]
+
+
+def test_decision_humana_manda_sobre_la_regla_automatica():
+    cat = {"version": 2, "institutions": [{"id": "minsal"}], "medications": [_minsal("minsal-1", "Mebendazol", "100 mg", "Sólido Oral", "oral")]}
+    r = isss.parse(row(code="8140301", name="Mebendazole", strength="100 mg", form="Tableta"))
+    sin, _, _ = combine(cat, [r])
+    assert len(sin["medications"]) == 2  # el nombre difiere: la regla automática no los une
+    con, _, st = combine(cat, [r], decisions={"8140301": "minsal-1"})
+    assert len(con["medications"]) == 1 and [i["id"] for i in con["medications"][0]["institutions"]] == ["minsal", "isss"] and st["isss_por_decision_humana"] == 1
