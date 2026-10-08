@@ -11,10 +11,12 @@
     "format": "prettier --write .",
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r test",
-    "export:catalog": "tsx scripts/export-catalog.ts",
+    "export:catalog": "tsx --env-file-if-exists=.env.local scripts/export-catalog.ts",
     "validate:catalog": "tsx scripts/export-catalog.ts --validate",
     "e2e": "pnpm --filter @medapoyo/web e2e",
-    "review:packet": "tsx scripts/review-packet.ts"
+    "review:packet": "tsx scripts/review-packet.ts",
+    "load:supabase": "tsx --env-file-if-exists=.env.local scripts/load-supabase.ts",
+    "publish:catalog": "tsx --env-file-if-exists=.env.local scripts/publish-catalog.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

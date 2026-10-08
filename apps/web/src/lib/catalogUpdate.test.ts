@@ -63,4 +63,23 @@ describe('actualización del catálogo', () => {
     await updateCatalog({ fetchFn: await server(cat(1, ['A'])), onProgress: (f) => seen.push(f) });
     expect(seen.at(-1)).toBe(1);
   });
+  it('usa el origen remoto y, si falla, la copia incluida en la app', async () => {
+    const remote = await buildSnapshot(cat(3, ['R']), { urlPrefix: '' }); // url relativa al manifiesto, como en Storage
+    const local = await buildSnapshot(cat(2, ['L']));
+    const seen: string[] = [];
+    const mk = (remoteUp: boolean) => (async (u: string) => {
+      seen.push(u);
+      if (u.startsWith('https://r.example/bucket')) {
+        if (!remoteUp) throw new TypeError('Failed to fetch');
+        return new Response(u.endsWith('manifest.json') ? JSON.stringify(remote.manifest) : remote.json);
+      }
+      return new Response(u.endsWith('manifest.json') ? JSON.stringify(local.manifest) : local.json);
+    }) as unknown as typeof fetch;
+    const bases = ['https://r.example/bucket', '/catalog'];
+    expect(await updateCatalog({ fetchFn: mk(true), bases })).toEqual({ status: 'updated', version: 3 });
+    expect(seen).toContain('https://r.example/catalog-v3.json'.replace('/catalog-', '/bucket/catalog-'));
+    await db.medications.clear(); await db.meta.clear();
+    expect(await updateCatalog({ fetchFn: mk(false), bases })).toEqual({ status: 'updated', version: 2 });
+    expect((await db.medications.toArray()).map((m) => m.genericName)).toEqual(['L']);
+  });
 });

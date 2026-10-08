@@ -83,13 +83,13 @@ export async function sha256Hex(data: string | Uint8Array): Promise<string> {
 }
 
 /** Serializa el catálogo y arma su manifiesto (el JSON serializado es el que se hashea). */
-export async function buildSnapshot(catalog: Catalog): Promise<{ json: string; manifest: CatalogManifest; filename: string }> {
+export async function buildSnapshot(catalog: Catalog, opts: { urlPrefix?: string } = {}): Promise<{ json: string; manifest: CatalogManifest; filename: string }> {
   const parsed = catalogSchema.parse(catalog);
   const json = JSON.stringify(parsed);
   const filename = `catalog-v${parsed.version}.json`;
   return {
     json,
     filename,
-    manifest: { version: parsed.version, publishedAt: parsed.publishedAt, url: `/catalog/${filename}`, sha256: await sha256Hex(json), count: parsed.medications.length },
+    manifest: { version: parsed.version, publishedAt: parsed.publishedAt, url: `${opts.urlPrefix ?? '/catalog/'}${filename}`, sha256: await sha256Hex(json), count: parsed.medications.length },
   };
 }

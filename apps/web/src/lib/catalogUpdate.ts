@@ -9,9 +9,17 @@ export type UpdateStatus =
 
 export interface UpdateOptions {
   fetchFn?: typeof fetch;
+  /** Orígenes del catálogo, en orden de preferencia (por defecto: Supabase Storage si está configurado y la copia incluida en la app). */
+  bases?: string[];
   /** 0–1; solo se informa cuando el servidor indica el tamaño. */
   onProgress?: (fraction: number) => void;
 }
+
+/** `VITE_CATALOG_BASE_URL` apunta al bucket público; la copia que viaja con la app (`/catalog`) queda de respaldo. */
+export const catalogBases = (): string[] => {
+  const remote = (import.meta.env.VITE_CATALOG_BASE_URL ?? '').trim().replace(/\/$/, '');
+  return remote ? [remote, '/catalog'] : ['/catalog'];
+};
 
 export const localCatalogVersion = async () => ((await db.meta.get('catalogVersion'))?.value as number | undefined) ?? 0;
 
@@ -50,22 +58,31 @@ export async function writeCatalog(catalog: Catalog) {
   });
 }
 
-export async function updateCatalog({ fetchFn = fetch, onProgress }: UpdateOptions = {}): Promise<UpdateStatus> {
+export async function updateCatalog({ fetchFn = fetch, onProgress, bases = catalogBases() }: UpdateOptions = {}): Promise<UpdateStatus> {
   try {
     // zod se carga al actualizar, no en el arranque.
     const { catalogSchema, manifestSchema, sha256Hex } = await import('@medapoyo/shared');
-    let res: Response;
-    try {
-      res = await fetchFn('/catalog/manifest.json', { cache: 'no-store' });
-    } catch {
-      return { status: 'offline' };
+    // Se usa el primer origen que responde; si el remoto falla, se prueba la copia incluida en la app.
+    let res: Response | undefined;
+    let base = '';
+    let lastError: UpdateStatus = { status: 'offline' };
+    for (const b of bases) {
+      try {
+        const r = await fetchFn(`${b}/manifest.json`, { cache: 'no-store' });
+        if (r.ok) { res = r; base = b; break; }
+        lastError = { status: 'error', message: `No se pudo leer el manifiesto (${r.status}).` };
+      } catch {
+        // sin red hacia ese origen: se prueba el siguiente
+      }
     }
-    if (!res.ok) return { status: 'error', message: `No se pudo leer el manifiesto (${res.status}).` };
+    if (!res) return lastError;
     const manifest = manifestSchema.parse(await res.json());
     const local = await localCatalogVersion();
     if (manifest.version <= local) return { status: 'current', version: local };
 
-    const data = await fetchFn(manifest.url, { cache: 'no-store' });
+    // La url del manifiesto puede ser relativa a él (bucket) o absoluta en el sitio (/catalog/…).
+    const origin = globalThis.location?.origin ?? 'http://localhost';
+    const data = await fetchFn(new URL(manifest.url, new URL(`${base}/manifest.json`, origin)).href, { cache: 'no-store' });
     if (!data.ok) return { status: 'error', message: `No se pudo descargar el catálogo (${data.status}).` };
     const bytes = await readWithProgress(data, onProgress);
     if ((await sha256Hex(bytes)) !== manifest.sha256) return { status: 'error', message: 'El catálogo descargado está corrupto (el hash no coincide).' };
