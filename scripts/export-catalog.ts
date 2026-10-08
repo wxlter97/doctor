@@ -49,13 +49,17 @@ export async function fromSupabase(opts: { version?: number; source?: string } =
     get<Row>('catalog_versions?select=version,source&order=version.desc&limit=1'),
   ]);
   const opt = <T>(v: T | null | undefined) => v ?? undefined;
+  // Orden de presentación (filtros y fichas): las listas conocidas primero, el resto alfabético.
+  const ORDER = ['minsal', 'isss', 'fosalud', 'sanidad_militar', 'isbm'];
+  const rank = (id: string) => (ORDER.includes(id) ? ORDER.indexOf(id) : ORDER.length);
+  const byInstitution = (a: { id: string }, b: { id: string }) => rank(a.id) - rank(b.id) || a.id.localeCompare(b.id);
   const used = new Set(meds.flatMap((m) => m.medication_institutions.map((i: Row) => i.institution_id)));
   return {
     version: opts.version ?? (versions[0]?.version ?? 0) + 1,
     publishedAt: new Date().toISOString(),
     source: opts.source ?? opt(versions[0]?.source),
     // Solo las instituciones que tienen medicamentos (Sanidad Militar e ISBM no tienen listado todavía).
-    institutions: institutions.filter((i) => used.has(i.id)).map((i) => ({ id: i.id, name: i.name, listName: opt(i.list_name), listEdition: opt(i.list_edition), sourceUrl: opt(i.source_url), sourceDate: opt(i.source_date) })),
+    institutions: institutions.filter((i) => used.has(i.id)).sort(byInstitution).map((i) => ({ id: i.id, name: i.name, listName: opt(i.list_name), listEdition: opt(i.list_edition), sourceUrl: opt(i.source_url), sourceDate: opt(i.source_date) })),
     synonyms: Object.fromEntries(synonyms.map((s) => [s.term, s.canonical])),
     medications: meds.map((m) => {
       const c = Array.isArray(m.clinical_info) ? m.clinical_info[0] : m.clinical_info;
@@ -64,7 +68,7 @@ export async function fromSupabase(opts: { version?: number; source?: string } =
         route: opt(m.route), atcCode: opt(m.atc_code), therapeuticGroup: opt(m.therapeutic_group), searchTerms: m.search_terms ?? [],
         institutions: m.medication_institutions
           .map((i: Row) => ({ id: i.institution_id, code: opt(i.institutional_code), careLevel: opt(i.care_level), presentation: opt(i.presentation), notes: opt(i.notes) }))
-          .sort((a: { id: string }, b: { id: string }) => a.id.localeCompare(b.id)),
+          .sort(byInstitution),
         clinical: c ? {
           indications: opt(c.indications), dosage: opt(c.dosage), contraindications: opt(c.contraindications), interactions: opt(c.interactions),
           warnings: opt(c.warnings), pregnancyLactation: opt(c.pregnancy_lactation), source: c.source, sourceRef: opt(c.source_ref),

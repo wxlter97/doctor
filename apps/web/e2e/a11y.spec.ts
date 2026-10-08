@@ -99,3 +99,11 @@ test('todo es operable solo con teclado (atajos, foco visible, hojas con Esc)', 
   await page.keyboard.press('Escape');
   await expect(page.getByRole('dialog')).toHaveCount(0);
 });
+
+test('no hay scripts en línea (la CSP de producción solo permite script-src self) y el tema guardado se aplica antes de pintar', async ({ page }) => {
+  await page.addInitScript(() => localStorage.setItem('medapoyo.prefs', JSON.stringify({ theme: 'dark', density: 'compact' })));
+  await page.goto('/');
+  expect(await page.evaluate(() => document.querySelectorAll('script:not([src])').length)).toBe(0);
+  const attrs = await page.evaluate(() => [document.documentElement.dataset.theme, document.documentElement.dataset.density]);
+  expect(attrs).toEqual(['dark', 'compact']);
+});

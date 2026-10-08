@@ -8,15 +8,7 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="description" content="Apoyo para médicos en El Salvador: medicamentos por institución, calculadoras clínicas y planificador de turnos. Herramienta de apoyo; no sustituye el criterio médico." />
     <title>MedHelp</title>
-    <script>
-      // Aplica tema y densidad antes del primer render para evitar parpadeo.
-      try {
-        var s = JSON.parse(localStorage.getItem('medapoyo.prefs') || '{}');
-        var d = document.documentElement;
-        if (s.theme === 'light' || s.theme === 'dark') d.dataset.theme = s.theme;
-        if (s.density === 'compact') d.dataset.density = 'compact';
-      } catch (e) {}
-    </script>
+    <script src="/theme-init.js"></script>
   </head>
   <body>
     <div id="root"></div>

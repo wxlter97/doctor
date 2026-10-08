@@ -42,8 +42,10 @@ if (!reg.ok) throw new Error(`catalog_versions: ${reg.status} ${await reg.text()
 
 // Comprobación de extremo a extremo: lo que ve el público es lo que se subió.
 const pub = `${url}/storage/v1/object/public/${BUCKET}`;
-const m = (await (await fetch(`${pub}/manifest.json`, { cache: 'no-store' })).json()) as { version: number; sha256: string };
-const got = await (await fetch(`${pub}/${filename}`)).text();
+// El manifiesto se sirve con caché de 60 s en el CDN: se consulta con un parámetro único para saltarla y ver lo recién subido.
+const bust = `?cb=${Date.now()}`;
+const m = (await (await fetch(`${pub}/manifest.json${bust}`, { cache: 'no-store' })).json()) as { version: number; sha256: string };
+const got = await (await fetch(`${pub}/${filename}${bust}`)).text();
 if (m.version !== catalog.version || (await sha256Hex(got)) !== manifest.sha256) throw new Error('Lo publicado no coincide con lo subido.');
 if (writeLocal) { // la copia de respaldo que viaja con la app en el próximo despliegue
   const out = join(import.meta.dirname, '..', 'apps/web/public/catalog');
