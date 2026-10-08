@@ -8,6 +8,7 @@ import { exportBackup, parseBackup } from '../shifts/logic';
 import { REST_DEFAULT_H, replaceAllData, setSetting, useSetting } from '../shifts/store';
 import type { Shift, ShiftType } from '../shifts/model';
 import { useState } from 'react';
+import { Link } from 'react-router';
 import { useCatalog } from '../../stores/catalog';
 import { CatalogDownload } from '../medications/CatalogDownload';
 import { avisoLegal } from './legal/aviso-legal';
@@ -103,6 +104,7 @@ export function SettingsPage() {
       <div className="card">
         <h2 className="font-bold">{s.legal}</h2>
         <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">{avisoLegal.map((p) => <li key={p}>{p}</li>)}</ul>
+        <Link className="mt-2 inline-flex min-h-11 items-center font-bold underline underline-offset-2" to="/fuentes">{s.sourcesLink}</Link>
       </div>
       <p className="text-sm text-muted">{s.version}: {import.meta.env.VITE_APP_VERSION}</p>
       <WxlterBlock />

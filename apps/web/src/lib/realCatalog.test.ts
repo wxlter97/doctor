@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import { catalogSchema, manifestSchema, sha256Hex } from '@medapoyo/shared';
 import { buildIndex } from './medicationSearch';
+import { sources } from '../features/sources/sources';
 
 // Catálogo publicado en public/catalog (hoy: LOM/MINSAL 2026 + LOM/ISSS 19.ª ed. + LIM-FOSALUD 2019, parcial).
 const dir = join(__dirname, '../../public/catalog');
@@ -49,6 +50,14 @@ describe('catálogo real publicado', () => {
     expect(both.length).toBeGreaterThan(200);
     expect(both.some((m) => m.institutions.map((i) => i.id).join() === 'minsal,isss')).toBe(true);
     expect(catalog.medications.some((m) => m.institutions.length === 3)).toBe(true);
+  });
+  it('la página de fuentes cubre cada institución del catálogo, con su edición y enlace', () => {
+    for (const inst of catalog.institutions) {
+      const src = sources.find((x) => x.id === inst.id);
+      expect(src, `falta la fuente de ${inst.id}`).toBeDefined();
+      expect(src!.url).toBe(inst.sourceUrl);
+      expect(src!.date.includes(String(inst.sourceDate?.slice(0, 4)))).toBe(true);
+    }
   });
   it('rendimiento: búsqueda ≤ 50 ms con el catálogo real', () => {
     const t = Array.from({ length: 7 }, () => { const s = performance.now(); index.search('amoxicilina'); return performance.now() - s; }).sort((a, b) => a - b);

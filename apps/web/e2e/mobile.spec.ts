@@ -92,3 +92,14 @@ test('móvil: la barra inferior navega entre las 4 secciones', async ({ page }) 
     await expect(page).toHaveURL(url);
   }
 });
+
+test('móvil: la página de fuentes se lee completa, sin desborde, y se llega desde Ajustes', async ({ page }) => {
+  await onboard(page);
+  await page.goto('/ajustes');
+  await page.getByRole('link', { name: 'Ver las fuentes y sus licencias' }).click();
+  await expect(page.getByRole('heading', { name: 'Fuentes', level: 1 })).toBeVisible();
+  await expect(page.getByText('no es una publicación oficial').first()).toBeVisible();
+  for (const name of ['MINSAL', 'ISSS', 'FOSALUD']) await expect(page.getByRole('heading', { level: 3, name: new RegExp(name) })).toBeVisible();
+  const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
+  expect(overflow).toBeLessThanOrEqual(0);
+});

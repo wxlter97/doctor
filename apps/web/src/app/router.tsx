@@ -23,6 +23,7 @@ export const router = createBrowserRouter([
       { path: 'turnos', lazy: async () => ({ Component: (await import('../features/shifts/ShiftsPage')).ShiftsPage }) },
       { path: 'turnos/horas', lazy: async () => ({ Component: (await import('../features/shifts/HoursPage')).HoursPage }) },
       { path: 'turnos/tipos', lazy: async () => ({ Component: (await import('../features/shifts/TypesPage')).TypesPage }) },
+      { path: 'fuentes', lazy: async () => ({ Component: (await import('../features/sources/SourcesPage')).SourcesPage }) },
       { path: 'ajustes', element: <SettingsPage /> },
       ...(import.meta.env.DEV
         ? [{ path: 'dev/tokens', lazy: async () => ({ Component: (await import('../features/dev/TokensPage')).TokensPage }) }]
