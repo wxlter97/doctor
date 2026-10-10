@@ -1,5 +1,8 @@
 import { z } from 'zod';
 
+// Sin JIT: zod 4 prueba `Function('')` y la CSP de producción (sin unsafe-eval) lo reporta como problema.
+z.config({ jitless: true });
+
 export interface ShiftType {
   id: string;
   name: string;

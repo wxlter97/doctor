@@ -1,4 +1,8 @@
 import { z } from 'zod';
+
+// zod 4 prueba si puede generar código (`Function('')`); la CSP de producción lo prohíbe (script-src sin unsafe-eval) y Chrome lo reporta
+// como problema aunque se capture. Los esquemas de esta app son chicos: se desactiva el JIT.
+z.config({ jitless: true });
 import type {
   AnyCalculator, Calculator, CalculatorDef, ChoiceInput, InputDef, Primitive, Values,
 } from './types';
