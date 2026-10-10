@@ -22,6 +22,17 @@ async function call(method: string, path: string, body?: unknown, prefer?: strin
   const text = await res.text();
   return text ? JSON.parse(text) : null;
 }
+/** PostgREST devuelve como máximo 1000 filas por petición (límite del proyecto): se pagina con Range para no dejar fuera ninguna. */
+async function getAll<T>(path: string): Promise<T[]> {
+  const rows: T[] = [];
+  for (let from = 0; ; from += 1000) {
+    const res = await fetch(`${url}/rest/v1/${path}`, { headers: { ...headers, Range: `${from}-${from + 999}`, 'Range-Unit': 'items' } });
+    if (!res.ok) throw new Error(`GET ${path.split('?')[0]}: ${res.status} ${await res.text()}`);
+    const page = (await res.json()) as T[];
+    rows.push(...page);
+    if (page.length < 1000) return rows;
+  }
+}
 async function upsert(table: string, rows: unknown[], conflict: string) {
   for (let i = 0; i < rows.length; i += 400) await call('POST', `${table}?on_conflict=${conflict}`, rows.slice(i, i + 400), 'resolution=merge-duplicates,return=minimal');
 }
@@ -47,13 +58,13 @@ await upsert('medications', meds, 'id');
 await upsert('medication_institutions', links, 'medication_id,institution_id');
 // Los vínculos que ya no existen (p. ej. un medicamento que dejó de estar en una institución) se quitan por medicamento.
 const keep = new Set(links.map((l) => `${l.medication_id}|${l.institution_id}`));
-const existing = (await call('GET', 'medication_institutions?select=medication_id,institution_id&limit=100000')) as { medication_id: string; institution_id: string }[];
+const existing = await getAll<{ medication_id: string; institution_id: string }>('medication_institutions?select=medication_id,institution_id&order=medication_id,institution_id');
 const stale = existing.filter((l) => !keep.has(`${l.medication_id}|${l.institution_id}`));
 for (const l of stale) await call('DELETE', `medication_institutions?medication_id=eq.${encodeURIComponent(l.medication_id)}&institution_id=eq.${l.institution_id}`);
 console.log(`Cargado. Vínculos obsoletos eliminados: ${stale.length}.`);
 if (prune) {
   const ids = new Set(meds.map((m) => m.id));
-  const all = (await call('GET', 'medications?select=id&limit=100000')) as { id: string }[];
+  const all = await getAll<{ id: string }>('medications?select=id&order=id');
   const extra = all.filter((m) => !ids.has(m.id));
   for (const m of extra) await call('DELETE', `medications?id=eq.${encodeURIComponent(m.id)}`);
   console.log(`--prune: medicamentos eliminados que no estaban en el archivo: ${extra.length}.`);
