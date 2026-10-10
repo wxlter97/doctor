@@ -27,7 +27,8 @@ describe('catálogo real publicado', () => {
     expect(catalog.institutions[2]?.listEdition).toContain('2019');
     expect(catalog.institutions[0]?.listEdition).toContain('1201');
     expect(catalog.institutions[1]?.listEdition).toContain('19');
-    expect(catalog.medications.every((m) => m.institutions.length > 0 && m.institutions.every((i) => i.code))).toBe(true);
+    // MINSAL e ISSS siempre traen código; FOSALUD puede no traerlo si el OCR no lo leyó bien (no se publica un código dudoso).
+    expect(catalog.medications.every((m) => m.institutions.length > 0 && m.institutions.every((i) => i.code || i.id === 'fosalud'))).toBe(true);
   });
   it('encuentra por nombre, sinónimo y tildes', () => {
     expect(names('paracetamol').some((n) => /Acetaminofén/.test(n))).toBe(true);
