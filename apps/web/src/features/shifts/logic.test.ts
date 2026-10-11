@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { DEFAULT_TYPES, type Shift } from './model';
-import { buildShift, exportBackup, findOverlap, nextShift, parseBackup, patternDates, restWarnings, summarize } from './logic';
+import { DEFAULT_TYPES, type Shift, type ShiftType } from './model';
+import { buildShift, daysCovered, exportBackup, findOverlap, nextShift, parseBackup, patternDates, restWarnings, shiftsByDay, summarize } from './logic';
 import { toIcs } from './ics';
 import { isoToMs, localIso, msToIso } from '../../lib/time';
 
@@ -138,5 +138,42 @@ describe('próximo turno', () => {
     const between = isoToMs(localIso('2026-03-11', '10:00'));
     expect(nextShift(shifts, DEFAULT_TYPES, between)).toMatchObject({ inProgress: false, shift: { id: shifts[1]!.id } });
     expect(nextShift(shifts, DEFAULT_TYPES, isoToMs(localIso('2026-04-01', '00:00')))).toBeUndefined();
+  });
+});
+
+describe('días que toca un turno', () => {
+  const type = (id: string, startTime: string, durationH: number, countsHours = true): ShiftType => ({ id, name: id, short: id[0]!.toUpperCase(), color: '#000000', startTime, durationH, countsHours });
+  const nocturno = type('nocturno', '19:00', 12);
+  const diurno = type('diurno', '07:00', 12);
+  const pg = type('pg', '00:00', 24, false);
+  const mk = (id: string, date: string, tp: ShiftType): Shift => ({ id, ...buildShift(date, tp), typeId: tp.id });
+
+  it('un nocturno marca el día que empieza y el día que termina', () => {
+    expect(daysCovered(mk('a', '2026-10-10', nocturno))).toEqual(['2026-10-10', '2026-10-11']);
+  });
+  it('un diurno marca un solo día y un fin exacto a medianoche no se pasa al siguiente', () => {
+    expect(daysCovered(mk('a', '2026-10-10', diurno))).toEqual(['2026-10-10']);
+    expect(daysCovered(mk('b', '2026-10-10', type('tarde', '12:00', 12)))).toEqual(['2026-10-10']);
+  });
+  it('un 24 h 07:00–07:00 marca ambos días; un turno de 48 h marca tres', () => {
+    expect(daysCovered(mk('a', '2026-10-10', type('24h', '07:00', 24)))).toEqual(['2026-10-10', '2026-10-11']);
+    expect(daysCovered(mk('b', '2026-10-10', type('48h', '07:00', 48)))).toEqual(['2026-10-10', '2026-10-11', '2026-10-12']);
+  });
+  it('cruza fin de mes y de año', () => {
+    expect(daysCovered(mk('a', '2026-12-31', nocturno))).toEqual(['2026-12-31', '2027-01-01']);
+  });
+  it('el mismo día puede tener varios turnos: el nocturno que termina y la post-guardia que empieza', () => {
+    const noche = mk('n', '2026-10-10', nocturno);
+    const post = mk('p', '2026-10-11', pg);
+    const byDay = shiftsByDay([post, noche]);
+    expect(byDay.get('2026-10-10')?.map((e) => [e.shift.id, e.role])).toEqual([['n', 'start']]);
+    expect(byDay.get('2026-10-11')?.map((e) => [e.shift.id, e.role])).toEqual([['n', 'continues'], ['p', 'start']]);
+    expect(findOverlap([noche], [nocturno, pg], post)).toBeUndefined(); // la post-guardia no bloquea
+  });
+  it('un diurno el día que termina el nocturno también es válido (borde exacto a las 07:00)', () => {
+    const noche = mk('n', '2026-10-10', nocturno);
+    const dia = mk('d', '2026-10-11', diurno);
+    expect(findOverlap([noche], [nocturno, diurno], dia)).toBeUndefined();
+    expect(shiftsByDay([noche, dia]).get('2026-10-11')?.length).toBe(2);
   });
 });

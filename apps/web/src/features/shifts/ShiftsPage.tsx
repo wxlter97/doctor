@@ -6,7 +6,7 @@ import { addDays, addMonths, datePart, diffDays, isoToMs, localIso, monthLabel, 
 import { DayDialog } from './DayDialog';
 import { ExportPanel } from './ExportPanel';
 import { PatternDialog } from './PatternDialog';
-import { buildShift, restWarnings, summarize } from './logic';
+import { buildShift, daysCovered, restWarnings, shiftsByDay, summarize } from './logic';
 import { REST_DEFAULT_H, deleteShift, ensureDefaultTypes, saveShift, useSetting, useShiftTypes, useShifts } from './store';
 import type { Shift, ShiftType } from './model';
 import { db, type ShiftRow } from '../../db';
@@ -31,11 +31,8 @@ export function ShiftsPage() {
   useEffect(() => { void ensureDefaultTypes(); }, []);
   const typeById = useMemo(() => new Map(types.map((x) => [x.id, x])), [types]);
 
-  const byDay = useMemo(() => {
-    const m = new Map<string, Shift[]>();
-    for (const sh of shifts) m.set(datePart(sh.start), [...(m.get(datePart(sh.start)) ?? []), sh]);
-    return m;
-  }, [shifts]);
+  // Cada día muestra los turnos que empiezan ese día y los que siguen en curso (un nocturno marca ambos días).
+  const byDay = useMemo(() => shiftsByDay(shifts), [shifts]);
 
   // Avisos de descanso por día (se muestran en el día del turno que empieza con poco descanso).
   const restByDay = useMemo(() => {
@@ -59,25 +56,22 @@ export function ShiftsPage() {
   const sum = summarize(shifts, types, range[0], range[1]);
   const monthShifts = shifts.filter((x) => isoToMs(x.end) > range[0] && isoToMs(x.start) < range[1]).sort((a, b) => isoToMs(a.start) - isoToMs(b.start));
 
+  // El pincel agrega o quita ESE tipo en el día sin tocar los demás turnos: un día puede tener varios
+  // (p. ej. el nocturno que termina y la post-guardia que empieza). Si se solapa con otro que cuenta horas, avisa.
   const applyBrush = async (date: string, toggle: boolean) => {
     const type = typeById.get(brush.typeId);
     if (!type) return;
-    const existing = byDay.get(date) ?? [];
-    if (existing.some((x) => x.typeId === type.id)) {
+    const same = (byDay.get(date) ?? []).find((e) => e.role === 'start' && e.shift.typeId === type.id);
+    if (same) {
       if (!toggle) return;
-      await Promise.all(existing.map((x) => deleteShift(x.id)));
-      setUndo({ removed: existing, added: [] });
+      await deleteShift(same.shift.id);
+      setUndo({ removed: [same.shift], added: [] });
       return;
     }
-    await Promise.all(existing.map((x) => deleteShift(x.id)));
     const res = await saveShift(buildShift(date, type));
-    if (!res.ok) {
-      await db.shifts.bulkPut(existing as ShiftRow[]);
-      setNotice(s.overlap);
-      return;
-    }
+    if (!res.ok) { setNotice(s.overlap); return; }
     setNotice('');
-    setUndo({ removed: existing, added: [res.shift] });
+    setUndo({ removed: [], added: [res.shift] });
   };
   const doUndo = async () => {
     if (!undo) return;
@@ -147,7 +141,7 @@ export function ShiftsPage() {
               const list = byDay.get(d) ?? [];
               const inMonth = d.slice(0, 7) === first.slice(0, 7);
               const warn = restByDay.has(d);
-              const label = `${dayLabel(d)}${list.length ? `: ${list.map((x) => typeById.get(x.typeId)?.name).join(', ')}` : ''}${warn ? '. ' + s.restShort : ''}`;
+              const label = `${dayLabel(d)}${list.length ? `: ${list.map((e) => `${typeById.get(e.shift.typeId)?.name}${e.role === 'continues' ? ` (${s.continues})` : ''}`).join(', ')}` : ''}${warn ? '. ' + s.restShort : ''}`;
               return (
                 <button
                   key={d} data-date={d} role="gridcell" aria-label={label}
@@ -156,9 +150,16 @@ export function ShiftsPage() {
                   className={`flex min-h-14 flex-col items-stretch gap-0.5 border-2 p-1 text-left text-sm ${d === today ? 'border-4 border-line font-black' : 'border-line'} ${inMonth ? 'bg-surface' : 'bg-surface-2 text-muted'}`}
                 >
                   <span className="flex items-center justify-between">{Number(d.slice(8))}{warn && <AlertTriangle aria-hidden size={14} />}</span>
-                  {list.map((x) => {
+                  {list.map(({ shift: x, role }) => {
                     const tp = typeById.get(x.typeId);
-                    return <span key={x.id} className="truncate border border-black px-1 text-center font-mono text-xs font-bold text-black" style={{ background: tp?.color }}>{tp?.short}</span>;
+                    return role === 'start' ? (
+                      <span key={x.id} className="truncate border border-black px-1 text-center font-mono text-xs font-bold text-black" style={{ background: tp?.color }}>{tp?.short}</span>
+                    ) : (
+                      // Sigue en curso (empezó un día antes): contorno discontinuo con el color del tipo, para ver que el turno cruza
+                      <span key={`${x.id}-c`} className="flex items-center justify-center gap-0.5 truncate border border-dashed border-line bg-surface px-1 text-center font-mono text-xs font-bold text-fg">
+                        <span aria-hidden className="inline-block size-2 shrink-0 border border-black" style={{ background: tp?.color }} />↳{tp?.short}
+                      </span>
+                    );
                   })}
                 </button>
               );
@@ -188,7 +189,7 @@ export function ShiftsPage() {
               <li key={x.id}>
                 <button className="card flex w-full flex-col items-start py-2 text-left" onClick={() => setSelected(d)}>
                   <span className="font-bold first-letter:uppercase">{dayLabel(d)}</span>
-                  <span>{tp?.name} · {timePart(x.start)}–{timePart(x.end)}</span>
+                  <span>{tp?.name} · {timePart(x.start)}–{timePart(x.end)}{daysCovered(x).length > 1 ? ' (+1 d)' : ''}</span>
                   {restByDay.get(d)?.map((m) => <span key={m} className="flex gap-1 text-sm font-bold"><AlertTriangle aria-hidden size={16} /> {m}</span>)}
                 </button>
               </li>
@@ -199,7 +200,7 @@ export function ShiftsPage() {
 
       <ExportPanel shifts={shifts} types={types} />
 
-      {selected && <DayDialog date={selected} shifts={byDay.get(selected) ?? []} types={types} rest={restByDay.get(selected) ?? []} onClose={() => setSelected(null)} />}
+      {selected && <DayDialog date={selected} entries={byDay.get(selected) ?? []} types={types} rest={restByDay.get(selected) ?? []} onClose={() => setSelected(null)} />}
       {pattern && <PatternDialog types={types} onClose={() => setPattern(false)} />}
     </section>
   );

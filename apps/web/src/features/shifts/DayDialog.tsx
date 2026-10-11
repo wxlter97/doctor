@@ -5,10 +5,11 @@ import { t } from '../../i18n/es-SV';
 import { dayLabel, datePart, timePart } from '../../lib/time';
 import { buildShift } from './logic';
 import { deleteShift, saveShift } from './store';
-import type { Shift, ShiftType } from './model';
+import { daysCovered, type DayEntry } from './logic';
+import type { ShiftType } from './model';
 
-export function DayDialog({ date, shifts, types, rest, onClose }: {
-  date: string; shifts: Shift[]; types: ShiftType[]; rest: string[]; onClose: () => void;
+export function DayDialog({ date, entries, types, rest, onClose }: {
+  date: string; entries: DayEntry[]; types: ShiftType[]; rest: string[]; onClose: () => void;
 }) {
   const s = t.shifts;
   const [error, setError] = useState('');
@@ -44,19 +45,23 @@ export function DayDialog({ date, shifts, types, rest, onClose }: {
             </p>
           )}
 
-          {shifts.length > 0 && (
+          {entries.length > 0 && (
             <ul className="mt-3 flex flex-col gap-2">
-              {shifts.map((sh) => {
+              {entries.map(({ shift: sh, role }) => {
                 const tp = types.find((x) => x.id === sh.typeId);
                 return (
                   <li key={sh.id} className="flex items-center justify-between gap-2 border-2 border-line p-2">
-                    <span className="font-bold"><span aria-hidden className="mr-2 inline-block size-3 border border-line" style={{ background: tp?.color }} />{tp?.name} · {timePart(sh.start)}–{timePart(sh.end)}{datePart(sh.end) !== datePart(sh.start) ? ' (+1 d)' : ''}</span>
+                    <span className="flex flex-col">
+                      <span className="font-bold"><span aria-hidden className="mr-2 inline-block size-3 border border-line" style={{ background: tp?.color }} />{tp?.name} · {timePart(sh.start)}–{timePart(sh.end)}{daysCovered(sh).length > 1 ? ' (+1 d)' : ''}</span>
+                      {role === 'continues' && <span className="text-sm text-muted">{s.startedOn(dayLabel(datePart(sh.start)))}</span>}
+                    </span>
                     <button className="btn" aria-label={s.deleteShift} onClick={() => void deleteShift(sh.id)}><Trash2 aria-hidden size={18} /></button>
                   </li>
                 );
               })}
             </ul>
           )}
+          {entries.length > 0 && <p className="mt-2 text-sm text-muted">{s.severalHint}</p>}
 
           <h3 className="mt-4 font-bold">{s.addShift}</h3>
           <div role="radiogroup" aria-label={s.type} className="mt-2 grid grid-cols-2 gap-2">

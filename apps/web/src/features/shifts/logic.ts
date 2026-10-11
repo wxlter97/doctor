@@ -12,6 +12,25 @@ export function buildShift(date: string, type: ShiftType, opts?: { startTime?: s
   return { start, end, typeId: type.id };
 }
 
+/** Días (YYYY-MM-DD) que toca un turno, del de inicio al de fin. Un fin exactamente a medianoche no cuenta el día siguiente. */
+export function daysCovered(s: Pick<Shift, 'start' | 'end'>): string[] {
+  const first = datePart(s.start);
+  const last = datePart(msToIso(isoToMs(s.end) - MIN));
+  const out: string[] = [];
+  for (let d = first; d <= last; d = addDays(d, 1)) out.push(d);
+  return out.length > 0 ? out : [first];
+}
+
+export interface DayEntry { shift: Shift; role: 'start' | 'continues' }
+/** Turnos por día de calendario: aparecen el día que empiezan y también cada día que siguen en curso (p. ej. un nocturno marca ambos días). */
+export function shiftsByDay(shifts: Shift[]): Map<string, DayEntry[]> {
+  const map = new Map<string, DayEntry[]>();
+  for (const shift of [...shifts].sort((a, b) => isoToMs(a.start) - isoToMs(b.start))) {
+    for (const [i, day] of daysCovered(shift).entries()) map.set(day, [...(map.get(day) ?? []), { shift, role: i === 0 ? 'start' : 'continues' }]);
+  }
+  return map;
+}
+
 export const overlaps = (a: Pick<Shift, 'start' | 'end'>, b: Pick<Shift, 'start' | 'end'>) =>
   isoToMs(a.start) < isoToMs(b.end) && isoToMs(b.start) < isoToMs(a.end);
 
