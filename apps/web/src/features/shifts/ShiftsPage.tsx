@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState, type KeyboardEvent } from 'react';
 import { Link } from 'react-router';
-import { AlertTriangle, ChevronLeft, ChevronRight, Paintbrush, Repeat, Undo2 } from 'lucide-react';
+import { AlertTriangle, CalendarPlus, ChevronLeft, ChevronRight, Paintbrush, Repeat, Undo2 } from 'lucide-react';
 import { t } from '../../i18n/es-SV';
 import { addDays, addMonths, datePart, diffDays, isoToMs, localIso, monthLabel, startOfMonth, startOfWeek, timePart, todayInSv, dayLabel } from '../../lib/time';
 import { DayDialog } from './DayDialog';
@@ -10,6 +10,7 @@ import { buildShift, restWarnings, summarize } from './logic';
 import { REST_DEFAULT_H, deleteShift, ensureDefaultTypes, saveShift, useSetting, useShiftTypes, useShifts } from './store';
 import type { Shift, ShiftType } from './model';
 import { db, type ShiftRow } from '../../db';
+import { EmptyState, PageHeader } from '../../components/PageHeader';
 
 const WEEK = ['D', 'L', 'M', 'M', 'J', 'V', 'S'];
 interface UndoOp { removed: Shift[]; added: Shift[] }
@@ -98,7 +99,7 @@ export function ShiftsPage() {
 
   return (
     <section className="flex max-w-3xl flex-col gap-4">
-      <h1 className="text-2xl font-bold">{s.title}</h1>
+      <PageHeader eyebrow={s.eyebrow} title={s.title} />
 
       <div className="flex items-center gap-2">
         <button className="btn" aria-label={s.prevMonth} onClick={() => setMonth(addMonths(month, -1))}><ChevronLeft aria-hidden size={20} /></button>
@@ -116,6 +117,13 @@ export function ShiftsPage() {
         <button className="btn" disabled={!undo} onClick={() => void doUndo()}><Undo2 aria-hidden size={18} /> {s.undo}</button>
         <button className="btn" onClick={() => setPattern(true)}><Repeat aria-hidden size={18} /> {s.repeat}</button>
       </div>
+
+      {shifts && shifts.length === 0 && !brush.on && (
+        <EmptyState icon={<CalendarPlus size={22} />}>
+          <p className="font-bold text-fg">{s.emptyTitle}</p>
+          <p className="text-sm">{s.emptyHint}</p>
+        </EmptyState>
+      )}
 
       {brush.on && (
         <div role="radiogroup" aria-label={s.type} className="flex flex-wrap gap-2">

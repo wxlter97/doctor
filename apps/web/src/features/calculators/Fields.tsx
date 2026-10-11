@@ -50,7 +50,7 @@ export function ChoiceField({ input, raw, onChange }: { input: ChoiceInput; raw:
   return (
     <fieldset className="flex flex-col gap-2">
       <legend className="lbl mb-1">{input.label}</legend>
-      <div role="radiogroup" aria-label={input.label} className="grid gap-2">
+      <div role="radiogroup" aria-label={input.label} className={`grid gap-2 ${input.options.every((o) => o.label.length <= 14) ? 'grid-cols-[repeat(auto-fit,minmax(7rem,1fr))]' : ''}`}>
         {input.options.map((o) => {
           const selected = String(o.value) === raw;
           return (

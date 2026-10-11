@@ -2,12 +2,14 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router';
 import { useLiveQuery } from 'dexie-react-hooks';
 import { Check, ChevronLeft, Copy, Star } from 'lucide-react';
-import { buildCopyText, getCalculator, isVisible, type AnyCalculator, type InputDef, type Values } from '@medapoyo/calculators';
+import { buildCopyText, categoryLabels, getCalculator, isVisible, type AnyCalculator, type InputDef, type Values } from '@medapoyo/calculators';
 import { db } from '../../db';
 import { addHistory, toggleFavorite, touchRecent } from '../../db/user';
 import { t } from '../../i18n/es-SV';
 import { ChoiceField, DateField, NumberField } from './Fields';
 import { Section } from './Section';
+import { PageHeader } from '../../components/PageHeader';
+import { POPULATION } from './meta';
 import { SeverityBadge } from './Severity';
 
 interface FormState { raw: Record<string, string>; units: Record<string, string> }
@@ -118,12 +120,15 @@ function CalculatorView({ calc }: { calc: AnyCalculator }) {
     <div className="lg:grid lg:grid-cols-[minmax(0,1fr)_24rem] lg:items-start lg:gap-8">
       <div className="flex flex-col gap-4 pb-4">
         <Link to="/calculadoras" className="inline-flex min-h-11 items-center gap-1 font-bold underline"><ChevronLeft aria-hidden size={18} /> {c.title}</Link>
-        <div className="flex items-start justify-between gap-2">
-          <h1 className="text-2xl font-bold">{calc.name}</h1>
-          <button className="btn shrink-0" aria-pressed={!!isFav} aria-label={isFav ? c.unfavorite : c.favorite} onClick={() => void toggleFavorite('calculator', calc.id)}>
-            <Star aria-hidden size={20} fill={isFav ? 'currentColor' : 'none'} />
-          </button>
-        </div>
+        <PageHeader
+          eyebrow={[categoryLabels[calc.category], POPULATION[calc.population]].filter(Boolean).join(' · ')}
+          title={calc.name}
+          aside={(
+            <button className={`btn shrink-0 ${isFav ? 'btn-selected' : ''}`} aria-pressed={!!isFav} aria-label={isFav ? c.unfavorite : c.favorite} onClick={() => void toggleFavorite('calculator', calc.id)}>
+              <Star aria-hidden size={20} fill={isFav ? 'currentColor' : 'none'} />
+            </button>
+          )}
+        />
 
         <form className="card flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
           {visible.map((i) =>
@@ -167,6 +172,7 @@ function CalculatorView({ calc }: { calc: AnyCalculator }) {
 
       <aside aria-live="polite" className="sticky bottom-0 -mx-4 border-t-2 border-line bg-surface px-4 py-3 lg:top-0 lg:mx-0 lg:border-2 lg:p-4">
         <h2 className="sr-only">{c.result}</h2>
+        <p aria-hidden className="eyebrow mb-1 hidden lg:mb-2 lg:block">{c.result}</p>
         {result.ok ? (
           <div className="flex flex-col gap-2">
             <div className="flex items-center justify-between gap-3 lg:flex-col lg:items-stretch lg:gap-2">

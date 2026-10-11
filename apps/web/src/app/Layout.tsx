@@ -11,6 +11,7 @@ import { useShortcuts } from './useShortcuts';
 import { updateCatalog } from '../lib/catalogUpdate';
 import { useCatalog } from '../stores/catalog';
 import { Onboarding } from '../features/onboarding/Onboarding';
+import { Logo } from '../components/Logo';
 
 const linkBase = 'flex items-center gap-3 border-line font-bold';
 
@@ -36,7 +37,7 @@ export function Layout() {
   return (
     <div className="flex h-full flex-col lg:flex-row">
       <aside className="hidden w-60 shrink-0 flex-col gap-2 border-r-2 border-line bg-surface p-4 lg:flex">
-        <div className="display mb-4 text-xl">{t.app.name}</div>
+        <div className="mb-4 flex items-center gap-3"><Logo size={36} /><span className="display text-xl">{t.app.name}</span></div>
         <nav aria-label={t.nav.main} className="flex flex-col gap-2">
           {sections.map(({ to, label, icon: Icon, end }) => (
             <NavLink key={to} to={to} end={end} className={({ isActive }) => `${linkBase} min-h-11 border-2 px-3 ${isActive ? 'bg-selected text-selected-fg' : ''}`}>
@@ -51,7 +52,7 @@ export function Layout() {
 
       <div className="flex min-h-0 flex-1 flex-col">
         <header className="flex items-center justify-between border-b-2 border-line bg-surface px-4 py-2 lg:hidden">
-          <span className="display text-lg">{t.app.name}</span>
+          <span className="flex items-center gap-2"><Logo size={32} /><span className="display text-lg">{t.app.name}</span></span>
           <NavLink to="/ajustes" aria-label={t.nav.settings} className="btn">
             <Settings aria-hidden size={22} />
           </NavLink>

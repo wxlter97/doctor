@@ -11,6 +11,7 @@ import { useState } from 'react';
 import { Link } from 'react-router';
 import { useCatalog } from '../../stores/catalog';
 import { CatalogDownload } from '../medications/CatalogDownload';
+import { PageHeader } from '../../components/PageHeader';
 import { avisoLegal } from './legal/aviso-legal';
 
 function Segmented<T extends string>({ label, value, options, onChange }: {
@@ -68,7 +69,7 @@ export function SettingsPage() {
   const historyCount = useLiveQuery(() => db.calcHistory.count(), []) ?? 0;
   return (
     <section className="flex max-w-2xl flex-col gap-4">
-      <h1 className="text-2xl font-bold">{s.title}</h1>
+      <PageHeader eyebrow={t.app.name} title={s.title} />
       <Segmented<Theme> label={s.theme} value={theme} onChange={setTheme}
         options={[['system', s.themeSystem], ['light', s.themeLight], ['dark', s.themeDark]]} />
       <Segmented<Density> label={s.density} value={density} onChange={setDensity}

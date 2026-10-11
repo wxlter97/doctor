@@ -18,6 +18,7 @@
   --color-selected: var(--selected-bg);
   --color-selected-fg: var(--selected-fg);
   --color-focus: var(--focus);
+  --color-hover: var(--hover);
   --color-faro: var(--faro);
   --color-tinta: var(--tinta);
   --color-alerta: var(--alerta);
@@ -85,6 +86,68 @@ h2 {
 }
 
 @layer components {
+  /* Etiqueta de sección sobre el título (mono, mayúsculas) */
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: var(--muted);
+  }
+  /* Bloque de ícono: cuadrado sólido (Tinta con ícono Faro en claro; Papel con Tinta en oscuro) */
+  .icon-block {
+    display: inline-flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+    background: var(--selected-bg);
+    color: var(--selected-fg);
+  }
+  .icon-block-lg {
+    width: 56px;
+    height: 56px;
+  }
+  /* Fila/tarjeta que es un enlace: se oscurece un poco al pasar y se invierte al presionar */
+  .row-link {
+    border: var(--border-width) solid var(--border-color);
+    background: var(--surface);
+    color: var(--fg);
+  }
+  .row-link:hover {
+    background: var(--hover);
+  }
+  .row-link:active {
+    background: var(--selected-bg);
+    color: var(--selected-fg);
+  }
+  .section-title {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: var(--space-3);
+    border-bottom: var(--border-width) solid var(--border-color);
+    padding-bottom: var(--space-2);
+  }
+  /* Dato con etiqueta (código, nivel, presentación…) */
+  .kv {
+    display: grid;
+    grid-template-columns: 7.5rem minmax(0, 1fr);
+    gap: var(--space-1) var(--space-3);
+    font-size: var(--text-sm);
+  }
+  .kv dt {
+    font-family: var(--font-mono);
+    font-size: var(--text-label);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 2px;
+  }
+  .kv dd {
+    margin: 0;
+  }
   /* Etiquetas y datos: JetBrains Mono, mayúsculas, tracking 0.12em */
   .lbl,
   .tag {

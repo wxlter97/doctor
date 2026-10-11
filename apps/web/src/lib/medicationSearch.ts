@@ -13,8 +13,10 @@ export interface MedIndex {
   search: (query: string, filters?: Filters) => CatalogMedication[];
 }
 
+/** Orden alfabético por el nombre sin números ni guiones al inicio («5 - Fluorouracilo» va con la F, no al principio). */
+const sortKey = (m: CatalogMedication) => normalize(m.genericName).replace(/^[\d\s\-.,]+/, '');
 const byName = (a: CatalogMedication, b: CatalogMedication) =>
-  normalize(a.genericName).localeCompare(normalize(b.genericName)) || a.strength.localeCompare(b.strength, 'es', { numeric: true });
+  sortKey(a).localeCompare(sortKey(b)) || normalize(a.genericName).localeCompare(normalize(b.genericName)) || a.strength.localeCompare(b.strength, 'es', { numeric: true });
 
 /** Índice en memoria sobre el catálogo local. Busca por nombre, principio activo, grupo y sinónimos. */
 export function buildIndex(meds: CatalogMedication[], institutions: Institution[], synonyms: Record<string, string>): MedIndex {

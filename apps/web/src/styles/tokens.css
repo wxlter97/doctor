@@ -26,6 +26,7 @@
   --bg: var(--papel);
   --surface: #ffffff;
   --surface-2: #efefe9;
+  --hover: #f0efe9; /* humo (#6B6B63) sigue a 4.6:1 sobre este tono */
   --fg: var(--tinta);
   --fg-soft: #3d3d38;
   --muted: var(--humo);
@@ -74,6 +75,7 @@
     --bg: var(--tinta);
     --surface: #1b1b19;
     --surface-2: #262624;
+    --hover: #262624;
     --fg: #ededE7;
     --fg-soft: #c9c9c2;
     --muted: #9a9a90;
@@ -92,6 +94,7 @@
   --bg: var(--tinta);
   --surface: #1b1b19;
   --surface-2: #262624;
+  --hover: #262624;
   --fg: #ededE7;
   --fg-soft: #c9c9c2;
   --muted: #9a9a90;

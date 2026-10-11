@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState, type KeyboardEvent } from 'react';
 import { Link, Outlet, useLocation, useMatch, useSearchParams } from 'react-router';
 import { useLiveQuery } from 'dexie-react-hooks';
-import { SlidersHorizontal, Star } from 'lucide-react';
+import { Check, ChevronDown, Info, Pill, SlidersHorizontal, Star, X } from 'lucide-react';
 import type { CatalogMedication } from '@medapoyo/shared';
 import { db } from '../../db';
 import { t } from '../../i18n/es-SV';
@@ -9,6 +9,7 @@ import { instShort } from '../../lib/institutions';
 import { useCatalog } from '../../stores/catalog';
 import { CatalogDownload } from './CatalogDownload';
 import { FiltersDialog } from './FiltersDialog';
+import { EmptyState, PageHeader } from '../../components/PageHeader';
 
 const MAX_RESULTS = 100;
 const NO_IDS: string[] = [];
@@ -16,17 +17,33 @@ const NO_IDS: string[] = [];
 export function MedicationRow({ med, fav, search }: { med: CatalogMedication; fav: boolean; search: string }) {
   return (
     <li>
-      <Link data-result to={{ pathname: `/medicamentos/${med.id}`, search }} className="card flex min-h-row flex-col gap-1 py-2">
-        <span className="flex items-center justify-between gap-2">
-          <strong className="text-lg">{med.genericName}</strong>
-          {fav && <Star aria-label={t.medications.favorite} size={18} fill="currentColor" />}
+      <Link data-result to={{ pathname: `/medicamentos/${med.id}`, search }} className="row-link flex min-h-row flex-col gap-1 px-3 py-3">
+        <span className="flex items-start justify-between gap-2">
+          <strong className="text-lg leading-snug">{med.genericName}</strong>
+          {fav && <Star aria-label={t.medications.favorite} size={18} fill="currentColor" className="mt-1 shrink-0" />}
         </span>
-        <span className="text-muted">{med.form} · {med.strength}</span>
-        <span className="flex flex-wrap gap-1">
+        <span className="text-sm text-soft"><span className="font-bold">{med.strength}</span> · {med.form}</span>
+        <span className="mt-1 flex flex-wrap items-center gap-1">
           {med.institutions.map((i) => <span key={i.id} className="tag">{instShort(i.id)}</span>)}
+          {med.therapeuticGroup && <span className="ml-1 truncate text-xs text-muted">{med.therapeuticGroup}</span>}
         </span>
       </Link>
     </li>
+  );
+}
+
+/** Aviso del catálogo parcial: una línea siempre visible; el detalle se despliega (no empuja los resultados). */
+function PartialNotice({ text, link }: { text: string; link: string }) {
+  return (
+    <details className="aviso aviso-warning group text-sm">
+      <summary className="flex min-h-11 cursor-pointer list-none items-center gap-2 font-bold [&::-webkit-details-marker]:hidden">
+        <Info aria-hidden size={18} className="shrink-0" />
+        <span className="flex-1">{t.medications.partialShort}</span>
+        <ChevronDown aria-hidden size={18} className="shrink-0 group-open:rotate-180" />
+      </summary>
+      <p className="pb-2">{text}</p>
+      <Link className="flex min-h-11 items-center font-bold underline" to="/fuentes">{link}</Link>
+    </details>
   );
 }
 
@@ -73,8 +90,8 @@ export function MedicationsLayout() {
   return (
     <div className="lg:grid lg:h-full lg:grid-cols-[minmax(0,26rem)_minmax(0,1fr)] lg:gap-6">
       <section className={`${detailOpen ? 'hidden lg:flex' : 'flex'} min-h-0 flex-col gap-3 lg:overflow-y-auto`} onKeyDown={onKey}>
-        <h1 className="text-2xl font-bold">{m.title}</h1>
-        {source === 'PARCIAL' && <p role="note" className="aviso aviso-warning text-sm font-bold">{m.partialBanner} <Link className="flex min-h-11 items-center underline" to="/fuentes">{m.sourcesLink}</Link></p>}
+        <PageHeader eyebrow={index ? m.catalogCount(index.meds.length) : undefined} title={m.title} />
+        {source === 'PARCIAL' && <PartialNotice text={m.partialBanner} link={m.sourcesLink} />}
         {source === 'FIXTURE' && <p role="note" className="aviso aviso-warning text-sm font-bold">{m.fixtureBanner}</p>}
         {loaded && !index ? (
           <div className="card flex flex-col gap-3">
@@ -83,30 +100,29 @@ export function MedicationsLayout() {
           </div>
         ) : (
           <>
-            <input id="med-search" className="field" type="search" autoComplete="off" aria-label={m.search} placeholder={m.search} value={text} onChange={(e) => setText(e.target.value)} />
+            <input id="med-search" className="field !min-h-14" type="search" autoComplete="off" aria-label={m.search} placeholder={m.search} value={text} onChange={(e) => setText(e.target.value)} />
             <div className="flex flex-wrap items-center gap-2">
               {(index?.institutions ?? []).map((i) => (
-                <button key={i.id} aria-pressed={insts.includes(i.id)} onClick={() => toggleInst(i.id)} className={`btn ${insts.includes(i.id) ? 'btn-selected' : ''}`}>{instShort(i.id)}</button>
+                <button key={i.id} aria-pressed={insts.includes(i.id)} onClick={() => toggleInst(i.id)} className={`btn ${insts.includes(i.id) ? 'btn-selected' : ''}`}>{insts.includes(i.id) && <Check aria-hidden size={16} />}{instShort(i.id)}</button>
               ))}
               <button className="btn" onClick={() => setFiltersOpen(true)}><SlidersHorizontal aria-hidden size={18} /> {m.filters}{advanced > 0 && <span className="border-2 border-current px-1.5 text-xs">{advanced}</span>}</button>
             </div>
             {filtered && (
               <div className="flex flex-wrap items-center gap-2" aria-label={m.activeFilters}>
                 {[...(form ? [[m.form, form, () => update({ form: undefined })] as const] : []), ...(group ? [[m.group, group, () => update({ group: undefined })] as const] : [])].map(([label, value, clear]) => (
-                  <button key={label} className="btn min-h-11 text-sm" onClick={clear} aria-label={m.removeFilter(label, value)}>{value} ✕</button>
+                  <button key={label} className="btn min-h-11 text-sm" onClick={clear} aria-label={m.removeFilter(label, value)}>{value} <X aria-hidden size={14} /></button>
                 ))}
                 <button className="min-h-11 font-bold underline" onClick={() => { setText(''); setParams({}, { replace: true }); }}>{m.clear}</button>
               </div>
             )}
-            <p className="text-sm text-muted">{m.notStock}</p>
             {favs.length > 0 && (
               <div className="flex flex-col gap-2">
-                <h2 className="font-bold">{m.favorites}</h2>
+                <div className="section-title"><h2>{m.favorites}</h2></div>
                 <ul className="flex flex-col gap-2">{favs.map((x) => <MedicationRow key={x.id} med={x} fav search={locSearch} />)}</ul>
               </div>
             )}
-            {index && results.length === 0 && <p className="card">{m.noResults(q)}</p>}
-            <p className="sr-only" aria-live="polite">{m.resultsCount(results.length)}</p>
+            {index && results.length === 0 && <EmptyState icon={<Pill size={22} />}><p>{m.noResults(q)}</p></EmptyState>}
+            {index && results.length > 0 && <p className="text-sm text-muted" aria-live="polite">{filtered ? m.resultsCount(results.length) : m.allCount(results.length)} · {m.notStockShort}</p>}
             <ul className="flex flex-col gap-2">
               {results.slice(0, MAX_RESULTS).map((x) => <MedicationRow key={x.id} med={x} fav={favIds.includes(x.id)} search={locSearch} />)}
             </ul>
@@ -123,5 +139,10 @@ export function MedicationsLayout() {
 }
 
 export function MedicationsIndexPlaceholder() {
-  return <p className="card text-muted">{t.medications.pick}</p>;
+  return (
+    <EmptyState icon={<Pill size={22} />}>
+      <p className="font-bold text-fg">{t.medications.pick}</p>
+      <p className="text-sm">{t.medications.pickTip}</p>
+    </EmptyState>
+  );
 }

@@ -2,6 +2,7 @@ import { Link } from 'react-router';
 import { t } from '../../i18n/es-SV';
 import { useCatalog } from '../../stores/catalog';
 import { sources } from './sources';
+import { PageHeader } from '../../components/PageHeader';
 
 export function SourcesPage() {
   const s = t.sources;
@@ -9,7 +10,7 @@ export function SourcesPage() {
   const source = useCatalog((x) => x.source);
   return (
     <article className="flex max-w-3xl flex-col gap-4 pb-4">
-      <h1 className="text-2xl font-bold">{s.title}</h1>
+      <PageHeader eyebrow="Transparencia" title={s.title} />
       <p className="aviso aviso-warning text-sm font-bold" role="note">{s.notOfficial}</p>
       <p>{s.intro}</p>
       <p className="text-sm text-muted">{version > 0 ? s.catalogState(version, source) : s.noCatalog}</p>
